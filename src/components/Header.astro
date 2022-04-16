@@ -2,14 +2,14 @@
 
 ---
 <header>
-<img src="/reviewmate-mainlogo(white).svg" alt="ReviewMate logo" style="max-width:20rem;" />
+<a href="/"><img src="/reviewmate-mainlogo(white).svg" alt="ReviewMate logo" style="max-width:20rem;" /></a>
   <nav>
     <ul>
       <li>
-      <a href="/">Home</a>
+        <a href="/">Plans</a>
       </li>
       <li>
-      <a href="/">Contact</a>
+        <a href="/">Contact</a>
       </li>
     </ul>
   </nav>
@@ -20,6 +20,7 @@
   header {
     width: 100%;
     background-color: hsl(var(--color1hsl));
+    padding: 1rem 1rem 0;
   }
   nav ul {
     display: flex;
@@ -28,8 +29,12 @@
     & li {
       list-style-type: none;
       line-height: 3rem;
-      font-size: 2.5rem;
+      // font-size: 2.5rem;
       padding: 10px 20px;
+      color: white;
+      & a {
+        color: white;
+      }
     }
   }
 </style>

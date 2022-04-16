@@ -8,8 +8,8 @@ $color1l: 40%;
 
 // Second color by each HSL value
 $color2h: 42;
-$color2s: 55%;
-$color2l: 98%;
+$color2s: 92%;
+$color2l: 71%;
 
 $color1hsl: $color1h, $color1s, $color1l;
 $color2hsl: $color2h, $color2s, $color2l;
@@ -20,19 +20,22 @@ $color2hsl: $color2h, $color2s, $color2l;
 	--color1h: #{$color1h} ;
 	--color1s: #{$color1s};
 	--color1l: #{$color1l};
-	--color2hsl: #{$color1hsl};
-	--color2h: #{$color1h};
-	--color2s: #{$color1s};
-	--color2l: #{$color1l};
+	--color2hsl: #{$color2hsl};
+	--color2h: #{$color2h};
+	--color2s: #{$color2s};
+	--color2l: #{$color2l};
 	--font-1: #{$font1};
 	--font-2: #{$font2};
 }
-
+html {
+	scroll-behavior: smooth;
+}
 h1, h2, h3, h4 {
 	font-family: $font1;
 }
 p, body {
 	font-family: $font2;
+	color: #333;
 }
 h1 {
 	font-size: 3.6rem;
@@ -83,6 +86,8 @@ main {
 }
 a {
 	text-decoration: none;
+	// color:  #555;
+	color:  hsl(var(--color1hsl));
 }
 dl {
 	margin-bottom: 2.6rem;

@@ -3,10 +3,67 @@
 ---
 
   <footer>
+    <img src="/reviewmate-smallerlogo.svg" alt="ReviewMate logo" width="130"  height="130" class="logoimg"/>
     <ul>
       <li>
+        <a href="" class="listheader">
+          Plans
+        </a>
+      </li>
+      <li>
         <a href="">
-        Something
+          Essentials
+        </a>
+      </li>
+      <li>
+        <a href="">
+          Pro
+        </a>
+      </li>
+      <li>
+        <a href="">
+          Enterprise
+        </a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="" class="listheader">
+          Plans
+        </a>
+      </li>
+      <li>
+        <a href="">
+          Essentials
+        </a>
+      </li>
+      <li>
+        <a href="">
+          Pro
+        </a>
+      </li>
+      <li>
+        <a href="">
+          Enterprise
+        </a>
+      </li>
+    </ul>
+
+
+    <ul>
+      <li>
+        <a href="/policies#privacypolicy">
+          Privacy Policy
+        </a>
+      </li>
+      <li>
+        <a href="/policies#termsandconditions">
+          Terms & Conditions
+        </a>
+      </li>
+      <li>
+        <a href="/policies#disclaimer">
+          Usage Disclaimer
         </a>
       </li>
     </ul>
@@ -14,9 +71,38 @@
 
   <style lang="scss">
     footer {
-      padding: 4% 6%;
+      padding: 2rem 6% 4%;
+      background-color: #555;
+      color: white;
+      display: flex;
+      flex-flow: row wrap;
+      gap: 2rem;
+      justify-content: center;
+      font-family: var(--font-1);
       & ul {
         list-style-type: none;
+        color: white;
+        flex: 2 1 16rem;
+        max-width: 16rem;
+        & li {
+          color: white;
+          & a {
+            color: #eee;
+            line-height: 1.5rem;
+            padding: 0.3rem;
+            display: block;
+            font-size: 0.9rem;
+          }
+        }
       }
+    }
+    .logoimg {
+      order: 6;
+      flex: 1 1 12rem;
+      margin-top: 3rem;
+    }
+    .listheader {
+      font-weight: bolder;
+      font-size: 1.2rem!important;
     }
   </style>
