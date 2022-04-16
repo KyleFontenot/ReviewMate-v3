@@ -1,55 +1,73 @@
+$font1: "Inter";
+$font2: "Hind Madurai";
+
+// First color by each HSL value
+$color1h: 8;
+$color1s: 62%;
+$color1l: 40%;
+
+// Second color by each HSL value
+$color2h: 42;
+$color2s: 55%;
+$color2l: 98%;
+
+$color1hsl: $color1h, $color1s, $color1l;
+$color2hsl: $color2h, $color2s, $color2l;
+
+// Expose Sass variables for custom properties (mainly for inline styling)
 :root {
-	--color-primary: #88d6fb;
-	--color-secondary: #41a0d8;
-	--color-tertiary: #2f7299;
-	--font-1: "Sunflower";
-	--font-2: "Sunflower";
-	--font-3: "Sunflower";
+	--color1hsl: #{$color1hsl};
+	--color1h: #{$color1h} ;
+	--color1s: #{$color1s};
+	--color1l: #{$color1l};
+	--color2hsl: #{$color1hsl};
+	--color2h: #{$color1h};
+	--color2s: #{$color1s};
+	--color2l: #{$color1l};
+	--font-1: #{$font1};
+	--font-2: #{$font2};
 }
 
-@font-face {
-	font-family: var(--font-1);
-	src: url("/fonts/Staatliches/Staatliches-Regular.ttf");
+h1, h2, h3, h4 {
+	font-family: $font1;
 }
-
+p, body {
+	font-family: $font2;
+}
 h1 {
-	font-family: "Sunflower";
 	font-size: 3.6rem;
 	line-height: 3.6rem;
 	margin-top: 1rem;
 	margin-bottom: 1.8rem;
+	font-weight: bold;
 }
 h2 {
-	font-family: "Sunflower";
 	font-size: 2.5rem;
 	line-height: 2.5rem;
 	margin-top: 0.6rem;
-	margin-bottom: 1.2rem;
+	margin-bottom: 1.4rem;
 }
 h3 {
-	font-family: "Sunflower";
-	font-size: 2.2rem;
+	font-size: 2rem;
 	line-height: 2.3rem;
-	margin-bottom: 0.4rem;
+	margin-bottom: 1rem;
+	letter-spacing: 2px;
 }
 h4 {
-	font-family: "Sunflower";
-	font-size: 1.85rem;
+	font-size: 1.65rem;
 	line-height: 1.85rem;
 	margin-bottom: 0.8rem;
 }
 p {
-	font-family: "Sunflower";
-	font-size: 110%;
+	font-size: 1.2rem;
 	line-height: 2rem;
-	text-indent: 2rem;
+	// text-indent: 2rem;
 	margin-bottom: 0.5rem;
 }
 body {
 	width: 100%;
 	background-color: #eee;
 	max-width: 100%;
-	font-family: "Mukta";
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
@@ -65,7 +83,6 @@ main {
 }
 a {
 	text-decoration: none;
-	color: var(--color-secondary);
 }
 dl {
 	margin-bottom: 2.6rem;

@@ -1,19 +1,19 @@
 
-const title = "KyleF's Solid Astro Starter";
+const title = "ReviewMate";
 const description =
-	"Kyle Fontenot's starter boilerplate for a SolidJS and Astro website.";
-const canonical = "https://website.com" | undefined;
+	"Streamline medical code auditing workflows by expediting findings, integrating communication, and maintaining fidelity.";
+const canonical = "https://review-mate.com" | undefined;
 
 const metadata = {
 	title: title,
 	description: description,
-	canonical: "https://website.com",
+	canonical: canonical,
 	openGraph: {
 		basic: {
 			title: title,
 			type: "website",
 			image: "./<pathtosocialimage>" || null,
-			url: "<url>" || null,
+			url: canonical || null,
 		},
 		optional: {
 			description: description,
@@ -24,20 +24,6 @@ const metadata = {
 		card: "<twitter:card>" || null,
 		site: "<twitter:site>" || null,
 		creator: "<twitter:creator>" || null,
-	},
-	colors: {
-		primary1: "#5BA6AE",
-		primary2: "#146E7D",
-		primary3: "#34575D",
-		secondary1: "#F6BFAF",
-		secondary2: "#E28B71",
-		white: "#FCF7F2",
-		black: "#34575D",
-	},
-	fonts: {
-		primary: "Sunflower",
-		secondary: "Sunflower",
-		tertiary: "Sunflower",
 	},
 };
 export default metadata;
