@@ -1,0 +1,277 @@
+---
+import StandardLayout from "../layouts/StandardLayout.astro"
+import Checkmark from "../components/Checkmark.astro"
+---
+<StandardLayout>
+
+<h1>Plans</h1>
+<p>All plans contain everything you may need for the core auditing tools such as importing data from your universe of data, pin-point findings, audit, and customizing reports. The Pro and Enterprise tiers are focused on auxiliary features such as automated montioring, etc.</p>
+<p>Every plan is simply a foundation for which you may add or remove features a-la-carte based on your needs.</p>
+
+<table style="">
+  <thead>
+    <tr>
+      <th><h2 style="font-size: 1.3rem; margin: 0;">Features</h2></th>
+      <th><h2>Essentials</h2></th>
+      <th><h2>Pro</h2></th>
+      <th><h2>Enterprise</h2></th>
+    </tr>
+  </thead>
+  <tbody>
+  <colgroup>
+    <col style=""></col>
+    <col style="min-width: 10rem;width: 20%"></col>
+    <col style="min-width: 10rem;width: 20%"></col>
+    <col style="min-width: 10rem;width: 20%"></col>
+  </colgroup>
+    <tr>
+      <td>Users</td>
+      <td style="border-top-left-radius: 13px;">Up to 10</td>
+      <td>Up to 25</td>
+      <td style="border-top-right-radius: 13px;">Unlimited*</td>
+    </tr>
+    <tr>
+      <td>Coders</td>
+      <td>Free</td>
+      <td>Free</td>
+      <td>Free</td>
+    </tr>
+    <tr><td colspan="4" class="moduleheading"><h3>Audit Modules</h3></td></tr>
+    <tr>
+      <td>Inpatient</td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Outpatient</td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Profee</td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>ASC</td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>CMS-HCC</td>
+      <td><Checkmark bool={false} /></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>APR DRG(3M)</td>
+      <td>TBD</td>
+      <td>TBD</td>
+      <td>TBD</td>
+    </tr>
+    <tr>
+      <td># of Records</td>
+      <td>20,000</td>
+      <td>60,000</td>
+      <td>125,000</td>
+    </tr>
+    <tr>
+      <td>Database Size</td>
+      <td>2GB</td>
+      <td>5GB</td>
+      <td>Unlimited*</td>
+    </tr>
+    <tr><td colspan="4" class="moduleheading"><h3>Additional Functionality</h3></td></tr>
+    <tr>
+      <td>Accuracy Manager (Reporting)</td>
+      <td><Checkmark bool/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Code Finder</td>
+      <td><Checkmark bool/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Document Manager</td>
+      <td><Checkmark bool/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>User Dashboards</td>
+      <td><Checkmark bool/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Client Dashboards</td>
+      <td><Checkmark bool/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr><td colspan="4" class="moduleheading"><h3>EMR Integration</h3></td></tr>
+    <tr>
+      <td>Multifactor Authentication</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Integration Manager</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>LDAP / Active Directory</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>VPN Integration</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr><td colspan="4" class="moduleheading"><h3>Additional Modules</h3></td></tr>
+    <tr>
+      <td>Audit The Auditor</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+
+    <tr>
+      <td>Workflow Analytics</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Time Tracking</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>User Training</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Forms Designer</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>ReviewMate Insights (Benchmarking)</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Sample Selector</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Customizable Workflows</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Configurable Task Workflows</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool={false} /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Risk Manager</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool={false} /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Record Tracker</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool={false} /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>HCC Analyzer</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool={false} /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>Retrospective Queries</td>
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+      <td>CDI Workflows</td>
+      <td style="border-bottom-left-radius: 13px;border-bottom: 1px solid #ddd;"><Checkmark bool={false} /></td>
+      <td style="border-bottom: 1px solid #ddd;"><Checkmark bool={false}  /></td>
+      <td style="border-bottom-right-radius: 13px;border-bottom: 1px solid #ddd;" ><Checkmark bool /></td>
+    </tr>
+  </tbody>
+</table>
+</StandardLayout>
+
+<style lang="scss">
+  table {
+    width: 104%;
+    font-size: 1.05rem;
+    border-collapse: separate; 
+    margin-inline: -2%;
+    margin-bottom: 3rem;
+  }
+  th, td {
+    padding: 1rem;
+    font-weight: bolder;
+  }
+  td {
+    // border: 1px solid #777;
+    vertical-align: middle;
+    text-align: center;
+    &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4) {
+      border-top: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+    }
+    &:nth-of-type(4) {
+      border-right: 1px solid #ddd;
+    }
+  }
+  col:nth-of-type(1) {
+    // outline: 3px solid purple;
+  }
+    th {
+      font-size: 3rem;
+    }
+
+    .moduleheading {
+      background-color: #f4f4f4;
+      font-size: 1rem;
+      text-align: center;
+      text-indent: 3rem;
+      letter-spacing: 1px;
+      font-weight: bold;
+      & h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0;
+      }
+    }
+</style>
