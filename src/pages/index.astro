@@ -7,24 +7,25 @@ import HomepageLayout from '../layouts/HomepageLayout.astro'
   <div class="shapeintro">
     <h2>Elevate your medical code auditing workflow</h2>
     <p>Streamline auditing, integrate your data seamlessly, and consolidate communication in one platform.</p>
+    <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" class="lottieintro" loop autoplay></lottie-player>
   </div>
-  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8"  style="width: 80%;  text-align:center;display:block;left: 50%;position: relative;transform: translate(-50%,0);margin-top: -20rem;z-index:40;" loop autoplay></lottie-player>
-
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum reiciendis, explicabo soluta porro, quaerat, assumenda laborum cum enim quos aspernatur incidunt voluptate. Perspiciatis, debitis blanditiis? Reprehenderit, quasi eius? Odit, quibusdam.</p>
   
 
+  <p style="margin-top: 12rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum reiciendis, explicabo soluta porro, quaerat, assumenda laborum cum enim quos aspernatur incidunt voluptate. Perspiciatis, debitis blanditiis? Reprehenderit, quasi eius? Odit, quibusdam.</p>
+  
 </HomepageLayout>
 
 <style lang="scss">
   .shapeintro {
     // background-color: hsl(var(--color1hsl));
     color: white; 
-    height: 100%;
+    // height: 30rem;
     width: 114%;
     margin-inline: -7%;
     height: 30rem;
     padding-top: 3rem;
     // top: -10rem;
+    top: 0;
     text-align: center;
     position: relative;
     z-index: 30;
@@ -43,5 +44,18 @@ import HomepageLayout from '../layouts/HomepageLayout.astro'
     & p {
       color: white;
     }
+  }
+  .lottieintro{
+    width: 100%;  
+    // height: 50rem;
+    min-height: 30rem;
+    text-align:center;
+    display:block;
+    left: 50%;
+    bottom:-4rem;
+    position: relative;
+    transform: translate(-50%,0);
+    // margin-top: -20rem;
+    z-index:40;
   }
 </style>

@@ -15,7 +15,6 @@
   </nav>
 </header>
 
-
 <style lang="scss">
   header {
     width: 100%;
@@ -23,10 +22,18 @@
     padding: 1rem 1rem 0;
     z-index: 200;
   }
+  nav {
+    width: calc(100% - 28rem);
+    margin-right: 1rem;
+    margin-left: auto;
+    float: right;
+  }
   nav ul {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: flex-end;
+    gap: 1rem;
+    // width: calc(100% - 28rem);
+    
     & li {
       list-style-type: none;
       line-height: 3rem;
