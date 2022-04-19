@@ -29,12 +29,12 @@
     <ul>
       <li>
         <a href="" class="listheader">
-          Plans
+          Use-Cases
         </a>
       </li>
       <li>
         <a href="">
-          Essentials
+          Medical 
         </a>
       </li>
       <li>
@@ -45,6 +45,29 @@
       <li>
         <a href="">
           Enterprise
+        </a>
+      </li>
+    </ul>
+
+    <ul>
+      <li>
+        <a href="" class="listheader">
+          Blog
+        </a>
+      </li>
+      <li>
+        <a href="">
+          FAQs
+        </a>
+      </li>
+      <li>
+        <a href="">
+          What's New
+        </a>
+      </li>
+      <li>
+        <a href="">
+          Blog
         </a>
       </li>
     </ul>
@@ -82,8 +105,9 @@
       & ul {
         list-style-type: none;
         color: white;
-        flex: 2 1 16rem;
-        max-width: 16rem;
+        flex: 2 1 10rem;
+        // max-width: 16rem;
+        order: 2;
         & li {
           color: white;
           & a {
@@ -98,9 +122,16 @@
     }
     .logoimg {
       order: 6;
-      flex: 1 1 12rem;
-      margin-top: 3rem;
+      flex: 1 1 100%;
+      // margin-top: 3rem;
+      
     }
+    @media (min-width: 1024px){
+      .logoimg {
+        flex: 1 1 12rem;
+        order: 1;
+      }
+      }
     .listheader {
       font-weight: bolder;
       font-size: 1.2rem!important;

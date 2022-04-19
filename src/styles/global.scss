@@ -2,14 +2,19 @@ $font1: "Inter";
 $font2: "Hind Madurai";
 
 // First color by each HSL value
+// Maroon
 $color1h: 8;
 $color1s: 62%;
 $color1l: 40%;
+// #662f27 ??
+// #A93330 ??
 
 // Second color by each HSL value
+// Yellow
 $color2h: 42;
 $color2s: 92%;
 $color2l: 71%;
+// #ffb914
 
 $color1hsl: $color1h, $color1s, $color1l;
 $color2hsl: $color2h, $color2s, $color2l;
@@ -75,14 +80,35 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
 	// overflow: hidden;
+
+
+	perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+body {
+	height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 main {
 	background-color: white;
-	max-width: 85rem;
-	padding: 3% 6%;
+	max-width: 90rem;
+	padding: 0 6% 3%;
 	line-height: 1.3rem;
-
+	color: #555;
 	margin: 0 auto;
+}
+header {
+	// position:relative;
+	// transform-style: preserve-3d;
+	// transform: translate3d(0, 0, -2px) scale(3);
+  // background-size: 100%;
+	// top: 0;
+	// left: 0;
+  // z-index: 20;
 }
 a {
 	text-decoration: none;

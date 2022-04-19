@@ -1,11 +1,47 @@
 ---
 import HomepageLayout from '../layouts/HomepageLayout.astro'
-import StyleOverview from '../components/StyleOverview.astro'
+// import StyleOverview from '../components/StyleOverview.astro'
 // import Image from "astro-imagetools"
 ---
 <HomepageLayout>
-  <StyleOverview></StyleOverview>
+  <div class="shapeintro">
+    <h2>Elevate your medical code auditing workflow</h2>
+    <p>Streamline auditing, integrate your data seamlessly, and consolidate communication in one platform.</p>
+  </div>
+  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8"  style="width: 80%;  text-align:center;display:block;left: 50%;position: relative;transform: translate(-50%,0);margin-top: -20rem;z-index:40;" loop autoplay></lottie-player>
 
-
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum reiciendis, explicabo soluta porro, quaerat, assumenda laborum cum enim quos aspernatur incidunt voluptate. Perspiciatis, debitis blanditiis? Reprehenderit, quasi eius? Odit, quibusdam.</p>
   
+
 </HomepageLayout>
+
+<style lang="scss">
+  .shapeintro {
+    // background-color: hsl(var(--color1hsl));
+    color: white; 
+    height: 100%;
+    width: 114%;
+    margin-inline: -7%;
+    height: 30rem;
+    padding-top: 3rem;
+    // top: -10rem;
+    text-align: center;
+    position: relative;
+    z-index: 30;
+    &::after {
+      content: '';
+      height: 100%;
+      width: 100%;
+      background-color: hsl(var(--color1hsl));
+      background: linear-gradient(to bottom, hsl(var(--color1hsl)) 80%, hsl(var(--color1h), 70%, 20%) );
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      clip-path: polygon(0% 79.25%, 0% 0%, 100% 0%, 100% 79.25%, 50% 100%);
+    }
+    & p {
+      color: white;
+    }
+  }
+</style>

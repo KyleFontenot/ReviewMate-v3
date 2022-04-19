@@ -4,6 +4,7 @@
   import "../styles/global.scss"
   import { SEO } from "astro-seo"
   import Quicklink from "../scripts/Quicklink.astro"
+  import Rellax from "../scripts/Rellax.astro"
 
   const {title } = metadata;
 
@@ -25,6 +26,7 @@
   <body>
     <slot />
   </body>
-  <!-- Any scripts you'd like to include. Such as from /src/scripts -->
+  <Rellax />
   <Quicklink />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </html>
