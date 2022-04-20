@@ -1,0 +1,14 @@
+---
+const {variant = 0 } = Astro.props
+---
+
+{variant === 0 ? <div class="flexdiv0">
+<slot name="image"/>
+<slot name="body"/>
+</div> : variant === 1 ? <div class="flexdiv1">
+<slot name="body"/>
+<slot name="image"/>
+</div> : variant === 2 ? <div class="flexdiv2">
+<slot name="image"/>
+<slot name="body"/>
+</div>  : <p>Variant prop needed</p>}
