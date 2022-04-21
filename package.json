@@ -10,7 +10,7 @@
 		"serve": "astro preview",
 		"format": "yarn prettier -w .",
 		"publish": "NODE_ENV=production astro build && yarn version",
-		"postpublish": "git add --all && git commit && git push"
+		"postpublish": "git add --all && git commit && git push && firebase deploy"
 	},
 	"devDependencies": {
 		"@astrojs/renderer-solid": "^0.4.2",

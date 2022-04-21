@@ -3,6 +3,7 @@
 ---
 <header>
 <a href="/"><img src="/reviewmate-mainlogo(white).svg" alt="ReviewMate logo" style="max-width:20rem;" /></a>
+<a href="#main" aria-label="Skip to content" id="skiptocontent" tab-index="0">Skip to content</a>
   <nav>
     <ul>
       <li>
@@ -17,14 +18,17 @@
 
 <style lang="scss">
   header {
-    width: 100%;
+    // width: 100%;
     background-color: hsl(var(--color1hsl));
-    padding: 1rem 1rem 0;
+    // padding: 1rem 1rem 0;
     z-index: 500;
+	max-width: 100rem;
+	padding: 1rem 2rem 1rem 1rem;
+  margin: 0 auto;
   }
   nav {
-    width: calc(100% - 28rem);
-    margin-right: 1rem;
+    // width: calc(100% - 28rem);
+    // margin-right: 1rem;
     margin-left: auto;
     float: right;
   }

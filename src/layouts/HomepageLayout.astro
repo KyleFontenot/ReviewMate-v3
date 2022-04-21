@@ -7,7 +7,11 @@ import Footer from "../components/Footer.astro"
 
 <DocumentLayout>
   <Header/>
-    <main style="padding-top: 0;"><slot /></main>
+    <main style="padding-top: 0;" id="main"><slot /></main>
   <Footer/>
+  <script>
+  ScrollReveal().reveal('.scrollreveal', {delay: 200});
+
+</script>
   
 </DocumentLayout>

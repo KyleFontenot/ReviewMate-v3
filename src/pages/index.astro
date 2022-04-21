@@ -3,62 +3,93 @@ import HomepageLayout from '../layouts/HomepageLayout.astro'
 // import StyleOverview from '../components/StyleOverview.astro'
 // import Image from "astro-imagetools"
 import FlexDiv from '../components/FlexDiv.astro'
+import Button from "../components/Button.astro"
+import SmallLink from "../components/SmallLink.astro"
 ---
 <HomepageLayout>
-  <div class="shapeintro">
+  <div class="shapeintro" style="margin-bottom: 16rem;">
     <h2>Elevate your medical code auditing workflow</h2>
-    <p>Streamline auditing, integrate your data seamlessly, and consolidate communication in one platform. Created by auditors, for auditors.</p>
+    <p style="max-width: 48rem;margin: 0.2rem auto 0;">Streamline auditing, integrate your data seamlessly, and consolidate communication in one platform.<br/> Created by auditors, for auditors.</p>
     <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" class="lottieintro" loop autoplay></lottie-player>
   </div>
+
+  <div style="width: 100%; display: flex;justify-content: center;margin-bottom: 8rem;gap: 2rem">
+    <Button text="Contact Us" outline />
+    <Button text="Use-cases" outline />
+    <Button text="Plans" outline />
+  </div>
   
-<FlexDiv variant={ 0 } style="margin-top: 16rem" class="scrollreveal load-hidden" >
-  <lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="bodylottie" loop autoplay  slot="image"></lottie-player>
+<FlexDiv variant={ 0 } class="scrollreveal load-hidden" >
+  <lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="bodylottie scrollreveal load-hidden" loop autoplay  slot="image"></lottie-player>
   <div slot="body">
     <h2>Integrate</h2>
     <p> Connect universe data seamlessly and with ease. Imported data is available platform-wide, and all auditing changes remain transparent from the source.</p>
+    <FlexDiv style="margin-top: 2rem;">
+      <SmallLink href="#" text="Sample Selector"/>
+      <SmallLink href="#" text="Something"/>
+      <SmallLink href="#" text="Something"/>
+    </FlexDiv>
   </div>
 </FlexDiv>
 
 <FlexDiv variant={ 1 } class="scrollreveal" >
-  <lottie-player src="/lotties/RM-refine.json" background="transparent"  speed="0.8"  loop autoplay  slot="image"></lottie-player>
+  <lottie-player src="/lotties/RM-refine.json" background="transparent"  speed="0.8"  loop autoplay  slot="image" class="bodylottie scrollreveal"></lottie-player>
   <div slot="body">
     <h2>Refine Searches</h2>
     <p>Search parameters efficiently gather accounts for instantaneous results without switching between spreadsheet apps.</p>
+    <FlexDiv style="margin-top: 2rem;">
+      <SmallLink href="#" text="Sample Selector"/>
+      <SmallLink href="#" text="Something"/>
+      <SmallLink href="#" text="Something"/>
+    </FlexDiv>
   </div>
 </FlexDiv>
 
 <FlexDiv variant={ 0 } >
-  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" loop autoplay slot="image"></lottie-player>
+  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" loop autoplay slot="image" class="bodylottie scrollreveal"></lottie-player>
   <div slot="body">
     <h2>Audit</h2>
     <p>Extrapolate findings with configurable workflows that hone your focus on relevant data.</p>
+    <FlexDiv style="margin-top: 2rem;">
+      <SmallLink href="#" text="Sample Selector"/>
+      <SmallLink href="#" text="Something"/>
+      <SmallLink href="#" text="Something"/>
+    </FlexDiv>
   </div>
 </FlexDiv>
 
 <FlexDiv variant={ 1 } >
-  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" loop autoplay slot="image"></lottie-player>
+  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" loop autoplay slot="image" class="bodylottie scrollreveal"></lottie-player>
   <div slot="body">
     <h2>Report</h2>
     <p>Relay findings in a seamless, adaptive system for any channel of communication. Customize every aspect of templates to encourage consistency across your institution.</p>
+    <FlexDiv style="margin-top: 2rem;">
+      <SmallLink href="#" text="Sample Selector"/>
+      <SmallLink href="#" text="Something"/>
+      <SmallLink href="#" text="Something"/>
+    </FlexDiv>
   </div>
 </FlexDiv>
 <FlexDiv variant={ 0 } >
-  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" loop autoplay slot="image"></lottie-player>
+  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" loop autoplay slot="image" class="bodylottie scrollreveal"></lottie-player>
   <div slot="body">
     <h2>Monitor</h2>
     <p>Track findings in one centralized platform while augmenting your workflow with artificial intelligence to improve results.</p>
+    <FlexDiv style="margin-top: 2rem;">
+      <SmallLink href="#" text="Sample Selector"/>
+      <SmallLink href="#" text="Something"/>
+      <SmallLink href="#" text="Something"/>
+    </FlexDiv>
   </div>
 </FlexDiv>
 
   <p style="margin-top: 12rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum reiciendis, explicabo soluta porro, quaerat, assumenda laborum cum enim quos aspernatur incidunt voluptate. Perspiciatis, debitis blanditiis? Reprehenderit, quasi eius? Odit, quibusdam.</p>
 
   
-  
 </HomepageLayout>
 
 <style lang="scss">
   .shapeintro {
-    // background-color: hsl(var(--color1hsl));
     color: white; 
     // height: 30rem;
     width: 114%;
@@ -100,7 +131,8 @@ import FlexDiv from '../components/FlexDiv.astro'
     z-index:40;
   }
   .bodylottie {
-    max-height: 13rem;
+    // max-height: 13rem;
+    height: 25rem;
     object-fit:contain;
   }
 </style>
