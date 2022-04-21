@@ -7,28 +7,28 @@ import FlexDiv from '../components/FlexDiv.astro'
 <HomepageLayout>
   <div class="shapeintro">
     <h2>Elevate your medical code auditing workflow</h2>
-    <p>Streamline auditing, integrate your data seamlessly, and consolidate communication in one platform.</p>
+    <p>Streamline auditing, integrate your data seamlessly, and consolidate communication in one platform. Created by auditors, for auditors.</p>
     <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" class="lottieintro" loop autoplay></lottie-player>
   </div>
   
-<FlexDiv variant={ 0 } >
-  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" class="lottieintro" loop autoplay slot="image"></lottie-player>
+<FlexDiv variant={ 0 } style="margin-top: 16rem" class="scrollreveal load-hidden" >
+  <lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="bodylottie" loop autoplay  slot="image"></lottie-player>
   <div slot="body">
     <h2>Integrate</h2>
     <p> Connect universe data seamlessly and with ease. Imported data is available platform-wide, and all auditing changes remain transparent from the source.</p>
   </div>
 </FlexDiv>
 
-<FlexDiv variant={ 1 } >
-  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" class="lottieintro" loop autoplay slot="image"></lottie-player>
+<FlexDiv variant={ 1 } class="scrollreveal" >
+  <lottie-player src="/lotties/RM-refine.json" background="transparent"  speed="0.8"  loop autoplay  slot="image"></lottie-player>
   <div slot="body">
     <h2>Refine Searches</h2>
-    <p>Search parameters efficiently gather accounts for instantaneous results without switching between spreadsheet apps</p>
+    <p>Search parameters efficiently gather accounts for instantaneous results without switching between spreadsheet apps.</p>
   </div>
 </FlexDiv>
 
 <FlexDiv variant={ 0 } >
-  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" class="lottieintro" loop autoplay slot="image"></lottie-player>
+  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" loop autoplay slot="image"></lottie-player>
   <div slot="body">
     <h2>Audit</h2>
     <p>Extrapolate findings with configurable workflows that hone your focus on relevant data.</p>
@@ -36,21 +36,14 @@ import FlexDiv from '../components/FlexDiv.astro'
 </FlexDiv>
 
 <FlexDiv variant={ 1 } >
-  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" class="lottieintro" loop autoplay slot="image"></lottie-player>
-  <div slot="body">
-    <h2>Audit</h2>
-    <p>Extrapolate findings with configurable workflows that hone your focus on relevant data.</p>
-  </div>
-</FlexDiv>
-<FlexDiv variant={ 0 } >
-  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" class="lottieintro" loop autoplay slot="image"></lottie-player>
+  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" loop autoplay slot="image"></lottie-player>
   <div slot="body">
     <h2>Report</h2>
     <p>Relay findings in a seamless, adaptive system for any channel of communication. Customize every aspect of templates to encourage consistency across your institution.</p>
   </div>
 </FlexDiv>
-<FlexDiv variant={ 1 } >
-  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" class="lottieintro" loop autoplay slot="image"></lottie-player>
+<FlexDiv variant={ 0 } >
+  <lottie-player src="/RM-lady-lottie.json" background="transparent"  speed="0.8" loop autoplay slot="image"></lottie-player>
   <div slot="body">
     <h2>Monitor</h2>
     <p>Track findings in one centralized platform while augmenting your workflow with artificial intelligence to improve results.</p>
@@ -105,5 +98,9 @@ import FlexDiv from '../components/FlexDiv.astro'
     transform: translate(-50%,0);
     // margin-top: -20rem;
     z-index:40;
+  }
+  .bodylottie {
+    max-height: 13rem;
+    object-fit:contain;
   }
 </style>

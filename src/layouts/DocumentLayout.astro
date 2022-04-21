@@ -4,7 +4,8 @@
   import "../styles/global.scss"
   import { SEO } from "astro-seo"
   import Quicklink from "../scripts/Quicklink.astro"
-  import Rellax from "../scripts/Rellax.astro"
+  // import Rellax from "../scripts/Rellax.astro"
+  import ScrollReveal from "../scripts/ScrollReveal.astro"
 
   const {title } = metadata;
 
@@ -26,11 +27,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <ScrollReveal />
   </head>
+  
   <body>
     <slot />
   </body>
-  <Rellax />
+  <!-- <Rellax /> -->
   <Quicklink />
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </html>

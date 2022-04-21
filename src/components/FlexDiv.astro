@@ -1,14 +1,14 @@
 ---
-const {variant = 0 } = Astro.props
+const {variant = 0, style } = Astro.props
 ---
 
-{variant === 0 ? <div class="flexdiv0">
+{variant === 0 ? <div class="flexdiv flexdiv0" {style}>
 <slot name="image"/>
 <slot name="body"/>
-</div> : variant === 1 ? <div class="flexdiv1">
+</div> : variant === 1 ? <div class="flexdiv flexdiv1" {style}>
 <slot name="body"/>
 <slot name="image"/>
-</div> : variant === 2 ? <div class="flexdiv2">
+</div> : variant === 2 ? <div class="flexdiv flexdiv2" {style}>
 <slot name="image"/>
 <slot name="body"/>
 </div>  : <p>Variant prop needed</p>}

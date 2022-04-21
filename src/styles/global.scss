@@ -6,8 +6,17 @@ $font2: "Hind Madurai";
 $color1h: 8;
 $color1s: 62%;
 $color1l: 40%;
+// Tint
+// C03835
+
+// Normal
+// #A53827 ??
+
+// Mid-shade
+// 923B2D
+
+// Shade
 // #662f27 ??
-// #A93330 ??
 
 // Second color by each HSL value
 // Yellow
@@ -134,7 +143,22 @@ dd {
 	margin-left: 3rem;
 }
 
+.flexdiv {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+
+}
+@media (min-width: 600px) {
+.flexdiv {
+		flex-flow: row nowrap;
+	}
+}
 
 .flexdiv0 {
 
+}
+
+html.sr .load-hidden {
+    visibility: hidden;
 }
