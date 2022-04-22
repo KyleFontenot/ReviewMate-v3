@@ -10,13 +10,13 @@ import SmallLink from "../components/SmallLink.astro"
   <div class="shapeintro" style="margin-bottom: 10rem;">
     <h2>Elevate your medical code auditing workflow</h2><br/>
     <p style="max-width: 48rem;margin: 0.2rem auto 0;">Streamline auditing, integrate your data seamlessly, and consolidate communication in one platform.<br/> Created by auditors, for auditors.</p>
-    <lottie-player src="/RM-lady-lottie.json" background="transparent" speed="0.8" class="lottieintro" loop autoplay></lottie-player>
+    <lottie-player src="/RM-lady-lottie.json" background="transparent" speed="0.8" class="lottieintro" loop autoplay style="z-index: 2;"></lottie-player>
   </div>
 
   <div style="width: 100%; display: flex;justify-content: center;margin-bottom: 4rem;gap: 2rem">
-    <Button text="Contact Us" outline />
-    <Button text="Use-cases" outline />
-    <Button text="Plans" outline />
+    <Button as="link" href="/" text="Contact Us"  outline style="z-index:30;" />
+    <Button as="link" href="/" text="Use-cases" outline style="z-index:30;"/>
+    <Button as="link" href="/plans" text="Plans" outline style="z-index:30;"/>
   </div>
   
 <FlexDiv variant={ 0 } class="load-hidden" justify="center" gap="2rem" >

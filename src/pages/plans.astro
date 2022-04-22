@@ -1,6 +1,7 @@
 ---
 import StandardLayout from "../layouts/StandardLayout.astro"
 import Checkmark from "../components/Checkmark.astro"
+import FeatureDropdown from '../components/FeatureDropdown.jsx'
 ---
 <StandardLayout>
 
@@ -19,7 +20,7 @@ import Checkmark from "../components/Checkmark.astro"
   </thead>
   <tbody>
   <colgroup>
-    <col style=""></col>
+    <col></col>
     <col style="min-width: 10rem;width: 20%"></col>
     <col style="min-width: 10rem;width: 20%"></col>
     <col style="min-width: 10rem;width: 20%"></col>
@@ -38,7 +39,7 @@ import Checkmark from "../components/Checkmark.astro"
     </tr>
     <tr><td colspan="4" class="moduleheading"><h3>Audit Modules</h3></td></tr>
     <tr>
-      <td>Inpatient</td>
+      <FeatureDropdown header="Inpatient" body="Hospital type s for internal medical case billing" />
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
