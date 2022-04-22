@@ -1,16 +1,26 @@
 ---
-const {variant, style } = Astro.props
+const {variant, style, id, class, justify, gap } = Astro.props
+let procStyle = new String();
+if (style ) {
+  procStyle = procStyle.concat(style);
+}
+if (justify ) {
+  procStyle = procStyle.concat('justify-content:' + justify + ';');
+}
+if (gap ) {
+  procStyle = procStyle.concat('gap:' + gap + ';');
+}
 ---
 
-{variant === 0 ? <div class="flexdiv flexdiv0" {style}>
+{variant === 0 ? <div class="flexdiv flexdiv0" {id} style={procStyle}>
 <slot name="image"/>
 <slot name="body"/>
-</div> : variant === 1 ? <div class="flexdiv flexdiv1" {style}>
+</div> : variant === 1 ? <div class="flexdiv flexdiv1" {id} style={procStyle}>
 <slot name="body"/>
 <slot name="image"/>
-</div> : variant === 2 ? <div class="flexdiv flexdiv2" {style}>
+</div> : variant === 2 ? <div class="flexdiv flexdiv2" {id} style={procStyle}>
 <slot name="image"/>
 <slot name="body"/>
-</div>  : <div class="flexdiv" {style}>
+</div>  : <div class="flexdiv" {id} style={procStyle}>
 <slot />
 </div> }

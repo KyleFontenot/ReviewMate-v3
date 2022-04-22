@@ -10,7 +10,8 @@ import Footer from "../components/Footer.astro"
     <main style="padding-top: 0;" id="main"><slot /></main>
   <Footer/>
   <script>
-  ScrollReveal().reveal('.scrollreveal', {delay: 200});
+  ScrollReveal().reveal('.scrollrevealleft', {delay: 400, distance: '10rem', origin: 'left', duration: 1000});
+  ScrollReveal().reveal('.scrollrevealright', {delay: 400, distance: '10rem', origin: 'right', duration: 1000});
 
 </script>
   

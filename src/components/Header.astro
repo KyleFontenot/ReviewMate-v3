@@ -1,9 +1,26 @@
 ---
-
+const arrofLinks = ["Plans", "Contact", "Resources", "Use Cases"]
 ---
 <header>
 <a href="/"><img src="/reviewmate-mainlogo(white).svg" alt="ReviewMate logo" style="max-width:20rem;" /></a>
 <a href="#main" aria-label="Skip to content" id="skiptocontent" tab-index="0">Skip to content</a>
+<div id="mobilenav">
+  <nav>
+    <ul>
+    {arrofLinks.map(each => 
+    <li>
+      <a href={`/${each.replace(' ', '').toLowerCase()}`}>{ each }</a>
+    </li>
+    )}
+      <li>
+        <a href="/plans">Plans</a>
+      </li>
+      <li>
+        <a href="/">Contact</a>
+      </li>
+    </ul>
+  </nav>
+</div>
   <nav>
     <ul>
       <li>
@@ -25,6 +42,9 @@
 	max-width: 100rem;
 	padding: 1rem 2rem 1rem 1rem;
   margin: 0 auto;
+  }
+  #mobilenav {
+    color: white;
   }
   nav {
     // width: calc(100% - 28rem);
