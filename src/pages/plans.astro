@@ -1,15 +1,23 @@
 ---
 import StandardLayout from "../layouts/StandardLayout.astro"
 import Checkmark from "../components/Checkmark.astro"
-import FeatureDropdown from '../components/FeatureDropdown.jsx'
+import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
 ---
 <StandardLayout>
 
-<h1>Plans</h1>
-<p>All plans contain everything you may need for the core auditing tools such as importing data from your universe of data, pin-point findings, audit, and customizing reports. The Pro and Enterprise tiers are focused on auxiliary features such as automated montioring, etc.</p>
-<p>Every plan is simply a foundation for which you may add or remove features a-la-carte based on your needs.</p>
+<div style="position: relative;">
+  <h1 style="position: sticky;position: -webkit-sticky; top: 0;">Plans</h1>
+  <p>All plans contain everything you may need for the core auditing tools such as importing data from your universe of data, pin-point findings, audit, and customizing reports. The Pro and Enterprise tiers are focused on auxiliary features such as automated montioring, etc.</p>
+  <p>Every plan is simply a foundation for which you may add or remove features a-la-carte based on your needs.</p>
+</div>
 
-<table style="">
+<table>
+<colgroup>
+    <col style="min-width:8rem;"></col>
+    <col style="min-width: 8rem;width: 15%"></col>
+    <col style="min-width: 8rem;width: 15%"></col>
+    <col style="min-width: 8rem;width: 15%"></col>
+  </colgroup>
   <thead>
     <tr>
       <th><h2 style="font-size: 1.3rem; margin: 0;">Features</h2></th>
@@ -19,12 +27,7 @@ import FeatureDropdown from '../components/FeatureDropdown.jsx'
     </tr>
   </thead>
   <tbody>
-  <colgroup>
-    <col></col>
-    <col style="min-width: 10rem;width: 20%"></col>
-    <col style="min-width: 10rem;width: 20%"></col>
-    <col style="min-width: 10rem;width: 20%"></col>
-  </colgroup>
+  
     <tr>
       <td>Users</td>
       <td style="border-top-left-radius: 13px;">Up to 10</td>
@@ -39,37 +42,37 @@ import FeatureDropdown from '../components/FeatureDropdown.jsx'
     </tr>
     <tr><td colspan="4" class="moduleheading"><h3>Audit Modules</h3></td></tr>
     <tr>
-      <FeatureDropdown header="Inpatient" body="Hospital type s for internal medical case billing" />
+      <td><FeatureDropdown header="Inpatient" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>Outpatient</td>
+      <td><FeatureDropdown header="Outpatient" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>Profee</td>
+      <td><FeatureDropdown header="Profee" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>ASC</td>
+      <td><FeatureDropdown header="ASC" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>CMS-HCC</td>
+      <td><FeatureDropdown header="CMS-HCC" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
       <td><Checkmark bool={false} /></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>APR DRG(3M)</td>
+      <td><FeatureDropdown header="APR DRG(3M)" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
       <td>TBD</td>
       <td>TBD</td>
       <td>TBD</td>
@@ -88,148 +91,165 @@ import FeatureDropdown from '../components/FeatureDropdown.jsx'
     </tr>
     <tr><td colspan="4" class="moduleheading"><h3>Additional Functionality</h3></td></tr>
     <tr>
-      <td>Accuracy Manager (Reporting)</td>
+      <td><FeatureDropdown header="Accuracy Manager (Reporting)" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
       <td><Checkmark bool/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>Code Finder</td>
+      <td><FeatureDropdown header="Code Finder" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
       <td><Checkmark bool/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>Document Manager</td>
+      <td><FeatureDropdown header="Document Manager" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
       <td><Checkmark bool/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>User Dashboards</td>
+      <td><FeatureDropdown header="User Dashboards" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
       <td><Checkmark bool/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>Client Dashboards</td>
+      <td><FeatureDropdown header="Client Dashboards" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
       <td><Checkmark bool/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr><td colspan="4" class="moduleheading"><h3>EMR Integration</h3></td></tr>
     <tr>
-      <td>Multifactor Authentication</td>
+      <td><FeatureDropdown header="Multifactor Authentication" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>Integration Manager</td>
+      <td><FeatureDropdown header="Integration Manager" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>LDAP / Active Directory</td>
+     <td><FeatureDropdown header="LDAP / Active Directory" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>VPN Integration</td>
+      <td><FeatureDropdown header="VPN Integration" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr><td colspan="4" class="moduleheading"><h3>Additional Modules</h3></td></tr>
     <tr>
-      <td>Audit The Auditor</td>
+      <td><FeatureDropdown header="Audit The Auditor" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
 
     <tr>
-      <td>Workflow Analytics</td>
+      <td><FeatureDropdown header="Workflow Analytics" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>Time Tracking</td>
+      <td><FeatureDropdown header="Time Tracking" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>User Training</td>
+      <td><FeatureDropdown header="User Training" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>Forms Designer</td>
+      <td><FeatureDropdown header="Forms Designer" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>ReviewMate Insights (Benchmarking)</td>
+      <td><FeatureDropdown header="ReviewMate Insights (Benchmarking)" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>Sample Selector</td>
+      <td><FeatureDropdown header="Sample Selector" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>Customizable Workflows</td>
+      <td><FeatureDropdown header="Customizable Workflows" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>Configurable Task Workflows</td>
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool={false} /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td>Risk Manager</td>
+        <td><FeatureDropdown header="Configurable Task Workflows" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool={false} /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>Record Tracker</td>
+        <td><FeatureDropdown header="Risk Manager" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool={false} /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>HCC Analyzer</td>
+        <td><FeatureDropdown header="Record Tracker" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool={false} /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>Retrospective Queries</td>
+        <td><FeatureDropdown header="HCC Analyzer" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+      <td><Checkmark bool={false}/></td>
+      <td><Checkmark bool={false} /></td>
+      <td><Checkmark bool /></td>
+    </tr>
+    <tr>
+        <td><FeatureDropdown header="Retrospective Queries" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td><Checkmark bool={false}/></td>
       <td><Checkmark bool /></td>
       <td><Checkmark bool /></td>
     </tr>
     <tr>
-      <td>CDI Workflows</td>
+        <td><FeatureDropdown header="CDI Workflows" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
       <td style="border-bottom-left-radius: 13px;border-bottom: 1px solid #ddd;"><Checkmark bool={false} /></td>
       <td style="border-bottom: 1px solid #ddd;"><Checkmark bool={false}  /></td>
       <td style="border-bottom-right-radius: 13px;border-bottom: 1px solid #ddd;" ><Checkmark bool /></td>
     </tr>
   </tbody>
 </table>
+<script defer>
+
+function hideDropdowns() {
+	document.querySelectorAll(".dropdown--open").forEach((each) => {
+		each.classList.remove("dropdown--open");
+	});
+	document.querySelectorAll(".arrow").forEach((each) => {
+		each.classList.remove("arrow--open");
+	});
+}
+
+document.addEventListener('click', e => {
+  if (e.target.closest('.fdd') == null){
+    hideDropdowns();
+  }
+})
+</script>
 </StandardLayout>
 
 <style lang="scss">
@@ -239,30 +259,58 @@ import FeatureDropdown from '../components/FeatureDropdown.jsx'
     border-collapse: separate; 
     margin-inline: -2%;
     margin-bottom: 3rem;
+    position: relative;
   }
   th, td {
     padding: 1rem;
     font-weight: bolder;
   }
+  table {
+    overflow-x: scroll;
+    position:relative;
+  }
+  thead {
+    position:relative;
+    
+  }
+  th {
+    position: sticky;
+    top: 0;
+    font-size: 3rem;
+    background-color: white;
+    height: 4rem;
+    z-index: 100;
+    padding: 3rem 0 0;
+    & > h2 {
+      display: block;
+      line-height: 4rem;
+    }
+  }
+  tr {
+    background-color: transparent;
+    transition: background-color 0.25s;
+    &:hover {
+      background-color: #f7f7f7;
+    }
+    &:nth-of-type(1):hover {
+      background-color: transparent;
+    }
+  }
   td {
     // border: 1px solid #777;
     vertical-align: middle;
     text-align: center;
+    position: sticky;
+    left: 0;
     &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4) {
       border-top: 1px solid #ddd;
       border-left: 1px solid #ddd;
+      font-weight: normal;
     }
     &:nth-of-type(4) {
       border-right: 1px solid #ddd;
     }
   }
-  col:nth-of-type(1) {
-    // outline: 3px solid purple;
-  }
-    th {
-      font-size: 3rem;
-    }
-
     .moduleheading {
       background-color: #f4f4f4;
       font-size: 1rem;

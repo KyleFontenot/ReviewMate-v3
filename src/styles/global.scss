@@ -102,17 +102,17 @@ body {
 	perspective: 1px;
     transform-style: preserve-3d;
     height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    // overflow-y: scroll;
+    // overflow-x: hidden;
 }
 body {
 	height: 100%;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    // overflow-y: hidden;
+    // overflow-x: hidden;
 }
 main {
 	background-color: white;
-	max-width: 100rem;
+	max-width: 100%;
 	padding: 2rem 6% 3%;
 	line-height: 1.3rem;
 	color: #555;
@@ -267,3 +267,52 @@ html.sr .load-hidden {
 			}
     }
   }
+	.linkarrow {
+		width: 14px;
+		height: 14px;
+		color: hsl(var(--color1hsl));
+		& * {
+fill: hsl(var(--color1hsl));
+		}
+		
+	}
+	.dropdown {
+  position: absolute;
+  display: block;
+  top: 115%;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  transition: opacity 0.3s, transform 0.3s;
+  transform-origin: 50% 50%;
+  opacity: 0;
+  transform: scale(0.8) translate3d(0,-60%,0);
+  background-color: white;
+  z-index: 700;
+  box-shadow: 0 4px 9px -1px #33333388;
+  padding: 1rem;
+  border-radius: 6px;
+  & > p {
+  text-indent: 0;
+  }
+}
+.dropdown--open {
+	visibility: visible;
+  opacity: 1;
+  transform: scale(1) translate3d(0,0,0);
+}
+.arrow {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-bottom: 3px solid #666;
+  border-right: 3px solid #666;
+  transform: rotate(45deg) translate3d(0, -1px, 0);
+  position: relative;
+  left: 0.6rem;
+  transition: transform 0.3s;
+  transform-origin: 50% 50%;
+}
+.arrow--open {
+  transform: rotate(-135deg) translate3d(0, 1px, 0);
+}
