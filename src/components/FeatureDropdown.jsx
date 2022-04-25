@@ -1,4 +1,4 @@
-import {createSignal, createEffect} from 'solid-js'
+import {createSignal } from 'solid-js'
 import styles from './FeatureDropdown.module.scss'
 
 function FeatureDropdown(props) {

@@ -142,6 +142,7 @@ dd {
 	align-items: center;
 	// justify-content: space-around;
 	justify-content: center;
+	margin-bottom: 2rem;
 }
 @media (min-width: 600px) {
 .flexdiv {
@@ -288,7 +289,7 @@ fill: hsl(var(--color1hsl));
   opacity: 0;
   transform: scale(0.8) translate3d(0,-60%,0);
   background-color: white;
-  z-index: 700;
+  z-index: 900;
   box-shadow: 0 4px 9px -1px #33333388;
   padding: 1rem;
   border-radius: 6px;

@@ -6,7 +6,7 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
 <StandardLayout>
 
 <div style="position: relative;">
-  <h1 style="position: sticky;position: -webkit-sticky; top: 0;">Plans</h1>
+  <h1 >Plans</h1>
   <p>All plans contain everything you may need for the core auditing tools such as importing data from your universe of data, pin-point findings, audit, and customizing reports. The Pro and Enterprise tiers are focused on auxiliary features such as automated montioring, etc.</p>
   <p>Every plan is simply a foundation for which you may add or remove features a-la-carte based on your needs.</p>
 </div>
@@ -280,10 +280,11 @@ document.addEventListener('click', e => {
     background-color: white;
     height: 4rem;
     z-index: 100;
-    padding: 3rem 0 0;
+    // padding: 3rem 0 0;
     & > h2 {
       display: block;
       line-height: 4rem;
+      margin:0;
     }
   }
   tr {

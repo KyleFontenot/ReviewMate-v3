@@ -9,7 +9,7 @@ import SmallLink from "../components/SmallLink.astro"
 <HomepageLayout>
   <div class="shapeintro" style="margin-bottom: 10rem;">
     <h2>Elevate your medical code auditing workflow</h2><br/>
-    <p style="max-width: 48rem;margin: 0.2rem auto 0;">Streamline auditing, integrate your data seamlessly, and consolidate communication in one platform.<br/> Created by auditors, for auditors.</p>
+    <p style="">Streamline auditing, integrate your data seamlessly, and consolidate communication in one platform.<br/> Created by auditors, for auditors.</p>
     <lottie-player src="/RM-lady-lottie.json" background="transparent" speed="0.8" class="lottieintro" loop autoplay style="z-index: 2;"></lottie-player>
   </div>
 
@@ -83,7 +83,7 @@ import SmallLink from "../components/SmallLink.astro"
   </div>
 </FlexDiv>
 
-<FlexDiv id="usecases" justify="space-around" >
+<!-- <FlexDiv id="usecases" justify="space-around" >
   <div>
     <h3>Inpatient Billing</h3>
     <p></p>
@@ -92,7 +92,7 @@ import SmallLink from "../components/SmallLink.astro"
     <h3>Outpatient Billing</h3>
     <p></p>
   </div>
-</FlexDiv>
+</FlexDiv> -->
 <h3>Additional Features</h3>
 
   
@@ -123,20 +123,23 @@ import SmallLink from "../components/SmallLink.astro"
       z-index: -1;
       clip-path: polygon(0% 79.25%, 0% 0%, 100% 0%, 100% 79.25%, 50% 100%);
     }
-    & p {
+    & > p {
       color: white;
+      // max-width: 70vh;
+      padding-inline: 5%;
     }
     & > h2 {
-      text-align: center;
+      text-align: justify;
+      text-justify:inter-word;
       line-height: 3rem;
       font-weight: bolder;
       // min-width: 20rem;
-      max-width: 70%;
+      max-width: 70vw;
       position: relative;
       // top: -2rem;
       // padding-top: 2rem;
-      margin: 0 auto;
-      display: inline-block;
+      margin: 0 auto 2rem;
+      display: block;
     }
   }
   .lottieintro{
