@@ -36,4 +36,28 @@
   <!-- <Rellax /> -->
   <Quicklink />
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script defer>
+    function hideDropdowns() {
+      document.querySelectorAll(".dropdown--open").forEach((each) => {
+        each.classList.remove("dropdown--open");
+      });
+      document.querySelectorAll(".arrow").forEach((each) => {
+        each.classList.remove("arrow--open");
+      });
+    }
+
+    function hideMobileMenu() {
+      
+    }
+
+    document.addEventListener('click', e => {
+      console.log(e.target)
+      if (e.target.closest('.fdd') == null){
+        hideDropdowns();
+      }
+      if (e.target.closest('nav') == null && e.target.closest('header') == null){
+        document.querySelector("nav").classList.remove("mobilemenu--open");
+      }
+    })
+    </script>
 </html>

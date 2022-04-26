@@ -142,12 +142,21 @@ dd {
 	align-items: center;
 	// justify-content: space-around;
 	justify-content: center;
-	margin-bottom: 2rem;
+	margin-bottom: 0;
+}
+.flexdiv1 > div {
+	order: 2;
+}
+.flexdiv1 > .bodylottie {
+	order: 1;
 }
 @media (min-width: 600px) {
 .flexdiv {
 		flex-flow: row nowrap;
 	}
+	.flexdiv1 > .bodylottie {
+	order: 3;
+}
 }
 // .flexdiv0 {
 
@@ -251,23 +260,6 @@ html.sr .load-hidden {
 	}
  }
 
- #usecases {
-    background-color: hsl(var(--color1hsl));
-    justify-content: space-around;
-    color: white;
-		width: 114%;
-		margin-inline: -7%;
-		& * {
-			color: white;
-		}
-    & > div {
-      flex: 2 1 30%;
-			padding: 4% 6%;
-			& > h3 {
-				text-align: center;
-			}
-    }
-  }
 	.linkarrow {
 		width: 14px;
 		height: 14px;
@@ -317,3 +309,24 @@ fill: hsl(var(--color1hsl));
 .arrow--open {
   transform: rotate(-135deg) translate3d(0, 1px, 0);
 }
+
+#usecases {
+    background-color: hsl(var(--color1hsl));
+    justify-content: space-around;
+    color: white;
+		width: 114%;
+		margin-inline: -7%;
+    margin-top: 4rem;
+		& * {
+			color: white;
+		}
+    & > div {
+      flex: 2 1 30%;
+			padding: 4% 6%;
+			& > h3 {
+				text-align: center;
+			}
+    }
+  }
+
+	

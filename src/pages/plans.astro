@@ -233,23 +233,7 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
     </tr>
   </tbody>
 </table>
-<script defer>
 
-function hideDropdowns() {
-	document.querySelectorAll(".dropdown--open").forEach((each) => {
-		each.classList.remove("dropdown--open");
-	});
-	document.querySelectorAll(".arrow").forEach((each) => {
-		each.classList.remove("arrow--open");
-	});
-}
-
-document.addEventListener('click', e => {
-  if (e.target.closest('.fdd') == null){
-    hideDropdowns();
-  }
-})
-</script>
 </StandardLayout>
 
 <style lang="scss">
