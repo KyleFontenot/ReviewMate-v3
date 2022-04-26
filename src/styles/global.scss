@@ -50,10 +50,13 @@ $color2hsl: $color2h, $color2s, $color2l;
 }
 html {
 	scroll-behavior: smooth;
+	// width: 100vw;
+	// max-width: 100vw;
 }
 h1, h2, h3, h4 {
 	font-family: $font1;
 }
+
 p, body {
 	font-family: $font2;
 	color: #333;

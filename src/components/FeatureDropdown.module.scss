@@ -3,17 +3,18 @@
   display: block;
   top: 115%;
   left: 0;
-  width: 100%;
+  width: 130%;
   visibility: hidden;
   transition: opacity 0.3s, transform 0.3s;
   transform-origin: 50% 50%;
   opacity: 0;
-  transform: scale(0.8) translate3d(0,-60%,0);
+  transform: scale(0.8) translate3d(15%,-60%,0);
   background-color: white;
   z-index: 100;
   box-shadow: 0 4px 9px -1px #33333388;
   padding: 1rem;
   border-radius: 6px;
+  z-index: 900;
   & > p {
   text-indent: 0;
   }

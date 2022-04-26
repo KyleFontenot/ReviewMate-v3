@@ -5,8 +5,17 @@ const arrofLinks = ["Plans", "Resources", "Use Cases", "Contact",]
 <a href="/"><img src="/reviewmate-mainlogo(white).svg" alt="ReviewMate logo" style="max-width:20rem;" /></a>
 <a href="#main" aria-label="Skip to content" id="skiptocontent" tab-index="0">Skip to content</a>
 <div id="mobilenavbutton" onClick="
-  document.querySelector('nav').classList.add('mobilemenu--open');
+  if (document.querySelector('nav').classList.contains('mobilemenu--open')){
+    document.querySelector('nav').classList.remove('mobilemenu--open');
+    document.querySelector('#mobilenavbutton').classList.remove('mobilenavbutton--open');
+  }
+  else {
+    document.querySelector('nav').classList.add('mobilemenu--open');
+    document.querySelector('#mobilenavbutton').classList.add('mobilenavbutton--open');
+  }
 ">
+<div class="mobilenavline"></div>
+<div class="mobilenavline"></div>
 </div>
   <nav>
     <ul>
@@ -28,25 +37,46 @@ const arrofLinks = ["Plans", "Resources", "Use Cases", "Contact",]
 	max-width: 100rem;
 	padding: 1rem 2rem 1rem 1rem;
   margin: 0 auto;
+  overflow-x:hidden;
   }
   
   #mobilenavbutton {
     color: white;
     z-index:900;
-    outline: 2px solid purple;
-    background-color: white;
-    // height: 100%;
+    background-color: transparent;
     position: absolute;
-    right: 1rem;
-    top: 1rem;
+    right: 1.5rem;
+    top: 2rem;
     height: 2rem;
     width: 2rem;
+    // outline: 1px solid purple;
+    & .mobilenavline {
+      height: 1px;
+      width: 1.6rem;
+      background-color: white;
+      display: block;
+      position:absolute;
+      top: 0.5rem;
+      left: 0.2rem;
+      transform-origin: 50% 50%;
+      transform: translate3d(0, 0,0) rotate(0);
+      transition: transform 0.3s;
+      &:nth-of-type(2){
+        top: 1.4rem;
+        transform: translate3d(0, 0, 0) rotate(0);
+      }
+    }
+    &.mobilenavbutton--open > .mobilenavline {
+      transform: translate3d(0, 0.5rem,0) rotate(45deg);
+      &:nth-of-type(2){
+        transform: translate3d(0, -0.5rem,0) rotate(-45deg);
+      }
+    }
   }
   
   nav {
-
     position: absolute;
-    top: 3.5rem;
+    top: 4.5rem;
     right: 0.5rem;
     // width: calc(100% - 28rem);
     // margin-right: 1rem;
@@ -115,7 +145,38 @@ const arrofLinks = ["Plans", "Resources", "Use Cases", "Contact",]
     #mobilenavbutton {
       visibility: hidden;
     }
+    nav {
+    position: absolute;
+    top: 4.5rem;
+    right: 0.5rem;
+    // width: calc(100% - 28rem);
+    // margin-right: 1rem;
+    margin-left: auto;
+    float: right;
+    background-color: transparent;
+    z-index: 800;
+    border-radius: 8px;
     
+  & ul {
+    display: flex;
+    flex-flow: row nowrap;
+    // justify-content: flex-end;
+    gap: 0;
+    // width: calc(100% - 28rem);
+    & li {
+      list-style-type: none;
+      line-height: 3rem;
+      // font-size: 2.5rem;
+      // padding: 10px 20px;
+      color: hsl(var(--color1hsl));
+      & a {
+        color: white;
+        padding: 10px 30px;
+        display: block;
+      }
+    }
+  }
+}
   }
 </style>
   

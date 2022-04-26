@@ -11,250 +11,265 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
   <p>Every plan is simply a foundation for which you may add or remove features a-la-carte based on your needs.</p>
 </div>
 
-<table>
-<colgroup>
-    <col style="min-width:8rem;"></col>
-    <col style="min-width: 8rem;width: 15%"></col>
-    <col style="min-width: 8rem;width: 15%"></col>
-    <col style="min-width: 8rem;width: 15%"></col>
-  </colgroup>
-  <thead>
-    <tr>
-      <th><h2 style="font-size: 1.3rem; margin: 0;">Features</h2></th>
-      <th><h2>Essentials</h2></th>
-      <th><h2>Pro</h2></th>
-      <th><h2>Enterprise</h2></th>
-    </tr>
-  </thead>
-  <tbody>
   
-    <tr>
-      <td>Users</td>
-      <td style="border-top-left-radius: 13px;">Up to 10</td>
-      <td>Up to 25</td>
-      <td style="border-top-right-radius: 13px;">Unlimited*</td>
-    </tr>
-    <tr>
-      <td>Coders</td>
-      <td>Free</td>
-      <td>Free</td>
-      <td>Free</td>
-    </tr>
-    <tr><td colspan="4" class="moduleheading"><h3>Audit Modules</h3></td></tr>
-    <tr>
-      <td><FeatureDropdown header="Inpatient" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="Outpatient" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="Profee" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="ASC" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="CMS-HCC" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-      <td><Checkmark bool={false} /></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="APR DRG(3M)" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-      <td>TBD</td>
-      <td>TBD</td>
-      <td>TBD</td>
-    </tr>
-    <tr>
-      <td># of Records</td>
-      <td>20,000</td>
-      <td>60,000</td>
-      <td>125,000</td>
-    </tr>
-    <tr>
-      <td>Database Size</td>
-      <td>2GB</td>
-      <td>5GB</td>
-      <td>Unlimited*</td>
-    </tr>
-    <tr><td colspan="4" class="moduleheading"><h3>Additional Functionality</h3></td></tr>
-    <tr>
-      <td><FeatureDropdown header="Accuracy Manager (Reporting)" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-      <td><Checkmark bool/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="Code Finder" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-      <td><Checkmark bool/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="Document Manager" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-      <td><Checkmark bool/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="User Dashboards" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-      <td><Checkmark bool/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="Client Dashboards" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-      <td><Checkmark bool/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr><td colspan="4" class="moduleheading"><h3>EMR Integration</h3></td></tr>
-    <tr>
-      <td><FeatureDropdown header="Multifactor Authentication" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="Integration Manager" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-     <td><FeatureDropdown header="LDAP / Active Directory" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="VPN Integration" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr><td colspan="4" class="moduleheading"><h3>Additional Modules</h3></td></tr>
-    <tr>
-      <td><FeatureDropdown header="Audit The Auditor" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
+    <div class="tableheaders">
+      <h2 style="font-size: 1.3rem; margin: 0;">Features</h2>
+      <h2>Essentials</h2>
+      <h2>Pro</h2>
+      <h2>Enterprise</h2>
+    </div>
 
-    <tr>
-      <td><FeatureDropdown header="Workflow Analytics" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="Time Tracking" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="User Training" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="Forms Designer" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="ReviewMate Insights (Benchmarking)" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="Sample Selector" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-      <td><FeatureDropdown header="Customizable Workflows" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-        <td><FeatureDropdown header="Configurable Task Workflows" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool={false} /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-        <td><FeatureDropdown header="Risk Manager" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool={false} /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-        <td><FeatureDropdown header="Record Tracker" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool={false} /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-        <td><FeatureDropdown header="HCC Analyzer" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool={false} /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-        <td><FeatureDropdown header="Retrospective Queries" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td><Checkmark bool={false}/></td>
-      <td><Checkmark bool /></td>
-      <td><Checkmark bool /></td>
-    </tr>
-    <tr>
-        <td><FeatureDropdown header="CDI Workflows" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-      <td style="border-bottom-left-radius: 13px;border-bottom: 1px solid #ddd;"><Checkmark bool={false} /></td>
-      <td style="border-bottom: 1px solid #ddd;"><Checkmark bool={false}  /></td>
-      <td style="border-bottom-right-radius: 13px;border-bottom: 1px solid #ddd;" ><Checkmark bool /></td>
-    </tr>
-  </tbody>
-</table>
+<div style="overflow-x:scroll;height: 122%;">
+  <table style="margin-bottom: 3rem;">
+  <colgroup>
+      <col style="max-width:4rem;"></col>
+      <col style="min-width: 10rem;width: 15%"></col>
+      <col style="min-width: 10rem;width: 15%"></col>
+      <col style="min-width: 10rem;width: 15%"></col>
+    </colgroup>
+    <!-- <thead>
+      <tr>
+        <th><h2 style="font-size: 1.3rem; margin: 0;">Features</h2></th>
+        <th><h2>Essentials</h2></th>
+        <th><h2>Pro</h2></th>
+        <th><h2>Enterprise</h2></th>
+      </tr>
+    </thead> -->
+    <tbody>
+    
+      <tr>
+        <td>Users</td>
+        <td style="border-top-left-radius: 13px;">Up to 10</td>
+        <td>Up to 25</td>
+        <td style="border-top-right-radius: 13px;">Unlimited*</td>
+      </tr>
+      <tr>
+        <td>Coders</td>
+        <td>Free</td>
+        <td>Free</td>
+        <td>Free</td>
+      </tr>
+      <tr><td colspan="4" class="moduleheading"><h3>Audit Modules</h3></td></tr>
+      <tr>
+        <td><FeatureDropdown header="Inpatient" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Outpatient" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Profee" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="ASC" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="CMS-HCC" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><Checkmark bool={false} /></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="APR DRG(3M)" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td>TBD</td>
+        <td>TBD</td>
+        <td>TBD</td>
+      </tr>
+      <tr>
+        <td># of Records</td>
+        <td>20,000</td>
+        <td>60,000</td>
+        <td>125,000</td>
+      </tr>
+      <tr>
+        <td>Database Size</td>
+        <td>2GB</td>
+        <td>5GB</td>
+        <td>Unlimited*</td>
+      </tr>
+      <tr><td colspan="4" class="moduleheading"><h3>Additional Functionality</h3></td></tr>
+      <tr>
+        <td><FeatureDropdown header="Accuracy Manager (Reporting)" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><Checkmark bool/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Code Finder" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><Checkmark bool/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Document Manager" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><Checkmark bool/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="User Dashboards" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><Checkmark bool/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Client Dashboards" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><Checkmark bool/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr><td colspan="4" class="moduleheading"><h3>EMR Integration</h3></td></tr>
+      <tr>
+        <td><FeatureDropdown header="Multifactor Authentication" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Integration Manager" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+       <td><FeatureDropdown header="LDAP / Active Directory" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="VPN Integration" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr><td colspan="4" class="moduleheading"><h3>Additional Modules</h3></td></tr>
+      <tr>
+        <td><FeatureDropdown header="Audit The Auditor" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+  
+      <tr>
+        <td><FeatureDropdown header="Workflow Analytics" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Time Tracking" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="User Training" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Forms Designer" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="ReviewMate Insights (Benchmarking)" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Sample Selector" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Customizable Workflows" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+          <td><FeatureDropdown header="Configurable Task Workflows" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool={false} /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+          <td><FeatureDropdown header="Risk Manager" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool={false} /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+          <td><FeatureDropdown header="Record Tracker" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool={false} /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+          <td><FeatureDropdown header="HCC Analyzer" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool={false} /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+          <td><FeatureDropdown header="Retrospective Queries" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+          <td><FeatureDropdown header="CDI Workflows" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td style="border-bottom-left-radius: 13px;border-bottom: 1px solid #ddd;"><Checkmark bool={false} /></td>
+        <td style="border-bottom: 1px solid #ddd;"><Checkmark bool={false}  /></td>
+        <td style="border-bottom-right-radius: 13px;border-bottom: 1px solid #ddd;" ><Checkmark bool /></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 </StandardLayout>
 
 <style lang="scss">
+.tableheaders{
+  position: sticky;
+  top: 0;
+& h2 {
+display: inline-block;
+}
+}
   table {
-    width: 104%;
+    // width: 104%;
     font-size: 1.05rem;
     border-collapse: separate; 
-    margin-inline: -2%;
-    margin-bottom: 3rem;
+    // margin-inline: -2%;
+    // margin-bottom: 3rem;
+    overflow-x:scroll;
     position: relative;
   }
   th, td {
     padding: 1rem;
     font-weight: bolder;
   }
-  table {
-    overflow-x: scroll;
-    position:relative;
-  }
   thead {
-    position:relative;
+    // position:sticky;
+    top: 0;
     
   }
   th {
@@ -263,7 +278,7 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
     font-size: 3rem;
     background-color: white;
     height: 4rem;
-    z-index: 100;
+    z-index: 500;
     // padding: 3rem 0 0;
     & > h2 {
       display: block;
@@ -285,12 +300,19 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
     // border: 1px solid #777;
     vertical-align: middle;
     text-align: center;
-    position: sticky;
+    // position: sticky;
     left: 0;
+    background-color:white;
+    // z-index:300;
+    border-right: 1px solid #ddd;
+    
+    // max-width: 10rem;
     &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4) {
       border-top: 1px solid #ddd;
       border-left: 1px solid #ddd;
       font-weight: normal;
+      position: relative;
+    z-index:200;
     }
     &:nth-of-type(4) {
       border-right: 1px solid #ddd;
