@@ -6,7 +6,7 @@ import contentful from 'contentful'
 
 const client = contentful.createClient({
   space: import.meta.env.CONTENTFUL_SPACE_ID,
-  accessToken: import.meta.env.CONTENTFUL_CONTENT_DELIVERY,
+  accessToken: import.meta.env.PUBLIC_CONTENTFUL_CONTENT_DELIVERY,
 });
 
 let results = await client.getEntries({
