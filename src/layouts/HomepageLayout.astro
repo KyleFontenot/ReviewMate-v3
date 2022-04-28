@@ -3,11 +3,14 @@ import DocumentLayout from "./DocumentLayout.astro"
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 // import ScrollReveal from "../scripts/ScrollReveal.astro"
+import {
+  ImageSupportDetection,
+} from "astro-imagetools/components";
 ---
 
 <DocumentLayout>
   <Header/>
-    <main style="padding-top: 0;" id="main"><slot /></main>
+    <slot />
   <Footer/>
   <script>
   ScrollReveal().reveal('.scrollrevealleft', {delay: 100, duration: 1200});

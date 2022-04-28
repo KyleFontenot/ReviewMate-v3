@@ -30,14 +30,13 @@ const arrofLinks = ["Plans", "Resources", "Use Cases", "Contact",]
 
 <style lang="scss">
   header {
-    // width: 100%;
+    width: 100%;
     background-color: hsl(var(--color1hsl));
-    // padding: 1rem 1rem 0;
     z-index: 500;
-	max-width: 100rem;
-	padding: 1rem 2rem 1rem 1rem;
-  margin: 0 auto;
-  overflow-x:hidden;
+    max-width: 100rem;
+    padding: 1rem 2rem 1rem 1rem;
+    margin: 0 auto;
+    overflow-x:hidden;
   }
   
   #mobilenavbutton {
@@ -146,32 +145,31 @@ const arrofLinks = ["Plans", "Resources", "Use Cases", "Contact",]
       visibility: hidden;
     }
     nav {
-    position: absolute;
-    top: 1rem;
-    right: 0.5rem;
-    // width: calc(100% - 28rem);
-    // margin-right: 1rem;
-    margin-left: auto;
-    float: right;
-    background-color: transparent;
-    z-index: 800;
-    border-radius: 8px;
-    
-  & ul {
-    display: flex;
-    flex-flow: row nowrap;
-    // justify-content: flex-end;
-    gap: 0;
-    // width: calc(100% - 28rem);
-    & li {
-      list-style-type: none;
-      line-height: 3rem;
-      // font-size: 2.5rem;
-      // padding: 10px 20px;
-      color: hsl(var(--color1hsl));
+      position: absolute;
+      top: 1rem;
+      right: 0.5rem;
+      // width: calc(100% - 28rem);
+      // margin-right: 1rem;
+      margin-left: auto;
+      float: right;
+      background-color: transparent;
+      z-index: 800;
+      border-radius: 8px;
+    & ul {
+      display: flex;
+      flex-flow: row nowrap;
+      // justify-content: flex-end;
+      gap: 0;
+      // width: calc(100% - 28rem);
+      & li {
+        list-style-type: none;
+        line-height: 3rem;
+        // font-size: 2.5rem;
+        // padding: 10px 20px;
+        color: hsl(var(--color1hsl));
       & a {
         color: white;
-        padding: 10px 30px;
+        padding: 10px 15px;
         display: block;
       }
     }
