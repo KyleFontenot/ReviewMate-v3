@@ -5,9 +5,7 @@ import HomepageLayout from '../layouts/HomepageLayout.astro'
 import FlexDiv from '../components/FlexDiv.astro'
 import Button from "../components/Button.astro"
 import SmallLink from "../components/SmallLink.astro"
-// import {
-//   BackgroundImage,
-// } from "astro-imagetools/components";
+import {Picture} from 'astro-imagetools/components'
 ---
   
 <HomepageLayout>
@@ -18,7 +16,7 @@ import SmallLink from "../components/SmallLink.astro"
       <p style="">Streamline auditing, integrate your data seamlessly, and consolidate communication in one platform.</p>
       <h3>Created by auditors, for auditors.</h3>
       <div id="productintroscreen">
-        <img src="/product-preview(2).svg" alt="screenshot of ReviewMate web-app" />
+        <img src="/product-preview.svg" alt="screenshot of ReviewMate web-app" />
       </div>
       <!-- <lottie-player src="/RM-lady-lottie.json" background="transparent" speed="0.8" class="lottieintro" loop autoplay style="z-index: 12;"></lottie-player> -->
       
@@ -155,10 +153,9 @@ import SmallLink from "../components/SmallLink.astro"
     }
   }
   .shapeintrobg {
-    background: url('/marc-mueller.jpg'); 
+    background: url('/marc-mueller(4).jpeg'); 
     background-repeat: norepeat;  
     background-size: cover;
-    // filter: blur(20px);
     clip-path: polygon(0% 79.25%, 0% -0.5%, 100% -0.5%, 100% 79.25%, 50% 100%);
     position: absolute;
     width: 100%;
@@ -231,7 +228,7 @@ import SmallLink from "../components/SmallLink.astro"
        display: block;
        background: linear-gradient(to bottom, transparent, white);
        background-color:  white;
-       outline: 2px solid purple;
+      //  outline: 2px solid purple;
      }
    }
 </style>
