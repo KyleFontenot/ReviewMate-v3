@@ -1,23 +1,8 @@
 ---
 import StandardLayout from '../layouts/StandardLayout.astro'
 import FlexDiv from '../components/FlexDiv.astro'
-import { Img } from "astro-imagetools/components";
-import contentful from 'contentful'
-
-const client = contentful.createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || import.meta.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_CONTENT_DELIVERY || import.meta.env.CONTENTFUL_CONTENT_DELIVERY,
-});
-
-let results = await client.getEntries({
-  content_type: 'blogPost'
-  }).then(entries => {
-  return entries.items
-});
-
-// const contentvar = import.meta.env.CONTENTFUL_CONTENT_DELIVERY 
-// const contentvar = process.env.CONTENTFUL_CONTENT_DELIVERY || import.meta.env.CONTENTFUL_CONTENT_DELIVERY 
-// console.log(contentvar)
+// import { Img } from "astro-imagetools/components";
+import BlogStream from '../components/BlogStream.astro'
 ---
 <StandardLayout>
   <FlexDiv>
@@ -25,18 +10,6 @@ let results = await client.getEntries({
     <p></p>
   </FlexDiv>
 
-<h2>Blog</h2>
-{results.map(item => {
-  return (
-    <h3>{item.fields.title}</h3>
-    <p>{item.fields.body.content[0].content[0].value}</p>
-    <Img src={`https://${item.fields.poster.fields.file.url}`} alt="something" />
-  )
-})}
-<h3>{results[0].fields.title}</h3>
+<BlogStream></BlogStream>
 
-
-  <FlexDiv>
-
-  </FlexDiv>
 </StandardLayout>

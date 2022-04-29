@@ -1,0 +1,83 @@
+---
+import { Picture, Img } from "astro-imagetools/components";
+import contentful from 'contentful'
+
+const client = contentful.createClient({
+  space: process.env.CONTENTFUL_SPACE_ID || import.meta.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_CONTENT_DELIVERY || import.meta.env.CONTENTFUL_CONTENT_DELIVERY,
+});
+
+let blogPosts = await client.getEntries({
+  content_type: 'blogPost'
+  }).then(entries => {
+    // entries.length > 4 ? entries.items.splice(0, 4) : entries.items
+    return entries.items
+    }
+).catch(err => {
+  console.log(err)
+});
+
+---
+<div class="wrapper">
+  <h2 style="width: 100%;">Blog</h2><br/>
+  <div class="container">
+    {blogPosts.map(post => {
+      return (
+        <div>
+          <div class="image">
+            <Img src={`https://${post.fields.poster.fields.file.url}`} alt="something" objectFit="cover" />
+          </div>
+          <h3>{post.fields.title}</h3>
+          <p>{post.fields.body.content[0].content[0].value}</p>
+          
+        </div>
+      )
+    })}
+  </div>
+</div>
+<style lang="scss">
+.wrapper {
+  color: white;
+  background-color: hsl(var(--color1hsl));
+  padding: 4% 5%;
+  & h2 {
+    text-align: center;
+  }
+}
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  & * {
+    color: white;
+  }
+  & h3 {
+    text-align: center;
+  }
+}
+.image { 
+  outline: 2px solid purple;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  & :global(img) {
+    outline: 3px solid red;
+    height: 20rem!important;
+    display: block;
+  }
+ }
+@media (min-width: 590px){
+  .container {
+    flex: row wrap;
+    & > div {
+      flex: 2 1 20rem;
+    }
+    & .image { 
+      // width: 100%;
+      // height: 18rem;
+      display: block;
+
+    }
+  }
+}
+</style>
