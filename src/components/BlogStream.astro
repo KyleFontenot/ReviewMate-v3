@@ -16,61 +16,104 @@ let blogPosts = await client.getEntries({
 ).catch(err => {
   console.log(err)
 });
-
+const {size = "large"} = Astro.props;
+// console.log(blogPosts)
 ---
 <div class="wrapper">
-  <h2 style="width: 100%;">Blog</h2><br/>
+  <h2 style="width: 100%;">Blog Posts</h2><br/>
   <div class="container">
     {blogPosts.map(post => {
       return (
-        <div>
+        <a href={`${post.fields.title.toLowerCase().replace(' ', '-')}`}>
           <div class="image">
             <Img src={`https://${post.fields.poster.fields.file.url}`} alt="something" objectFit="cover" />
           </div>
-          <h3>{post.fields.title}</h3>
-          <p>{post.fields.body.content[0].content[0].value}</p>
-          
-        </div>
+          <div class="textbody">
+            <h3>{post.fields.title}</h3>
+            {post.fields.body.content[0].content[0].value.length > 80 ? <p class="limited">{post.fields.body.content[0].content[0].value.split('').splice(0, 80).join('').concat('...')}</p> : <p>{post.fields.body.content[0].content[0].value}</p>}
+            <span class="readmore">Read More</span>
+          </div>
+        </a>
       )
     })}
   </div>
 </div>
 <style lang="scss">
 .wrapper {
-  color: white;
-  background-color: hsl(var(--color1hsl));
-  padding: 4% 5%;
+  color: #666;
+  // background-color: hsl(var(--color1hsl));
+  background-color: #f2f2f2;
+  width: 114%;
+  margin-inline: -7%;
+  padding: 2% 5%;
   & h2 {
-    text-align: center;
+    // text-align: center;
   }
 }
 .container {
   display: flex;
   flex-flow: row nowrap;
   gap: 1rem;
+  & > a:hover, & > a:focus-visible, {
+outline: 2px solid hsl(var(--color1hsl));
+  }
   & * {
-    color: white;
+    color: #666;
   }
   & h3 {
     text-align: center;
+    margin-top: 1.6rem;
   }
 }
 .image { 
-  outline: 2px solid purple;
+  // outline: 2px solid purple;
   display: block;
   overflow: hidden;
   width: 100%;
+  flex: 2 1 12rem;
+  position: relative;
   & :global(img) {
-    outline: 3px solid red;
-    height: 20rem!important;
+    // outline: 3px solid red;
+    height: 17rem!important;
     display: block;
   }
  }
+ .textbody {
+   background-color: white;
+   padding: 20px 30px;
+   position: relative;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   & > h3 {
+     margin-top: 0;
+   }
+ }
+ .readmore {
+   position: absolute;
+   bottom: 0.75rem;
+   right: 1.25rem;
+   font-size: 0.95rem;
+   background-color: white;
+   color: hsl(var(--color1hsl));
+ }
+//  .limited {
+//    position: relative;
+//  }
+//  .limited::after {
+//    content: '';
+//    width: 3rem;
+//    height: 1.2rem;
+//    position: absolute;
+//    bottom: 0;
+//    right: 0;
+//    background-color: hsl(var(--color1hsl));
+//    outline: 2px solid purple;
+//  }
 @media (min-width: 590px){
   .container {
     flex: row wrap;
     & > div {
-      flex: 2 1 20rem;
+      flex: 2 1 12rem;
     }
     & .image { 
       // width: 100%;
