@@ -1,0 +1,60 @@
+---
+import StandardLayout from "../../layouts/StandardLayout.astro"
+import contentful from 'contentful'
+import { Img } from "astro-imagetools/components";
+
+// let blogPosts = await client.getEntries({
+//   content_type: 'blogPost'
+//   }).then(entries => {
+//     // entries.length > 4 ? entries.items.splice(0, 4) : entries.items
+//     return entries.items
+//     }
+// ).catch(err => {
+//   console.log(err)
+// });
+// console.log(blogPosts)
+
+
+export async function getStaticPaths() {
+
+  const client =  contentful.createClient({
+    space: process.env.CONTENTFUL_SPACE_ID || import.meta.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_CONTENT_DELIVERY || import.meta.env.CONTENTFUL_CONTENT_DELIVERY,
+  });
+  let blogPosts = await client.getEntries({
+  content_type: 'blogPost'
+  }).then(entries => {
+    // entries.length > 4 ? entries.items.splice(0, 4) : entries.items
+    // console.log(entries)
+    return entries.items
+    }
+  ).catch(err => {
+    console.log(err)
+  });
+  console.log(blogPosts)
+  return blogPosts.map(post => {
+    return {
+      params: { blogPost: post.fields.title.toLowerCase().replaceAll(' ', '-') },
+      // props: post
+      props: { 
+        title: post.fields.title, 
+        body: post.fields.body.content[0].content[0].value, 
+        poster: post.fields.poster.fields.file.url,
+        date: post.fields.dateCreated,
+
+      }
+    };
+  });
+}
+const {blogPost} = Astro.params;
+const {title, body, poster, date} = Astro.props;
+
+---
+
+<StandardLayout >
+  <h2>{title}</h2>
+  <p>{date}</p>
+  <Img src={`https://${poster}`} alt="something" objectFit="cover" />
+  <p>{body}</p>
+  
+</StandardLayout>

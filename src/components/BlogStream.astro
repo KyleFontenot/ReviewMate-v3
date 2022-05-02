@@ -1,5 +1,5 @@
 ---
-import { Picture, Img } from "astro-imagetools/components";
+import { Img } from "astro-imagetools/components";
 import contentful from 'contentful'
 
 const client = contentful.createClient({
@@ -24,7 +24,7 @@ const {size = "large"} = Astro.props;
   <div class="container">
     {blogPosts.map(post => {
       return (
-        <a href={`${post.fields.title.toLowerCase().replace(' ', '-')}`}>
+        <a href={`/blog/${post.fields.title.toLowerCase().replaceAll(' ', '-')}`}>
           <div class="image">
             <Img src={`https://${post.fields.poster.fields.file.url}`} alt="something" objectFit="cover" />
           </div>

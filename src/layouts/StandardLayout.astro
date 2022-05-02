@@ -2,9 +2,10 @@
 import DocumentLayout from "./DocumentLayout.astro"
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
+const {slug} = Astro.props;
 ---
 
-<DocumentLayout>
+<DocumentLayout slug={slug}>
   <Header/>
   <main id="main"><slot /></main>
     
