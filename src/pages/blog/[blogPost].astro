@@ -1,18 +1,8 @@
 ---
 import StandardLayout from "../../layouts/StandardLayout.astro"
 import contentful from 'contentful'
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { Img } from "astro-imagetools/components";
-
-// let blogPosts = await client.getEntries({
-//   content_type: 'blogPost'
-//   }).then(entries => {
-//     // entries.length > 4 ? entries.items.splice(0, 4) : entries.items
-//     return entries.items
-//     }
-// ).catch(err => {
-//   console.log(err)
-// });
-// console.log(blogPosts)
 
 
 export async function getStaticPaths() {
@@ -31,30 +21,64 @@ export async function getStaticPaths() {
   ).catch(err => {
     console.log(err)
   });
-  console.log(blogPosts)
+  console.log(blogPosts[0].fields.body.content.map(node => node.content))
   return blogPosts.map(post => {
     return {
       params: { blogPost: post.fields.title.toLowerCase().replaceAll(' ', '-') },
-      // props: post
+      
       props: { 
         title: post.fields.title, 
-        body: post.fields.body.content[0].content[0].value, 
+        body: documentToHtmlString(post.fields.body), 
         poster: post.fields.poster.fields.file.url,
-        date: post.fields.dateCreated,
+        date: new Date(post.fields.dateCreated),
 
       }
     };
   });
 }
+const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const {blogPost} = Astro.params;
 const {title, body, poster, date} = Astro.props;
+// let dateparsed = new Date(date)
 
+const url = new URL(Astro.request.url);
+console.log(url)
 ---
 
 <StandardLayout >
-  <h2>{title}</h2>
-  <p>{date}</p>
-  <Img src={`https://${poster}`} alt="something" objectFit="cover" />
-  <p>{body}</p>
+  <article>
+    <h2>{title}</h2>
+    <p>{month[date.getMonth()]} {date.getDate()}, {date.getFullYear()}</p>
+    <div style="display:flex;flow-flow: row nowrap; gap:1rem;">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  
+  <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+  <script type="IN/Share" data-url="https://www.linkedin.com"></script>
+
+  <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url.href}`} target="__blank" rel="noopener">Share on Linkedin</a>
+    </div>
+
+    <Img src={`https://${poster}`} alt="something" objectFit="cover" />
+    
+    <div set:html={body}></div>
+  </article>
   
 </StandardLayout>
+<style lang="scss">
+  article :global(img) {
+    display: flex;
+    // outline: 2px solid purple;
+    max-width: 50rem!important;
+    display: block!important;
+    margin-inline: auto!important;
+    text-align: center;
+    margin-bottom: 3rem!important;
+  }
+  .twitter-share-button {
+    display: block;
+    line-height: 1.2rem;
+  }
+  :global(.IN-74a7d7b0-81d1-4475-af64-727c42231d82-1G9ISYhSF8XoOmdcl0yKDu){
+    
+  }
+</style>

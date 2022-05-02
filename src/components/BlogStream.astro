@@ -20,7 +20,7 @@ const {size = "large"} = Astro.props;
 // console.log(blogPosts)
 ---
 <div class="wrapper">
-  <h2 style="width: 100%;">Blog Posts</h2><br/>
+  <h3 style="width: 100%;">Blog Posts</h3><br/>
   <div class="container">
     {blogPosts.map(post => {
       return (
@@ -29,7 +29,7 @@ const {size = "large"} = Astro.props;
             <Img src={`https://${post.fields.poster.fields.file.url}`} alt="something" objectFit="cover" />
           </div>
           <div class="textbody">
-            <h3>{post.fields.title}</h3>
+            <h4>{post.fields.title}</h4>
             {post.fields.body.content[0].content[0].value.length > 80 ? <p class="limited">{post.fields.body.content[0].content[0].value.split('').splice(0, 80).join('').concat('...')}</p> : <p>{post.fields.body.content[0].content[0].value}</p>}
             <span class="readmore">Read More</span>
           </div>
@@ -54,8 +54,12 @@ const {size = "large"} = Astro.props;
   display: flex;
   flex-flow: row nowrap;
   gap: 1rem;
+  & > a { 
+    transition: outline 0.2s;
+    outline: 2px solid transparent;
+   }
   & > a:hover, & > a:focus-visible, {
-outline: 2px solid hsl(var(--color1hsl));
+    outline: 2px solid hsl(var(--color1hsl));
   }
   & * {
     color: #666;

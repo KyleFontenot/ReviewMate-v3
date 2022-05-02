@@ -138,7 +138,31 @@ dd {
 dd {
 	margin-left: 3rem;
 }
+blockquote {
+	background-color: #f2f2f2;
+	padding: 30px 50px;
+	border-radius: 6px;
+	border-top-right-radius:15px;
+	border-bottom-right-radius:15px;
+	margin: 1.5rem 2rem 2rem 3rem;
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		width: 4px;
+		height: 100%;
+		display: block;
+		top: 0;
+		left: 0;
+		background-color: hsl(var(--color1hsl));
+	}
+	& p {
 
+	font-size: 130%;
+	line-height: 170%;
+	}
+	font-size: 1.4rem;
+}
 .flexdiv {
 	display: flex;
 	flex-flow: column nowrap;

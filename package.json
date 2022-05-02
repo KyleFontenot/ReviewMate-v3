@@ -22,6 +22,7 @@
 	},
 	"dependencies": {
 		"@astrojs/solid-js": "^0.1.2",
+		"@contentful/rich-text-html-renderer": "^15.12.1",
 		"astro": "^1.0.0-beta.14",
 		"astro-imagetools": "^0.5.8",
 		"astro-seo": "^0.5.0",
