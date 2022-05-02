@@ -2,10 +2,10 @@
 import DocumentLayout from "./DocumentLayout.astro"
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
-const {slug} = Astro.props;
+const {slug, openGraph} = Astro.props;
 ---
 
-<DocumentLayout slug={slug}>
+<DocumentLayout slug={slug} {openGraph}>
   <Header/>
   <main id="main"><slot /></main>
     

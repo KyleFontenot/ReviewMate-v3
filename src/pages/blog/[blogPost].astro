@@ -3,7 +3,8 @@ import StandardLayout from "../../layouts/StandardLayout.astro"
 import contentful from 'contentful'
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { Img } from "astro-imagetools/components";
-
+import LinkedinIcon from '../../components/LinkedinIcon.astro';
+import TwitterIcon from '../../components/TwitterIcon.astro';
 
 export async function getStaticPaths() {
 
@@ -41,34 +42,49 @@ const {blogPost} = Astro.params;
 const {title, body, poster, date} = Astro.props;
 // let dateparsed = new Date(date)
 
-const url = new URL(Astro.request.url);
-console.log(url)
+const url = new URL(Astro.canonicalURL);
+console.log(title)
 ---
 
-<StandardLayout >
+<StandardLayout slug={title} openGraph={{
+  basic: {
+    title: title,
+    type: "website",
+    image: '/ReviewMate-op.jpg',
+    url: url,
+  },
+}} >
   <article>
-    <h2>{title}</h2>
-    <p>{month[date.getMonth()]} {date.getDate()}, {date.getFullYear()}</p>
-    <div style="display:flex;flow-flow: row nowrap; gap:1rem;">
-      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <div class="infocontainer">
+      <h2>{title}</h2>
+      <p>{month[date.getMonth()]} {date.getDate()}, {date.getFullYear()}</p>
+      
+      <div class="sharecontainer" style="">
+        <a href={`http://twitter.com/share?url=ReviewMate%3A%20${title}%0A${url}`} target="__blank" rel="noopener" class="sharelink"  >
+        <TwitterIcon style="fill:white;"/>Share on Twitter</a>
   
-  <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-  <script type="IN/Share" data-url="https://www.linkedin.com"></script>
+        <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url.href}`} target="__blank" rel="noopener" class="sharelink"  >
+        <LinkedinIcon style=" "/>Share on Linkedin</a>
+      </div>
 
-  <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url.href}`} target="__blank" rel="noopener">Share on Linkedin</a>
-    </div>
-
+    </p>
+  
+  
     <Img src={`https://${poster}`} alt="something" objectFit="cover" />
     
-    <div set:html={body}></div>
+    <div class="blogbody" set:html={body}></div>
   </article>
   
 </StandardLayout>
 <style lang="scss">
+article { 
+  position: relative;
+  display: block;
+ }
   article :global(img) {
     display: flex;
-    // outline: 2px solid purple;
-    max-width: 50rem!important;
+    max-width: unset!important;
+    width: clamp(10rem, 50rem, 100%)!important;
     display: block!important;
     margin-inline: auto!important;
     text-align: center;
@@ -81,4 +97,21 @@ console.log(url)
   :global(.IN-74a7d7b0-81d1-4475-af64-727c42231d82-1G9ISYhSF8XoOmdcl0yKDu){
     
   }
+  .sharelink {
+    color: white;
+    background-color: blue;
+    display:inline-block;
+    padding: 10px 15px;
+    vertical-align: middle;
+    & :global(svg) { 
+height: 30px;width: 30px;
+     }
+  }
+  .sharecontainer {
+    display:flex;
+    flex-flow: row nowrap; 
+    gap:1rem;
+    margin-bottom: 2rem;
+  }
+
 </style>

@@ -10,15 +10,30 @@
   const {title } = metadata;
 
   const description = Astro.props.description || metadata.description || "descriptions of something"
-  const image = Astro.props.description || metadata.image || null
+  const image = "/ReviewMate-op.jpg"
   const canonical = Astro.props.canonical || metadata.canonical || undefined
   const slug = Astro.props.slug || undefined
+  const openGraph = {
+    basic: {
+      title: Astro.props.title || title,
+      type: "website",
+      image: Astro.props.image || "/ReviewMate-op.jpg",
+      url: canonical,
+    },
+    image: {
+      alt: 'Logo Overview of ReviewMate'
+    },
+    optional: {
+      description: Astro.props.description || description,
+    }
+  }
+  // const {openGraph} = Astro.props;
 ---
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title set:html={title}></title>
-    <SEO title={slug ? `${title} | ${slug}` : title} description={description} canonical={canonical} />
+    <!-- <title set:html={title}></title> -->
+    <SEO title={slug ? `${title} | ${slug}` : title} description={description} canonical={canonical} {openGraph}/>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">

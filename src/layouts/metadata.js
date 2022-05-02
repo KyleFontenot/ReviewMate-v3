@@ -3,6 +3,7 @@ const title = "ReviewMate";
 const description =
 	"Streamline medical code auditing workflows by expediting findings, integrating communication, and maintaining fidelity.";
 const canonical = "https://review-mate.com" | undefined;
+const image = "/ReviewMate-op.jpg"
 
 const metadata = {
 	title: title,
@@ -12,7 +13,7 @@ const metadata = {
 		basic: {
 			title: title,
 			type: "website",
-			image: "./<pathtosocialimage>" || null,
+			image: image|| null,
 			url: canonical || null,
 		},
 		optional: {

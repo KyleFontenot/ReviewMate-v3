@@ -9,7 +9,7 @@ export default defineConfig({
 	// pages: "./src/pages",
 	outDir: "./dist",
 	publicDir: "./public",
-	// site: "",
+	site: "https://main--deft-cuchufli-bfd7e3.netlify.app/",
 	integrations: [solid()],
 	vite: {
 		plugins: [astroImagePlugin],
