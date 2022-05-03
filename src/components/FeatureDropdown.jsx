@@ -31,7 +31,7 @@ function FeatureDropdown(props) {
 				<p>{props.body}</p>
 				{props.link ? (
 					<a href={props.link}>
-						See More{" "}
+						See More
 						<img
 							src="/icons/diagonal-arrow.svg"
 							alt="Arrow link icon"
