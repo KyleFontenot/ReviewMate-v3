@@ -71,137 +71,140 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
       
       <tr><td colspan="4" class="moduleheading"><h3>Additional Functionality</h3></td></tr>
       <tr>
-        <td><FeatureDropdown header="Accuracy Manager (Reporting)" body="View accuracy rates for different entities, groups, and dates by slicing result findings by many types of parameters. " link="/features/inpatient" client:idle /></td>
+        <td><FeatureDropdown header="Accuracy Manager (Reporting)" body="View accuracy rates for different entities, groups, and dates by slicing result findings by many types of parameters. " link="/features/accuracymanager/" client:idle /></td>
         <td><Checkmark bool/></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
       </tr>
       <tr>
-        <td><FeatureDropdown header="Code Finder" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><FeatureDropdown header="Code Finder" body="Reference specific code instances historically system-wide. Expand when codes were used previously etc." link="/features/codefinder/" client:idle /></td>
         <td><Checkmark bool/></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
       </tr>
       <tr>
-        <td><FeatureDropdown header="Document Manager" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><FeatureDropdown header="Document Manager" body="Share files, such as reports, between different levels of administration levels. HIPAA compliant, and supported by clear version controlling." link="/features/documentmanager/" client:idle /></td>
         <td><Checkmark bool/></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
       </tr>
       <tr>
-        <td><FeatureDropdown header="User Dashboards" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><FeatureDropdown header="Dashboards" body="Customizable dashboards for organizing the data you need. Underline pertinent workflows for auditors, administrators, or create client dashboards for consuming results." link="/features/dashboards/" client:idle /></td>
         <td><Checkmark bool/></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
       </tr>
-      <tr>
-        <td><FeatureDropdown header="Client Dashboards" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-        <td><Checkmark bool/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
+      
       <tr><td colspan="4" class="moduleheading"><h3>EMR Integration</h3></td></tr>
       <tr>
-        <td><FeatureDropdown header="Multifactor Authentication" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="Integration Manager" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-       <td><FeatureDropdown header="LDAP / Active Directory" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="VPN Integration" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr><td colspan="4" class="moduleheading"><h3>Additional Modules</h3></td></tr>
-      <tr>
-        <td><FeatureDropdown header="Audit The Auditor" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-  
-      <tr>
-        <td><FeatureDropdown header="Workflow Analytics" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="Time Tracking" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="User Training" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><FeatureDropdown header="Multifactor Authentication" body="Confirm fidelity with more complex sign-on options. Integration with Google Duo." link="/features/security/" client:idle /></td>
         <td><Checkmark bool={false}/></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
       </tr>
       
       <tr>
-        <td><FeatureDropdown header="ReviewMate Insights (Benchmarking)" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+       <td><FeatureDropdown header="LDAP / Active Directory" body="Connect directly into enterprise LDAP system from within ReviewMate. Master passwords work within ReviewMate for seamless user authentication." link="/features/security/" client:idle /></td> 
         <td><Checkmark bool={false}/></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
       </tr>
       <tr>
-        <td><FeatureDropdown header="Sample Selector" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><FeatureDropdown header="VPN Integration" body="End-to-end VPN tunneling compatibility with SOC2 certified compliance." link="/features/security/" client:idle /></td> 
         <td><Checkmark bool={false}/></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
       </tr>
       <tr>
-        <td><FeatureDropdown header="Customizable Workflows" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><FeatureDropdown header="Integration Manager" body="Import spreadsheets, universes of data, or any other third-party source of data into a central resource. Manage, maintain, and navigate sources dynamically." link="/features/integrationmanager/" client:idle /></td>
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr><td colspan="4" class="moduleheading"><h3>Additional Modules</h3></td></tr>
+      <tr>
+        <td><FeatureDropdown header="Audit The Auditor" body="Review completed audits and reviews by adding  layered documentation. Original data is referential and integrated." link="/features/audittheauditor/" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+  
+      <tr>
+        <td><FeatureDropdown header="Staffing Analytics" body="Time tracking and progress transparency, against tasks, findings, accounts. Track goals and accountability with visual charts and dashboard plugins." link="/features/analytics/" client:idle /></td> 
         <td><Checkmark bool={false}/></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
       </tr>
       <tr>
-          <td><FeatureDropdown header="Configurable Task Workflows" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+        <td><FeatureDropdown header="System Metrics" body="Utilize visual graphs and charts to focus on performance-based results. Discover prioritization concerns as they happen." link="/features/analytics/" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Reporting" body="Customizable reports (including custom branding), along with many different templates to create consistent reporting effortlessly." client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Time Tracking" body='Keep track of time based on tasks, assignments, and projects. Modular "tasks" keep chunks of work accountable and trackable.' link="/features/analytics/" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="User Training" body="Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules." link="/features/usertraining/" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      
+      <tr>
+        <td><FeatureDropdown header="ReviewMate Insights (Benchmarking)" body="Benchmark and compare performance against other ReviewMate users. Offers advice, community and insight within local scopes, global scopes, or 'millions of records within our community'. Exposes common coding errors that integrate with your Risk Manager." link="/features/reviewmateinsights/" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Selector Tools" body="Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool." link="/features/selectortools/" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+        <td><FeatureDropdown header="Automation Workflows" body="Configurable automation tasks for reducing redundant tasks." link="/features/automation/" client:idle /></td> 
+        <td><Checkmark bool={false}/></td>
+        <td><Checkmark bool /></td>
+        <td><Checkmark bool /></td>
+      </tr>
+      <tr>
+          <td><FeatureDropdown header="Task Workflows" body="Modularized chunks of work give auditors, reviewers, administrators, and even clients, direct accountability and concise communication." link="/features/taskworkflows" client:idle /></td> 
         <td><Checkmark bool={false}/></td>
         <td><Checkmark bool={false} /></td>
         <td><Checkmark bool /></td>
       </tr>
       <tr>
-          <td><FeatureDropdown header="Risk Manager" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+          <td><FeatureDropdown header="Risk Manager" body="Leverage artificial intelligence and historical findings to monitor and stay on-top of potential risks."  client:idle /></td> 
         <td><Checkmark bool={false}/></td>
         <td><Checkmark bool={false} /></td>
         <td><Checkmark bool /></td>
       </tr>
       <tr>
-          <td><FeatureDropdown header="Record Tracker" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+          <td><FeatureDropdown header="Record Tracker" body="View full narratives of records in one integrated place by using timelines within each record." link="/features/inpatient" client:idle /></td> 
         <td><Checkmark bool={false}/></td>
         <td><Checkmark bool={false} /></td>
         <td><Checkmark bool /></td>
       </tr>
+      
       <tr>
-          <td><FeatureDropdown header="HCC Analyzer" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool={false} /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-          <td><FeatureDropdown header="Retrospective Queries" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+          <td><FeatureDropdown header=" Queries" body="Intuitively analyze and report coders' physician queries on compliance, appropriateness, and efficiency."  client:idle /></td> 
         <td><Checkmark bool={false}/></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
       </tr>
       <tr>
-          <td><FeatureDropdown header="CDI Workflows" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td> 
+          <td><FeatureDropdown header="CDI Communication" body="Integrate communication with any first-party or third-party CDI team." client:idle /></td> 
         <td style="border-bottom-left-radius: 13px;border-bottom: 1px solid #ddd;"><Checkmark bool={false} /></td>
         <td style="border-bottom: 1px solid #ddd;"><Checkmark bool={false}  /></td>
         <td style="border-bottom-right-radius: 13px;border-bottom: 1px solid #ddd;" ><Checkmark bool /></td>

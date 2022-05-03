@@ -15,7 +15,7 @@
   const slug = Astro.props.slug || undefined
   const openGraph = {
     basic: {
-      title: Astro.props.title || title,
+      title: Astro.props.title || `ReviewMate${Astro.request.pathname !== '/' ? ' | ' + Astro.request.pathname : ''}`,
       type: "website",
       image: Astro.props.image || "/ReviewMate-op.jpg",
       url: canonical,
@@ -28,6 +28,7 @@
     }
   }
   // const {openGraph} = Astro.props;
+  // console.log(Astro.request)
 ---
 <html lang="en">
   <head>
