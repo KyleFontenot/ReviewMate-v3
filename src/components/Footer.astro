@@ -1,5 +1,7 @@
 ---
-
+import LinkedinIcon from "./LinkedinIcon.astro"
+import TwitterIcon from "./TwitterIcon.astro"
+import FacebookIcon from "./FacebookIcon.astro"
 ---
 
   <footer>
@@ -26,30 +28,31 @@
         </a>
       </li>
     </ul>
+
     <ul>
       <li>
-        <a href="" class="listheader">
-          Use-Cases
+        <a href="/resources/" class="listheader">
+          Resources
         </a>
       </li>
       <li>
-        <a href="">
-          Medical 
+        <a href="/blog/">
+          Blog 
         </a>
       </li>
       <li>
-        <a href="">
-          Pro
+        <a href="/faqs/">
+          FAQs
         </a>
       </li>
       <li>
-        <a href="">
-          Enterprise
+        <a href="/faqs/">
+          What's New
         </a>
       </li>
     </ul>
 
-    <ul>
+    <!-- <ul>
       <li>
         <a href="" class="listheader">
           About
@@ -70,10 +73,21 @@
           Blog
         </a>
       </li>
-    </ul>
+    </ul> -->
 
 
     <ul>
+      <li style="display:flex;flex-flow:row nowrap;justify-content:space-around;margin-bottom:0.4rem;">
+        <a href="https://twitter.com/ReviewMatee/" target="__blank" rel="noopener" style="text-align: center;">
+          <TwitterIcon style="fill: white; height: 25px;width: 25px;"/>
+        </a>
+        <a href="https://www.linkedin.com/company/reviewmate1/" target ="__blank" rel="noopener">
+          <LinkedinIcon style="fill: white;height: 25px;width: 25px;"/>
+        </a>
+        <a href="https://www.facebook.com/ReviewMate1/" target="__blank" rel="noopener">
+        <FacebookIcon style="fill: white;height: 25px;width: 25px;"/>
+        </a>
+      </li>
       <li>
         <a href="/policies/#privacypolicy">
           Privacy Policy
@@ -89,7 +103,10 @@
           Usage Disclaimer
         </a>
       </li>
+      
     </ul>
+
+    
   </footer>
 
   <style lang="scss">

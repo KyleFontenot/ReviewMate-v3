@@ -301,7 +301,8 @@ fill: hsl(var(--color1hsl));
   display: block;
   top: 115%;
   left: 0;
-  width: 100%;
+  width: 80vw;
+	max-width: 40rem;
   visibility: hidden;
   transition: opacity 0.3s, transform 0.3s;
   transform-origin: 50% 50%;
@@ -316,6 +317,7 @@ fill: hsl(var(--color1hsl));
   text-indent: 0;
   }
 }
+
 .dropdown--open {
 	visibility: visible;
   opacity: 1;

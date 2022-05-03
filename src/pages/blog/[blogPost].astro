@@ -60,11 +60,13 @@ console.log(title)
       <p>{month[date.getMonth()]} {date.getDate()}, {date.getFullYear()}</p>
       
       <div class="sharecontainer" style="">
-        <a href={`http://twitter.com/share?url=ReviewMate%3A%20${title}%0A${url}`} target="__blank" rel="noopener" class="sharelink"  >
-        <TwitterIcon style="fill:white;"/>Share on Twitter</a>
+        <a href={`http://twitter.com/share?url=ReviewMate%3A%20${title}%0A${url}`} target="__blank" rel="noopener" class="sharelink" style="background-color:#6FCCF5;" >
+        <TwitterIcon style="fill:white; "/>
+        Share on Twitter</a>
   
-        <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url.href}`} target="__blank" rel="noopener" class="sharelink"  >
-        <LinkedinIcon style=" "/>Share on Linkedin</a>
+        <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url.href}`} target="__blank" rel="noopener" class="sharelink" style="background-color: #3B688D;"  >
+        <LinkedinIcon style=" "/>
+        Share on Linkedin</a>
       </div>
 
     </p>
@@ -99,12 +101,27 @@ article {
   }
   .sharelink {
     color: white;
-    background-color: blue;
+    // background-color: blue;
     display:inline-block;
-    padding: 10px 15px;
+    padding: 10px 10px;
+    // height: 38px;
     vertical-align: middle;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    // line-height: 34px;
+    padding-left: 2.6rem;
+    position: relative;
+    & > * {
+      float: left;
+      vertical-align: middle;
+    }
     & :global(svg) { 
-height: 30px;width: 30px;
+      height: 26px;
+      width: 26px;
+      display: inline-block;
+      position: absolute;
+      left: 0.5rem;
+      top: 6px;
      }
   }
   .sharecontainer {

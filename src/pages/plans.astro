@@ -10,37 +10,36 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
   <p>All plans contain everything you may need for the core auditing tools such as importing data from your universe of data, pin-point findings, audit, and customizing reports. The Pro and Enterprise tiers are focused on auxiliary features such as automated montioring, etc.</p>
   <p>Every plan is simply a foundation for which you may add or remove features a-la-carte based on your needs.</p>
 </div>
-
   
-    <div class="tableheaders">
+    <!-- <div class="tableheaders">
       <h2 style="font-size: 1.3rem; margin: 0;">Features</h2>
       <h2>Essentials</h2>
       <h2>Pro</h2>
       <h2>Enterprise</h2>
-    </div>
+    </div> -->
 
-<div style="overflow-x:scroll;height: 122%;">
-  <table style="margin-bottom: 3rem;">
+<div style="overflow-x:scroll;height: 162%; ">
+  <table style="margin-bottom: 3rem;width: 100%;">
   <colgroup>
       <col style="max-width:4rem;"></col>
       <col style="min-width: 10rem;width: 15%"></col>
       <col style="min-width: 10rem;width: 15%"></col>
       <col style="min-width: 10rem;width: 15%"></col>
     </colgroup>
-    <!-- <thead>
+    <thead>
       <tr>
         <th><h2 style="font-size: 1.3rem; margin: 0;">Features</h2></th>
         <th><h2>Essentials</h2></th>
         <th><h2>Pro</h2></th>
         <th><h2>Enterprise</h2></th>
       </tr>
-    </thead> -->
+    </thead>
     <tbody>
     
       
       <tr><td colspan="4" class="moduleheading"><h3>Auditing Modules</h3></td></tr>
       <tr>
-        <td><FeatureDropdown header="Inpatient" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
+        <td><FeatureDropdown header="Inpatient" body="Hospital types for internal medical case billing" link="/features/inpatient" link="" client:idle /></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
@@ -69,24 +68,7 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
       </tr>
-      <tr>
-        <td><FeatureDropdown header="APR DRG(3M)" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-        <td>TBD</td>
-        <td>TBD</td>
-        <td>TBD</td>
-      </tr>
-      <tr>
-        <td># of Records</td>
-        <td>20,000</td>
-        <td>60,000</td>
-        <td>125,000</td>
-      </tr>
-      <tr>
-        <td>Database Size</td>
-        <td>2GB</td>
-        <td>5GB</td>
-        <td>Unlimited*</td>
-      </tr>
+      
       <tr><td colspan="4" class="moduleheading"><h3>Additional Functionality</h3></td></tr>
       <tr>
         <td><FeatureDropdown header="Accuracy Manager (Reporting)" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
