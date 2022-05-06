@@ -1,0 +1,73 @@
+
+.formBlock {
+	min-height:30rem;
+	height:20rem;
+	background-color:white;
+	display:block;
+	border-radius:30px;
+}
+.formColumn{
+	background-color:#fff;
+	padding:3rem 3rem;
+	border-radius:40px;
+	width:90%;
+	max-width:50rem;
+	margin: 0 auto;
+	box-shadow:-1px 6px 10px -2px #666;
+	& h2 {
+		text-align:center;
+	}
+}
+#formBlockBackground {
+
+	background-color:red;
+	background:url('../../images/grid4.png');
+	background-position:170% 160%;
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	padding-top:2rem;
+	padding-bottom:5rem;
+}
+form {
+	margin:0;
+	& input {
+		margin:0.5rem auto 0.5rem auto;
+	}
+	& label {
+		margin:1.5rem auto 0 auto;
+		display:block;
+		width:100%;
+		max-width:30rem;
+	}
+	& input[type='text'], input[type='tel'], input[type='email'],input[type='textarea'] {
+		display:block;
+		width:100%;
+		margin:0.5rem auto 0.5rem;
+		max-width:30rem;
+
+	}
+}
+form input[type='submit'], form button{
+	margin:4.3rem auto 1.5rem auto!important;
+	display:block;
+	position:relative;
+}
+button {
+	// transform:scale(1.4);
+}
+.error {
+	outline:5px solid blue;
+}
+#errorMessage {
+	display:block;
+	margin: 1.5rem auto 0;
+	text-align:center;
+	color:red;
+	font-size:1.2rem;
+}
+input[type=email]:focus, input[type=number]:focus, input[type=password]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=url]:focus, textarea:focus, select:focus {
+	outline:inherit;
+	&.error {
+		outline:5px solid blue;
+	}
+}

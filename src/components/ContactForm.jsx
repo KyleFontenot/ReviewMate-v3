@@ -1,11 +1,8 @@
 // import React, {useRef, useState} from "react"
 import {createSignal} from "solid-js"
-// import Block from "../Block.jsx"
-// import NumberFormat from 'react-number-format';
-// NumberFormat inputs
-import "./FormBlock.scss"
+// import "./FormBlock.scss"
 
-const FormBlock = () => {
+export default function ContactForm (){
   // const emailField = useRef();
   // const errorRef = useRef();
   let emailField;

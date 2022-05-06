@@ -1,0 +1,55 @@
+.container {
+transition: background-color 0.2s;
+}
+// button element 
+.header {
+  background-color: transparent;
+  font-size: 1.4rem;
+  width: 100%;
+  color: #555;
+  cursor: pointer;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  border-right: 0;
+  border-left: 0;
+  text-align: left;
+  padding: 25px 20px 15px 30px;
+  font-family: "Hind Madurai";
+  transition: background-color 0.2s, color 0.2s;
+}
+.faqdropdown {
+  position: relative;
+  max-height: 0;
+  visibility: hidden;
+  opacity: 1;
+  // padding: 2rem 2rem 2rem 3rem;
+  padding-left: 5%;
+  padding-right: 3%;
+  font-size: 1.1rem;
+  background-color: #f9f9f9;
+}
+.dropdownopen {
+ opacity: 1;
+ max-height: 100%; 
+ visibility: visible;
+ padding-top: 1.5rem;
+ padding-bottom: 2rem;
+
+}
+
+.arrow {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-bottom: 3px solid #666;
+  border-right: 3px solid #666;
+  transform: rotate(45deg) translate3d(0, -3px, 0);
+  position: relative;
+  left: 0.6rem;
+  transition: transform 0.3s;
+  transform-origin: 50% 50%;
+}
+.arrowopen {
+  // transform: rotate(-135deg);
+  transform: rotate(-135deg) translate3d(0, 1px, 0);
+}
