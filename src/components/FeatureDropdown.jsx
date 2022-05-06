@@ -1,5 +1,5 @@
-import {createSignal } from 'solid-js'
-import styles from './FeatureDropdown.module.scss'
+import { createSignal } from 'solid-js'
+// import styles from './FeatureDropdown.module.scss'
 
 function FeatureDropdown(props) {
   const [open, setOpen] = createSignal(false);
@@ -11,7 +11,7 @@ function FeatureDropdown(props) {
 			<button
 				tab-index="0"
 				aria-label="Dropdown toggle"
-				class={styles.header}
+				class="fddheader"
 				onClick={() => {
 					hideDropdowns()
 					dropdownRef.classList.add('dropdown--open')

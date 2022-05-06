@@ -302,8 +302,9 @@ fill: hsl(var(--color1hsl));
   position: absolute;
   display: block;
   top: 115%;
-  left: 0;
-  width: 80vw;
+  left: 115%;
+	top: 0;
+  width: calc(90vw - 16rem);
 	max-width: 40rem;
   visibility: hidden;
   transition: opacity 0.3s, transform 0.3s;
@@ -369,3 +370,21 @@ fill: hsl(var(--color1hsl));
 			display: block;
 		}
 	}
+.fddheader {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+	font-size: 1.05rem;
+	line-height: 2rem;
+	margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #555;
+  font-family: 'Hind Madurai';
+  transition: background-color 0.2s;
+  width: 100%;
+  margin: 0;
+  // &:hover {
+  //   background-color: #fcfcfc;
+  // }
+}

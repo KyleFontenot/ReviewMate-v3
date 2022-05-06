@@ -13,7 +13,6 @@
 		"postpublish": "git add --all && git commit && git push && firebase deploy"
 	},
 	"devDependencies": {
-		"@astrojs/renderer-solid": "^0.4.2",
 		"autoprefixer": "^10.4.5",
 		"postcss-preset-env": "^7.4.4",
 		"prettier-plugin-astro": "^0.0.12",
@@ -21,6 +20,7 @@
 		"vite-plugin-compression": "^0.5.1"
 	},
 	"dependencies": {
+		"@astrojs/renderer-solid": "^0.4.2",
 		"@astrojs/solid-js": "^0.1.2",
 		"@contentful/rich-text-html-renderer": "^15.12.1",
 		"astro": "^1.0.0-beta.14",

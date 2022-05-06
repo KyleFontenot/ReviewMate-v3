@@ -13,31 +13,28 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
   
     <!-- <div class="tableheaders">
       <h2 style="font-size: 1.3rem; margin: 0;">Features</h2>
-      <h2>Essentials</h2>
-      <h2>Pro</h2>
+      <h2>Essentials</h2> <h2>Pro</h2>
       <h2>Enterprise</h2>
     </div> -->
 
-<div style="overflow-x:scroll;height: 162%; ">
-  <table style="margin-bottom: 3rem;width: 100%;">
-  <colgroup>
-      <col style="max-width:4rem;"></col>
-      <col style="min-width: 10rem;width: 15%"></col>
-      <col style="min-width: 10rem;width: 15%"></col>
-      <col style="min-width: 10rem;width: 15%"></col>
-    </colgroup>
-    <thead>
+<div style="overflow-x:scroll;height: 162%;">
+  <table id="wholetable" style="margin-bottom: 3rem;width: 100%;">
+  <!-- <colgroup>
+      <col style="max-width:4rem;" />
+      <col style="min-width: 10rem;width: 15%" />
+      <col style="min-width: 10rem;width: 15%;background-color: hsl(var(--color2hsl));" />
+      <col style="min-width: 10rem;width: 15%" />
+    </colgroup> -->
+    <thead id="tablehead">
       <tr>
-        <th><h2 style="font-size: 1.3rem; margin: 0;">Features</h2></th>
-        <th><h2>Essentials</h2></th>
-        <th><h2>Pro</h2></th>
-        <th><h2>Enterprise</h2></th>
+        <th class="stickyhead"><h2 style="font-size: 1.3rem; margin: 0;">Features</h2></th>
+        <th class="stickyhead"><h2>Essentials</h2></th>
+        <th class="stickyhead"><h2>Pro</h2></th>
+        <th class="stickyhead"><h2>Enterprise</h2></th>
       </tr>
     </thead>
     <tbody>
-    
-      
-      <tr><td colspan="4" class="moduleheading"><h3>Auditing Modules</h3></td></tr>
+      <tr><td colspan={ 4 } class="moduleheading"><h3>Auditing Modules</h3></td></tr>
       <tr>
         <td><FeatureDropdown header="Inpatient" body="Many features extend every aspect of inpatient auditing" link="/features/inpatient" client:idle /></td>
         <td><Checkmark bool /></td>
@@ -69,9 +66,9 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
         <td><Checkmark bool /></td>
       </tr>
       
-      <tr><td colspan="4" class="moduleheading"><h3>Additional Functionality</h3></td></tr>
+      <tr><td colspan={ 4 } class="moduleheading"><h3>Additional Functionality</h3></td></tr>
       <tr>
-        <td><FeatureDropdown header="Accuracy Manager (Reporting)" body="View accuracy rates for different entities, groups, and dates by slicing result findings by many types of parameters. " link="/features/accuracymanager/" client:idle /></td>
+        <td><FeatureDropdown header="Accuracy Manager (Reporting)" body="View accuracy rates for different entities, groups, and dates by slicing result findings by many types of parameters." link="/features/accuracymanager/" client:idle /></td>
         <td><Checkmark bool/></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
@@ -95,7 +92,7 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
         <td><Checkmark bool /></td>
       </tr>
       
-      <tr><td colspan="4" class="moduleheading"><h3>EMR Integration</h3></td></tr>
+      <tr><td colspan={ 4 } class="moduleheading"><h3>EMR Integration</h3></td></tr>
       <tr>
         <td><FeatureDropdown header="Multifactor Authentication" body="Confirm fidelity with more complex sign-on options. Integration with Google Duo." link="/features/security/" client:idle /></td>
         <td><Checkmark bool={false}/></td>
@@ -121,7 +118,7 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
       </tr>
-      <tr><td colspan="4" class="moduleheading"><h3>Additional Modules</h3></td></tr>
+      <tr><td colspan={ 4 } class="moduleheading"><h3>Additional Modules</h3></td></tr>
       <tr>
         <td><FeatureDropdown header="Audit The Auditor" body="Review completed audits and reviews by adding  layered documentation. Original data is referential and integrated." link="/features/audittheauditor/" client:idle /></td> 
         <td><Checkmark bool={false}/></td>
@@ -148,7 +145,7 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
         <td><Checkmark bool /></td>
       </tr>
       <tr>
-        <td><FeatureDropdown header="Time Tracking" body='Keep track of time based on tasks, assignments, and projects. Modular "tasks" keep chunks of work accountable and trackable.' link="/features/analytics/" client:idle /></td> 
+        <td><FeatureDropdown header="Time Tracking" body=`Keep track of time based on tasks, assignments, and projects. Modular "tasks" keep chunks of work accountable and trackable.` link="/features/analytics/" client:idle /></td> 
         <td><Checkmark bool={false}/></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
@@ -198,7 +195,7 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
       </tr>
       
       <tr>
-          <td><FeatureDropdown header=" Queries" body="Intuitively analyze and report coders' physician queries on compliance, appropriateness, and efficiency."  client:idle /></td> 
+          <td><FeatureDropdown header=" Retrospective Physician Queries" body="Intuitively analyze and report coders' physician queries on compliance, appropriateness, and efficiency."  client:idle /></td> 
         <td><Checkmark bool={false}/></td>
         <td><Checkmark bool /></td>
         <td><Checkmark bool /></td>
@@ -213,15 +210,43 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
   </table>
 </div>
 
+<script>
+  let headtop = document.querySelector('#wholetable').offsetTop;
+  let scrollTop = window.scrollY;
+
+  // window.addEventListener('scroll', () => {
+  //   scrollTop = window.scrollY;
+  //   console.log(document.querySelectorAll('th'))
+  //   if (scrollTop >= headtop) {
+  //     document.querySelectorAll('th').forEach(each => {
+  //       each.style.position = "fixed"
+  //       each.style.top = "0"
+  //     })
+  //     // document.querySelectorAll('th').style.top = "0"
+  //   }
+  //   else {
+  //     document.querySelectorAll('th').style.position = "relative"
+  //     document.querySelectorAll('th').style.top = "0"
+  //   }
+  // })
+
+  window.onresize = () => {
+      headtop = document.querySelector('#wholetable').offsetTop;
+    }
+
+  //  headtop = "something";
+  // console.log(scrollTop)
+</script>
+
 </StandardLayout>
 
 <style lang="scss">
 .tableheaders{
   position: sticky;
   top: 0;
-& h2 {
-display: inline-block;
-}
+  & h2 {
+  display: inline-block;
+  }
 }
   table {
     // width: 104%;
@@ -231,15 +256,18 @@ display: inline-block;
     // margin-bottom: 3rem;
     overflow-x:scroll;
     position: relative;
+    // table-layout: fixed;
+  }
+  thead th {
+
   }
   th, td {
     padding: 1rem;
     font-weight: bolder;
   }
   thead {
-    // position:sticky;
+    // position:fixed;
     top: 0;
-    
   }
   th {
     position: sticky;
@@ -248,6 +276,7 @@ display: inline-block;
     background-color: white;
     height: 4rem;
     z-index: 500;
+    // position: sticky;
     // padding: 3rem 0 0;
     & > h2 {
       display: block;
@@ -269,13 +298,12 @@ display: inline-block;
     // border: 1px solid #777;
     vertical-align: middle;
     text-align: center;
-    // position: sticky;
+    position: sticky;
     left: 0;
     background-color:white;
-    // z-index:300;
+    z-index:300;
     border-right: 1px solid #ddd;
-    
-    // max-width: 10rem;
+    width: 16rem;
     &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4) {
       border-top: 1px solid #ddd;
       border-left: 1px solid #ddd;
@@ -283,8 +311,15 @@ display: inline-block;
       position: relative;
     z-index:200;
     }
+    &:nth-of-type(3) {
+    background-color: hsla(var(--color2hsl), 4%);
+    }
     &:nth-of-type(4) {
       border-right: 1px solid #ddd;
+      background-color: hsla(var(--color1hsl), 3%);
+    }
+    td[colspan="4"]{
+      position: relative;
     }
   }
     .moduleheading {
