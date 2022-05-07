@@ -5,8 +5,6 @@ function FAQ(props) {
   const [open, setOpen] = createSignal(false);
 	let dropdownRef;
 	let arrowRef;
-
-
   return (
 		<div
 			class={styles.container}

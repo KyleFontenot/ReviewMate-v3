@@ -388,3 +388,9 @@ fill: hsl(var(--color1hsl));
   //   background-color: #fcfcfc;
   // }
 }
+.featuresection {
+	& li {
+		line-height: 1.8rem;
+		margin-bottom: 0.4rem;
+	}
+}
