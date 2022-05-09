@@ -1,6 +1,6 @@
-// import React, {useRef, useState} from "react"
+
 import {createSignal} from "solid-js"
-// import "./FormBlock.scss"
+import styles from './ContactForm.module.scss'
 
 export default function ContactForm (){
   // const emailField = useRef();
@@ -33,46 +33,81 @@ function checkForm(e) {
   }
 }
   return (
-    <div className="container" >
+		<div className="container">
 			<div className="row">
 				<div className="column formColumn">
-	        <h2>Contact Us</h2>
+					<h2>Contact Us</h2>
 
-	        <form
-	          name="contact"
-	          method="POST"
-	          data-netlify="true"
-	          data-netlify-honeypot="bot-field"
-            formNoValidate
-            noValidate
-            action="/submitted"
-	        >
-            <input type="hidden" name="bot-field" id="formbotfield" />
-	          <input type="hidden" name="form-name" value="contact" />
+					<form
+						name="contact"
+						method="POST"
+						data-netlify="true"
+						data-netlify-honeypot="bot-field"
+						formNoValidate
+						noValidate
+						action="/submitted"
+					>
+						<input type="hidden" name="bot-field" id="formbotfield" />
+						<input type="hidden" name="form-name" value="contact" />
 
 						<label htmlFor="name">Name:</label>
-	          <input type="text" name="Name" placeholder="Name" id="nameField" required/>
+						<input
+							type="text"
+							name="Name"
+							placeholder="Name"
+							id="nameField"
+							classList={{ [styles.input]: true }}
+							required
+						/>
 
-            <label htmlFor="emailField">Email:</label>
-	          <input type="email" ref={emailField} name="Email" placeholder="email@email.com" id="emailField" className="" required />
-            <label htmlFor="emailField">Phone (Optional):</label>
-            {/* Need a number formatter in solidjs */}
-            {/* <NumberFormat format="+1 (###) ###-####" mask="_" type="tel" name="Phone" placeholder="+1 (123) 867-5309" id="phoneField"/> */}
+						<label htmlFor="emailField">Email:</label>
+						<input
+							type="email"
+							ref={emailField}
+							name="Email"
+							placeholder="email@email.com"
+							id="emailField"
+							classList={{ [styles.input]: true }}
+							required
+						/>
+						<label htmlFor="emailField">Phone (Optional):</label>
+						{/* Need a number formatter in solidjs */}
+						{/* <NumberFormat format="+1 (###) ###-####" mask="_" type="tel" name="Phone" placeholder="+1 (123) 867-5309" id="phoneField"/> */}
 
-            <label htmlFor="entityField">Entity:</label>
-	          <input type="text" name="Entity" placeholder="Company" id="entityField" />
+						<label htmlFor="entityField">Entity:</label>
+						<input
+							type="text"
+							name="Entity"
+							placeholder="Company"
+							id="entityField"
+							classList={{ [styles.input]: true }}
+						/>
 
-            <label htmlFor="commentField">Comments:</label>
-	          <input type="textarea" rows={2} cols={10} name="Info" id="commentField" />
-            <div id="errorMessage" ref={errorRef}>{errorMessage()}</div>
-	          <button type="button" onClick={checkForm} style={{
-                margin:'1.75rem auto',
-                textAlign:'center'
-              }}>Send</button>
-	        </form>
-	      </div>
+						<label htmlFor="commentField">Comments:</label>
+						<input
+							type="textarea"
+							rows={2}
+							cols={10}
+							name="Info"
+							id="commentField"
+							classList={{ [styles.input]: true }}
+						/>
+						<div id="errorMessage" ref={errorRef}>
+							{errorMessage()}
+						</div>
+						<button
+							type="button"
+							onClick={checkForm}
+							style={{
+								margin: "1.75rem auto",
+								textAlign: "center",
+							}}
+						>
+							Send
+						</button>
+					</form>
+				</div>
 			</div>
-    </div>
-
-  )
+		</div>
+	);
 }

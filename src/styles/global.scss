@@ -361,11 +361,14 @@ fill: hsl(var(--color1hsl));
     }
   }
 
-	.paddedDiv {
+	.faqdiv {
 		// padding-bottom: 10px;
 		margin-top: 4rem;
 		margin-bottom: 5rem;
-		border-left: 3px solid hsl(var(--color1hsl));
+		padding-bottom: 2.5rem;
+		width: 114%;
+		margin-inline: -7%;
+		background-color: hsl(var(--color1hsl));
 		& button {
 			display: block;
 		}
@@ -388,9 +391,49 @@ fill: hsl(var(--color1hsl));
   //   background-color: #fcfcfc;
   // }
 }
-.featuresection {
+.feature {
 	& li {
 		line-height: 1.8rem;
 		margin-bottom: 0.4rem;
 	}
+	.feature__description {
+		border-bottom: 2px solid hsl(var(--color1hsl));
+		padding-bottom: 2rem;
+	}
+	.feature__img {
+		max-width: 45rem;
+		max-height: 100%;
+		overflow: hidden;
+		margin-bottom: 2rem;
+	}
+	& ul {
+		padding-top: 2rem;
+		display: flex;
+		flex-flow: row wrap;
+		gap: 2rem;
+		& li {
+			margin-bottom: 0.5rem;
+		}
+	}
+	@media (min-width: 690px){
+		.feature__img {
+			float: right;
+			margin-left: 2rem;
+			width: 60%;
+		}
+		& ul {
+			margin-top: 3rem;
+			margin-bottom: 3rem;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(15rem, 20rem));
+			grid-template-rows: repeat(autofill, 1fr);
+			gap: 2rem;
+			clear:both;
+			& li {
+				margin-bottom: 0.5rem;
+				flex: 1 1 17rem;
+			}
+		}
+	}
 }
+

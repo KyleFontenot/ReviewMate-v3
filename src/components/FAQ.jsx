@@ -12,7 +12,7 @@ function FAQ(props) {
 				open()
 					? "background-color: #efefef; box-shadow:0 3px 6px -1px #33333333 inset;"
 					: ""
-			}`}
+			}${props.style && props.style}`}
 		>
 			<button
 				tab-index="0"

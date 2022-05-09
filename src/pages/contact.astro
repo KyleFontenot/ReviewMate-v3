@@ -4,13 +4,21 @@ import StandardLayout from "../layouts/StandardLayout.astro"
 // import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
 import ContactForm from '../components/ContactForm.jsx'
 import {FAQ} from '../components/FAQ.jsx'
+import {Img} from 'astro-imagetools/components'
 ---
 <StandardLayout>
-  <ContactForm client:idle />
- <div class="paddedDiv">
- <h2 style="text-align: center;margin-bottom: 2rem;">FAQs</h2>
-    <FAQ header="What is ReviewMate?" body="ReviewMate provides your company with one centralized platform where audits take place and will replace any manual processes your auditing team currently uses. Shareholders in the audit process will be able to transparently view how audits are going, how far along the audit is in the process and run reports. According to time studies, ReviewMate saves about 30% of an auditors’ time by automating some of their processes." client:idle />
-    <FAQ header="How will ReviewMate benefit my company?" body="ReviewMate provides your company with one centralized platform where audits take place and will replace any manual processes your auditing team currently uses. Shareholders in the audit process will be able to transparently view how audits are going, how far along the audit is in the process and run reports. According to time studies, ReviewMate saves about 30% of an auditor’s time by automating some of their processes." client:idle />
+<div class="contactbg">
+
+   <div style="filter: blur(5px); width: 115%;height:115%;"><Img src="/src/images/fauxels-meeting.jpg" alt="people meting over a table." role="presentation" /></div>
+   <ContactForm client:idle />
+</div>
+
+
+ <div class="faqdiv"> 
+ <h2 style="background-color: white;margin: 0 auto;padding:2rem 0 3rem; text-align: center;font-size: 2.6rem;">FAQs</h2>
+    <FAQ header="What is ReviewMate?" body="ReviewMate provides your company with one centralized platform where audits take place and will replace any manual processes your auditing team currently uses. Shareholders in the audit process will be able to transparently view how audits are going, how far along the audit is in the process and run reports. According to time studies, ReviewMate saves about 30% of an auditors’ time by automating some of their processes." style="margin-top: 2rem;" client:idle />
+
+    <FAQ header="How will ReviewMate benefit my company?" body="ReviewMate provides your company with one centralized platform where audits take place and will replace any manual processes your auditing team currently uses. Shareholders in the audit process will be able to transparently view how audits are going, how far along the audit is in the process and run reports. According to time studies, ReviewMate saves about 30% of an auditor’s time by automating some of their processes."   client:idle />
     
     <FAQ header="How will ReviewMate benefit my company?" body="Auditors will find that their processes will take less time by automation of reporting, reconciliation, and communication. Auditors can communicate with coders within ReviewMate through tasks making the reconciliation process seamless. Having coding references imbedded in ReviewMate eliminates the toggling back and forth between groupers and auditing tools. Also eliminated is the requirement to enter demographics and codes into a grouper to make sequencing decisions or price an account." client:idle />
     
@@ -20,13 +28,6 @@ import {FAQ} from '../components/FAQ.jsx'
 
     <FAQ header="Is ReviewMate secure?" body="ReviewMate is hosted on secure servers which are SOC2 Type 2 and SOC 3 Type 2 certified and HIPAA and HITECH audited, designed to secure and protect critical healthcare data, and electronic protected health information (ePHI) and records." client:idle />
 
-    <!-- <FAQ header="What modules does ReviewMate have?" body="We currently have:
-
-IPPS (facility inpatient)
-OPPS (facility outpatient)
-ASC (ambulatory surgery center)
-Profee (physician’s office)
-CMS-HCC (Medicare risk adjustment)" client:idle /> -->
 
     <FAQ header="How does pricing work?" body="Pricing is based on a subscription model and is stratified by how many reviewers and managers access the system. Two different models are available: 1) Static monthly subscription based on your known volumes (usually for hospital systems). 2) Static monthly subscription plus a per-record fee so that you only pay for what you use (usually for firms who have variable work from month to month)" client:idle />
 
@@ -37,6 +38,24 @@ CMS-HCC (Medicare risk adjustment)" client:idle /> -->
     <FAQ header="Do I need to download anything to use the software?" body="No. ReviewMate is completely browser-based. Users just need an internet connection and one of the popular web-browsers such as Mozilla Firefox, Google Chrome, Apple Safari or Microsoft Internet Explorer." client:idle />
 
     <FAQ header="Does ReviewMate have reporting functions/reports?" body="Yes. ReviewMate has many ways of running reports for audits. Different users can access reporting and use the system as a “help yourself” type of software. There are seven different reporting modules in ReviewMate." client:idle />
-
  </div> 
 </StandardLayout>
+
+<style lang="scss"> 
+.contactbg {
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 1fr;
+   place-items: center;
+   overflow: hidden; 
+   width: 114%;
+   margin-inline:-7%;
+   margin-top: -2rem;
+   & > :global(*) > :global(div)  {
+      // outline: 2px solid purple;
+      position: absolute;
+      width: 100%;
+   }
+}
+
+</style>

@@ -1,5 +1,11 @@
 .container {
-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  max-width: 60rem;
+  margin-inline: auto;
+  border-left: 3px solid hsl(var(--color1hsl));
+  border-right: 3px solid hsl(var(--color1hsl));
+  background-color: white;
+  // margin-top: 2rem;
 }
 // button element 
 .header {
@@ -21,12 +27,13 @@ transition: background-color 0.2s;
   position: relative;
   max-height: 0;
   visibility: hidden;
-  opacity: 1;
+  opacity: 0;
   // padding: 2rem 2rem 2rem 3rem;
   padding-left: 5%;
   padding-right: 3%;
   font-size: 1.1rem;
   background-color: #f9f9f9;
+  transition: opacity 0.2s;
 }
 .dropdownopen {
  opacity: 1;

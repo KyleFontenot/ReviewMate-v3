@@ -5,5 +5,5 @@ const {text, as, href, outline, color = "maroon", style} = Astro.props
   <a href={href} class={`button${outline ? ' button--outline': ''}${color ? ' ' + 'button--' + color : ''}`} {style}>{text}</a> : 
 as === "submit" || as === "input" ? 
   <input type="submit" class={`button${outline ? ' button--outline': ''}${color ? ' ' + 'button--' + color : ''}`} value={text} {style}/> : 
-  <button class={`button${outline ? ' button--outline': ''}${color ? ' ' + 'button--' + color : ''}`} {style}>{text}</button>}
+<button class={`button${outline ? ' button--outline': ''}${color ? ' ' + 'button--' + color : ''}`} {style}>{text}</button>}
   
