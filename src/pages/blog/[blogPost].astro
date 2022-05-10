@@ -5,6 +5,7 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { Img } from "astro-imagetools/components";
 import LinkedinIcon from '../../components/LinkedinIcon.astro';
 import TwitterIcon from '../../components/TwitterIcon.astro';
+import Button from '../../components/Button.astro'
 
 export async function getStaticPaths() {
 
@@ -15,35 +16,30 @@ export async function getStaticPaths() {
   let blogPosts = await client.getEntries({
   content_type: 'blogPost'
   }).then(entries => {
-    // entries.length > 4 ? entries.items.splice(0, 4) : entries.items
-    // console.log(entries)
     return entries.items
     }
   ).catch(err => {
     console.log(err)
   });
-  console.log(blogPosts[0].fields.body.content.map(node => node.content))
   return blogPosts.map(post => {
     return {
       params: { blogPost: post.fields.title.toLowerCase().replaceAll(' ', '-') },
-      
       props: { 
         title: post.fields.title, 
         body: documentToHtmlString(post.fields.body), 
         poster: post.fields.poster.fields.file.url,
         date: new Date(post.fields.dateCreated),
-
       }
     };
   });
 }
 const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-const {blogPost} = Astro.params;
-const {title, body, poster, date} = Astro.props;
+// const {blogPost} = Astro.params;
+const {title, body, poster, date, author} = Astro.props;
 // let dateparsed = new Date(date)
 
 const url = new URL(Astro.canonicalURL);
-console.log(title)
+// console.log(title)
 ---
 
 <StandardLayout slug={title} openGraph={{
@@ -54,10 +50,13 @@ console.log(title)
     url: url,
   },
 }} >
+<span class="headingbar">
+  <Button as="link" color="grey" href="/blog/" outline style="margin-left: auto;margin-right: 0;text-align: right;" text="&#x21e6; All Blog Posts" />
+</span>
   <article>
     <div class="infocontainer">
-      <h2>{title}</h2>
-      <p>{month[date.getMonth()]} {date.getDate()}, {date.getFullYear()}</p>
+      <h1>{title}</h1>
+      <p>{month[date.getMonth()]} {date.getDate()}, {date.getFullYear()}{author && <p> -- {author}</p>}</p>
       
       <div class="sharecontainer" style="">
         <a href={`http://twitter.com/share?url=ReviewMate%3A%20${title}%0A${url}`} target="__blank" rel="noopener" class="sharelink" style="background-color:#6FCCF5;" >
@@ -130,5 +129,11 @@ article {
     gap:1rem;
     margin-bottom: 2rem;
   }
-
+.headingbar {
+  text-align: right;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+}
 </style>

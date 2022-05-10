@@ -1,0 +1,18 @@
+.container {
+  min-height: 22rem;
+  position: relative;
+  background-color: transparent;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: hsl(var(--color1hsl));
+    box-shadow: 0 0 80px 80px hsl(var(--color1hsl));
+    border-radius: 100vw;
+  }
+}

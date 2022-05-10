@@ -10,18 +10,20 @@ const client = contentful.createClient({
 let blogPosts = await client.getEntries({
   content_type: 'blogPost'
   }).then(entries => {
-    // entries.length > 4 ? entries.items.splice(0, 4) : entries.items
     return entries.items
     }
 ).catch(err => {
   console.log(err)
 });
-const {size = "large"} = Astro.props;
-// console.log(blogPosts)
+const {size = "small", style} = Astro.props;
+
+if (blogPosts.length > 3 && size !== 'large'){
+  blogPosts = blogPosts.slice(0, 3)
+}
 ---
-<div class="wrapper">
-  <h3 style="width: 100%;">Blog Posts</h3><br/>
-  <div class="container">
+<div class:list={[ 'blogwrapper', {wrapperlarge: size === 'large'}]} id="blog" {style}>
+  {size === 'large' ? <h1 style="width: 100%;">Blog</h1> : <h3 style="width: 100%;">Blog Posts</h3>}
+  <div class="container"><br />
     {blogPosts.map(post => {
       return (
         <a href={`/blog/${post.fields.title.toLowerCase().replaceAll(' ', '-')}`}>
@@ -39,17 +41,7 @@ const {size = "large"} = Astro.props;
   </div>
 </div>
 <style lang="scss">
-.wrapper {
-  color: #666;
-  // background-color: hsl(var(--color1hsl));
-  background-color: #f2f2f2;
-  width: 114%;
-  margin-inline: -7%;
-  padding: 2% 5%;
-  & h2 {
-    // text-align: center;
-  }
-}
+
 .container {
   display: flex;
   flex-flow: row nowrap;
@@ -64,21 +56,22 @@ const {size = "large"} = Astro.props;
   & * {
     color: #666;
   }
-  & h3 {
-    text-align: center;
-    margin-top: 1.6rem;
-  }
+  // & > h3, & > h2 {
+  //   text-align: center;
+  //   margin-top: 1.6rem;
+  //   margin-bottom: 2rem;
+  // }
 }
 .image { 
-  // outline: 2px solid purple;
   display: block;
   overflow: hidden;
   width: 100%;
   flex: 2 1 12rem;
   position: relative;
   & :global(img) {
-    // outline: 3px solid red;
     height: 17rem!important;
+    // width: 17rem!important;
+    // height: 100%!important;
     display: block;
   }
  }
@@ -88,6 +81,7 @@ const {size = "large"} = Astro.props;
    position: relative;
    border-bottom-left-radius: 10px;
    border-bottom-right-radius: 10px;
+   min-height: 10rem;
    & > h3 {
      margin-top: 0;
    }
@@ -113,18 +107,5 @@ const {size = "large"} = Astro.props;
 //    background-color: hsl(var(--color1hsl));
 //    outline: 2px solid purple;
 //  }
-@media (min-width: 590px){
-  .container {
-    flex: row wrap;
-    & > div {
-      flex: 2 1 12rem;
-    }
-    & .image { 
-      // width: 100%;
-      // height: 18rem;
-      display: block;
 
-    }
-  }
-}
 </style>

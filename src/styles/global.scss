@@ -237,9 +237,10 @@ html.sr .load-hidden {
 	padding: 0.8rem 1.4rem;
 	position: relative;
 	font-size: 1.3rem;
+	display: inline-block;
 	border: none;
 	border-radius: 4px;
-	margin: 0.5rem;
+	margin: 0.5rem 0.5rem 1rem;
 	letter-spacing: 0.2px;
 	border-color: hsl(var(--color1hsl));
 	border-width: 0;
@@ -423,6 +424,54 @@ fill: hsl(var(--color1hsl));
 				flex: 1 1 17rem;
 			}
 		}
+	}
+}
+
+.blogwrapper {
+  color: #666;
+  // background-color: hsl(var(--color1hsl));
+  background-color: #f2f2f2;
+  width: 114%;
+  margin-inline: -7%;
+  padding: 2% 5%;
+	height: 100%;
+	display: block;
+	& > h3, & > h2 {
+    // text-align: center;
+    margin-top: 1.6rem;
+    margin-bottom: 2rem;
+  }
+	& .wrapperlarge {
+
+	}
+	.container {
+    flex: row wrap;
+		align-items: stretch;
+    align-content: stretch;
+		display:flex;
+		
+	}
+	@media (min-width: 590px){
+  .container {
+    flex-flow: row wrap;
+		align-items: stretch;
+    align-content: stretch;
+		display: flex;
+    & > div {
+      flex: 2 1 12rem;
+    }
+    & .image { 
+      // width: 100%;
+      // height: 18rem;
+      display: block;
+
+    }
+  }
+}
+	& > .container > a {
+		height: 100%;
+		display: block;
+		outline: 3px solid green;
 	}
 }
 

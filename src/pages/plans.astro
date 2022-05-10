@@ -2,6 +2,10 @@
 import StandardLayout from "../layouts/StandardLayout.astro"
 import Checkmark from "../components/Checkmark.astro"
 import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
+
+import RowEntry from "../components/RowEntry.astro"
+import featureList from '../featureList.js'
+// console.log(featureList)
 ---
 <StandardLayout>
 
@@ -35,6 +39,11 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
     </thead>
     <tbody>
       <tr><td colspan={ 4 } class="moduleheading"><h3>Auditing Modules</h3></td></tr>
+
+      <!-- <tr>
+        <RowEntry entry={featureList[0]} essentials pro enterprise client:idle/>
+      </tr> -->
+      
       <tr>
         <td><FeatureDropdown header="Inpatient" body="Many features extend every aspect of inpatient auditing" link="/features/inpatient/" client:idle /></td>
         <td><Checkmark bool /></td>
@@ -188,7 +197,7 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
         <td><Checkmark bool /></td>
       </tr>
       <tr>
-          <td><FeatureDropdown header="Record Tracker" body="View full narratives of records in one integrated place by using timelines within each record." link="/features/inpatient" client:idle /></td> 
+          <td><FeatureDropdown header="Record Tracker" body="View full narratives of records in one integrated place by using timelines within each record." link="/features/changetracker" client:idle /></td> 
         <td><Checkmark bool={false}/></td>
         <td><Checkmark bool={false} /></td>
         <td><Checkmark bool /></td>
@@ -304,12 +313,20 @@ import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
     z-index:300;
     border-right: 1px solid #ddd;
     width: 16rem;
+    
     &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4) {
       border-top: 1px solid #ddd;
       border-left: 1px solid #ddd;
       font-weight: normal;
       position: relative;
     z-index:200;
+    }
+    &:nth-of-type(2) {
+      border-left: 0px solid transparent;
+    background-color: #ffffff33;
+    }
+    &:nth-of-type(2), &:nth-of-type(3) {
+      border-right: 0px solid transparent;
     }
     &:nth-of-type(3) {
     background-color: hsla(var(--color2hsl), 4%);

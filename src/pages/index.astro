@@ -5,7 +5,8 @@ import HomepageLayout from '../layouts/HomepageLayout.astro'
 import FlexDiv from '../components/FlexDiv.astro'
 import Button from "../components/Button.astro"
 import SmallLink from "../components/SmallLink.astro"
-import {Picture} from 'astro-imagetools/components'
+// import {Picture} from 'astro-imagetools/components'
+import ConcernBlob from '../components/ConcernBlob.astro'
 ---
   
 <HomepageLayout>
@@ -25,10 +26,12 @@ import {Picture} from 'astro-imagetools/components'
 
 <main style="padding-top: 0;" id="main">
   <div style="width: 100%; display: flex;justify-content: center; flex-flow: row wrap;margin-bottom: 4rem;gap: 1rem">
-    <Button as="link" href="/" text="Contact Us"  outline style="z-index:30;" />
-    <Button as="link" href="/" text="Use-cases" outline style="z-index:30;"/>
-    <Button as="link" href="/plans/" text="Plans" outline style="z-index:30;"/>
+    <Button as="link" href="/resources/" text="View our Blog" outline style="z-index:30;"/>
+    <Button as="link" href="/contact/" text="Contact Us" style="z-index:30;" />
+    <Button as="link" href="/plans/" text="Tiers and Features" outline style="z-index:30;"/>
   </div>
+
+  <ConcernBlob />
   
 <FlexDiv variant={ 0 } class="load-hidden" justify="center" gap="2rem" >
   <lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="bodylottie scrollrevealright" loop autoplay  slot="image"></lottie-player>

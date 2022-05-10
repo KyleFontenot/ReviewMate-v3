@@ -1,5 +1,5 @@
 ---
-const arrofLinks = ["Plans", "Resources", "Use Cases", "Contact"]
+const arrofLinks = ["Plans", "Resources", "Contact"]
 ---
 <header>
   <a href="/"><img src="/reviewmate-mainlogo(white).svg" alt="ReviewMate logo" style="max-width:20rem;" /></a>
@@ -149,7 +149,7 @@ const arrofLinks = ["Plans", "Resources", "Use Cases", "Contact"]
       visibility: hidden;
     }
     nav {
-      position: absolute;
+      position: relative;
       top: 1rem;
       right: 0.5rem;
       // width: calc(100% - 28rem);
@@ -176,6 +176,21 @@ const arrofLinks = ["Plans", "Resources", "Use Cases", "Contact"]
         padding: 10px 15px;
         display: block;
         font-size: 1.05rem;
+        position: relative;
+        &::after {
+          content: '';
+          width: 100%;
+          height: 100%;
+          box-shadow: 0 0 16px 0 #33333333;
+          display: block;
+          position: aboslute;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+        }
+        &:hover {
+
+        }
       }
     }
   }
