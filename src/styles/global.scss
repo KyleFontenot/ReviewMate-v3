@@ -361,18 +361,7 @@ fill: hsl(var(--color1hsl));
     }
   }
 
-	.faqdiv {
-		// padding-bottom: 10px;
-		margin-top: 4rem;
-		margin-bottom: 5rem;
-		padding-bottom: 2.5rem;
-		width: 114%;
-		margin-inline: -7%;
-		background-color: hsl(var(--color1hsl));
-		& button {
-			display: block;
-		}
-	}
+	
 .fddheader {
   cursor: pointer;
   background-color: transparent;

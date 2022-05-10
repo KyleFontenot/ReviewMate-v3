@@ -1,37 +1,44 @@
 
 import {createSignal} from "solid-js"
 import styles from './ContactForm.module.scss'
+import { AsYouType } from "libphonenumber-js";
 
 export default function ContactForm (){
-  // const emailField = useRef();
-  // const errorRef = useRef();
-  let emailField;
+  let phoneFieldRef;
+  let emailFieldRef;
   let errorRef
   const [errorMessage, seterrorMessage] = createSignal('');
   // let validForm = true;
+	let phoneValue;
+	let ayt = new AsYouType("US");
 
+	let regEmailtest = new RegExp(
+		/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+	);
 
-function checkForm(e) {
-  e.preventDefault();
-  console.log('test');
-  let validForm = true;
-  try {
-    if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(emailField.current.value)){
-      emailField.current.classList.add('error');
-      emailField.current.focus();
-      throw "The email address doesn't seem right."
-    }
-  }
-  catch (err){
-    validForm = false;
-    seterrorMessage(err);
-    console.log(err);
-  }
-  if (validForm) {
-    emailField.current.classList.remove('error');
-    document.getElementsByTagName('form')[0].submit();
-  }
-}
+	function checkValidInput( event, type) {
+		if (type == "email"){
+			if (!regEmailtest.test(event.target.value)) {
+				emailFieldRef.classList.add(styles.error);
+				seterrorMessage("Please provide an email address");
+				// event.target.focus();
+			} else {
+			}
+		}
+		else if (type == "phone") {
+			if (ayt.isValid()) {
+				console.log("hoorary");
+				e.target.value = phoneValue;
+			} else {
+				ayt.reset();
+				event.target.value = "";
+				seterrorMessage("Is that phone number right?");
+				phoneFieldRef.classList.add(styles.warning);
+				
+			}
+		}
+	}
+
   return (
 		<div className="container">
 			<div className="row">
@@ -63,16 +70,33 @@ function checkForm(e) {
 						<label htmlFor="emailField">Email:</label>
 						<input
 							type="email"
-							ref={emailField}
+							ref={emailFieldRef}
 							name="Email"
 							placeholder="email@email.com"
 							id="emailField"
+							onFocusOut={(e) => {
+								checkValidInput(e, "email");
+							}}
 							classList={{ [styles.input]: true }}
 							required
 						/>
 						<label htmlFor="emailField">Phone (Optional):</label>
 						{/* Need a number formatter in solidjs */}
-						{/* <NumberFormat format="+1 (###) ###-####" mask="_" type="tel" name="Phone" placeholder="+1 (123) 867-5309" id="phoneField"/> */}
+						<input
+							type="tel"
+							name="Phone"
+							placeholder="+1 (123) 867-5309"
+							id="phoneField"
+							ref={phoneFieldRef}
+							onInput={(e) => {
+								ayt.reset();
+								phoneValue = ayt.input(e.target.value);
+							}}
+							onFocusOut={(e) => {
+								checkValidInput(e, "phone");
+							}}
+							classList={{ [styles.input]: true }}
+						/>
 
 						<label htmlFor="entityField">Entity:</label>
 						<input
@@ -82,6 +106,48 @@ function checkForm(e) {
 							id="entityField"
 							classList={{ [styles.input]: true }}
 						/>
+
+						<div class={styles.radiodiv}>
+							<div>
+								<input
+									type="checkbox"
+									id="auditor"
+									name="inquiry"
+									value="auditing"
+									class={styles.check}
+								/>
+								<label for="auditor">Auditing Interest</label>
+							</div>
+							<div>
+								<input
+									type="checkbox"
+									id="administration"
+									name="inquiry"
+									value="administration"
+								/>
+								<label for="administration">Administration Interest </label>
+							</div>
+
+							<div>
+								<input
+									type="checkbox"
+									id="generalquestions"
+									name="inquiry"
+									value="general"
+								/>
+								<label for="generalquestions">General Questions</label>
+							</div>
+
+							<div>
+								<input
+									type="checkbox"
+									id="currentuser"
+									name="inquiry"
+									value="currentuser"
+								/>
+								<label for="currentuser">Current user</label>
+							</div>
+						</div>
 
 						<label htmlFor="commentField">Comments:</label>
 						<input
@@ -97,11 +163,10 @@ function checkForm(e) {
 						</div>
 						<button
 							type="button"
-							onClick={checkForm}
-							style={{
-								margin: "1.75rem auto",
-								textAlign: "center",
+							onClick={() => {
+								// checkForm
 							}}
+							classList={{ [styles.button]: true }}
 						>
 							Send
 						</button>
