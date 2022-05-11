@@ -3,7 +3,8 @@ const featureList = {
 		{
 			title: "Inpatient",
 			//
-			short: "IPPS.  facility inpatient accounts betwen. Inpatient hostpital stay. (Inpatient prospective payment system. )",
+			short:
+				"Thorough IPPS auditing capability is one of our many core standards in ReviewMate's system.",
 			long: "",
 			link: "/features/inpatient/",
 			type: "auditingmodules",
@@ -13,7 +14,8 @@ const featureList = {
 		},
 		{
 			title: "Outpatient",
-			short: "Many features extend every aspect of outpatient auditing.  Outpaitent prospective payement system. Acute-care hospital outpatient payment system",
+			short:
+				"Outpatient prospective payment systems extend our core standard auditing features.",
 			long: "",
 			link: "/features/outpatient/",
 			type: "auditingmodules",
@@ -23,8 +25,7 @@ const featureList = {
 		},
 		{
 			title: "ProFee",
-			// !!!
-			short: "Physician Fee schedule / Physician office auditing. **Platform",
+			short: "Physician Fee schedule and/or Physician office auditing is among the other core auditing standards.",
 			long: "",
 			link: "/features/profee/",
 			type: "auditingmodules",
@@ -34,7 +35,7 @@ const featureList = {
 		},
 		{
 			title: "ASC",
-			short: "Free-standing ambulatory surgery center .   ** platform" ,
+			short: "Free-standing ambulatory surgery center is sa first-class citizen to the standard auditing capabilities.",
 			long: "",
 			link: "/features/ASC/",
 			type: "auditingmodules",
@@ -44,8 +45,8 @@ const featureList = {
 		},
 		{
 			title: "CMS-HCC (Risk Adjustment)",
-			// !!!
-			short: "CMS(centers for medical service) Hierirachal Condition Categories / Risk Adjustment. **platform",
+			short:
+				"CMS(centers for medical service), Hierirachal Condition Categories, Risk Adjustment. Belong to every plan tier.",
 			long: "",
 			link: "/features/ASC/",
 			type: "auditingmodules",
@@ -101,11 +102,11 @@ const featureList = {
 		},
 	],
 
-
 	integration: [
 		{
 			title: "Multifactor Authentication",
-			short:"Confirm fidelity with more complex sign-on options. Integration with Google Duo.",
+			short:
+				"Confirm fidelity with more complex sign-on options. Integration with Google Duo.",
 			long: "",
 			link: "/features/security/",
 			type: "EMR",
@@ -150,12 +151,12 @@ const featureList = {
 
 	analytics: [
 		{
-		title: "Staffing Analaytics",
-		short:
-			"Time tracking and progress transparency, against tasks, findings, accounts. Track goals and accountability with visual charts and dashboard plugins.",
-		long: "",
-		link: "/features/analytics/",
-		type: "additional",
+			title: "Staffing Analaytics",
+			short:
+				"Time tracking and progress transparency, against tasks, findings, accounts. Track goals and accountability with visual charts and dashboard plugins.",
+			long: "",
+			link: "/features/analytics/",
+			type: "additional",
 			essentials: false,
 			pro: true,
 			enterprise: true,
@@ -231,8 +232,7 @@ const featureList = {
 		},
 		{
 			title: "Automation Workflows",
-			short:
-				"Configurable automation tasks for reducing redundant tasks.",
+			short: "Configurable automation tasks for reducing redundant tasks.",
 			long: "",
 			link: "/features/automation/",
 			type: "additional",
@@ -295,7 +295,7 @@ const featureList = {
 			pro: false,
 			enterprise: true,
 		},
-	]
-}
+	],
+};
 
 export default featureList
