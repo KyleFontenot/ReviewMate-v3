@@ -3,9 +3,26 @@ import StandardLayout from "../layouts/StandardLayout.astro"
 import Checkmark from "../components/Checkmark.astro"
 import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
 
-import RowEntry from "../components/RowEntry.astro"
 import featureList from '../featureList.js'
-// console.log(featureList)
+const {auditing_modules, reporting, integration, analytics, addition_functionalities } = featureList;
+
+const capitalizeString = (str : string) => {
+  if (!str.includes('_')){
+    let strArr = str.split('')
+    strArr[0] = strArr[0].toUpperCase()
+    return strArr.join('')
+  }
+  else {
+    let wordArr = str.split('_').map(word => {
+      let strArr = word.split('')
+      strArr[0] = strArr[0].toUpperCase()
+      return strArr.join('') 
+    })
+    return wordArr.join(' ')
+  }
+}
+// console.log(Object.entries(featureList)[0][1][0].title);
+// console.log(Object.entries(featureList)[0][1])
 ---
 <StandardLayout>
 
@@ -13,208 +30,38 @@ import featureList from '../featureList.js'
   <h1 >Plans</h1>
   <p>All plans contain everything you may need for the core auditing tools such as importing data from your universe of data, pin-point findings, audit, and customizing reports. The Pro and Enterprise tiers are focused on auxiliary features such as automated montioring, etc.</p>
   <p>Every plan is simply a foundation for which you may add or remove features a-la-carte based on your needs.</p>
-</div>
-  
-    <!-- <div class="tableheaders">
-      <h2 style="font-size: 1.3rem; margin: 0;">Features</h2>
-      <h2>Essentials</h2> <h2>Pro</h2>
-      <h2>Enterprise</h2>
-    </div> -->
-
-<div style="overflow-x:scroll;height: 162%;">
+</div>  
+<div style="overflow-x:scroll;height: 110%;width: 100%;">
   <table id="wholetable" style="margin-bottom: 3rem;width: 100%;">
-  <!-- <colgroup>
-      <col style="max-width:4rem;" />
-      <col style="min-width: 10rem;width: 15%" />
-      <col style="min-width: 10rem;width: 15%;background-color: hsl(var(--color2hsl));" />
-      <col style="min-width: 10rem;width: 15%" />
-    </colgroup> -->
     <thead id="tablehead">
       <tr>
-        <th class="stickyhead"><h2 style="font-size: 1.3rem; margin: 0;">Features</h2></th>
+        <th class=""><h2 style="font-size: 1.3rem; margin: 0;">Features</h2></th>
         <th class="stickyhead"><h2>Essentials</h2></th>
         <th class="stickyhead"><h2>Pro</h2></th>
         <th class="stickyhead"><h2>Enterprise</h2></th>
       </tr>
     </thead>
     <tbody>
-      <tr><td colspan={ 4 } class="moduleheading"><h3>Auditing Modules</h3></td></tr>
 
-      <!-- <tr>
-        <RowEntry entry={featureList[0]} essentials pro enterprise client:idle/>
-      </tr> -->
+    {Object.entries(featureList).map(category => {
+      // console.log(category[1]);
+      return (
+      <tr><td colspan={ 4 } class="moduleheading"><h3>{capitalizeString(category[0])}</h3></td></tr>
+      {category[1].map(feature => {
+        return (
+          <tr>
+            <td><FeatureDropdown header={feature.title} body={feature.short} link={feature.link} client:idle /></td>
+            <td><Checkmark bool={feature.essentials} /></td>
+            <td><Checkmark bool={feature.pro}  /></td>
+            <td><Checkmark bool={feature.enterprise}  /></td>
+          </tr>
+        )
+      })}
       
-      <tr>
-        <td><FeatureDropdown header="Inpatient" body="Many features extend every aspect of inpatient auditing" link="/features/inpatient/" client:idle /></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="Outpatient" body="Many features extend every aspect of outpatient auditing" link="/features/outpatient/" client:idle /></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="Profee" body="Many features extend every aspect of Profee auditing" link="/features/profee/" client:idle /></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="ASC" body="Many features extend of ASC auditing capability." link="/features/inpatient" client:idle /></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="CMS-HCC" body="Hospital types for internal medical case billing" link="/features/inpatient" client:idle /></td>
-        <td><Checkmark bool={false} /></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      
-      <tr><td colspan={ 4 } class="moduleheading"><h3>Additional Functionality</h3></td></tr>
-      <tr>
-        <td><FeatureDropdown header="Accuracy Manager (Reporting)" body="View accuracy rates for different entities, groups, and dates by slicing result findings by many types of parameters." link="/features/accuracymanager/" client:idle /></td>
-        <td><Checkmark bool/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="Code Finder" body="Reference specific code instances historically system-wide. Expand when codes were used previously etc." link="/features/codefinder/" client:idle /></td>
-        <td><Checkmark bool/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="Document Manager" body="Share files, such as reports, between different levels of administration levels. HIPAA compliant, and supported by clear version controlling." link="/features/documentmanager/" client:idle /></td>
-        <td><Checkmark bool/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="Dashboards" body="Customizable dashboards for organizing the data you need. Underline pertinent workflows for auditors, administrators, or create client dashboards for consuming results." link="/features/dashboards/" client:idle /></td>
-        <td><Checkmark bool/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      
-      <tr><td colspan={ 4 } class="moduleheading"><h3>EMR Integration</h3></td></tr>
-      <tr>
-        <td><FeatureDropdown header="Multifactor Authentication" body="Confirm fidelity with more complex sign-on options. Integration with Google Duo." link="/features/security/" client:idle /></td>
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      
-      <tr>
-       <td><FeatureDropdown header="LDAP / Active Directory" body="Connect directly into enterprise LDAP system from within ReviewMate. Master passwords work within ReviewMate for seamless user authentication." link="/features/security/" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="VPN Integration" body="End-to-end VPN tunneling compatibility with SOC2 certified compliance." link="/features/security/" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="Integration Manager" body="Import spreadsheets, universes of data, or any other third-party source of data into a central resource. Manage, maintain, and navigate sources dynamically." link="/features/integrationmanager/" client:idle /></td>
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr><td colspan={ 4 } class="moduleheading"><h3>Additional Modules</h3></td></tr>
-      <tr>
-        <td><FeatureDropdown header="Audit The Auditor" body="Review completed audits and reviews by adding  layered documentation. Original data is referential and integrated." link="/features/audittheauditor/" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-  
-      <tr>
-        <td><FeatureDropdown header="Staffing Analytics" body="Time tracking and progress transparency, against tasks, findings, accounts. Track goals and accountability with visual charts and dashboard plugins." link="/features/analytics/" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="System Metrics" body="Utilize visual graphs and charts to focus on performance-based results. Discover prioritization concerns as they happen." link="/features/analytics/" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="Reporting" body="Customizable reports (including custom branding), along with many different templates to create consistent reporting effortlessly." client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="Time Tracking" body="Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable." link="/features/analytics/" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="User Training" body="Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules." link="/features/usertraining/" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      
-      <tr>
-        <td><FeatureDropdown header="ReviewMate Insights (Benchmarking)" body="Benchmark and compare performance against other ReviewMate users. Offers advice, community and insight within local scopes, global scopes, or 'millions of records within our community'. Exposes common coding errors that integrate with your Risk Manager." link="/features/reviewmateinsights/" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="Selector Tools" body="Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool." link="/features/selectortools/" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-        <td><FeatureDropdown header="Automation Workflows" body="Configurable automation tasks for reducing redundant tasks." link="/features/automation/" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-          <td><FeatureDropdown header="Task Workflows" body="Modularized chunks of work give auditors, reviewers, administrators, and even clients, direct accountability and concise communication." link="/features/taskworkflows" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool={false} /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-          <td><FeatureDropdown header="Risk Manager" body="Leverage artificial intelligence and historical findings to monitor and stay on-top of potential risks."  client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool={false} /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-          <td><FeatureDropdown header="Record Tracker" body="View full narratives of records in one integrated place by using timelines within each record." link="/features/changetracker" client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool={false} /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      
-      <tr>
-          <td><FeatureDropdown header=" Retrospective Physician Queries" body="Intuitively analyze and report coders' physician queries on compliance, appropriateness, and efficiency."  client:idle /></td> 
-        <td><Checkmark bool={false}/></td>
-        <td><Checkmark bool /></td>
-        <td><Checkmark bool /></td>
-      </tr>
-      <tr>
-          <td><FeatureDropdown header="CDI Communication" body="Integrate communication with any first-party or third-party CDI team." client:idle /></td> 
-        <td style="border-bottom-left-radius: 13px;border-bottom: 1px solid #ddd;"><Checkmark bool={false} /></td>
-        <td style="border-bottom: 1px solid #ddd;"><Checkmark bool={false}  /></td>
-        <td style="border-bottom-right-radius: 13px;border-bottom: 1px solid #ddd;" ><Checkmark bool /></td>
-      </tr>
+
+      )
+    } ) }
+
     </tbody>
   </table>
 </div>
@@ -243,8 +90,6 @@ import featureList from '../featureList.js'
       headtop = document.querySelector('#wholetable').offsetTop;
     }
 
-  //  headtop = "something";
-  // console.log(scrollTop)
 </script>
 
 </StandardLayout>
@@ -267,9 +112,7 @@ import featureList from '../featureList.js'
     position: relative;
     // table-layout: fixed;
   }
-  thead th {
 
-  }
   th, td {
     padding: 1rem;
     font-weight: bolder;
@@ -313,13 +156,14 @@ import featureList from '../featureList.js'
     z-index:300;
     border-right: 1px solid #ddd;
     width: 16rem;
+    // padding: 1rem;
     
     &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4) {
       border-top: 1px solid #ddd;
       border-left: 1px solid #ddd;
       font-weight: normal;
       position: relative;
-    z-index:200;
+      z-index:200;
     }
     &:nth-of-type(2) {
       border-left: 0px solid transparent;
@@ -335,9 +179,9 @@ import featureList from '../featureList.js'
       border-right: 1px solid #ddd;
       background-color: hsla(var(--color1hsl), 3%);
     }
-    td[colspan="4"]{
-      position: relative;
-    }
+    // td[colspan="4"]{
+    //   position: relative;
+    // }
   }
     .moduleheading {
       background-color: #f4f4f4;

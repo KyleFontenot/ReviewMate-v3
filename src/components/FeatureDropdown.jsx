@@ -12,6 +12,7 @@ function FeatureDropdown(props) {
 				tab-index="0"
 				aria-label="Dropdown toggle"
 				class="fddheader"
+				style={`${open() ? 'background-color: #ebebeb;' : ''}`}
 				onClick={() => {
 					hideDropdowns()
 					dropdownRef.classList.add('dropdown--open')
@@ -29,7 +30,7 @@ function FeatureDropdown(props) {
 				ref={dropdownRef}
 			>
 				<p>{props.body}</p>
-				{props.link ? (
+				{props.link && props.link !== null ? (
 					<a href={props.link}>
 						See More
 						<img
