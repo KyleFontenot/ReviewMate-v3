@@ -25,7 +25,8 @@ const featureList = {
 		},
 		{
 			title: "ProFee",
-			short: "Physician Fee schedule and/or Physician office auditing is among the other core auditing standards.",
+			short:
+				"Physician Fee schedule and/or Physician office auditing is among the other core auditing standards.",
 			long: "",
 			link: "/features/profee/",
 			type: "auditingmodules",
@@ -35,7 +36,8 @@ const featureList = {
 		},
 		{
 			title: "ASC",
-			short: "Free-standing ambulatory surgery center is sa first-class citizen to the standard auditing capabilities.",
+			short:
+				"Free-standing ambulatory surgery center is a first-class citizen to the standard auditing capabilities.",
 			long: "",
 			link: "/features/ASC/",
 			type: "auditingmodules",
@@ -57,7 +59,7 @@ const featureList = {
 	],
 	reporting: [
 		{
-			title: "Accuracy Manager (Reporting)",
+			title: "Accuracy Manager",
 			short:
 				"View accuracy rates for different entities, groups, dates, by slicing result findings set parameters to obtain different sets of accuracy rates",
 			long: "Customizable reports (including custom branding), along with many different templates to create consistent reporting effortlessly.",
@@ -72,6 +74,30 @@ const featureList = {
 			short:
 				"Reference specific code instances historically system-wide. Expand when codes were used previously etc.",
 			long: "",
+			link: "/features/codefinder/",
+			type: "functionalities",
+			essentials: true,
+			pro: true,
+			enterprise: true,
+		},
+
+		{
+			title: "Dashboards",
+			short:
+				"Customizable dashboards for organizing the data you need. Underline pertinent workflows for auditors, administrators, or create client dashboards for consuming results.",
+			long: "",
+			link: "/features/dashboards/",
+			type: "functionalities",
+			essentials: true,
+			pro: true,
+			enterprise: true,
+		},
+		//
+		{
+			title: "Reporting Templates",
+			short:
+				"Unlimited amount of customizable templates for your firm. From branding to typography, keep your reports consistent seamlessly.",
+			long: "Customizable reports (including custom branding), along with many different templates to create consistent reporting effortlessly.",
 			link: "/features/accuracymanager/",
 			type: "functionalities",
 			essentials: true,
@@ -79,22 +105,11 @@ const featureList = {
 			enterprise: true,
 		},
 		{
-			title: "Document Manager",
+			title: "Summary Reports",
 			short:
-				"Share files, such as reports, between different levels of administration levels. HIPAA compliant, and supported by clear version controlling.",
-			long: "",
-			link: "/features/documentmanager/",
-			type: "functionalities",
-			essentials: true,
-			pro: true,
-			enterprise: true,
-		},
-		{
-			title: "Dashboards",
-			short:
-				"Customizable dashboards for organizing the data you need. Underline pertinent workflows for auditors, administrators, or create client dashboards for consuming results.",
-			long: "",
-			link: "/features/dashboards/",
+				"Create your own summaries for delivering and portraying audit findings limitlessly.",
+			long: "Formal reports and summarizations for quickly. ",
+			link: "/features/accuracymanager/",
 			type: "functionalities",
 			essentials: true,
 			pro: true,
@@ -198,6 +213,17 @@ const featureList = {
 			enterprise: true,
 		},
 		{
+			title: "Document Manager",
+			short:
+				"Share files such as reports, imported spreadsheets, and training materials between different administration levels. HIPAA compliant, and supported by clear version controlling.",
+			long: "",
+			link: "/features/documentmanager/",
+			type: "functionalities",
+			essentials: true,
+			pro: true,
+			enterprise: true,
+		},
+		{
 			title: "User Training",
 			short:
 				"Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules.",
@@ -243,7 +269,7 @@ const featureList = {
 		{
 			title: "Task Workflows",
 			short:
-				"Modularized chunks of work give auditors, reviewers, administrators, and even clients, direct accountability and concise communication.",
+				"Modularized chunks of work give auditors, reviewers, administrators, and even clients, direct accountability and concise communication. **facilitate communicate inline with audits. ",
 			long: "",
 			link: "/features/usertraining/",
 			type: "additional",
