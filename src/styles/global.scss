@@ -279,7 +279,10 @@ html.sr .load-hidden {
 	.linkarrow {
 		width: 14px;
 		height: 14px;
+		margin-left: 10px;
 		color: hsl(var(--color1hsl));
+		fill: hsl(var(--color1hsl));
+		
 		& * {
 fill: hsl(var(--color1hsl));
 		}
@@ -291,7 +294,7 @@ fill: hsl(var(--color1hsl));
   top: 115%;
   left: 115%;
 	top: 0;
-  width: calc(90vw - 16rem);
+  width: calc(90vw - 20rem);
 	max-width: 40rem;
   visibility: hidden;
   transition: opacity 0.3s, transform 0.3s;

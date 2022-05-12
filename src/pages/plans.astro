@@ -2,6 +2,7 @@
 import StandardLayout from "../layouts/StandardLayout.astro"
 import Checkmark from "../components/Checkmark.astro"
 import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
+import FlexDiv from '../components/FlexDiv.astro'
 
 import featureList from '../featureList.js'
 const {auditing_modules, reporting, integration, analytics, addition_functionalities } = featureList;
@@ -28,9 +29,25 @@ const capitalizeString = (str : string) => {
 
 <div style="position: relative;">
   <h1 >Plans</h1>
-  <p>All plans contain everything you may need for the core auditing tools such as importing data from your universe of data, pin-point findings, audit, and customizing reports. The Pro and Enterprise tiers are focused on auxiliary features such as automated montioring, etc.</p>
-  <p>Every plan is simply a foundation for which you may add or remove features a-la-carte based on your needs.</p>
+  <p>All plans contain everything you may need for the core auditing tools such as importing data from your universe of data, pin-point findings, audit, and customizing reports. The Pro and Enterprise tiers are focused on auxiliary features such as automated montioring, client-facing dashboards, benchmarking, and more.</p>
+
+</div>
+<div class="planoverview">
+  <div>
+    <h3>Essentials</h3>
+    <p>Everything you need to revolutionize your auditing workflow.</p>
+  </div>
+  <div>
+    <h3>Pro</h3>
+    <p>Additional features pertaining to a few more administrative and monitoring roles.</p>
+  </div>
+  <div>
+    <h3>Enterprise</h3>
+    <p>Full-suite of features extending the power of every role in your firm.</p>
+  </div>
 </div>  
+<h4 style="max-width: 40rem;margin-inline: auto;text-align: center;color: #888;font-size: 1.4rem;margin-top: 4rem;">Please note! :</h4>
+<p style="max-width: 40rem;margin-inline: auto;padding: 0.2rem 3rem 2rem;background: linear-gradient(to bottom, transparent 20%, #cccccc29);border-radius: 10px;margin-bottom:2rem;color: #777;">None of the plans are restrictions, they are simply commonly grouped features. We manicure plans to your specific needs, so let us connect with you about your particular situation.</p>
 <div style="overflow-x:scroll;height: 110%;width: 100%;">
   <table id="wholetable" style="margin-bottom: 3rem;width: 100%;">
     <thead id="tablehead">
@@ -156,6 +173,7 @@ const capitalizeString = (str : string) => {
     z-index:300;
     border-right: 1px solid #ddd;
     width: 16rem;
+    min-width: 16rem;
     // padding: 1rem;
     
     &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4) {
@@ -190,9 +208,102 @@ const capitalizeString = (str : string) => {
       text-indent: 3rem;
       letter-spacing: 1px;
       font-weight: bold;
+      z-index: 200;
       & h3 {
         font-size: 1.3rem;
         margin-bottom: 0;
+      }
+    }
+
+    .planoverview {
+      display: flex;
+      width: 100%;
+      flex-flow: column;
+      max-width: 90%;
+      margin-inline: auto;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      margin-top: 4rem;
+      
+      & > div {  
+        width: 100%;
+        margin-inline: auto;
+        text-align: left;
+        border-radius: 10px;
+        & p, & h3 {
+        border-width: 1px;
+        border-style: solid;
+      }
+        & > h3 {
+          text-align: center;
+          display: block;
+          margin-inline: auto;
+          width: 10rem;
+          width: 100%;
+          padding: 18px;
+          margin-bottom: 0;
+          background-color:#dddddd54;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          border-bottom-color: transparent!important;
+        }
+        & > p {
+          background-color:#dddddd14;
+          text-align: left;
+          padding: 18px 8% 26px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          margin-bottom: 0;
+          
+        }
+        &:nth-of-type(1){
+          box-shadow: 0 1px 10px -4px #ccc;
+          & > h3 {
+            border-color: #ccc;
+          }
+          & > p {
+            border-color: #ccc;
+          }
+        }
+        &:nth-of-type(2){
+          box-shadow: 0 1px 10px -4px hsl(var(--color2hsl));
+          & > h3 {
+            background-color: hsla(var(--color2hsl), 20%);
+            border-color: hsl(var(--color2hsl));
+          }
+          & > p {
+            background-color: hsla(var(--color2hsl), 5%);
+            border-color: hsl(var(--color2hsl));
+          }
+        }
+        &:nth-of-type(3){
+          box-shadow: 0 1px 10px -4px hsla(var(--color1hsl), 60%);
+          border-radius: 10px;
+          & > h3 {
+            background-color: hsla(var(--color1hsl), 10%);
+            border-color: hsla(var(--color1hsl), 40%);
+          }
+          & > p {
+            background-color: hsla(var(--color1hsl), 5%);
+            border-color: hsla(var(--color1hsl), 40%);
+          }
+        }
+      }
+    }
+    @media (min-width: 690px){
+      .planoverview {
+        flex-flow: row nowrap;
+        align-items: center;
+        max-width: 100%;
+        & div {
+          display: block;
+          height: 16rem;
+          height: 100%;
+          & > p {
+            // height: 100%;
+            text-indent: 20px;
+          }
+        }
       }
     }
 </style>
