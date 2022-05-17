@@ -40,139 +40,126 @@ export default function ContactForm (){
 	}
 
   return (
-		<div className="container">
-			<div className="row">
-				<div className="column formColumn">
-					<h2>Contact Us</h2>
+	<div class={styles.container}>
+		<h2>Contact Us</h2>
+		<form
+			name="contact"
+			method="POST"
+			data-netlify="true"
+			data-netlify-honeypot="bot-field"
+			formNoValidate
+			noValidate
+			action="/submitted"
+			class={styles.form}
+		>
+			<input type="hidden" name="bot-field" id="formbotfield" />
+			<input type="hidden" name="form-name" value="contact" />
 
-					<form
-						name="contact"
-						method="POST"
-						data-netlify="true"
-						data-netlify-honeypot="bot-field"
-						formNoValidate
-						noValidate
-						action="/submitted"
-					>
-						<input type="hidden" name="bot-field" id="formbotfield" />
-						<input type="hidden" name="form-name" value="contact" />
+			<label htmlFor="name">Name:</label>
+			<input
+				type="text"
+				name="Name"
+				placeholder="Name"
+				id="nameField"
+				classList={{ [styles.input]: true }}
+				required
+			/>
 
-						<label htmlFor="name">Name:</label>
-						<input
-							type="text"
-							name="Name"
-							placeholder="Name"
-							id="nameField"
-							classList={{ [styles.input]: true }}
-							required
-						/>
+			<label htmlFor="emailField">Email:</label>
+			<input
+				type="email"
+				ref={emailFieldRef}
+				name="Email"
+				placeholder="email@email.com"
+				id="emailField"
+				onFocusOut={(e) => {
+					checkValidInput(e, "email");
+				}}
+				classList={{ [styles.input]: true }}
+				required
+			/>
+			<label htmlFor="emailField">Phone (Optional):</label>
+			{/* Need a number formatter in solidjs */}
+			<input
+				type="tel"
+				name="Phone"
+				placeholder="+1 (123) 867-5309"
+				id="phoneField"
+				ref={phoneFieldRef}
+				onInput={(e) => {
+					ayt.reset();
+					phoneValue = ayt.input(e.target.value);
+				}}
+				onFocusOut={(e) => {
+					checkValidInput(e, "phone");
+				}}
+				classList={{ [styles.input]: true }}
+			/>
 
-						<label htmlFor="emailField">Email:</label>
-						<input
-							type="email"
-							ref={emailFieldRef}
-							name="Email"
-							placeholder="email@email.com"
-							id="emailField"
-							onFocusOut={(e) => {
-								checkValidInput(e, "email");
-							}}
-							classList={{ [styles.input]: true }}
-							required
-						/>
-						<label htmlFor="emailField">Phone (Optional):</label>
-						{/* Need a number formatter in solidjs */}
-						<input
-							type="tel"
-							name="Phone"
-							placeholder="+1 (123) 867-5309"
-							id="phoneField"
-							ref={phoneFieldRef}
-							onInput={(e) => {
-								ayt.reset();
-								phoneValue = ayt.input(e.target.value);
-							}}
-							onFocusOut={(e) => {
-								checkValidInput(e, "phone");
-							}}
-							classList={{ [styles.input]: true }}
-						/>
+			<label htmlFor="entityField">Entity:</label>
+			<input
+				type="text"
+				name="Entity"
+				placeholder="Company"
+				id="entityField"
+				classList={{ [styles.input]: true }}
+			/>
 
-						<label htmlFor="entityField">Entity:</label>
-						<input
-							type="text"
-							name="Entity"
-							placeholder="Company"
-							id="entityField"
-							classList={{ [styles.input]: true }}
-						/>
-
-						<div class={styles.radiodiv}>
-							<div>
-								<input
-									type="checkbox"
-									id="auditor"
-									name="inquiry"
-									value="auditing"
-									class={styles.check}
-								/>
-								<label for="auditor">Auditing Interest</label>
-							</div>
-							<div>
-								<input
-									type="checkbox"
-									id="administration"
-									name="inquiry"
-									value="administration"
-								/>
-								<label for="administration">Administration Interest </label>
-							</div>
-
-							<div>
-								<input
-									type="checkbox"
-									id="generalquestions"
-									name="inquiry"
-									value="general"
-								/>
-								<label for="generalquestions">General Questions</label>
-							</div>
-
-							<div>
-								<input
-									type="checkbox"
-									id="currentuser"
-									name="inquiry"
-									value="currentuser"
-								/>
-								<label for="currentuser">Current user</label>
-							</div>
-						</div>
-
-						<label htmlFor="commentField">Comments:</label>
-						<input
-							type="textarea"
-							rows={2}
-							cols={10}
-							name="Info"
-							id="commentField"
-							classList={{ [styles.input]: true }}
-						/>
-						<div id="errorMessage" ref={errorRef}>
-							{errorMessage()}
-						</div>
-						<button
-							type="button"
-							onClick={() => {
-								// checkForm
-							}}
-							classList={{ [styles.button]: true }}
-						>
-							Send
-						</button>
-					</form>
+			<div class={styles.radiodiv}>
+				<div>
+					<input
+						type="checkbox"
+						id="auditor"
+						name="inquiry"
+						value="auditing"
+						class={styles.check}
+					/>
+					<label for="auditor">Auditing Interest</label>
 				</div>
+				<div>
+					<input
+						type="checkbox"
+						id="administration"
+						name="inquiry"
+						value="administration"
+					/>
+					<label for="administration">Administration Interest </label>
+				</div>
+
+				<div>
+					<input
+						type="checkbox"
+						id="generalquestions"
+						name="inquiry"
+						value="general"
+					/>
+					<label for="generalquestions">General Questions</label>
+				</div>
+
 			</div>
-		</div>
+
+			<label htmlFor="commentField">Comments:</label>
+			<input
+				type="textarea"
+				rows={2}
+				cols={10}
+				name="Info"
+				id="commentField"
+				classList={{ [styles.input]: true }}
+			/>
+			<div id="errorMessage" ref={errorRef}>
+				{errorMessage()}
+			</div>
+			<button
+				type="button"
+				onClick={() => {
+					// checkForm
+				}}
+				classList={{ [styles.button]: true }}
+			>
+				Send
+			</button>
+		</form>
+	</div>			
 	);
 }

@@ -22,14 +22,23 @@ import {Img} from 'astro-imagetools/components'
    place-items: center;
    overflow: hidden; 
    width: 114%;
-   min-height: 40rem;
+   // min-height: 40rem;
+   height: auto;
+   min-height:60rem;
    margin-inline:-7%;
    margin-top: -2rem;
    padding-top: 3rem;
+   padding: 5% 2%;
    & > :global(*) > :global(div)  {
       // outline: 2px solid purple;
-      position: absolute;
+      // position: relative;
       width: 100%;
+      & :global(img) {
+         
+      }
+   }
+   & > div :global(img){
+      height: 100%!important;
    }
 }
 

@@ -1,6 +1,7 @@
 .container {
   transition: background-color 0.2s;
-  max-width: 60rem;
+  max-width: 50rem;
+  // border-radius: 12px;
   margin-inline: auto;
   border-left: 3px solid hsl(var(--color1hsl));
   border-right: 3px solid hsl(var(--color1hsl));

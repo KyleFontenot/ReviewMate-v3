@@ -419,7 +419,6 @@ fill: hsl(var(--color1hsl));
 	color: white;
 	z-index:900;
 	padding: 8px 14px;
-	// transform:
 	transition: opacity 0.1s, transform 0.4s;
 	transform: translate3d(-10rem, 0, 0);
 	&:focus-visible, &:focus {

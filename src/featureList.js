@@ -106,7 +106,8 @@ const featureList = {
 		},
 		{
 			title: "Coder Report Cards",
-			short: "Easily digestible reports on accuracy with exact comment notes from all associated reviewers. Distributed coder login credentials allow for direct viewable transcripts for accoutability.",
+			short:
+				"Easily digestible reports on accuracy with exact comment notes from all associated reviewers. Distributed coder login credentials allow for direct viewable transcripts for accoutability.",
 			long: "",
 			link: "/features/reporting/",
 			type: "reporting",
@@ -138,7 +139,7 @@ const featureList = {
 		},
 	],
 
-	integration: [
+	data_integration: [
 		{
 			title: "Multifactor Authentication",
 			short:
@@ -245,9 +246,9 @@ const featureList = {
 			enterprise: true,
 		},
 		{
-			title: "User Training",
+			title: "Education Tracking",
 			short:
-				"Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules.",
+				"Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules. Create and assign quizzes",
 			long: "",
 			link: "/features/usertraining/",
 			type: "additional",
@@ -278,26 +279,36 @@ const featureList = {
 			enterprise: true,
 		},
 		{
-			title: "Automation Workflows",
-			short: "Configurable automation tasks for reducing redundant tasks.",
+			title: "Customizable Tasks",
+			short: "Customizable task responses allow all users to focus on pertinent issues. Field or view verbose responses based on user preferences.",
 			long: "",
-			link: "/features/automation/",
+			link: "/features/selectortools/",
 			type: "additional",
 			essentials: false,
 			pro: true,
 			enterprise: true,
 		},
-		{
-			title: "Task Workflows",
-			short:
-				"Modularized chunks of work give auditors, reviewers, administrators, and even clients, direct accountability and concise communication. **facilitate communicate inline with audits. ",
-			long: "",
-			link: "/features/usertraining/",
-			type: "additional",
-			essentials: false,
-			pro: false,
-			enterprise: true,
-		},
+		// {
+		// 	title: "Automation Workflows",
+		// 	short: "Configurable automation tasks for reducing redundant tasks.",
+		// 	long: "",
+		// 	link: "/features/automation/",
+		// 	type: "additional",
+		// 	essentials: false,
+		// 	pro: true,
+		// 	enterprise: true,
+		// },
+		// {
+		// 	title: "Task Workflows",
+		// 	short:
+		// 		"Modularized chunks of work give auditors, reviewers, administrators, and even clients, direct accountability and concise communication. **facilitate communicate inline with audits. ",
+		// 	long: "",
+		// 	link: "/features/usertraining/",
+		// 	type: "additional",
+		// 	essentials: false,
+		// 	pro: false,
+		// 	enterprise: true,
+		// },
 		{
 			title: "Risk Manager",
 			short:

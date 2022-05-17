@@ -1,9 +1,10 @@
 ---
 import {FAQ} from './FAQ.jsx'
+const {style} = Astro.props
 ---
 
-<div class="faqdiv"> 
- <h2 style="background-color: white;margin: 0 auto;padding:2rem 0 3rem; text-align: center;font-size: 2.6rem;">FAQs</h2>
+<div class="faqdiv" style="padding-left: 2rem; padding-right: 2rem;border-radius: 6px;"> 
+ <h2 style="background-color: white;margin: 0 auto;padding:2rem 0 3rem; text-align: center;font-size: 2.6rem;margin-inline: -2rem;">FAQs</h2>
     <FAQ header="What is ReviewMate?" body="ReviewMate provides your company with one centralized platform where audits take place and will replace any manual processes your auditing team currently uses. Shareholders in the audit process will be able to transparently view how audits are going, how far along the audit is in the process and run reports. According to time studies, ReviewMate saves about 30% of an auditors’ time by automating some of their processes." style="margin-top: 2rem;" client:idle />
 
     <FAQ header="How will ReviewMate benefit my company?" body="ReviewMate provides your company with one centralized platform where audits take place and will replace any manual processes your auditing team currently uses. Shareholders in the audit process will be able to transparently view how audits are going, how far along the audit is in the process and run reports. According to time studies, ReviewMate saves about 30% of an auditor’s time by automating some of their processes."   client:idle />
