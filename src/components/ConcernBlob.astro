@@ -1,7 +1,12 @@
 ---
 import styles from './ConcernBlob.module.scss'
+const {variant, tagline, description, answer, imagehref} = Astro.props
 ---
-
-<div class={styles.container}>
-  <p>test</p>
+<div class:list={[styles.container, {[styles.variant2] : variant === 2}]}>
+  <h4 class={styles.tagline} >{tagline}</h4>
+  <div class={styles.div}>
+    <p class={styles.description}><img src="/icons/exclamation.svg" class={styles.exclamation} role="presentation" aria-label="hidden" /> {description}</p>
+    <p class={styles.answer}>  {answer}</p>
+  </div>
+  <img class={styles.image} src="/favicon(withoutbg).svg" />
 </div>
