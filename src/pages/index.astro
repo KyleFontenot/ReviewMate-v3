@@ -6,10 +6,8 @@ import FlexDiv from '../components/FlexDiv.astro'
 import Button from "../components/Button.astro"
 import SmallLink from "../components/SmallLink.astro"
 // import {Picture} from 'astro-imagetools/components'
-import ConcernBlob from '../components/ConcernBlob.astro'
-
+import ConcernBlob from '../components/ConcernBlob.jsx'
 ---
-  
 <HomepageLayout>
     <div class="shapeintro" >
       <div class="shapeintrobg"></div>
@@ -20,9 +18,7 @@ import ConcernBlob from '../components/ConcernBlob.astro'
         <img src="/product-preview.svg" alt="screenshot of ReviewMate web-app" />
       </div>
       <!-- <lottie-player src="/RM-lady-lottie.json" background="transparent" speed="0.8" class="lottieintro" loop autoplay style="z-index: 12;"></lottie-player> -->
-      
     </div>
-
 
 <main style="padding-top: 0;" id="main">
   <div style="width: 100%; display: flex;justify-content: center; flex-flow: row wrap;margin-bottom: 4rem;gap: 1rem">
