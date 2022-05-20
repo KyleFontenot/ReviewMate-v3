@@ -1,15 +1,11 @@
 ---
 import HomepageLayout from '../layouts/HomepageLayout.astro'
-// import StyleOverview from '../components/StyleOverview.astro'
-// import Image from "astro-imagetools"
 import FlexDiv from '../components/FlexDiv.astro'
 import Button from "../components/Button.astro"
 import SmallLink from "../components/SmallLink.astro"
-// import {Picture} from 'astro-imagetools/components'
 import ConcernBlob from '../components/ConcernBlob.astro'
 
 ---
-  
 <HomepageLayout>
     <div class="shapeintro" >
       <div class="shapeintrobg"></div>
@@ -20,25 +16,38 @@ import ConcernBlob from '../components/ConcernBlob.astro'
         <img src="/product-preview.svg" alt="screenshot of ReviewMate web-app" />
       </div>
       <!-- <lottie-player src="/RM-lady-lottie.json" background="transparent" speed="0.8" class="lottieintro" loop autoplay style="z-index: 12;"></lottie-player> -->
-      
     </div>
 
-
 <main style="padding-top: 0;" id="main">
-  <div style="width: 100%; display: flex;justify-content: center; flex-flow: row wrap;margin-bottom: 4rem;gap: 1rem">
+  <div style="width: 100%; display: flex;justify-content: center; flex-flow: row wrap;margin-bottom: 4rem;gap: 1rem; align-items: center;">
     <Button as="link" href="/resources/" text="View our Blog" outline style="z-index:30;"/>
-    <Button as="link" href="/contact/" text="Contact Us" style="z-index:30;" />
+    <Button as="link" href="/contact/" text="Contact Us" style="z-index:30;" size="3" />
     <Button as="link" href="/plans/" text="Tiers and Features" outline style="z-index:30;"/>
   </div>
 
+  <FlexDiv gap="2rem">
+    <div>
+      <h3>Consolidate data from any source</h3>
+      <p>Connect ReviewMate right into your universe of data or import loose resources independently, for gathering samples.</p>
+    </div>
+    <div>
+      <h3>Audit and extrapolate findings seamlessly</h3>
+      <p>Integrated tools keep both the auditor closer to the data, and expands more accountable, transparent communication.</p>
+    </div>
+      <div>
+      <h3>Report and Monitor</h3>
+      <p>Customizable reports and integrated communication channels expedite results right to the end-user.</p>
+    </div>
+  </FlexDiv>
+
 <div class="rellaxwrapper">
-    <ConcernBlob tagline={`The "Spreadsheet Friction" problem`} description="Juggling between spreadsheets and different program resources is not only frustrating, but it wastes time, and can contribute to inconsistency." answer="ReviewMate consolidates all of your sources of information into one platform. Log in and take care of business.">
+    <ConcernBlob tagline={`The "Spreadsheet Friction" problem`} description="Juggling between spreadsheets and different program resources is not only frustrating, but it wastes time, and can contribute to inconsistency." answer="ReviewMate consolidates all of your sources of information into one platform. Log in and take care of business." client:load>
     </ConcernBlob>
-    <ConcernBlob variant={2} tagline={`The "Game of Telephone" problem`} description="While reviewers are providing insights and comments on findings, having a single document being constantly carbon copied blurs lines of accountability, and opens up gaps for miscommunication." answer="Synchronized communication allows for every single audit, finding, comment, and task to be completely transparent for all authorized parties. ">
+    <ConcernBlob variant={2} tagline={`The "Game of Telephone" problem`} description="While reviewers are providing insights and comments on findings, having a single document being constantly carbon copied blurs lines of accountability, and opens up gaps for miscommunication." answer="Synchronized communication allows for every single audit, finding, comment, and task to be completely transparent for all authorized parties. " client:load>
     </ConcernBlob>
-    <ConcernBlob tagline={`The "Email Traffic-Jam" problem`} description="Email threads become messy and burdensome, sometimes overlooking pertinent information in pages and pages of history." answer="ReviewMate brings modern central communication to auditing deliberation, by integrating direct references, explicit notes, and party transparency so that everyone is heard concisely.">
+    <ConcernBlob tagline={`The "Email Traffic-Jam" problem`} description="Email threads become messy and burdensome, sometimes overlooking pertinent information in pages and pages of history." answer="ReviewMate brings modern central communication to auditing deliberation, by integrating direct references, explicit notes, and party transparency so that everyone is heard concisely." client:idle>
     </ConcernBlob>
-    <ConcernBlob variant={2} tagline={`The "Opaque" problem`} description="Managers, and most importantly, clients, need to be able to keep track of active progression in auditing tasks to utilize a pro-active approach to the teams' work." answer="Tasks in ReviewMate are groups of assigned work which can be traced on factual, present data. ReviewMate even extends special transparency tools for clients and coders alike.">
+    <ConcernBlob variant={2} tagline={`The "Opaque" problem`} description="Managers, and most importantly, clients, need to be able to keep track of active progression in auditing tasks to utilize a pro-active approach to the teams' work." answer="Tasks in ReviewMate are groups of assigned work which can be traced on factual, present data. ReviewMate even extends special transparency tools for clients and coders alike." client:load>
     </ConcernBlob>
 </div>
   
@@ -46,7 +55,7 @@ import ConcernBlob from '../components/ConcernBlob.astro'
   <lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="bodylottie scrollrevealright" loop autoplay  slot="image"></lottie-player>
   <div slot="body" style="max-width: 25rem;">
     <h2>Integrate</h2>
-    <p> Connect universe data seamlessly and with ease. Imported data is available platform-wide, and all auditing changes remain transparent from the source.</p>
+    <p class="rellax" data-rellax-speed="-1"> Connect universe data seamlessly and with ease. Imported data is available platform-wide, and all auditing changes remain transparent from the source.</p>
     <FlexDiv style="margin-top: 2rem;gap:1.3rem;">
       <SmallLink href="#" text="Sample Selector"/>
       <SmallLink href="#" text="Something"/>
@@ -59,7 +68,7 @@ import ConcernBlob from '../components/ConcernBlob.astro'
   <lottie-player src="/lotties/RM-refine.json" background="transparent"  speed="0.8"  loop autoplay  slot="image" class="bodylottie scrollrevealright"></lottie-player>
   <div slot="body" style="max-width: 25rem;">
     <h2>Refine Searches</h2>
-    <p>Search parameters efficiently gather accounts for instantaneous results without switching between spreadsheet apps.</p>
+    <p class="rellax" data-rellax-speed="-1">Search parameters efficiently gather accounts for instantaneous results without switching between spreadsheet apps.</p>
     <FlexDiv style="margin-top: 2rem;gap:1.3rem;">
       <SmallLink href="#" text="Sample Selector"/>
       <SmallLink href="#" text="Something"/>
@@ -72,8 +81,8 @@ import ConcernBlob from '../components/ConcernBlob.astro'
   <lottie-player src="/lotties/RM-audit.json" background="transparent"  speed="0.8" loop autoplay slot="image" class="bodylottie scrollrevealleft"></lottie-player>
   <div slot="body" style="max-width: 25rem;">
     <h2>Audit</h2>
-    <p>Extrapolate findings with configurable workflows that hone your focus on relevant data.</p>
-    <FlexDiv style="margin-top: 2rem;gap:1.3rem;">
+    <p class="rellax" data-rellax-speed="-1">Extrapolate findings with configurable workflows that hone your focus on relevant data.</p>
+    <FlexDiv style="margin-top: 2rem;gap:1.3rem;" >
       <SmallLink href="#" text="Sample Selector"/>
       <SmallLink href="#" text="Something"/>
       <SmallLink href="#" text="Something"/>
@@ -84,8 +93,8 @@ import ConcernBlob from '../components/ConcernBlob.astro'
 <FlexDiv variant={ 1 } justify="center" gap='2rem'>
   <lottie-player src="/lotties/RM-report.json" background="transparent"  speed="0.8" loop autoplay slot="image" class="bodylottie scrollrevealright"></lottie-player>
   <div slot="body" style="max-width: 25rem;">
-    <h2>Report</h2>
-    <p>Relay findings in a seamless, adaptive system for any channel of communication. Customize every aspect of templates to encourage consistency across your institution.</p>
+    <h2 class="rellax2">Report</h2>
+    <p class="rellax1">Relay findings in a seamless, adaptive system for any channel of communication. Customize every aspect of templates to encourage consistency across your institution.</p>
     <FlexDiv style="margin-top: 2rem;gap:1.3rem;">
       <SmallLink href="#" text="Sample Selector"/>
       <SmallLink href="#" text="Something"/>
@@ -97,7 +106,7 @@ import ConcernBlob from '../components/ConcernBlob.astro'
   <lottie-player src="/lotties/RM-monitor.json" background="transparent"  speed="0.8" loop autoplay slot="image" class="bodylottie scrollrevealleft"></lottie-player>
   <div slot="body" style="max-width: 25rem;">
     <h2>Monitor</h2>
-    <p>Track findings in one centralized platform while augmenting your workflow with artificial intelligence to improve results.</p>
+    <p class="rellax" data-rellax-speed="-1">Track findings in one centralized platform while augmenting your workflow with artificial intelligence to improve results.</p>
     <FlexDiv style="margin-top: 2rem;gap:1.3rem;">
       <SmallLink href="#" text="Sample Selector"/>
       <SmallLink href="#" text="Something"/>
@@ -119,6 +128,7 @@ import ConcernBlob from '../components/ConcernBlob.astro'
 </FlexDiv>
 <h3>Much more than auditing</h3>
 </main>
+
 
 </HomepageLayout>
 

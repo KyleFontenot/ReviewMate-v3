@@ -29,6 +29,7 @@
 		"contentful": "^9.1.28",
 		"libphonenumber-js": "^1.9.53",
 		"quicklink": "^2.2.0",
+		"rellax": "^1.12.1",
 		"sass": "^1.51.0",
 		"vite-plugin-vsharp": "^1.1.4"
 	}

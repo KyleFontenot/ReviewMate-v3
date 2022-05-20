@@ -1,10 +1,18 @@
 ---
-  
-const {text, as, href, outline, color = "maroon", style} = Astro.props
+  interface ButtonProps {
+    text: string;
+    as: "link" | "input" | "link"; 
+    href?: string; 
+    outline?: boolean 
+    color?: "maroon" | "yellow";
+    style?: string; 
+    size?: number;
+  }
+const {text, as, href, outline, color = "maroon", style, size = 1} = Astro.props
 ---
 {as === "link" ? 
-  <a href={href} class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}]} {style}>{text}</a> : 
+  <a href={href} class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}, {[`button--${size}`] : size}]} {style}>{text}</a> : 
 as === "submit" || as === "input" ? 
-  <input type="submit" class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}]}  value={text} {style}/> : 
-<button class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}]}  {style}>{text}</button>
-  
+  <input type="submit" class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}, {[`button--${size}`] : size}]} value={text} {style}/> : 
+<button class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}, {[`button--${size}`] : size}]} {style}>{text}</button>
+  }

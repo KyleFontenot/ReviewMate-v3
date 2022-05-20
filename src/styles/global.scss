@@ -260,8 +260,23 @@ html.sr .load-hidden {
 	&:hover, &:focus-visible {
 		transform: translate3d(0, -3px, 0);
 	}
+	&.button--2:hover, &.button--2:focus-visible {
+		transform: translate3d(0, -3px, 0) scale(1.2);
+	}
+	&.button--3:hover, &.button--3:focus-visible {
+		transform: translate3d(0, -3px, 0) scale(1.4);
+	}
 	&:focus-visible {
 		outline: 2px solid #777;
+	}
+	&.button--2 {
+		transform: scale(1.2);
+		margin: 10px 10px 10px 1rem;
+	}
+	&.button--3 {
+		transform: scale(1.4);
+		margin: 15px 15px 15px 1rem;
+		border-radius: 6px;
 	}
  }
 

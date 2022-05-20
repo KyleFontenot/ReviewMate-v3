@@ -5,6 +5,7 @@
   import { SEO } from "astro-seo"
   import Quicklink from "../scripts/Quicklink.astro"
   import Rellax from "../scripts/Rellax.astro"
+  // import Rellax from "rellax"
   import ScrollReveal from "../scripts/ScrollReveal.astro"
 
   const {title } = metadata;
@@ -75,6 +76,10 @@
         hideMobileMenu()
       }
     })
+    </script>
+    <script hoisted src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js" ></script>
+    <script hoisted>
+      var rellax = new Rellax(".rellax", {wrapper : '.rellaxwrapper'});
     </script>
     <Rellax />
 </html>
