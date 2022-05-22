@@ -54,9 +54,9 @@ import ConcernBlob from '../components/ConcernBlob.astro'
 <FlexDiv variant={ 0 } class="load-hidden" justify="center" gap="2rem" >
   <lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="bodylottie scrollrevealright" loop autoplay  slot="image"></lottie-player>
   <div slot="body" style="max-width: 25rem;">
-    <h2>Integrate</h2>
-    <p class="rellax" data-rellax-speed="-1"> Connect universe data seamlessly and with ease. Imported data is available platform-wide, and all auditing changes remain transparent from the source.</p>
-    <FlexDiv style="margin-top: 2rem;gap:1.3rem;">
+    <h2 class="rellax2">Integrate</h2>
+    <p> Connect universe data seamlessly and with ease. Imported data is available platform-wide, and all auditing changes remain transparent from the source.</p>
+    <FlexDiv class="rellax1" style="margin-top: 2rem;gap:1.3rem;">
       <SmallLink href="#" text="Sample Selector"/>
       <SmallLink href="#" text="Something"/>
       <SmallLink href="#" text="Something"/>
@@ -139,6 +139,7 @@ import ConcernBlob from '../components/ConcernBlob.astro'
     margin-inline: auto;
     // min-height: 34rem;
     height: clamp(34rem, 87vh, 60rem);
+    display: block;
     max-width: 100rem;
     top: -2px;
     text-align: center;
@@ -228,11 +229,12 @@ import ConcernBlob from '../components/ConcernBlob.astro'
     //  height: 20rem;
      border-radius: 8px;
      margin-inline: auto;
-     position: relative;
-     left: 0;
+     position: absolute;
+     left: 50%;
      bottom: -8rem;
      overflow: hidden;
      box-shadow: 0 0 14px -3px #333;
+     transform: translate(-50%, 0);
      & > img {
        position: relative;
        width: 100%;
