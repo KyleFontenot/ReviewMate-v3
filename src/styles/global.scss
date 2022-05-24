@@ -156,32 +156,7 @@ blockquote {
 	}
 	font-size: 1.4rem;
 }
-.flexdiv {
-	display: flex;
-	flex-flow: column nowrap;
-	align-items: center;
-	// justify-content: space-around;
-	justify-content: center;
-	margin-bottom: 0;
-}
-.flexdiv1 > div {
-	order: 2;
-}
-.flexdiv1 > .bodylottie {
-	order: 1;
-}
 
-@media (min-width: 600px) {
-.flexdiv {
-		flex-flow: row nowrap;
-	}
-	.flexdiv1 > .bodylottie {
-	order: 3;
-}
-}
-// .flexdiv0 {
-
-// }
 .smalllink {
 	color: hsl(var(--color1hsl));
 	padding: 0.3rem 0.6rem;
@@ -218,6 +193,29 @@ html.sr .load-hidden {
 		// opacity: 0;
 }
 
+.flexdiv {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	// justify-content: space-around;
+	justify-content: center;
+	margin-bottom: 0;
+}
+.flexdiv1 > div {
+	order: 2;
+}
+.flexdiv1 > .bodylottie {
+	order: 1;
+}
+
+@media (min-width: 600px) {
+.flexdiv {
+		flex-flow: row nowrap;
+	}
+	.flexdiv1 > .bodylottie {
+	order: 3;
+  }
+}
 
  .button {
 	padding: 0.8rem 1.4rem;

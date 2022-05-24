@@ -4,7 +4,7 @@ import FlexDiv from '../components/FlexDiv.astro'
 import Button from "../components/Button.astro"
 import SmallLink from "../components/SmallLink.astro"
 import ConcernBlob from '../components/ConcernBlob.astro'
-
+// import Timeline from "../components/Timeline.astro"
 ---
 <HomepageLayout>
     <div class="shapeintro" >
@@ -25,17 +25,20 @@ import ConcernBlob from '../components/ConcernBlob.astro'
     <Button as="link" href="/plans/" text="Tiers and Features" outline style="z-index:30;"/>
   </div>
 
-  <FlexDiv gap="2rem">
-    <div>
-      <h3>Consolidate data from any source</h3>
+  <FlexDiv gap="2rem" className="producttraits">
+    <div >
+      <img src="/Integrate(kf).svg" alt="Icon of pulling in data from hospital database" style="width: 10rem;margin-inline: auto;display: block;margin-bottom: 2rem;" class="rellax1" />
+      <h3 style="letter-spacing:0;">Consolidate data from any source</h3>
       <p>Connect ReviewMate right into your universe of data or import loose resources independently, for gathering samples.</p>
     </div>
     <div>
-      <h3>Audit and extrapolate findings seamlessly</h3>
+      <img src="/Audit(kf).svg" alt="Icon of pulling in data from hospital database" style="width: 10rem;margin-inline: auto;display: block;margin-bottom: 2rem;" class="rellax1" />
+      <h3 style="letter-spacing:0;">Audit and extrapolate findings seamlessly</h3>
       <p>Integrated tools keep both the auditor closer to the data, and expands more accountable, transparent communication.</p>
     </div>
-      <div>
-      <h3>Report and Monitor</h3>
+    <div>
+      <img src="/Integrate(kf).svg" alt="Icon of pulling in data from hospital database" style="width: 10rem;margin-inline: auto;display: block;margin-bottom: 2rem;" class="rellax1" />
+      <h3 style="letter-spacing:0;">Report and Monitor</h3>
       <p>Customizable reports and integrated communication channels expedite results right to the end-user.</p>
     </div>
   </FlexDiv>
@@ -51,6 +54,8 @@ import ConcernBlob from '../components/ConcernBlob.astro'
     </ConcernBlob>
 </div>
   
+<!-- <Timeline></Timeline> -->
+
 <FlexDiv variant={ 0 } class="load-hidden" justify="center" gap="2rem" >
   <lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="bodylottie scrollrevealright" loop autoplay  slot="image"></lottie-player>
   <div slot="body" style="max-width: 25rem;">
@@ -255,4 +260,28 @@ import ConcernBlob from '../components/ConcernBlob.astro'
       //  outline: 2px solid purple;
      }
    }
+   .producttraits{
+    //  outline: 2px solid purple;
+    
+      flex-flow: row wrap;
+      justify-content: space-around;
+      margin-top: 6rem;
+      & > div {
+        flex: 1 1 25rem;
+        max-width: 25rem;
+        & > img{
+          filter: invert(22%) sepia(69%) saturate(1660%) hue-rotate(345deg) brightness(100%) contrast(86%);
+        }
+      }
+
+     & h3 {
+       letter-spacing: 0;
+     }
+   }
+  //  @media( min-width: 680px){
+  //    .producttraits{
+  //      flex-flow: row nowrap;
+    
+  //   }
+  //  }
 </style>

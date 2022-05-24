@@ -1,6 +1,7 @@
 ---
-const {variant, style, id, class, justify, gap } = Astro.props;
+const {variant, style, id, className, justify, gap } = Astro.props;
 let procStyle = new String();
+// console.log(className);
 if (style ) {
   procStyle = procStyle.concat(style);
 }
@@ -10,18 +11,18 @@ if (justify ) {
 if (gap ) {
   procStyle = procStyle.concat('gap:' + gap + ';');
 }
-// console.log(class);
+
 ---
 
-{variant === 0 ? <div class:list={["flexdiv", "flexdiv0"]} {id} style={procStyle}>
+{variant === 0 ? <div class:list={["flexdiv", "flexdiv0", className]} {id} style={procStyle}>
 <slot name="image"/>
 <slot name="body"/>
-</div> : variant === 1 ? <div class="flexdiv flexdiv1" {id} style={procStyle}>
+</div> : variant === 1 ? <div class:list={["flexdiv", "flexdiv0", className]} {id} style={procStyle}>
 <slot name="body"/>
 <slot name="image"/>
-</div> : variant === 2 ? <div class="flexdiv flexdiv2" {id} style={procStyle}>
+</div> : variant === 2 ? <div class:list={["flexdiv", "flexdiv0", className]} {id} style={procStyle}>
 <slot name="image"/>
 <slot name="body"/>
-</div>  : <div class="flexdiv" {id} style={procStyle}>
+</div>  : <div class:list={["flexdiv", "flexdiv0", className]} {id} style={procStyle}>
 <slot />
 </div> }
