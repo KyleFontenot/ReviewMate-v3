@@ -56,29 +56,74 @@ import Timeline from "../components/Timeline.astro"
   
 <Timeline>
   <div slot="1">
-   <h2>Integrate</h2> 
-   <p>Connect universe data seamlessly and with ease. Imported data is available platform-wide, and all auditing changes remain transparent from the source.</p>
+    <div class="timelinediv">
+      <div>
+        <h2>Integrate</h2> 
+        <p>Connect universe data seamlessly and with ease. Imported data is available platform-wide, and all auditing changes remain transparent from the source.</p>
+        <SmallLink href="#" text="Sample Selector"/>
+        <SmallLink href="#" text="Sample Selector"/>
+        <SmallLink href="#" text="Sample Selector"/>
+      </div>
+    <div><lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div>
+    </div>
   </div>
   <div slot="2">
-   <h2>Refine Searches</h2> 
-   <p>Search parameters efficiently gather accounts for instantaneous results without switching between spreadsheet apps.</p>
+    <div class="timelinediv">
+      <div>
+      <h2>Refine Searches</h2> 
+      <p>Search parameters efficiently gather accounts for instantaneous results without switching between spreadsheet apps.</p>
+      <SmallLink href="#" text="Sample Selector"/>
+      <SmallLink href="#" text="Sample Selector"/>
+      <SmallLink href="#" text="Sample Selector"/>
+    </div>
+    <div><lottie-player src="/lotties/RM-refine.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div>
+    </div>
   </div>
   <div slot="3">
+  <div class="timelinediv">
+      <div>
    <h2>Audit</h2> 
    <p>Extrapolate findings with configurable workflows that hone your focus on relevant data.</p>
+   <SmallLink href="#" text="Sample Selector"/>
+   <SmallLink href="#" text="Sample Selector"/>
+   <SmallLink href="#" text="Sample Selector"/>
+   </div>
+   <div><lottie-player src="/lotties/RM-audit.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div>
+    </div>
   </div>
   <div slot="4">
+  <div class="timelinediv">
+      <div>
    <h2>Report</h2> 
    <p>Relay findings in a seamless, adaptive system for any channel of communication. Customize every aspect of templates to encourage consistency across your institution.</p>
+   <SmallLink href="#" text="Sample Selector"/>
+   <SmallLink href="#" text="Sample Selector"/>
+   <SmallLink href="#" text="Sample Selector"/>
+   </div>
+   <div><lottie-player src="/lotties/RM-report.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div>
+    </div>
   </div>
   <div slot="5">
+  <div class="timelinediv">
+      <div>
    <h2>Monitor</h2> 
    <p>Track findings in one centralized platform while augmenting your workflow with artificial intelligence to improve results.</p>
+   <SmallLink href="#" text="Sample Selector"/>
+   <SmallLink href="#" text="Sample Selector"/>
+   <SmallLink href="#" text="Sample Selector"/>
+   </div>
+   <div><lottie-player src="/lotties/RM-monitor.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div>
+    </div>
   </div>
 </Timeline>
 
-<FlexDiv variant={ 0 } class="load-hidden" justify="center" gap="2rem" >
-  <lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="bodylottie scrollrevealright" loop autoplay  slot="image"></lottie-player>
+
+
+
+
+
+<!-- <FlexDiv variant={ 0 } class="load-hidden" justify="center" gap="2rem" >
+  <lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class=" scrollrevealright" loop autoplay  slot="image"></lottie-player>
   <div slot="body" style="max-width: 25rem;">
     <h2 class="rellax2">Integrate</h2>
     <p> Connect universe data seamlessly and with ease. Imported data is available platform-wide, and all auditing changes remain transparent from the source.</p>
@@ -91,7 +136,7 @@ import Timeline from "../components/Timeline.astro"
 </FlexDiv>
 
 <FlexDiv variant={ 1 }  justify="center" gap='2rem'>
-  <lottie-player src="/lotties/RM-refine.json" background="transparent"  speed="0.8"  loop autoplay  slot="image" class="bodylottie scrollrevealright"></lottie-player>
+  <lottie-player src="/lotties/RM-refine.json" background="transparent"  speed="0.8"  loop autoplay  slot="image" class=" scrollrevealright"></lottie-player>
   <div slot="body" style="max-width: 25rem;">
     <h2>Refine Searches</h2>
     <p class="rellax" data-rellax-speed="-1">Search parameters efficiently gather accounts for instantaneous results without switching between spreadsheet apps.</p>
@@ -104,7 +149,7 @@ import Timeline from "../components/Timeline.astro"
 </FlexDiv>
 
 <FlexDiv variant={ 0 } justify="center" gap='2rem'>
-  <lottie-player src="/lotties/RM-audit.json" background="transparent"  speed="0.8" loop autoplay slot="image" class="bodylottie scrollrevealleft"></lottie-player>
+  <lottie-player src="/lotties/RM-audit.json" background="transparent"  speed="0.8" loop autoplay slot="image" class=" scrollrevealleft"></lottie-player>
   <div slot="body" style="max-width: 25rem;">
     <h2>Audit</h2>
     <p class="rellax" data-rellax-speed="-1">Extrapolate findings with configurable workflows that hone your focus on relevant data.</p>
@@ -117,7 +162,7 @@ import Timeline from "../components/Timeline.astro"
 </FlexDiv>
 
 <FlexDiv variant={ 1 } justify="center" gap='2rem'>
-  <lottie-player src="/lotties/RM-report.json" background="transparent"  speed="0.8" loop autoplay slot="image" class="bodylottie scrollrevealright"></lottie-player>
+  <lottie-player src="/lotties/RM-report.json" background="transparent"  speed="0.8" loop autoplay slot="image" class=" scrollrevealright"></lottie-player>
   <div slot="body" style="max-width: 25rem;">
     <h2 class="rellax2">Report</h2>
     <p class="rellax1">Relay findings in a seamless, adaptive system for any channel of communication. Customize every aspect of templates to encourage consistency across your institution.</p>
@@ -129,7 +174,7 @@ import Timeline from "../components/Timeline.astro"
   </div>
 </FlexDiv>
 <FlexDiv variant={ 0 } justify="center" gap='2rem' >
-  <lottie-player src="/lotties/RM-monitor.json" background="transparent"  speed="0.8" loop autoplay slot="image" class="bodylottie scrollrevealleft"></lottie-player>
+  <lottie-player src="/lotties/RM-monitor.json" background="transparent"  speed="0.8" loop autoplay slot="image" class=" scrollrevealleft"></lottie-player>
   <div slot="body" style="max-width: 25rem;">
     <h2>Monitor</h2>
     <p class="rellax" data-rellax-speed="-1">Track findings in one centralized platform while augmenting your workflow with artificial intelligence to improve results.</p>
@@ -139,7 +184,7 @@ import Timeline from "../components/Timeline.astro"
       <SmallLink href="#" text="Something"/>
     </FlexDiv>
   </div>
-</FlexDiv>
+</FlexDiv> -->
 
 <FlexDiv id="usecases" justify="space-around" >
   <div>
@@ -305,4 +350,30 @@ import Timeline from "../components/Timeline.astro"
     
   //   }
   //  }
+  .timelinediv{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+    & div:nth-of-type(2){
+      // flex: 1 1 30rem;
+      width: 30rem;
+      height: 15rem;
+    }
+    .timelinelottie {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  @media (max-width: 790px){
+    .timelinediv div:nth-of-type(2){
+      // flex: 1 1 30rem;
+      width: 0;
+      // height: 15rem;
+    }
+    .timelinelottie {
+      display: none;
+    }
+  }
 </style>
