@@ -2,14 +2,16 @@
 import StandardLayout from '../layouts/StandardLayout.astro'
 import FlexDiv from '../components/FlexDiv.astro'
 // import { Img } from "astro-imagetools/components";
+import FAQSection from "../components/FAQSection.astro"
 import BlogStream from '../components/BlogStream.astro'
+import ArticleStream from '../components/ArticleStream.astro'
 ---
 <StandardLayout>
   <FlexDiv>
-    <h2>Resources</h2>
-    <p></p>
+    <h2 style="margin-bottom: 2rem;">Resources</h2>
   </FlexDiv>
 
-<BlogStream></BlogStream>
-
+<BlogStream/>
+<ArticleStream/>
+<FAQSection/>
 </StandardLayout>

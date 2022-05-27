@@ -2,7 +2,6 @@ const featureList = {
 	auditing_modules: [
 		{
 			title: "Inpatient",
-			//
 			short:
 				"Thorough IPPS auditing capability is one of our many core standards in ReviewMate's system.",
 			long: "",
@@ -125,7 +124,7 @@ const featureList = {
 			essentials: true,
 			pro: true,
 			enterprise: true,
-		},
+        },
 		{
 			title: "Exportability",
 			short:
@@ -254,6 +253,7 @@ const featureList = {
 			type: "additional",
 			essentials: false,
 			pro: true,
+			enterprise: true,
 			enterprise: true,
 		},
 		{

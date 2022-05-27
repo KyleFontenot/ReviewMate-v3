@@ -7,8 +7,8 @@ const client = contentful.createClient({
   accessToken: process.env.CONTENTFUL_CONTENT_DELIVERY || import.meta.env.CONTENTFUL_CONTENT_DELIVERY,
 });
 
-let blogPosts = await client.getEntries({
-  content_type: 'blogPost'
+let articles = await client.getEntries({
+  content_type: 'articlePost'
   }).then(entries => {
     return entries.items
     }
@@ -17,23 +17,29 @@ let blogPosts = await client.getEntries({
 });
 const {size = "small", style} = Astro.props;
 
-if (blogPosts.length > 3 && size !== 'large'){
-  blogPosts = blogPosts.slice(0, 3)
-}
+/* if (articles.length > 3 && size !== 'large'){ */
+/*   articles = articles.slice(0, 2) */
+/* } */
+const months = ['January', 'February',
+'March','April','May','June','July','August','September','October','November','Decembere',]
 ---
 <div class:list={[ 'blogwrapper', {wrapperlarge: size === 'large'}]} id="blog" {style}>
-  {size === 'large' ? <h1 style="width: 100%;">Blog</h1> : <h3 style="width: 100%;">Blog Posts</h3>}
+  {size === 'large' ? <h1 style="width: 100%;">Articles</h1> : <h3 style="width: 100%;">External Articles</h3>}
   <div class="container"><br />
-    {blogPosts.map(post => {
+
+    {articles.map(article => {
+      let formatDate =  new Date(article.fields.date)
       return (
-        <a href={`/blog/${post.fields.title.toLowerCase().replaceAll(' ', '-')}`} class="articlediv">
+        <a href={`${article.fields.url}`} class="articlediv">
           <div class="image">
-            <Img src={`https://${post.fields.poster.fields.file.url}`} alt="something" objectFit="cover" />
+             <Img src={`https:${article.fields.thumbnail.fields.file.url}`} alt={`${article.fields.thumbnail.fields.description}`} objectFit="contain" /> 
           </div>
           <div class="textbody">
-            <h4>{post.fields.title}</h4>
-            {post.fields.body.content[0].content[0].value.length > 80 ? <p class="limited">{post.fields.body.content[0].content[0].value.split('').splice(0, 80).join('').concat('...')}</p> : <p>{post.fields.body.content[0].content[0].value}</p>}
-            <span class="readmore">Read More</span>
+            <h4>{article.fields.articleTitle}</h4>
+            <p class="url">{article.fields.url}</p>
+            <p class="author">{article.fields.author}</p>
+            <p class="date">{months[formatDate.getMonth()]} {formatDate.getDate()},
+            {formatDate.getFullYear()}</p>
           </div>
         </a>
       )
@@ -41,7 +47,6 @@ if (blogPosts.length > 3 && size !== 'large'){
   </div>
 </div>
 <style lang="scss">
-
 .container {
   display: flex;
   flex-flow: row nowrap;
@@ -74,25 +79,6 @@ if (blogPosts.length > 3 && size !== 'large'){
     // height: 100%!important;
     display: block;
   }
- }
- .textbody {
-   background-color: white;
-   padding: 20px 30px;
-   position: relative;
-   border-bottom-left-radius: 10px;
-   border-bottom-right-radius: 10px;
-   min-height: 10rem;
-   & > h3 {
-     margin-top: 0;
-   }
- }
- .readmore {
-   position: absolute;
-   bottom: 0.75rem;
-   right: 1.25rem;
-   font-size: 0.95rem;
-   background-color: white;
-   color: hsl(var(--color1hsl));
  }
  .textbody {
    background-color: white;

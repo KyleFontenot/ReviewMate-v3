@@ -15,7 +15,6 @@ import Timeline from "../components/Timeline.astro"
       <div id="productintroscreen">
         <img src="/product-preview.svg" alt="screenshot of ReviewMate web-app" />
       </div>
-      <!-- <lottie-player src="/RM-lady-lottie.json" background="transparent" speed="0.8" class="lottieintro" loop autoplay style="z-index: 12;"></lottie-player> -->
     </div>
 
 <main style="padding-top: 0;" id="main">
@@ -199,8 +198,6 @@ import Timeline from "../components/Timeline.astro"
 </FlexDiv>
 <h3>Much more than auditing</h3>
 </main>
-
-
 </HomepageLayout>
 
 <style lang="scss">
@@ -208,7 +205,6 @@ import Timeline from "../components/Timeline.astro"
     color: white; 
     width: 100%;
     margin-inline: auto;
-    // min-height: 34rem;
     height: clamp(34rem, 87vh, 60rem);
     display: block;
     max-width: 100rem;
@@ -220,7 +216,6 @@ import Timeline from "../components/Timeline.astro"
     
     & > p {
       color: white;
-      // max-width: 70vh;
       padding-inline: 5%;
     }
     & > h2 {
@@ -229,12 +224,9 @@ import Timeline from "../components/Timeline.astro"
       line-height: 3rem;
       font-weight: bolder;
       text-align: center;
-      // min-width: 20rem;
       max-width: 70vw;
       position: relative;
       top: 2rem;
-      // padding-top: 2rem;
-      // outline: 2px solid purple;
       margin: 0 auto 2rem;
       display: block;
     }
@@ -243,7 +235,6 @@ import Timeline from "../components/Timeline.astro"
       font-size: 1.2rem;
       letter-spacing: 0;
       font-weight: bolder;
-
     }
   }
   .shapeintrobg {
@@ -254,29 +245,23 @@ import Timeline from "../components/Timeline.astro"
     position: absolute;
     width: 100%;
     height: 100%;
-    // content: '';
     top: -20px;
     transform: translate(0, -2px);
     z-index: -1;
-    // outline: 1px solid purple;
     &::after {
       content: '';
       height: 100%;
       width: 100%;
       background-color: hsl(var(--color1hsl));
-
-      // background: linear-gradient(to bottom, hsl(var(--color1hsl)) 80%, hsl(var(--color1h), 70%, 20%) );
       background: linear-gradient(to bottom, hsl(var(--color1hsl)) 40%, hsla(var(--color1h), 70%, 20%, 50%) );
       position: absolute;
       top: -30px;
       left: 0;
       z-index: -1;
-      // clip-path: polygon(0% 79.25%, 0% 0%, 100% 0%, 100% 79.25%, 50% 100%);
     }
   }
   .lottieintro{
     width: 100%;  
-    // height: 50rem;
     min-height: 30rem;
     text-align:center;
     display:block;
@@ -284,11 +269,9 @@ import Timeline from "../components/Timeline.astro"
     bottom:-14rem;
     position: absolute;
     transform: translate(-50%,0);
-    // margin-top: -20rem;
     z-index:40;
   }
   .bodylottie {
-    // max-height: 13rem;
     max-width: 25rem;
     height: 25rem;
     object-fit:contain;
@@ -323,12 +306,9 @@ import Timeline from "../components/Timeline.astro"
        display: block;
        background: linear-gradient(to bottom, transparent, white);
        background-color:  white;
-      //  outline: 2px solid purple;
      }
    }
    .producttraits{
-    //  outline: 2px solid purple;
-    
       flex-flow: row wrap;
       justify-content: space-around;
       margin-top: 6rem;
@@ -345,11 +325,6 @@ import Timeline from "../components/Timeline.astro"
      }
    }
   //  @media( min-width: 680px){
-  //    .producttraits{
-  //      flex-flow: row nowrap;
-    
-  //   }
-  //  }
   .timelinediv{
     display: flex;
     justify-content: space-between;
@@ -357,23 +332,23 @@ import Timeline from "../components/Timeline.astro"
     flex-wrap: nowrap;
     
     & div:nth-of-type(2){
-      // flex: 1 1 30rem;
-      width: 30rem;
+      flex: 1 1 30rem;
       height: 15rem;
     }
     .timelinelottie {
       height: 100%;
-      width: 100%;
+      margin: auto 0 auto auto;
+      max-width: 13rem;
+
     }
   }
   @media (max-width: 790px){
     .timelinediv div:nth-of-type(2){
-      // flex: 1 1 30rem;
       width: 0;
-      // height: 15rem;
     }
     .timelinelottie {
       display: none;
+
     }
   }
 </style>
