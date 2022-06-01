@@ -44,7 +44,7 @@ if (blogPosts.length > 3 && size !== 'large'){
 
 .container {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   gap: 1rem;
   & > a { 
     transition: outline 0.2s;
@@ -56,11 +56,6 @@ if (blogPosts.length > 3 && size !== 'large'){
   & * {
     color: #666;
   }
-  // & > h3, & > h2 {
-  //   text-align: center;
-  //   margin-top: 1.6rem;
-  //   margin-bottom: 2rem;
-  // }
 }
 .image { 
   display: block;
@@ -134,8 +129,9 @@ if (blogPosts.length > 3 && size !== 'large'){
   color: hsl(var(--color1hsl));
  }
  .articlediv{
-   flex: 1 1 40rem;
-   max-width: 40rem;
+   flex: 1 1 30rem;
+   max-width: 30rem;
+  //  min-width: 30rem;
  }
  .author {
   position: absolute;

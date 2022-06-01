@@ -49,8 +49,9 @@ const months = ['January', 'February',
 <style lang="scss">
 .container {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   gap: 1rem;
+  margin-bottom: 3rem;
   & > a { 
     transition: outline 0.2s;
     outline: 2px solid transparent;
@@ -61,11 +62,6 @@ const months = ['January', 'February',
   & * {
     color: #666;
   }
-  // & > h3, & > h2 {
-  //   text-align: center;
-  //   margin-top: 1.6rem;
-  //   margin-bottom: 2rem;
-  // }
 }
 .image { 
   display: block;
@@ -73,11 +69,13 @@ const months = ['January', 'February',
   width: 100%;
   flex: 2 1 12rem;
   position: relative;
+  overflow-y: hidden;
   & :global(img) {
-    height: 17rem!important;
-    // width: 17rem!important;
-    // height: 100%!important;
+    // height: 17rem!important;
     display: block;
+    object-fit: cover;
+    width: 100%;
+    max-height: 15rem;
   }
  }
  .textbody {
@@ -120,8 +118,8 @@ const months = ['January', 'February',
   color: hsl(var(--color1hsl));
  }
  .articlediv{
-   flex: 1 1 40rem;
-   max-width: 40rem;
+   flex: 1 1 30rem;
+   max-width: 30rem;
  }
  .author {
   position: absolute;
