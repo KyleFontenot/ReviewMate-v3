@@ -8,7 +8,6 @@ export default function ContactForm (){
   let emailFieldRef;
   let errorRef
   const [errorMessage, seterrorMessage] = createSignal('');
-  // let validForm = true;
 	let phoneValue;
 	let ayt = new AsYouType("US");
 
@@ -41,7 +40,7 @@ export default function ContactForm (){
 
   return (
 	<div class={styles.container}>
-		<h2>Contact Us</h2>
+    <h2><img src="/reviewmate-smallerlogo(regular).svg" class={styles.headerimg}/>Contact Us</h2>
 		<form
 			name="contact"
 			method="POST"

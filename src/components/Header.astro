@@ -193,10 +193,14 @@ const arrofLinks = ["Plans", "Resources", "Contact"]
           border-radius: 5px;
           background: linear-gradient(to bottom left, transparent, #ffffff82);
           transform: translate3d(-5rem, 5rem, 0);
-          transition: transform 0.15s;
+          transition: transform 0.15s, outline 0.4s;
+          outline: 1px solid transparent;
+        }
+        &:hover {
+          outline: 1px solid white;
         }
         &:hover::after {
-          transform: translate3d(0, 0, 0);
+          /* transform: translate3d(0, 0, 0); */
         }
       }
     }

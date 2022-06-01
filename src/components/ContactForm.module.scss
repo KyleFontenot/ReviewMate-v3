@@ -13,8 +13,12 @@
   border: 2px solid #eee;
   & > h2 {
     text-align: center;
-
   }
+}
+.headerimg {
+  height: 70px;
+  width: 70px;
+  padding-top: 2rem;
 }
 #formBlockBackground {
 	background-color:red;
@@ -35,6 +39,7 @@
 		display:block;
 		width:100%;
 		max-width:30rem;
+    font-size: 1.1rem;
 	}
 	& input[type='text'], input[type='tel'], input[type='email'], input[type='textarea'] {
 		display:block;
