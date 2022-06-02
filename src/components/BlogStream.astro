@@ -19,16 +19,13 @@ let blogPosts = await client.getEntries({
 ).catch(err => {
   console.log(err)
 });
-// if (blogPosts.length > 3 && size !== 'large'){
-//   blogPosts = blogPosts.slice(0, 3)
-// }
 ---
-<div class:list={[ 'blogwrapper', {wrapperlarge: size === 'large'}]} id="blog" {style}>
+<div class='blogwrapper' id="blog" {style}>
   {size === 'large' ? <h1 style="width: 100%;">Blog</h1> : <h3 style="width: 100%;">Blog Posts</h3>}
   <div class="container"><br />
     {blogPosts.map(post => {
       return (
-        <a href={`/blog/${post.fields.title.toLowerCase().replaceAll(' ', '-')}`} class="articlediv">
+        <a href={`/blog/${post.fields.title.toLowerCase().replaceAll(' ', '-')}`} >
           <div class="image">
             <Img src={`https://${post.fields.poster.fields.file.url}`} alt="something" objectFit="cover" />
           </div>
@@ -44,16 +41,78 @@ let blogPosts = await client.getEntries({
   </div>
 </div>
 <style lang="scss">
+.blogwrapper {
+  color: #666;
+  background-color: #f2f2f2;
+  width: 114%;
+  margin-inline: -7%;
+  padding: 2% 5%;
+	height: 100%;
+	display: block;
+	& > h3, & > h2 {
+    // text-align: center;
+    margin-top: 1.6rem;
+    margin-bottom: 2rem;
+  }
+	.container {
+    flex: row wrap;
+		align-items: stretch;
+    align-content: stretch;
+		display:flex;
+	}
+	@media (min-width: 590px){
+  .container {
+    flex-flow: row wrap;
+		align-items: stretch;
+    align-content: stretch;
+		display: flex;
+    & > div {
+      flex: 2 1 12rem;
+    }
+    & .image { 
+      // width: 100%;
+      // height: 18rem;
+      display: block;
+
+    }
+  }
+}
+}
 .container {
   display: flex;
   flex-flow: row wrap;
   gap: 1rem;
+  margin-bottom: 3rem;
   & > a { 
-    transition: outline 0.2s;
-    outline: 2px solid transparent;
+    border: 2px solid transparent;
+    display: block;
+    height: 100%;
+    flex: 2 1 20rem;
+    position: relative;
+    transition: transform 0.3s, border 0.3s;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: block;
+      top: 0;
+      left: 0;
+      // background-color: #66666666;
+      z-index: 1;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px -2px #333333ff;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
    }
   & > a:hover, & > a:focus-visible, {
-    outline: 2px solid hsl(var(--color1hsl));
+    border: 2px solid hsl(var(--color1hsl));
+    transform: translate3d(0, -3px, 0);
+    &::after {
+      opacity: 1;
+      transform: translate3d(0, -3px, 0);
+    }
   }
   & * {
     color: #666;
@@ -130,11 +189,7 @@ let blogPosts = await client.getEntries({
   background-color: white;
   color: hsl(var(--color1hsl));
  }
- .articlediv{
-   flex: 1 1 30rem;
-   max-width: 30rem;
-  //  min-width: 30rem;
- }
+
  .author {
   position: absolute;
   bottom: 0.55rem;

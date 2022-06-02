@@ -4,26 +4,13 @@
 $font1: "Inter";
 $font2: "Hind Madurai";
 
-// First color by each HSL value
-// Maroon
 $color1h: 8;
 $color1s: 62%;
 $color1l: 40%;
 
-// Second color by each HSL value
-// Yellow
 $color2h: 42;
 $color2s: 92%;
 $color2l: 71%;
-// #ffb914
-// sHade: 
-// #cf9f2d
-
-
-
-// Secret Navy: 
-// #285176
-
 $color1hsl: $color1h, $color1s, $color1l;
 $color2hsl: $color2h, $color2s, $color2l;
 
@@ -109,7 +96,7 @@ body {
 main {
 	background-color: white;
 	max-width: 100%;
-	padding: 2rem 6% 3%;
+	padding: 2rem 6% 3rem;
 	line-height: 1.3rem;
 	color: #555;
 	margin: 0 auto;
@@ -371,55 +358,6 @@ fill: hsl(var(--color1hsl));
   // &:hover {
   //   background-color: #fcfcfc;
   // }
-}
-
-
-.blogwrapper {
-  color: #666;
-  // background-color: hsl(var(--color1hsl));
-  background-color: #f2f2f2;
-  width: 114%;
-  margin-inline: -7%;
-  padding: 2% 5%;
-	height: 100%;
-	display: block;
-	& > h3, & > h2 {
-    // text-align: center;
-    margin-top: 1.6rem;
-    margin-bottom: 2rem;
-  }
-	& .wrapperlarge {
-
-	}
-	.container {
-    flex: row wrap;
-		align-items: stretch;
-    align-content: stretch;
-		display:flex;
-		
-	}
-	@media (min-width: 590px){
-  .container {
-    flex-flow: row wrap;
-		align-items: stretch;
-    align-content: stretch;
-		display: flex;
-    & > div {
-      flex: 2 1 12rem;
-    }
-    & .image { 
-      // width: 100%;
-      // height: 18rem;
-      display: block;
-
-    }
-  }
-}
-	& > .container > a {
-		height: 100%;
-		display: block;
-		outline: 3px solid green;
-	}
 }
 
 #skiptocontent { 

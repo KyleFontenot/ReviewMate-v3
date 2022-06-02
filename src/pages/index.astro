@@ -118,7 +118,7 @@ import BlogStream from "../components/BlogStream.astro"
 <BlogStream />
 
 
-<FlexDiv padding="4rem 5%" className="calltoaction">
+<FlexDiv  className="calltoaction">
   <h3>Let us show you how you can start saving hours a week</h3>
   <div >
     <Button color="white" as="link" href="/plans/" text="Explore our plans and features" size="2" style="z-index:30;margin-top: 2rem;"/>
@@ -296,12 +296,14 @@ import BlogStream from "../components/BlogStream.astro"
     }
   }
   .calltoaction{
-    margin-top:4rem;
-    margin-bottom:2rem;
+    // margin-top:4rem;
+    // margin-bottom:2rem;
+    padding: 6rem 5%;
     background-color: hsl(var(--color1hsl));  
     flex-direction: column;
     width: 114%;
     margin-inline: -7%;
+    margin-bottom: -3rem;
     & h3 {
       color: white;
       letter-spacing: 0;

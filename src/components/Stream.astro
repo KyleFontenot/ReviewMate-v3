@@ -1,32 +1,11 @@
 ---
 import { Img } from "astro-imagetools/components";
-import contentful from 'contentful'
 
-const client = contentful.createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || import.meta.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_CONTENT_DELIVERY || import.meta.env.CONTENTFUL_CONTENT_DELIVERY,
-});
-
-let articles = await client.getEntries({
-  content_type: 'articlePost'
-  }).then(entries => {
-    return entries.items
-    }
-).catch(err => {
-  console.log(err)
-});
-const {size = "small", style} = Astro.props;
-
-const months = ['January', 'February',
-'March','April','May','June','July','August','September','October','November','Decembere',]
 ---
 <div class='blogwrapper' id="blog" {style}>
-  {size === 'large' ? <h1 style="width: 100%;">Articles</h1> : <h3 style="width: 100%;">External Articles</h3>}
-  <div class="container"><br />
+  <slot name="title" /><br/>
+  <slot name="mappedarticles" />
 
-    {articles.map(article => {
-      let formatDate =  new Date(article.fields.date)
-      return (
         <a href={`${article.fields.url}`} >
           <div class="image">
              <Img src={`https:${article.fields.thumbnail.fields.file.url}`} alt={`${article.fields.thumbnail.fields.description}`} objectFit="contain" /> 
@@ -39,8 +18,6 @@ const months = ['January', 'February',
             {formatDate.getFullYear()}</p>
           </div>
         </a>
-      )
-    })}
   </div>
 </div>
 <style lang="scss">
