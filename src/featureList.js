@@ -238,7 +238,7 @@ const featureList = {
 			short:
 				"Share files such as reports, imported spreadsheets, and training materials between different administration levels. HIPAA compliant, and supported by clear version controlling.",
 			long: "",
-			link: "/features/documentmanager/",
+			link: "/features/integration/",
 			type: "functionalities",
 			essentials: true,
 			pro: true,

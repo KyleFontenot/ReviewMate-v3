@@ -5,13 +5,14 @@ import Button from "../components/Button.astro"
 import SmallLink from "../components/SmallLink.astro"
 import ConcernBlob from '../components/ConcernBlob.astro'
 import Timeline from "../components/Timeline.astro"
+import BlogStream from "../components/BlogStream.astro"
 ---
 <HomepageLayout>
     <div class="shapeintro" >
       <div class="shapeintrobg"></div>
       <h2>Elevate your medical code auditing workflow</h2>
-      <p style="">Streamline auditing, integrate your data seamlessly, and consolidate communication in one platform.</p>
-      <h3>Created by auditors, for auditors.</h3>
+      <p style="font-size: 105%;">Streamline auditing, integrate your data seamlessly, and consolidate communication in one platform.</p>
+      <h3 style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
       <div id="productintroscreen">
         <img src="/product-preview.svg" alt="screenshot of ReviewMate web-app" />
       </div>
@@ -21,7 +22,7 @@ import Timeline from "../components/Timeline.astro"
   <div class="introCTA" >
     <Button as="link" href="/resources/" text="View our Blog" outline style="z-index:30;"/>
     <Button as="link" href="/contact/" text="Contact Us" style="z-index:30;" size="3" />
-    <Button as="link" href="/plans/" text="Tiers and Features" outline style="z-index:30;"/>
+    <Button as="link" href="/plans/" text="Plans and Features" outline style="z-index:30;"/>
   </div>
 
   <FlexDiv gap="2rem" className="producttraits">
@@ -59,9 +60,8 @@ import Timeline from "../components/Timeline.astro"
       <div>
         <h2>Integrate</h2> 
         <p>Connect universe data seamlessly and with ease. Imported data is available platform-wide, and all auditing changes remain transparent from the source.</p>
-        <SmallLink href="#" text="Sample Selector"/>
-        <SmallLink href="#" text="Sample Selector"/>
-        <SmallLink href="#" text="Sample Selector"/>
+        <SmallLink href="/features/integration/" text="Integration Manager"/>
+        <SmallLink href="/features/integration/" text="Document Manager"/>
       </div>
     <div><lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div>
     </div>
@@ -71,9 +71,8 @@ import Timeline from "../components/Timeline.astro"
       <div>
       <h2>Refine Searches</h2> 
       <p>Search parameters efficiently gather accounts for instantaneous results without switching between spreadsheet apps.</p>
-      <SmallLink href="#" text="Sample Selector"/>
-      <SmallLink href="#" text="Sample Selector"/>
-      <SmallLink href="#" text="Sample Selector"/>
+      <SmallLink href="/features/selectortools/" text="Sample Selector"/>
+      <SmallLink href="#" text="Risk Manager"/>
     </div>
     <div><lottie-player src="/lotties/RM-refine.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div>
     </div>
@@ -116,6 +115,9 @@ import Timeline from "../components/Timeline.astro"
   </div>
 </Timeline>
 
+<BlogStream />
+
+
 <FlexDiv padding="4rem 5%" className="calltoaction">
   <h3>Let us show you how you can start saving hours a week</h3>
   <div >
@@ -146,8 +148,6 @@ import Timeline from "../components/Timeline.astro"
       padding-inline: 5%;
     }
     & > h2 {
-      text-align: justify;
-      text-justify:inter-word;
       line-height: 3rem;
       font-weight: bolder;
       text-align: center;
@@ -180,7 +180,7 @@ import Timeline from "../components/Timeline.astro"
       height: 100%;
       width: 100%;
       background-color: hsl(var(--color1hsl));
-      background: linear-gradient(to bottom, hsl(var(--color1hsl)) 40%, hsla(var(--color1h), 70%, 20%, 50%) );
+      background: linear-gradient(172deg, hsl(var(--color1hsl)) 35%, hsla(var(--color1h), 70%, 20%, 50%) );
       position: absolute;
       top: -30px;
       left: 0;

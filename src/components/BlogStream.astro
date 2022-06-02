@@ -7,19 +7,21 @@ const client = contentful.createClient({
   accessToken: process.env.CONTENTFUL_CONTENT_DELIVERY || import.meta.env.CONTENTFUL_CONTENT_DELIVERY,
 });
 
+const {size = "small", style} = Astro.props;
+
 let blogPosts = await client.getEntries({
-  content_type: 'blogPost'
+  content_type: 'blogPost',
+  order: '-sys.createdAt',
+  limit: size === "large" ? 20 : 3
   }).then(entries => {
     return entries.items
     }
 ).catch(err => {
   console.log(err)
 });
-const {size = "small", style} = Astro.props;
-
-if (blogPosts.length > 3 && size !== 'large'){
-  blogPosts = blogPosts.slice(0, 3)
-}
+// if (blogPosts.length > 3 && size !== 'large'){
+//   blogPosts = blogPosts.slice(0, 3)
+// }
 ---
 <div class:list={[ 'blogwrapper', {wrapperlarge: size === 'large'}]} id="blog" {style}>
   {size === 'large' ? <h1 style="width: 100%;">Blog</h1> : <h3 style="width: 100%;">Blog Posts</h3>}
@@ -33,6 +35,7 @@ if (blogPosts.length > 3 && size !== 'large'){
           <div class="textbody">
             <h4>{post.fields.title}</h4>
             {post.fields.body.content[0].content[0].value.length > 80 ? <p class="limited">{post.fields.body.content[0].content[0].value.split('').splice(0, 80).join('').concat('...')}</p> : <p>{post.fields.body.content[0].content[0].value}</p>}
+            <p class="author">{post.fields.author}</p>
             <span class="readmore">Read More</span>
           </div>
         </a>
@@ -41,7 +44,6 @@ if (blogPosts.length > 3 && size !== 'large'){
   </div>
 </div>
 <style lang="scss">
-
 .container {
   display: flex;
   flex-flow: row wrap;

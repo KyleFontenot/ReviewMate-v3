@@ -91,21 +91,6 @@ contrast(88%); margin-right: 1rem; padding-top: 10px; margin-left:10px;"/></h4>
   let headtop = document.querySelector('#wholetable').offsetTop;
   let scrollTop = window.scrollY;
 
-  // window.addEventListener('scroll', () => {
-  //   scrollTop = window.scrollY;
-  //   console.log(document.querySelectorAll('th'))
-  //   if (scrollTop >= headtop) {
-  //     document.querySelectorAll('th').forEach(each => {
-  //       each.style.position = "fixed"
-  //       each.style.top = "0"
-  //     })
-  //     // document.querySelectorAll('th').style.top = "0"
-  //   }
-  //   else {
-  //     document.querySelectorAll('th').style.position = "relative"
-  //     document.querySelectorAll('th').style.top = "0"
-  //   }
-  // })
 
   window.onresize = () => {
       headtop = document.querySelector('#wholetable').offsetTop;
@@ -124,14 +109,10 @@ contrast(88%); margin-right: 1rem; padding-top: 10px; margin-left:10px;"/></h4>
   }
 }
   table {
-    // width: 104%;
     font-size: 1.05rem;
     border-collapse: separate; 
-    // margin-inline: -2%;
-    // margin-bottom: 3rem;
     overflow-x:scroll;
     position: relative;
-    // table-layout: fixed;
   }
 
   th, td {
