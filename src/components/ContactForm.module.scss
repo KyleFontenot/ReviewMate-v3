@@ -53,18 +53,18 @@
 	display:block;
 	position:relative;
 }
-.error {
-	outline:5px solid blue;
-}
-#errorMessage {
+
+.errorMessage {
 	display:block;
 	margin: 1.5rem auto 0;
+	max-width: 30rem;
 	text-align:center;
-	color:red;
+	// color:red;
 	font-size:1.2rem;
 }
 input[type=email]:focus, input[type=number]:focus, input[type=password]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=url]:focus, textarea:focus, select:focus {
 	outline:inherit;
+	outline: 3px solid transparent;
 	&.error {
 		outline:5px solid blue;
 	}

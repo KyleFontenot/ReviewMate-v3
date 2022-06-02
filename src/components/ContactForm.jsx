@@ -7,7 +7,7 @@ export default function ContactForm (){
   let phoneFieldRef;
   let emailFieldRef;
   let errorRef
-  const [errorMessage, seterrorMessage] = createSignal('');
+  const [errorMessage, seterrorMessage] = createSignal(' ');
 	let phoneValue;
 	let ayt = new AsYouType("US");
 
@@ -146,7 +146,7 @@ export default function ContactForm (){
 				id="commentField"
 				classList={{ [styles.input]: true }}
 			/>
-			<div id="errorMessage" ref={errorRef}>
+			<div id="errorMessage" class={styles.errorMessage} ref={errorRef}>
 				{errorMessage()}
 			</div>
 			<button

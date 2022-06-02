@@ -124,7 +124,7 @@ const featureList = {
 			essentials: true,
 			pro: true,
 			enterprise: true,
-        },
+		},
 		{
 			title: "Exportability",
 			short:
@@ -138,7 +138,7 @@ const featureList = {
 		},
 	],
 
-	data_integration: [
+	security: [
 		{
 			title: "Multifactor Authentication",
 			short:
@@ -167,17 +167,6 @@ const featureList = {
 				"End-to-end VPN tunneling compatibility with SOC2 certified compliance.",
 			long: "",
 			link: "/features/security/",
-			type: "EMR",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-		},
-		{
-			title: "Integration Manager",
-			short:
-				"Import spreadsheets, universes of data, or any other third-party source of data into a central resource. Manage, maintain, and navigate sources dynamically.",
-			long: "",
-			link: "/features/integrationmanager/",
 			type: "EMR",
 			essentials: false,
 			pro: true,
@@ -222,6 +211,17 @@ const featureList = {
 	],
 
 	additional_functionalities: [
+		{
+			title: "Integration Manager",
+			short:
+				"Import spreadsheets, universes of data, or any other third-party source of data into a central resource. Manage, maintain, and navigate sources dynamically.",
+			long: "",
+			link: "/features/integrationmanager/",
+			type: "EMR",
+			essentials: false,
+			pro: true,
+			enterprise: true,
+		},
 		{
 			title: "Audit The Auditor",
 			short:
@@ -280,7 +280,8 @@ const featureList = {
 		},
 		{
 			title: "Customizable Tasks",
-			short: "Customizable task responses allow all users to focus on pertinent issues. Field or view verbose responses based on user preferences.",
+			short:
+				"Customizable task responses allow all users to focus on pertinent issues. Field or view verbose responses based on user preferences.",
 			long: "",
 			link: "/features/selectortools/",
 			type: "additional",
