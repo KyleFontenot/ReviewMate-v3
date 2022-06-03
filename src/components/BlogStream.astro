@@ -1,13 +1,14 @@
 ---
-import { Img } from "astro-imagetools/components";
+import Stream from "./Stream.astro"
+import Article from "./Article.astro"
 import contentful from 'contentful'
+
+const {size = "small"} = Astro.props;
 
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID || import.meta.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_CONTENT_DELIVERY || import.meta.env.CONTENTFUL_CONTENT_DELIVERY,
 });
-
-const {size = "small", style} = Astro.props;
 
 let blogPosts = await client.getEntries({
   content_type: 'blogPost',
@@ -19,180 +20,26 @@ let blogPosts = await client.getEntries({
 ).catch(err => {
   console.log(err)
 });
+
+const months = ['January', 'February',
+'March','April','May','June','July','August','September','October','November','December',]
+const descriptionCutoff = 90
 ---
-<div class='blogwrapper' id="blog" {style}>
-  {size === 'large' ? <h1 style="width: 100%;">Blog</h1> : <h3 style="width: 100%;">Blog Posts</h3>}
-  <div class="container"><br />
-    {blogPosts.map(post => {
-      return (
-        <a href={`/blog/${post.fields.title.toLowerCase().replaceAll(' ', '-')}`} >
-          <div class="image">
-            <Img src={`https://${post.fields.poster.fields.file.url}`} alt="something" objectFit="cover" />
-          </div>
-          <div class="textbody">
-            <h4>{post.fields.title}</h4>
-            {post.fields.body.content[0].content[0].value.length > 80 ? <p class="limited">{post.fields.body.content[0].content[0].value.split('').splice(0, 80).join('').concat('...')}</p> : <p>{post.fields.body.content[0].content[0].value}</p>}
-            <p class="author">{post.fields.author}</p>
-            <span class="readmore">Read More</span>
-          </div>
-        </a>
-      )
-    })}
-  </div>
-</div>
-<style lang="scss">
-.blogwrapper {
-  color: #666;
-  background-color: #f2f2f2;
-  width: 114%;
-  margin-inline: -7%;
-  padding: 2% 5%;
-	height: 100%;
-	display: block;
-	& > h3, & > h2 {
-    // text-align: center;
-    margin-top: 1.6rem;
-    margin-bottom: 2rem;
+<Stream title="Blog Articles" size={ size } >
+  {blogPosts.map(post => {
+    const blogBody = post.fields.body.content[0].content[0].value;
+    let formatDate =  new Date(post.fields.dateCreated)
+    return (
+      <Article 
+        href={`/blog/${post.fields.title.toLowerCase().replaceAll(' ', '-')}`} 
+        imgSrc={post.fields.poster.fields.file.url} 
+        imgAlt="something" 
+        articleTitle={post.fields.title}
+        description={blogBody.length > descriptionCutoff ? blogBody.split('').splice(0, descriptionCutoff).join('').concat('...') : blogBody}
+        author={post.fields.author} 
+        date={`${months[formatDate.getMonth()]} ${formatDate.getDate()}, ${formatDate.getFullYear()}`}
+      />
+    )
   }
-	.container {
-    flex: row wrap;
-		align-items: stretch;
-    align-content: stretch;
-		display:flex;
-	}
-	@media (min-width: 590px){
-  .container {
-    flex-flow: row wrap;
-		align-items: stretch;
-    align-content: stretch;
-		display: flex;
-    & > div {
-      flex: 2 1 12rem;
-    }
-    & .image { 
-      // width: 100%;
-      // height: 18rem;
-      display: block;
-
-    }
-  }
-}
-}
-.container {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 1rem;
-  margin-bottom: 3rem;
-  & > a { 
-    border: 2px solid transparent;
-    display: block;
-    height: 100%;
-    flex: 2 1 20rem;
-    position: relative;
-    transition: transform 0.3s, border 0.3s;
-    &::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      display: block;
-      top: 0;
-      left: 0;
-      // background-color: #66666666;
-      z-index: 1;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px -2px #333333ff;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-   }
-  & > a:hover, & > a:focus-visible, {
-    border: 2px solid hsl(var(--color1hsl));
-    transform: translate3d(0, -3px, 0);
-    &::after {
-      opacity: 1;
-      transform: translate3d(0, -3px, 0);
-    }
-  }
-  & * {
-    color: #666;
-  }
-}
-.image { 
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  flex: 2 1 12rem;
-  position: relative;
-  & :global(img) {
-    height: 17rem!important;
-    // width: 17rem!important;
-    // height: 100%!important;
-    display: block;
-  }
- }
- .textbody {
-   background-color: white;
-   padding: 20px 30px;
-   position: relative;
-   border-bottom-left-radius: 10px;
-   border-bottom-right-radius: 10px;
-   min-height: 10rem;
-   & > h3 {
-     margin-top: 0;
-   }
- }
- .readmore {
-   position: absolute;
-   bottom: 0.75rem;
-   right: 1.25rem;
-   font-size: 0.95rem;
-   background-color: white;
-   color: hsl(var(--color1hsl));
- }
- .textbody {
-   background-color: white;
-   padding: 20px 30px;
-   padding-bottom: 4rem;
-   position: relative;
-   border-bottom-left-radius: 10px;
-   border-bottom-right-radius: 10px;
-   min-height: 10rem;
-   height: 100%;
-   & > h3 {
-     margin-top: 0;
-   }
-   & > h4 {
-
-     font-size: 1.3rem;
-   }
-   & p {
-     text-indent: 0;
-   }
-   & .url {
-     font-size: 0.8rem;
-     line-height: 1rem;
-     color: #999;
-   }
-   & .date {
-     position: absolute;
-     right: 1.5rem;
-     bottom: 0.5rem;
-     font-size: 0.9rem;
-   }
- }
- .readmore {
-  position: absolute;
-  bottom: 0.75rem;
-  right: 1.25rem;
-  font-size: 0.95rem;
-  background-color: white;
-  color: hsl(var(--color1hsl));
- }
-
- .author {
-  position: absolute;
-  bottom: 0.55rem;
-  left: 1.5rem;
- }
-</style>
+)}
+</Stream>
