@@ -1,0 +1,17 @@
+---
+import FeatureCategory from "../../components/FeatureCategory.astro"
+import StandardLayout from "../../layouts/StandardLayout.astro"
+import Feature from "../../components/Feature.astro"
+import featureList from "../../featureList.js"
+const reportingModules = featureList.reporting;
+---
+<StandardLayout>
+  <FeatureCategory title="Reporting Features">
+  {reportingModules.map(module => {
+    return (
+      <Feature size="small" title={module.title} href={module.link}><p>{module.short}</p></Feature>
+    )
+  })}
+  
+  </FeatureCategory>
+</StandardLayout>

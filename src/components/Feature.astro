@@ -1,4 +1,99 @@
 ---
+import { Img } from "astro-imagetools/components"
+const {size = "large", title, href, imgSrc, imgAlt} = Astro.props
 
 ---
 
+{size === "large" ? 
+<section>
+  <h1 class="title">{title}</h1>
+  <div class="largediv">
+    <div class="paragraph"><slot /></div>
+    <div class="featureimage"><Img src={imgSrc} alt={imgAlt} /></div>
+    <slot name="bulletpoints" />
+  </div>
+</section> :
+
+<div class="div">
+  <a href={href} class="title"><h3>{title}</h3></a>
+  <slot />
+  <slot name="bulletpoints" />
+  <a href={href} class="seemore">See more <img src="/icons/diagonal-arrow.svg" class="seemorearrow"/></a>
+</div>
+}
+
+<style lang="scss">
+  .largediv {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    max-width: 100%;
+    & :global(ul) {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 1.5rem;
+      & :global(li) {
+        flex: 1.5 1 15rem;
+        margin-bottom: 0.2rem;
+        line-height: 1.8rem;
+        font-size: 1.05rem;
+      }
+    } 
+  }
+  .featureimage {
+    height: 100%;
+    max-height: 30rem;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 3rem;
+  }
+  @media (min-width: 820px){
+    .largediv {
+      // gap: 1rem;
+      flex-flow: row wrap;
+    }
+    .featureimage {
+      flex: 1 1 50%;
+      width: 50%;
+      // margin-right: -6%;
+      // margin-top: -8.4rem;
+      // height: calc(100% + 16.4rem);
+      
+    }
+    .paragraph {
+      flex: 1 1 50%;
+      width: 50%;
+      padding: 1.3rem 2.3rem 1.3rem 1.3rem;
+    }
+  }
+
+  div.div {
+    padding-inline: 2rem;
+  }
+  .seemore {
+    color: hsl(var(--color1hsl));
+    display: inline-block;
+    margin-left: auto;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border-bottom: 1px solid hsl(var(--color1hsl));
+    }
+  }
+  .featureimage {
+
+  }
+  .seemorearrow {
+    width: 10px;
+    height: 10px;
+    filter: invert(24%) sepia(27%) saturate(4898%) hue-rotate(348deg) brightness(91%) contrast(83%);
+  }
+  a.title{
+    margin-bottom: 1rem;
+    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid hsl(var(--color1hsl));
+    display: block;
+    &:hover {
+    }
+  }
+</style>
