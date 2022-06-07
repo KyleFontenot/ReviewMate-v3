@@ -1,18 +1,20 @@
 ---
 import { Img } from "astro-imagetools/components"
-const {size = "large", title, href, imgSrc, imgAlt} = Astro.props
+import CommonTraits from "./CommonTraits.astro"
+const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
 
 ---
 
 {size === "large" ? 
-<section>
+<article>
   <h1 class="title">{title}</h1>
   <div class="largediv">
     <div class="paragraph"><slot /></div>
     <div class="featureimage"><Img src={imgSrc} alt={imgAlt} /></div>
+    {commontraits ? <CommonTraits></CommonTraits> : ''}
     <slot name="bulletpoints" />
   </div>
-</section> :
+</article> :
 
 <div class="div">
   <a href={href} class="title"><h3>{title}</h3></a>
@@ -35,7 +37,7 @@ const {size = "large", title, href, imgSrc, imgAlt} = Astro.props
       & :global(li) {
         flex: 1.5 1 15rem;
         margin-bottom: 0.2rem;
-        line-height: 1.8rem;
+        line-height: 1.3rem;
         font-size: 1.05rem;
       }
     } 
@@ -56,10 +58,6 @@ const {size = "large", title, href, imgSrc, imgAlt} = Astro.props
     .featureimage {
       flex: 1 1 50%;
       width: 50%;
-      // margin-right: -6%;
-      // margin-top: -8.4rem;
-      // height: calc(100% + 16.4rem);
-      
     }
     .paragraph {
       flex: 1 1 50%;

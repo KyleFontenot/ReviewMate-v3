@@ -2,14 +2,17 @@
 import FeatureLayout from '../../layouts/FeatureLayout.astro'
 import Feature from '../../components/Feature.astro'
 import CallToAction from '../../components/CallToAction.astro'
+import Tidbit from '../../components/Tidbit.astro'
 import featureList from "../../featureList.js"
 const inpatient = featureList.auditing_modules.find(obj => obj.title === "Inpatient")
 ---
 <FeatureLayout>
-<Feature title="Inpatient" imgSrc="/src/images/rodnae.jpg" imgAlt="Doctors meeting together"> 
-  {}
-    <p>{inpatient?.long}</p>
-    <p>The IPPS (Facility Inpatient) auditing module of ReviewMate provides accuracy rates for all elements including:</p>
+<Feature title="Inpatient" imgSrc="/src/images/rodnae.jpg" imgAlt="Doctors meeting together" commontraits> 
+  {inpatient?.long.map(paragraph => {
+    return (
+      <p>{paragraph}</p>
+    )
+  })}
   <ul slot="bulletpoints">
   {inpatient?.bullets?.map(point => {
     return (
@@ -18,6 +21,13 @@ const inpatient = featureList.auditing_modules.find(obj => obj.title === "Inpati
   }
   )}
   </ul>
+<Tidbit>
+  <h3>IPPS auditing elements directly usable for accuracy rates</h3>
+  <ul>
+    <li>something</li>
+  </ul>
+</Tidbit>
+  
     
 </Feature>
 <CallToAction></CallToAction>

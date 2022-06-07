@@ -1,33 +1,24 @@
 ---
-import StandardLayout from '../../layouts/StandardLayout.astro'
-import { Img } from 'astro-imagetools/components'
+import FeatureLayout from '../../layouts/FeatureLayout.astro'
+import Feature from '../../components/Feature.astro'
 import CallToAction from '../../components/CallToAction.astro'
+import featureList from "../../featureList.js"
+const outpatient = featureList.auditing_modules.find(obj => obj.title === "Outpatient")
 ---
-  <StandardLayout>
-  <section class="feature">
-      <h1>Outpatient</h1>
-      <div class="feature__img"><Img src="/src/images/evg-kowa.jpg" alt="Physician's looking over x-ray results."></div>
-      <div class="feature__description">
-        <p>The Outpatient (OPPS - Facility outpatient) Module in ReviewMate provides accuracy rates for all audited elements, communication between the auditor and coder, a library of reports that can be customized and exported, and an "Audit the Auditor" option. </p>
-        <p>The OPPS auditing module of ReviewMate provides accuracy rates for all elements including:</p>
-      </div>
-    <ul>
-      <li>APC (Ambulatory Payment Classification)</li>
-      <li>CPT/HCPCS (Current Procedural Terminology/Healthcare Common Procedure Coding System)</li>
-      <li>E&M (CPT codes in the Evaluation and Management chapter)</li>
-      <li>Non-E&M (CPT codes not in the Evaluation and Management chapter)</li>
-      <li>Modifier(s)</li>
-      <li>Revenue Codes</li>
-      <li>Service Units</li>
-      <li>Diagnosis (ICD-10-CM or ICD-9-CM)</li>
-      <li>First-listed Diagnosis</li>
-      <li>Secondary Diagnosis</li>
-      <li>Procedure (ICD-10-PCS - optional)</li>
-      <li>Discharge Disposition (optional)</li>
-      <li>Procedure Provider</li>
-      <li>Procedure Date</li>
-      <li>CMS-HCC ( Hierarchal Condition Category)</li>
-    </ul>
-  </section>
-  <CallToAction></CallToAction>
-  </StandardLayout>
+<FeatureLayout>
+<Feature title="Outpatient" imgSrc="/src/images/rodnae.jpg" imgAlt="Doctors meeting together"> 
+  {}
+    <p>{outpatient?.long}</p>
+    <p>The IPPS (Facility Inpatient) auditing module of ReviewMate provides accuracy rates for all elements including:</p>
+  <ul slot="bulletpoints">
+  {outpatient?.bullets?.map(point => {
+    return (
+      <li>{point}</li>
+    )
+  }
+  )}
+  </ul>
+    
+</Feature>
+<CallToAction></CallToAction>
+</FeatureLayout>
