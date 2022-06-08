@@ -8,11 +8,14 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
 {size === "large" ? 
 <article>
   <h1 class="title">{title}</h1>
+  <span class="subtitle"></span>
   <div class="largediv">
-    <div class="paragraph"><slot /></div>
-    <div class="featureimage"><Img src={imgSrc} alt={imgAlt} /></div>
-    {commontraits ? <CommonTraits></CommonTraits> : ''}
+    <div class="paragraph"><slot name="paragraphs" /></div>
+    <Img src={imgSrc} alt={imgAlt} height={800}/>
+    <slot name="common" />
     <slot name="bulletpoints" />
+    <slot/>
+    
   </div>
 </article> :
 
@@ -42,22 +45,13 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
       }
     } 
   }
-  .featureimage {
-    height: 100%;
-    max-height: 30rem;
-    width: 100%;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 3rem;
-  }
   @media (min-width: 820px){
     .largediv {
-      // gap: 1rem;
       flex-flow: row wrap;
-    }
-    .featureimage {
-      flex: 1 1 50%;
-      width: 50%;
+      &  > :global(img) { 
+        flex: 1 1 50%;
+        border-left: 1px solid hsl(var(--color1hsl));
+       }
     }
     .paragraph {
       flex: 1 1 50%;
@@ -78,9 +72,6 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
       border-bottom: 1px solid hsl(var(--color1hsl));
     }
   }
-  .featureimage {
-
-  }
   .seemorearrow {
     width: 10px;
     height: 10px;
@@ -93,5 +84,8 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
     display: block;
     &:hover {
     }
+  }
+  .subtitle {
+    color: #ccc;
   }
 </style>

@@ -3,23 +3,28 @@ import FeatureLayout from '../../layouts/FeatureLayout.astro'
 import Feature from '../../components/Feature.astro'
 import CallToAction from '../../components/CallToAction.astro'
 import Tidbit from '../../components/Tidbit.astro'
+import CommonTraits from "../../components/CommonTraits.jsx"
 import featureList from "../../featureList.js"
 const inpatient = featureList.auditing_modules.find(obj => obj.title === "Inpatient")
 ---
 <FeatureLayout>
 <Feature title="Inpatient" imgSrc="/src/images/rodnae.jpg" imgAlt="Doctors meeting together" commontraits> 
-  {inpatient?.long.map(paragraph => {
-    return (
-      <p>{paragraph}</p>
-    )
-  })}
-  <ul slot="bulletpoints">
-  {inpatient?.bullets?.map(point => {
-    return (
-      <li>{point}</li>
-    )
-  }
-  )}
+  <div slot="paragraphs">
+    {inpatient?.long.map(paragraph => {
+      return (
+        <p>{paragraph}</p>
+      )
+    })}
+  </div>
+  {inpatient?.commontraits === true ? <CommonTraits client:idle /> : ''}
+  <ul style="margin-bottom: 4rem;">
+    {inpatient?.commontraits === true ? <h3 style="width: 100%;">In addition, our IPPS module features:</h3> : ''} 
+    {inpatient?.bullets?.map(point => {
+      return (
+        <li>{point}</li>
+      )
+    }
+    )}
   </ul>
 <Tidbit>
   <h3>IPPS auditing elements directly usable for accuracy rates</h3>
