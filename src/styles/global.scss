@@ -17,7 +17,7 @@ $color2hsl: $color2h, $color2s, $color2l;
 // Expose Sass variables for custom properties (mainly for inline styling)
 :root {
 	--color1hsl: #{$color1hsl};
-	--color1h: #{$color1h} ;
+	--color1h: #{$color1h};
 	--color1s: #{$color1s};
 	--color1l: #{$color1l};
 	--color2hsl: #{$color2hsl};
@@ -27,16 +27,25 @@ $color2hsl: $color2h, $color2s, $color2l;
 	--font-1: #{$font1};
 	--font-2: #{$font2};
 }
+::selection {
+	background-color: hsl(var(--color1hsl));
+	color: white;
+}
 html {
 	scroll-behavior: smooth;
 	// width: 100vw;
 	// max-width: 100vw;
 }
-h1, h2, h3, h4 {
+
+h1,
+h2,
+h3,
+h4 {
 	font-family: $font1;
 }
 
-p, body {
+p,
+body {
 	font-family: $font2;
 	color: #333;
 }
@@ -66,8 +75,8 @@ h4 {
 	margin-bottom: 0.8rem;
 }
 p {
-	font-size: 1rem;
-	line-height: 2rem;
+	font-size: 1.08rem;
+	line-height: 1.9rem;
 	text-indent: 2rem;
 	margin-bottom: 0.5rem;
 	color: #666;
@@ -76,23 +85,21 @@ body {
 	width: 100%;
 	// background-color: #eee;
 	max-width: 100%;
-
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
 	overflow-x: hidden;
 
-
 	perspective: 1px;
-    transform-style: preserve-3d;
-    height: 100%;
-    // overflow-y: scroll;
-    // overflow-x: hidden;
+	transform-style: preserve-3d;
+	height: 100%;
+	// overflow-y: scroll;
+	// overflow-x: hidden;
 }
 body {
 	height: 100%;
-    // overflow-y: hidden;
-    // overflow-x: hidden;
+	// overflow-y: hidden;
+	// overflow-x: hidden;
 }
 main {
 	background-color: white;
@@ -103,10 +110,11 @@ main {
 	margin: 0 auto;
 }
 
+
 a {
 	text-decoration: none;
 	// color:  #555;
-	color:  hsl(var(--color1hsl));
+	color: hsl(var(--color1hsl));
 }
 dl {
 	margin-bottom: 2.6rem;
@@ -123,12 +131,12 @@ blockquote {
 	background-color: #f2f2f2;
 	padding: 30px 50px;
 	border-radius: 6px;
-	border-top-right-radius:15px;
-	border-bottom-right-radius:15px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
 	margin: 1.5rem 2rem 2rem 3rem;
 	position: relative;
 	&::after {
-		content: '';
+		content: "";
 		position: absolute;
 		width: 4px;
 		height: 100%;
@@ -138,11 +146,18 @@ blockquote {
 		background-color: hsl(var(--color1hsl));
 	}
 	& p {
-
-	font-size: 130%;
-	line-height: 170%;
+		font-size: 130%;
+		line-height: 170%;
 	}
 	font-size: 1.4rem;
+}
+
+li {
+	list-style-image: url('/icons/right-arrow(list).svg');	
+}
+footer * {
+	list-style-type: none;
+	list-style-image: none;
 }
 
 .smalllink {
@@ -153,10 +168,9 @@ blockquote {
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 	font-size: 0.9rem;
-	// transition: color 0.1s;
-	z-index:10;
+	z-index: 10;
 	&::after {
-		content: '';
+		content: "";
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -168,17 +182,19 @@ blockquote {
 		// transition: opacity 0.1s;
 		z-index: -1;
 	}
-	&:hover, &:focus-visible {
+	&:hover,
+	&:focus-visible {
 		// border-bottom: 1px solid hsl(var(--color1hsl));
 		color: white;
 	}
-	&:hover::after, &:focus-visible::after {
+	&:hover::after,
+	&:focus-visible::after {
 		opacity: 1;
 	}
 }
 html.sr .load-hidden {
-    visibility: hidden;
-		// opacity: 0;
+	visibility: hidden;
+	// opacity: 0;
 }
 
 .flexdiv {
@@ -197,15 +213,15 @@ html.sr .load-hidden {
 }
 
 @media (min-width: 600px) {
-.flexdiv {
+	.flexdiv {
 		flex-flow: row nowrap;
 	}
 	.flexdiv1 > .bodylottie {
-	order: 3;
-  }
+		order: 3;
+	}
 }
 
- .button {
+.button {
 	padding: 0.8rem 1.4rem;
 	position: relative;
 	font-size: 1.1rem;
@@ -241,15 +257,18 @@ html.sr .load-hidden {
 	&.button--outline {
 		background-color: transparent;
 		border-width: 1px;
-		color: hsl(var(--color1hsl)) 
+		color: hsl(var(--color1hsl));
 	}
-	&:hover, &:focus-visible {
+	&:hover,
+	&:focus-visible {
 		transform: translate3d(0, -3px, 0);
 	}
-	&.button--2:hover, &.button--2:focus-visible {
+	&.button--2:hover,
+	&.button--2:focus-visible {
 		transform: translate3d(0, -3px, 0) scale(1.2);
 	}
-	&.button--3:hover, &.button--3:focus-visible {
+	&.button--3:hover,
+	&.button--3:focus-visible {
 		transform: translate3d(0, -3px, 0) scale(1.4);
 	}
 	&:focus-visible {
@@ -264,120 +283,120 @@ html.sr .load-hidden {
 		margin: 15px 15px 15px 1rem;
 		border-radius: 6px;
 	}
- }
+}
 
-	.linkarrow {
-		width: 14px;
-		height: 14px;
-		margin-left: 10px;
-		color: hsl(var(--color1hsl));
+.linkarrow {
+	width: 14px;
+	height: 14px;
+	margin-left: 10px;
+	color: hsl(var(--color1hsl));
+	fill: hsl(var(--color1hsl));
+	filter: invert(24%) sepia(27%) saturate(4898%) hue-rotate(348deg)
+		brightness(91%) contrast(83%);
+
+	& * {
 		fill: hsl(var(--color1hsl));
-		filter: invert(24%) sepia(27%) saturate(4898%) hue-rotate(348deg) brightness(91%) contrast(83%);
-		
-		& * {
-fill: hsl(var(--color1hsl));
-		}
-		
 	}
-	.dropdown {
-  position: absolute;
-  display: block;
-  top: 115%;
-  left: 115%;
+}
+.dropdown {
+	position: absolute;
+	display: block;
+	top: 115%;
+	left: 115%;
 	top: 0;
-  width: calc(90vw - 20rem);
+	width: calc(90vw - 20rem);
 	max-width: 40rem;
-  visibility: hidden;
-  transition: opacity 0.3s, transform 0.3s;
-  transform-origin: 50% 50%;
-  opacity: 0;
-  transform: scale(0.8) translate3d(0,-60%,0);
-  background-color: white;
-  z-index: 900;
-  box-shadow: 0 4px 9px -1px #33333388;
-  padding: 1rem;
-  border-radius: 6px;
-  & > p {
-  text-indent: 0;
-  }
+	visibility: hidden;
+	transition: opacity 0.3s, transform 0.3s;
+	transform-origin: 50% 50%;
+	opacity: 0;
+	transform: scale(0.8) translate3d(0, -60%, 0);
+	background-color: white;
+	z-index: 900;
+	box-shadow: 0 4px 9px -1px #33333388;
+	padding: 1rem;
+	border-radius: 6px;
+	& > p {
+		text-indent: 0;
+	}
 }
 
 .dropdown--open {
 	visibility: visible;
-  opacity: 1;
-  transform: scale(1) translate3d(0,0,0);
+	opacity: 1;
+	transform: scale(1) translate3d(0, 0, 0);
 }
 .arrow {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-bottom: 3px solid #666;
-  border-right: 3px solid #666;
-  transform: rotate(45deg) translate3d(0, -1px, 0);
-  position: relative;
-  left: 0.6rem;
-  transition: transform 0.3s;
-  transform-origin: 50% 50%;
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-bottom: 3px solid #666;
+	border-right: 3px solid #666;
+	transform: rotate(45deg) translate3d(0, -1px, 0);
+	position: relative;
+	left: 0.6rem;
+	transition: transform 0.3s;
+	transform-origin: 50% 50%;
 }
 .arrow--open {
-  transform: rotate(-135deg) translate3d(0, 1px, 0);
+	transform: rotate(-135deg) translate3d(0, 1px, 0);
 }
 
 #usecases {
-    background-color: hsl(var(--color1hsl));
-    justify-content: space-around;
-    color: white;
-		width: 114%;
-		margin-inline: -7%;
-    margin-top: 4rem;
-		& * {
-			color: white;
+	background-color: hsl(var(--color1hsl));
+	justify-content: space-around;
+	color: white;
+	width: 114%;
+	margin-inline: -7%;
+	margin-top: 4rem;
+	& * {
+		color: white;
+	}
+	& > div {
+		flex: 2 1 30%;
+		padding: 4% 6%;
+		& > h3 {
+			text-align: center;
 		}
-    & > div {
-      flex: 2 1 30%;
-			padding: 4% 6%;
-			& > h3 {
-				text-align: center;
-			}
-    }
-  }
+	}
+}
 
-	
 .fddheader {
-  cursor: pointer;
-  background-color: transparent;
-  outline: none;
-  border: none;
+	cursor: pointer;
+	background-color: transparent;
+	outline: none;
+	border: none;
 	font-size: 1.05rem;
 	line-height: 2rem;
 	margin-bottom: 0.5rem;
-  font-weight: 700;
-  color: #555;
-  font-family: 'Hind Madurai';
-  transition: background-color 0.2s;
-  width: 100%;
-  margin: 0;
-  // &:hover {
-  //   background-color: #fcfcfc;
-  // }
+	font-weight: 700;
+	color: #555;
+	font-family: "Hind Madurai";
+	transition: background-color 0.2s;
+	width: 100%;
+	margin: 0;
+	// &:hover {
+	//   background-color: #fcfcfc;
+	// }
 }
 
-#skiptocontent { 
+#skiptocontent {
 	// visibility: hidden;
 	// outline: 2px solid purple;
 	opacity: 0;
 	position: absolute;
 	left: 1rem;
-	top:5rem;
+	top: 5rem;
 	color: white;
-	z-index:900;
+	z-index: 900;
 	padding: 8px 14px;
 	transition: opacity 0.1s, transform 0.4s;
 	transform: translate3d(-10rem, 0, 0);
-	&:focus-visible, &:focus {
+	&:focus-visible,
+	&:focus {
 		// visibility: visible;
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
 		outline: 2px solid white;
 	}
- }
+}
