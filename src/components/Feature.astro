@@ -18,7 +18,6 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
     
   </div>
 </article> :
-
 <div class="div">
   <a href={href} class="title"><h3>{title}</h3></a>
   <slot />
@@ -33,17 +32,6 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
     flex-flow: column wrap;
     width: 100%;
     max-width: 100%;
-    // & :global(ul) {
-    //   display: flex;
-    //   flex-flow: row wrap;
-    //   gap: 1.5rem;
-    //   & :global(li) {
-    //     flex: 1.5 1 15rem;
-    //     margin-bottom: 0.2rem;
-    //     line-height: 1.3rem;
-    //     font-size: 1.05rem;
-    //   }
-    // } 
   }
   .paragraph {
       padding: 1.3rem 2.3rem 3rem 1.3rem;
@@ -55,6 +43,7 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
         flex: 1 1 50%;
         // border-left: 1px solid hsl(var(--color1hsl));
         position: relative;
+        max-height: 34rem;
        }
     }
     .paragraph {

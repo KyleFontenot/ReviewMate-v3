@@ -1,0 +1,89 @@
+---
+import FeatureLayout from '../../layouts/FeatureLayout.astro'
+import Feature from '../../components/Feature.astro'
+import CallToAction from '../../components/CallToAction.astro'
+import Tidbit from '../../components/Tidbit.astro'
+import CommonTraits from "../../components/CommonTraits.jsx"
+
+import featureList from '../../featureList.js'
+
+// const features = await featureList.auditing_modules.map(module => module)
+// console.log(features.map(feature => feature.title))
+
+export function getStaticPaths() {
+
+  return featureList.auditing_modules.map(feature => 
+  {
+    return({
+    params: {id: feature.slug}, 
+    props: {feature: feature}
+  })} )
+}
+
+// const {id} = Astro.params;
+const {feature} = Astro.props;
+
+console.log(feature.bullets)
+---
+<FeatureLayout>
+<Feature title={feature.title} imgSrc={feature?.imgSrc} imgAlt={feature?.imgAlt} commontraits> 
+  <div slot="paragraphs">
+    {feature?.long.map(paragraph => {
+      return (
+        <p>{paragraph}</p>
+      )
+    })}
+  </div>
+  {feature?.commontraits === true ? <CommonTraits client:idle /> : ''}
+  
+    {(feature?.commontraits === true && feature.bullets) ? <h3 style="width: 100%;">In addition, our IPPS module features:</h3><ul class="list" >{feature?.bullets?.map(point => {
+      return (
+        <li class="bullet">{point}</li>
+      )
+    }
+    )}</ul> : 
+    (feature?.bullets?.length !== undefined && feature?.bullets?.length > 0) ? <ul class="list" >{feature?.bullets?.map(point => {
+      return (
+        <li class="bullet">{point}</li>
+      )
+    }
+    )}</ul> : ''} 
+    
+  </ul>
+
+</Feature>
+<CallToAction explain></CallToAction>
+</FeatureLayout>
+<style lang="scss">
+  .list {
+    width :100%;
+    margin-bottom: 4rem;
+    display: flex;
+    gap: 1rem;
+    flex-flow: row wrap;
+    & li {
+      flex: 2 1 40rem;
+      
+    }
+  }
+.featurelist {
+  margin-top: 2rem;
+  & li {
+    margin-bottom: 1rem;
+  }
+}
+.accuracyrate {
+  font-size: 3.2rem;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+.inpatienttable {
+  border-collapse: separate;
+  border-spacing: 1rem 1em;
+  margin-top: 3.4rem;
+  & > thead {
+    margin-top: 2rem;
+  }
+}
+</style>
