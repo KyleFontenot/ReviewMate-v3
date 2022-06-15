@@ -4,12 +4,18 @@ import StandardLayout from "../../layouts/StandardLayout.astro"
 import Feature from "../../components/Feature.astro"
 import featureList from "../../featureList.js"
 const reportingModules = featureList.reporting;
+const formatSlug = (title : string) => {
+	if(title.includes(' ')){
+		title.replace(' ', '-')
+	}
+	return title.toLowerCase()
+}
 ---
 <StandardLayout>
-  <FeatureCategory title="Reporting Features">
+  <FeatureCategory title="Auditing Accounts">
   {reportingModules.map(module => {
     return (
-      <Feature size="small" title={module.title} href={module.link}><p>{module.short}</p></Feature>
+      <Feature size="small" title={module.title} href={`/reporting/${formatSlug(module.title)}`}><p>{module.short}</p></Feature>
     )
   })}
   

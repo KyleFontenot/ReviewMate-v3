@@ -22,6 +22,7 @@ class Module extends FeatureParent {
 		this.pro = tiers[1];
 		this.enterprise = tiers[2];
 		this.bullets = bullets
+		this.commontraits = false;
 	}
 }
 class AuditingModule extends Module {
@@ -39,7 +40,7 @@ const featureList = {
 			[
 				"More than three-quarters of the nation's inpatient acute-care hospitals are paid under the inpatient prospective payment system (IPPS). The IPPS methodology pays a flat rate based on the average charges across all hospitals for specific diagnoses, regardless of whether that particular patient costs more or less.",
 				"Correct DRG assignment is critical to the health of your organization. Coding audits and using the proper tools will allow financial and compliant stability.",
-				"The ReviewMate platform assists medical coding auditors analyzing specific elements affecting DRG assignment and reimbursement.",
+				"The ReviewMate platform assists medical coding auditors analyze specific elements affecting DRG assignment and reimbursement.",
 			],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
 			[true, true, true],
@@ -51,9 +52,13 @@ const featureList = {
 		new AuditingModule(
 			"Outpatient",
 			"Outpatient prospective payment systems extend our core standard auditing features.",
-			["Long paragraph"],
+      [
+				"The Outpatient Prospective Payment System (OPPS) is the system through which Medicare decides how much money a hospital or community mental health center will get for outpatient care provided to patients with Medicare.    Reimbursement is based on Ambulatory Payment Classification (APC) assignment.",
+        "Correct APC assignment is critical to the health of your organization. Coding audits and using the proper tools will allow financial and compliant stability.",
+				"The ReviewMate platform assists medical coding auditors analyze specific elements affecting APC assignment and reimbursement.",
+],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
-			[true, true, true],
+			[true, true, true]
 			// add bulletopints here
 		),
 		new AuditingModule(
@@ -61,7 +66,7 @@ const featureList = {
 			"Physician Fee schedule and/or Physician office auditing is among the other core auditing standards.",
 			["Long paragraph"],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
-			[true, true, true],
+			[true, true, true]
 			// add bulletopints here
 		),
 		new AuditingModule(
@@ -69,7 +74,7 @@ const featureList = {
 			"Free-standing ambulatory surgery center is a first-class citizen to the standard auditing capabilities.",
 			["Long paragraph"],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
-			[true, true, true],
+			[true, true, true]
 			// add bulletopints here
 		),
 		new AuditingModule(
@@ -77,114 +82,84 @@ const featureList = {
 			"CMS(centers for medical service), Hierarchical Condition Categories, Risk Adjustment. Belong to every plan tier.",
 			["Long paragraph"],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
-			[true, true, true],
+			[true, true, true]
 			// add bulletopints here
 		),
 	],
 	reporting: [
-		{
-			title: "Accuracy Manager",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Choose from a variety of parameters and gather custom accuracy rates.",
-			long: "Allows to slice and dice your data for  View accuracy rates for different entities, groups, dates, by slicing result findings.",
-			link: "/features/reporting/",
-			type: "reporting",
-			essentials: true,
-			pro: true,
-			enterprise: true,
-		},
-		{
-			title: "Code Finder",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Reference specific code instances historically system-wide. Expand when codes were used previously etc.",
-			long: "",
-			link: "/features/reporting/",
-			type: "reporting",
-			essentials: true,
-			pro: true,
-			enterprise: true,
-		},
-
-		{
-			title: "Dashboards",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Customizable dashboards for organizing the data you need. Underline pertinent workflows for auditors, administrators, or create client dashboards for consuming results.",
-			long: "",
-			link: "/features/reporting/",
-			type: "reporting",
-			essentials: true,
-			pro: true,
-			enterprise: true,
-		},
-		//
-		{
-			title: "Summary Templates",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
+		new Module(
+			"Accuracy Manager",
+			"Choose from a range of parameters and gather custom accuracy rates.",
+			[
+        "Allows the slicing and dicing your data for aggregating custom accuracy rates.  View accuracy rates by different entities, groups, or date ranges.",	
+        "Allows the slicing and dicing your data for aggregating custom accuracy rates.  View accuracy rates by different entities, groups, or date ranges.",
+			],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[true, true, true]
+			// add bulletpoints here
+		),
+		new Module(
+			"Code Finder",
+			"Reference specific code instances historically system-wide. Expand when codes were used previously etc.",
+			[
+				"Allows to slice and dice your data for  View accuracy rates for different entities, groups, dates, by slicing result findings.",
+			],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[true, true, true]
+			// add bulletpoints here
+		),
+		new Module(
+			"Dashboards",
+			"Customizable dashboards for organizing the data you need. Underline pertinent workflows for auditors, administrators, or create client dashboards for consuming results.",
+			[
+				"Allows to slice and dice your data for  View accuracy rates for different entities, groups, dates, by slicing result findings.",
+			],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[true, true, true]
+			// add bulletpoints here
+		),
+		new Module(
+			"Summary Templates",
+			"Unlimited amount of customizable templates for your firm. From branding to typography, keep your reports consistent seamlessly.",
+			[
 				"Unlimited amount of customizable templates for your firm. From branding to typography, keep your reports consistent seamlessly.",
-			long: "Customizable reports (including custom branding), along with many different templates to create consistent reporting effortlessly.",
-			link: "/features/reporting/",
-			type: "reporting",
-			essentials: true,
-			pro: true,
-			enterprise: true,
-		},
-		{
-			title: "Coder Report Cards",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Easily digestible reports on accuracy with exact comment notes from all associated reviewers. Distributed coder login credentials allow for direct viewable transcripts for accoutability.",
-			long: "",
-			link: "/features/reporting/",
-			type: "reporting",
-			essentials: true,
-			pro: true,
-			enterprise: true,
-		},
-		{
-			title: "Comparison Statistics",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Extract valuable information across time comparing multiple audits against each other. Metrics and results are exportable right into usable reports.",
-			long: "",
-			link: "/features/reporting/",
-			type: "functionalities",
-			essentials: true,
-			pro: true,
-			enterprise: true,
-		},
-		{
-			title: "Exportability",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"All reports can be exported into PDFs, Excel spreadsheets, Word documents.",
-			long: "",
-			link: "/features/reporting/",
-			type: "functionalities",
-			essentials: true,
-			pro: true,
-			enterprise: true,
-		},
+			],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[true, true, true]
+			// add bulletpoints here
+		),
+		new Module(
+			"Coder Report Cards",
+			"Easily digestible reports on accuracy with exact comment notes from all associated reviewers. Distributed coder login credentials allow for direct viewable transcripts for accoutability.",
+			[
+				"Unlimited amount of customizable templates for your firm. From branding to typography, keep your reports consistent seamlessly.",
+			],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[true, true, true]
+			// add bulletpoints here
+		),
+		new Module(
+			"Exportability",
+			"All reports can be exported into PDFs, Excel spreadsheets, Word documents.",
+			[
+				"Unlimited amount of customizable templates for your firm. From branding to typography, keep your reports consistent seamlessly.",
+			],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[true, true, true]
+			// add bulletpoints here
+		),
 	],
-
 	security: [
+		new Module(
+			"Multifactor Authentication",
+			"Confirm fidelity with more complex sign-on options. Integration with Google Duo.",
+			[
+				"Unlimited amount of customizable templates for your firm. From branding to typography, keep your reports consistent seamlessly.",
+			],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
+
 		{
 			title: "Multifactor Authentication",
 			get slug() {

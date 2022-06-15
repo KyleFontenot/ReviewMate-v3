@@ -2,3 +2,9 @@
 const { href, text} = Astro.props
 ---
   <a href={href} class="smalllink">{text}</a>
+    <style>
+    .smalllink {
+      position: relative;
+      margin-top: 0.8rem;
+    }
+</style>

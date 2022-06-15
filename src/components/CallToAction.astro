@@ -1,11 +1,13 @@
 ---
 import FlexDiv from './FlexDiv.astro'
 import Button from './Button.astro'
-const {explain} = Astro.props;
+const {explain, module} = Astro.props;
+
 ---
 
 <FlexDiv style="margin-top: 3rem;" justify="space-around" align="center">
-  {explain ? <p class="explanation">Hello test</p> : ''}
+  {explain ? <p class="explanation">Any further questions</p> : ''}
+  {module !== undefined ? <Button text={`${module}`}> : ''}
   <slot />
   <Button as="link" href="/contact/" color="yellow" text="Contact Us" size="2" >Contact</Button>
 </FlexDiv>
