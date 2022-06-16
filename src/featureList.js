@@ -4,7 +4,7 @@ const formatSlug = (title) => {
 		fmtTitle = fmtTitle.replaceAll(" ", "-");
 	}
 	if (fmtTitle.includes("/")) {
-		fmtTitle = fmtTitle.replaceAll(" ", "-");
+		fmtTitle = fmtTitle.replaceAll("/", "");
 	}
 	if (fmtTitle.includes("(")) {
 		fmtTitle = fmtTitle.slice(fmtTitle.indexOf("("), fmtTitle.indexOf(")"));
@@ -264,7 +264,10 @@ const featureList = {
 			"Audit The Auditor",
 			"Review completed audits and reviews by adding  layered documentation. Original data is referential and integrated.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/andrey.jpg",
+				alt: "Midsection of adult examining a printed business summary",
+			},
 			[false, true, true]
 		),
 
@@ -272,7 +275,10 @@ const featureList = {
 			"Document Manager",
 			"Share files such as reports, imported spreadsheets, and training materials between different administration levels. HIPAA compliant, and supported by clear version controlling.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/documentmanager.jpg",
+				alt: "Man examining a document",
+			},
 			[true, true, true]
 		),
 
@@ -280,21 +286,24 @@ const featureList = {
 			"Education Tracking",
 			"Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules. Create and assign quizzes",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/goodluz.jpg",
+				alt: "Young adults using touchpad",
+			},
 			[false, true, true]
 		),
 		new Module(
 			"ReviewMate Insights (Benchmarking)",
 			"Benchmark and compare performance against other ReviewMate users. Offers advice, community and insight within local scopes, global scopes, or 'millions of records within our community'. Exposes common coding errors that integrate with your Risk Manager.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{ src: "/src/images/photos/groupidea.jpg", alt: "Group of happy diverse business people standing in studio and holding glowing light" },
 			[false, true, true]
 		),
 		new Module(
 			"Selector Tools",
 			"Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{ src: "/src/images/photos/selection.jpg", alt: "Customer group circled" },
 			[false, true, true]
 		),
 
@@ -302,7 +311,7 @@ const featureList = {
 			"Customizable Tasks",
 			"Customizable task responses allow all users to focus on pertinent issues. Field or view verbose responses based on user preferences.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{ src: "/src/images/photos/postitnotes.jpg", alt: "Three differentl colored Post-it notes on a window" },
 			[false, true, true]
 		),
 
@@ -310,7 +319,7 @@ const featureList = {
 			"Risk Manager",
 			"Leverage artificial intelligence and historical findings to monitor and stay on-top of potential risks.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{ src: "/src/images/photos/riskaversion.jpg", alt: "Partial view of risk manager blocking toppling dominoes" },
 			[false, false, true]
 		),
 
@@ -318,14 +327,14 @@ const featureList = {
 			"Record Tracker",
 			"View full narratives of records in one integrated place by using timelines within each record.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{ src: "/src/images/photos/recordtracker.jpg", alt: "Woman and physician meeting over a medical record" },
 			[false, false, true]
 		),
 		new Module(
 			"Retrospective Physician Queries",
 			"Intuitively analyze and report coders' physician queries on compliance, appropriateness, and efficiency.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{ src: "/src/images/photos/physicianquery.jpg", alt: "Doctor greeting and collaborating with businessman" },
 			[false, true, true]
 		),
 
@@ -333,7 +342,7 @@ const featureList = {
 			"CDI Communication",
 			"Integrate communication with any first-party or third-party CDI team.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{ src: "/src/images/photos/CDIcommunication.jpg", alt: "Young woman scrutinizing charts on a monitor" },
 			[false, false, true]
 		),
 	],

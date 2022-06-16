@@ -6,7 +6,7 @@ const {explain, previousButton} = Astro.props;
 
 <FlexDiv style="margin-top: 3rem;" justify="space-around" align="center">
   {previousButton && <Button as="link" outline leftArrow text={previousButton.text} href={previousButton.href}/>}
-  {explain ? <p class="explanation">Any further questions</p> : ''}
+  {explain ? <p class="explanation">Any particular questions or inquiries? We'd like to hear from you.</p> : ''}
   
   <slot />
   <Button as="link" href="/contact/" color="yellow" text="Contact Us" size="2" >Contact</Button>
