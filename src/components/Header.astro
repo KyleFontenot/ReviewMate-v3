@@ -23,7 +23,7 @@ const arrofSubLinks = ["Auditing Accounts", "Reporting", "Security", "Analytics"
     <nav>
       <ul>
         {arrofLinks.map(each => 
-          <li class=`${each === "Contact" ? "class='contact'" : ''}`>
+          <li class=`${each === "Contact" ? 'contact' : ''}`>
             <a href={`/${each.replace(' ', '').toLowerCase()}/`}>{ each }</a>
           </li>
         )}
@@ -54,6 +54,7 @@ const arrofSubLinks = ["Auditing Accounts", "Reporting", "Security", "Analytics"
     // padding-bottom: 12rem;
     // overflow-y: visible;
   }
+  
   
   #mobilenavbutton {
     color: white;
@@ -109,6 +110,7 @@ const arrofSubLinks = ["Auditing Accounts", "Reporting", "Security", "Analytics"
       list-style-type: none;
       line-height: 1rem;
       color: white;
+      list-style-image: none;	
       & a {
         color: hsl(var(--color1hsl));
         padding: 10px 30px;
@@ -158,12 +160,12 @@ const arrofSubLinks = ["Auditing Accounts", "Reporting", "Security", "Analytics"
       justify-content: flex-end;
       & li {
         list-style-type: none;
-        // line-height: 1.2rem;
+        margin-bottom: 12px;
         
         color: hsl(var(--color1hsl));
       & a {
         color: white;
-        padding: 3px 15px 15px;
+        padding: 15px;
         display: block;
         font-size: 1.15rem;
         position: relative;
@@ -209,8 +211,14 @@ const arrofSubLinks = ["Auditing Accounts", "Reporting", "Security", "Analytics"
   }
 }
   }
-  .contactbutton {
-    background-color: hsl(var(--color2hsl));
-  }
+  .contact { 
+    margin-left: 5px;
+    & a {
+      background-color: white;
+      color: hsl(var(--color1hsl))!important;
+      border-radius: 6px;
+      // box-shadow: 0 1px 5px 0px white;
+    }
+   }
 </style>
   

@@ -1,7 +1,7 @@
 {
 	"name": "reviewmate3",
 	"license": "MIT",
-	"version": "0.5.1",
+	"version": "0.7.1",
 	"private": true,
 	"scripts": {
 		"dev": "astro dev --experimental-integrations",
