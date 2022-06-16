@@ -82,7 +82,7 @@ const featureList = {
 			"Free-standing ambulatory surgery center is a first-class citizen to the standard auditing capabilities.",
 			["Long paragraph"],
 			{
-				src: "/src/images/photos/rodnae-ambulance.jpg",
+				src: "/src/images/photos/ambulance.jpg",
 				alt: "Nurses loading a patient into a gurney",
 			},
 			[true, true, true]
