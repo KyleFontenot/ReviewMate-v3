@@ -23,6 +23,7 @@
 	},
 	"dependencies": {
 		"@contentful/rich-text-html-renderer": "^15.12.1",
+		"@lottiefiles/lottie-player": "^1.5.7",
 		"astro": "^1.0.0-beta.27",
 		"astro-imagetools": "^0.6.3",
 		"astro-seo": "^0.5.0",
@@ -31,6 +32,7 @@
 		"quicklink": "^2.2.0",
 		"rellax": "^1.12.1",
 		"sass": "^1.51.0",
+		"scrollreveal": "^4.0.9",
 		"vite-plugin-vsharp": "^1.1.4"
 	}
 }

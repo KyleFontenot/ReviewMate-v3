@@ -28,17 +28,17 @@ import BlogStream from "../components/BlogStream.astro"
 
   <FlexDiv gap="0.2rem" className="producttraits">
     <div >
-      <img src="/Integrate(kf).svg" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
+      <img src="/Integrate(kf).svg" width="128" height="143"  alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
       <h3 style="letter-spacing:0;">Consolidate data from any source</h3>
       <p>Connect ReviewMate right into your universe of data or import loose resources independently, for gathering samples.</p>
     </div>
     <div>
-      <img src="/Audit(kf).svg" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
+      <img src="/Audit(kf).svg" width="128" height="143" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
       <h3 style="letter-spacing:0;">Audit and extrapolate findings seamlessly</h3>
       <p>Integrated tools keep both the auditor closer to the data, and expands more accountable, transparent communication.</p>
     </div>
     <div>
-      <img src="/Report(kf).svg" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
+      <img src="/Report(kf).svg" width="128" height="143" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
       <h3 style="letter-spacing:0;">Report and Monitor</h3>
       <p>Customizable reports and integrated communication channels expedite results right to the end-user.</p>
     </div>
@@ -67,7 +67,9 @@ import BlogStream from "../components/BlogStream.astro"
         <SmallLink href="/security/multifactor-authentication/" text="Multifactor Authentication"/>
         <SmallLink href="/security/ldap-active-directory" text="LDAP / Active Directory"/>
         <SmallLink href="/security/vpn-integration/" text="VPN Integration"/>
-        </div> <div><lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> </div>
+        </div> 
+        <!-- <div><lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> </div> -->
+        </div>
   </div>
   <div slot="2">
     <div class="timelinediv">
@@ -78,7 +80,7 @@ import BlogStream from "../components/BlogStream.astro"
       <SmallLink href="/" text="Sample Selector"/>
       <SmallLink href="#" text="Risk Manager"/>
     </div>
-    <div><lottie-player src="/lotties/RM-refine.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div>
+      <!-- <div><lottie-player src="/lotties/RM-refine.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
   </div>
   <div slot="3">
@@ -93,7 +95,7 @@ import BlogStream from "../components/BlogStream.astro"
    <SmallLink href="/auditingaccounts/asc" text="ASC"/>
    <SmallLink href="/auditingaccounts/cms-hcc" text="CMS-HCC"/>
    </div>
-   <div><lottie-player src="/lotties/RM-audit.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div>
+   <!-- <div><lottie-player src="/lotties/RM-audit.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
   </div>
   <div slot="4">
@@ -108,7 +110,7 @@ import BlogStream from "../components/BlogStream.astro"
    <SmallLink href="#" text="Summary Templates"/>
    <SmallLink href="#" text="Exportability"/>
    </div>
-   <div><lottie-player src="/lotties/RM-report.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div>
+   <!-- <div><lottie-player src="/lotties/RM-report.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
   </div>
   <div slot="5">
@@ -119,14 +121,11 @@ import BlogStream from "../components/BlogStream.astro"
    <SmallLink href="#" text="Sample Selector"/>
    <SmallLink href="#" text="Sample Selector"/>
    </div>
-   <div><lottie-player src="/lotties/RM-monitor.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div>
+   <!-- <div><lottie-player src="/lotties/RM-monitor.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
   </div>
 </Timeline>
-
 <BlogStream />
-
-
 <FlexDiv  className="calltoaction">
   <h3 style="padding-inline: 6%;">Let us show you how you can start saving hours a week</h3>
   <div >
@@ -180,7 +179,7 @@ import BlogStream from "../components/BlogStream.astro"
 
   }
   .shapeintrobg {
-    background: url('/marc-mueller(4).jpeg'); 
+    background: url('/marc-mueller(4).webp'), url('/marc-mueller(4).jpeg'); 
     background-repeat: norepeat;  
     background-size: cover;
     clip-path: polygon(0% 79.25%, 0% -0.5%, 100% -0.5%, 100% 79.25%, 50% 100%);

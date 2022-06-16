@@ -4,9 +4,11 @@
   import "../styles/global.scss"
   import { SEO } from "astro-seo"
   import Quicklink from "../scripts/Quicklink.astro"
-  import Rellax from "../scripts/Rellax.astro"
-  // import Rellax from "rellax"
-  import ScrollReveal from "../scripts/ScrollReveal.astro"
+  // import Rellax from "../scripts/Rellax.astro"
+  import Rellax from "rellax"
+  // import "@lottiefiles/lottie-player";
+  // import ScrollReveal from 'scrollreveal'
+  // import ScrollReveal from "../scripts/ScrollReveal.astro"
 
   const {title } = metadata;
 
@@ -44,16 +46,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <ScrollReveal />
+    <!-- <ScrollReveal /> -->
+
   </head>
   
   <body>
     <slot />
   </body>
-  <!-- <Rellax /> -->
-  <Quicklink />
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- <Quicklink /> -->
   <script defer>
+    // quicklink.prefetch("/projects");
+    quicklink.listen();
+  </script>
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VPCMB0035"></script>
+    <script defer>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8VPCMB0035');
+    </script>
+
+
+    <!-- <Rellax /> -->
+    <script defer>
+      var rellax1 = new Rellax(".rellax1", {
+          speed: 0.3,
+          center: true,
+        });
+      var rellax2 = new Rellax(".rellax2", {
+        speed: 0.5,
+        center: true,
+      });
+    </script>
+
+    <script defer >
+      import('scrollreveal')
+    </script>
+
+    <script defer>
     function hideDropdowns() {
       document.querySelectorAll(".dropdown--open").forEach((each) => {
         each.classList.remove("dropdown--open");
@@ -77,18 +109,4 @@
       }
     })
     </script>
-    <script hoisted src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js" ></script>
-    <!-- <script hoisted>
-      var rellax = new Rellax(".rellax", {wrapper : '.rellaxwrapper'});
-    </script> -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VPCMB0035"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-8VPCMB0035');
-    </script>
-    <Rellax />
 </html>
