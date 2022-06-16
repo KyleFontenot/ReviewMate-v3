@@ -1,18 +1,20 @@
 const formatSlug = (title) => {
-	if(title.includes(' ')){
-		title.replace(' ', '-')
+	let fmtTitle = title;
+	if (fmtTitle.includes(" ")) {
+		fmtTitle = fmtTitle.replaceAll(" ", "-");
 	}
-	return title.toLowerCase()
-}
+	if (fmtTitle.includes("/")) {
+		fmtTitle = fmtTitle.replaceAll(" ", "-");
+	}
+	if (fmtTitle.includes("(")) {
+		fmtTitle = fmtTitle.slice(fmtTitle.indexOf("("), fmtTitle.indexOf(")"));
+	}
+	return fmtTitle.toLowerCase();
+};
 
-class FeatureParent {
-	constructor(title){
-		this.title = title
-	}
-}
-class Module extends FeatureParent {
+class Module {
 	constructor(title, short, long, img, tiers, bullets) {
-		super(title);
+		this.title = title;
 		this.slug = formatSlug(title);
 		this.short = short;
 		this.long = long;
@@ -21,7 +23,7 @@ class Module extends FeatureParent {
 		this.essentials = tiers;
 		this.pro = tiers[1];
 		this.enterprise = tiers[2];
-		this.bullets = bullets
+		this.bullets = bullets;
 		this.commontraits = false;
 	}
 }
@@ -57,7 +59,10 @@ const featureList = {
 				"Correct APC assignment is critical to the health of your organization. Coding audits and using the proper tools will allow financial and compliant stability.",
 				"The ReviewMate platform assists medical coding auditors analyze specific elements affecting APC assignment and reimbursement.",
 			],
-			{ src: "/src/images/photos/mart-production.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/mart-production.jpg",
+				alt: "Doctors meeting together",
+			},
 			[true, true, true]
 			// add bulletopints here
 		),
@@ -65,7 +70,10 @@ const featureList = {
 			"Profee",
 			"Physician Fee schedule and/or Physician office auditing is among the other core auditing standards.",
 			["Long paragraph"],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/polina.jpg",
+				alt: "Female doctor analyzing a chart",
+			},
 			[true, true, true]
 			// add bulletopints here
 		),
@@ -73,15 +81,21 @@ const featureList = {
 			"ASC",
 			"Free-standing ambulatory surgery center is a first-class citizen to the standard auditing capabilities.",
 			["Long paragraph"],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/rodnae-ambulance.jpg",
+				alt: "Nurses loading a patient into a gurney",
+			},
 			[true, true, true]
 			// add bulletopints here
 		),
 		new AuditingModule(
 			"CMS-HCC",
-			"CMS(centers for medical service), Hierarchical Condition Categories, Risk Adjustment. Belong to every plan tier.",
+			"CMS(centers for medical service), Hierarchical Condition Categories, Risk Adjustment.",
 			["Long paragraph"],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/anna-shvets.jpg",
+				alt: "Medical machines in a patient's room",
+			},
 			[true, true, true]
 			// add bulletopints here
 		),
@@ -94,7 +108,10 @@ const featureList = {
 				"Allows the slicing and dicing your data for aggregating custom accuracy rates.  View accuracy rates by different entities, groups, or date ranges.",
 				"Allows the slicing and dicing your data for aggregating custom accuracy rates.  View accuracy rates by different entities, groups, or date ranges.",
 			],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/lukas.jpg",
+				alt: "Statistics on multiple sheets of paper",
+			},
 			[true, true, true]
 			// add bulletpoints here
 		),
@@ -104,7 +121,10 @@ const featureList = {
 			[
 				"Allows to slice and dice your data for  View accuracy rates for different entities, groups, dates, by slicing result findings.",
 			],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/tima.jpg",
+				alt: "Physician searching through hand-written notes",
+			},
 			[true, true, true]
 			// add bulletpoints here
 		),
@@ -114,7 +134,10 @@ const featureList = {
 			[
 				"Allows to slice and dice your data for  View accuracy rates for different entities, groups, dates, by slicing result findings.",
 			],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/cottonbro.jpg",
+				alt: "Older male looking at statistics on an online dashboard",
+			},
 			[true, true, true]
 			// add bulletpoints here
 		),
@@ -124,7 +147,10 @@ const featureList = {
 			[
 				"Unlimited amount of customizable templates for your firm. From branding to typography, keep your reports consistent seamlessly.",
 			],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/artem.jpg",
+				alt: "Held up printed business summaries",
+			},
 			[true, true, true]
 			// add bulletpoints here
 		),
@@ -134,7 +160,10 @@ const featureList = {
 			[
 				"Unlimited amount of customizable templates for your firm. From branding to typography, keep your reports consistent seamlessly.",
 			],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/kindel.jpg",
+				alt: "Person viewing printed charts",
+			},
 			[true, true, true]
 			// add bulletpoints here
 		),
@@ -144,7 +173,10 @@ const featureList = {
 			[
 				"Unlimited amount of customizable templates for your firm. From branding to typography, keep your reports consistent seamlessly.",
 			],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/pixabay.jpg",
+				alt: "Two people conferring over printed statistic summaries ",
+			},
 			[true, true, true]
 			// add bulletpoints here
 		),
@@ -154,21 +186,30 @@ const featureList = {
 			"Multifactor Authentication",
 			"Confirm fidelity with more complex sign-on options. Integration with Google Duo.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/frederik.jpg",
+				alt: "Cell phone on homescreen",
+			},
 			[false, true, true]
 		),
 		new Module(
 			"LDAP / Active Directory",
 			"Connect directly into enterprise LDAP system from within ReviewMate. Master passwords work within ReviewMate for seamless user authentication.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/morillo.jpg",
+				alt: "Woman gaining access to server",
+			},
 			[false, true, true]
 		),
 		new Module(
 			"VPN Integration",
 			"End-to-end VPN tunneling compatibility with SOC2 certified compliance.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/vpn.jpg",
+				alt: "Computer connecting to a VPN service",
+			},
 			[false, true, true]
 		),
 	],
@@ -178,7 +219,10 @@ const featureList = {
 			"Staffing Analaytics",
 			"Time tracking and progress transparency, against tasks, findings, accounts. Track goals and accountability with visual charts and dashboard plugins.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/krukov.jpg",
+				alt: "Man nd woman sharing statistics result",
+			},
 			[false, true, true]
 		),
 
@@ -186,15 +230,20 @@ const featureList = {
 			"System Metrics",
 			"Utilize visual graphs and charts to focus on performance-based results. Discover prioritization concerns as they happen.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/negative-space.jpg",
+				alt: "Laptop showing results of query",
+			},
 			[false, true, true]
 		),
-
 		new Module(
 			"Time Tracking",
 			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/timetracking.jpg",
+				alt: "Physician checking the time on his watch",
+			},
 			[false, true, true]
 		),
 	],
@@ -204,245 +253,91 @@ const featureList = {
 			"Integration Manager",
 			"Import spreadsheets, universes of data, or any other third-party source of data into a central resource. Manage, maintain, and navigate sources dynamically.",
 			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{
+				src: "/src/images/photos/sayles.jpg",
+				alt: "Many cords plugged into electronic",
+			},
 			[false, true, true]
 		),
-		{
-			title: "Integration Manager",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Import spreadsheets, universes of data, or any other third-party source of data into a central resource. Manage, maintain, and navigate sources dynamically.",
-			long: "",
-			link: "/features/integrationmanager/",
-			type: "EMR",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-		},
 
 		new Module(
-			"Time Tracking",
-			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			"Audit The Auditor",
+			"Review completed audits and reviews by adding  layered documentation. Original data is referential and integrated.",
 			[""],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
 			[false, true, true]
 		),
-		{
-			title: "Audit The Auditor",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Review completed audits and reviews by adding  layered documentation. Original data is referential and integrated.",
-			long: "",
-			link: "/features/audittheauditor/",
-			type: "additional",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-		},
 
 		new Module(
-			"Time Tracking",
-			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			"Document Manager",
+			"Share files such as reports, imported spreadsheets, and training materials between different administration levels. HIPAA compliant, and supported by clear version controlling.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[true, true, true]
+		),
+
+		new Module(
+			"Education Tracking",
+			"Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules. Create and assign quizzes",
 			[""],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
 			[false, true, true]
 		),
-		{
-			title: "Document Manager",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Share files such as reports, imported spreadsheets, and training materials between different administration levels. HIPAA compliant, and supported by clear version controlling.",
-			long: "",
-			link: "/features/integration/",
-			type: "functionalities",
-			essentials: true,
-			pro: true,
-			enterprise: true,
-		},
-
 		new Module(
-			"Time Tracking",
-			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			"ReviewMate Insights (Benchmarking)",
+			"Benchmark and compare performance against other ReviewMate users. Offers advice, community and insight within local scopes, global scopes, or 'millions of records within our community'. Exposes common coding errors that integrate with your Risk Manager.",
 			[""],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
 			[false, true, true]
 		),
-		{
-			title: "Education Tracking",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules. Create and assign quizzes",
-			long: "",
-			link: "/features/usertraining/",
-			type: "additional",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-			enterprise: true,
-		},
-
 		new Module(
-			"Time Tracking",
-			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			"Selector Tools",
+			"Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool.",
 			[""],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
 			[false, true, true]
 		),
-		{
-			title: "ReviewMate Insights (Benchmarking)",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Benchmark and compare performance against other ReviewMate users. Offers advice, community and insight within local scopes, global scopes, or 'millions of records within our community'. Exposes common coding errors that integrate with your Risk Manager.",
-			long: "",
-			link: "/features/reviewmateinsights/",
-			type: "additional",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-		},
 
 		new Module(
-			"Time Tracking",
-			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			"Customizable Tasks",
+			"Customizable task responses allow all users to focus on pertinent issues. Field or view verbose responses based on user preferences.",
 			[""],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
 			[false, true, true]
 		),
-		{
-			title: "Selector Tools",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool.",
-			long: "",
-			link: "/features/selectortools/",
-			type: "additional",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-		},
 
 		new Module(
-			"Time Tracking",
-			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			"Risk Manager",
+			"Leverage artificial intelligence and historical findings to monitor and stay on-top of potential risks.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, false, true]
+		),
+
+		new Module(
+			"Record Tracker",
+			"View full narratives of records in one integrated place by using timelines within each record.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, false, true]
+		),
+		new Module(
+			"Retrospective Physician Queries",
+			"Intuitively analyze and report coders' physician queries on compliance, appropriateness, and efficiency.",
 			[""],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
 			[false, true, true]
 		),
-		{
-			title: "Customizable Tasks",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Customizable task responses allow all users to focus on pertinent issues. Field or view verbose responses based on user preferences.",
-			long: "",
-			link: "/features/selectortools/",
-			type: "additional",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-		},
 
 		new Module(
-			"Time Tracking",
-			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			"CDI Communication",
+			"Integrate communication with any first-party or third-party CDI team.",
 			[""],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
-			[false, true, true]
+			[false, false, true]
 		),
-		{
-			title: "Risk Manager",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Leverage artificial intelligence and historical findings to monitor and stay on-top of potential risks.",
-			long: "",
-			link: null,
-			type: "additional",
-			essentials: false,
-			pro: false,
-			enterprise: true,
-		},
-
-		new Module(
-			"Time Tracking",
-			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
-			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
-			[false, true, true]
-		),
-		{
-			title: "Record Tracker",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"View full narratives of records in one integrated place by using timelines within each record.",
-			long: "",
-			link: "/features/changetracker/",
-			type: "additional",
-			essentials: false,
-			pro: false,
-			enterprise: true,
-		},
-
-		new Module(
-			"Time Tracking",
-			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
-			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
-			[false, true, true]
-		),
-		{
-			title: "Retrospective Physician Queries",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Intuitively analyze and report coders' physician queries on compliance, appropriateness, and efficiency.",
-			long: "",
-			link: null,
-			type: "additional",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-		},
-
-		new Module(
-			"Time Tracking",
-			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
-			[""],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
-			[false, true, true]
-		),
-		{
-			title: "CDI Communication",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Integrate communication with any first-party or third-party CDI team.",
-			long: "",
-			link: "/features/changetracker/",
-			type: "additional",
-			essentials: false,
-			pro: false,
-			enterprise: true,
-		},
 	],
 };
 
-export default featureList
+export default featureList;
+export {formatSlug}

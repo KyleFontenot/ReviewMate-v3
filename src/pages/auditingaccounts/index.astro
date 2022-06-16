@@ -2,17 +2,8 @@
 import FeatureCategory from "../../components/FeatureCategory.astro"
 import StandardLayout from "../../layouts/StandardLayout.astro"
 import Feature from "../../components/Feature.astro"
-import featureList from "../../featureList.js"
-// console.log(featureList.auditing_modules)
+import featureList, {formatSlug} from "../../featureList.js"
 const auditModules = featureList.auditing_modules;
-// const arrFeatures = featureList.auditing_modules.map(feature => feature)
-// console.log(arrFeatures)
-const formatSlug = (title : string) => {
-	if(title.includes(' ')){
-		title.replace(' ', '-')
-	}
-	return title.toLowerCase()
-}
 ---
 <StandardLayout>
   <FeatureCategory title="Auditing Accounts">
