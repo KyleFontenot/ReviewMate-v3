@@ -18,10 +18,8 @@ function FAQ(props) {
 				tab-index="0"
 				aria-label="Dropdown toggle"
 				class={styles.header}
-				style={`${
-					open()
-						? "color: hsl(var(--color1hsl));"
-						: ""
+				style={`${open() ? "color: hsl(var(--color1hsl));" : ""}${
+					props.last ? "padding-bottom:26px;" : ""
 				}`}
 				onClick={() => {
 					setOpen(!open());
@@ -38,7 +36,7 @@ function FAQ(props) {
 					[styles.dropdownopen]: open(),
 				}}
 			>
-				<p>{props.body}</p>
+				{props.children}
 			</div>
 		</div>
 	);

@@ -11,10 +11,8 @@ import BlogStream from "../components/BlogStream.astro"
     <div class="shapeintro" >
       <div class="shapeintrobg"></div>
       <h2>Elevate your medical code auditing workflow</h2>
-      <span style="font-size: 105%;text-indent: 0px;margin-top:
-      2rem;display:block;">Streamline auditing,
-      integrate your data seamlessly, and consolidate communication in one
-      platform.</span>
+      <p >Streamline auditing,
+      integrate your data seamlessly, and consolidate communication in one platform.</p>
       <h3 style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
       <div id="productintroscreen">
         <img src="/product-preview.svg" alt="screenshot of ReviewMate web-app" />
@@ -130,13 +128,15 @@ import BlogStream from "../components/BlogStream.astro"
 
 
 <FlexDiv  className="calltoaction">
-  <h3>Let us show you how you can start saving hours a week</h3>
+  <h3 style="padding-inline: 6%;">Let us show you how you can start saving hours a week</h3>
   <div >
     <Button color="white" as="link" href="/plans/" text="Explore our plans and features" size="2" style="z-index:30;margin-top: 2rem;"/>
     <Button color="yellow" as="link" href="/contact/" text="Contact Us" size="2" style="z-index:30;margin-top: 2rem;"/>
   </div>
     
 </FlexDiv>
+
+
 </main>
 </HomepageLayout>
 
@@ -148,32 +148,36 @@ import BlogStream from "../components/BlogStream.astro"
     height: clamp(34rem, 87vh, 60rem);
     display: block;
     max-width: 100%;
-    top: -2px;
+    top: -1px;
     text-align: center;
     position: relative;
     z-index: 30;
     margin-bottom: 16rem;
-    
-    & > p {
-      color: white;
-      padding-inline: 5%;
-    }
     & > h2 {
       line-height: 3rem;
       font-weight: bolder;
       text-align: center;
       max-width: 70vw;
       position: relative;
-      top: 2rem;
+      top: 4%;
       margin: 0 auto 2rem;
       display: block;
     }
+    & > p {
+      margin-top: 3.5rem;
+      text-indent: 0;
+      color: white;
+      padding-inline: 5%;
+    }
+    
     & > h3 {
       color: white;
+      margin-top: 1.5rem;
       font-size: 1.2rem;
       letter-spacing: 0;
       font-weight: bolder;
     }
+
   }
   .shapeintrobg {
     background: url('/marc-mueller(4).jpeg'); 
@@ -244,13 +248,16 @@ import BlogStream from "../components/BlogStream.astro"
      bottom: -8rem;
      overflow: hidden;
      box-shadow: 0 0 14px -3px #333;
-     transform: translate(-50%, 0);
+     transform-origin: 50% 50%;
+     transform: translate3d(-50%, 0, 0) ;
      & > img {
        position: relative;
        width: 100%;
        height: 100%;
        display: block;
        z-index: 100;
+      //  transform: rotate3d(10deg, 10deg, 0);
+      //  transform: rotate3d(1, 1, 1, 3deg);
      }
      &::after {
        content: '';

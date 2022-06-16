@@ -52,12 +52,12 @@ const featureList = {
 		new AuditingModule(
 			"Outpatient",
 			"Outpatient prospective payment systems extend our core standard auditing features.",
-      [
+			[
 				"The Outpatient Prospective Payment System (OPPS) is the system through which Medicare decides how much money a hospital or community mental health center will get for outpatient care provided to patients with Medicare.    Reimbursement is based on Ambulatory Payment Classification (APC) assignment.",
-        "Correct APC assignment is critical to the health of your organization. Coding audits and using the proper tools will allow financial and compliant stability.",
+				"Correct APC assignment is critical to the health of your organization. Coding audits and using the proper tools will allow financial and compliant stability.",
 				"The ReviewMate platform assists medical coding auditors analyze specific elements affecting APC assignment and reimbursement.",
-],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			],
+			{ src: "/src/images/photos/mart-production.jpg", alt: "Doctors meeting together" },
 			[true, true, true]
 			// add bulletopints here
 		),
@@ -91,8 +91,8 @@ const featureList = {
 			"Accuracy Manager",
 			"Choose from a range of parameters and gather custom accuracy rates.",
 			[
-        "Allows the slicing and dicing your data for aggregating custom accuracy rates.  View accuracy rates by different entities, groups, or date ranges.",	
-        "Allows the slicing and dicing your data for aggregating custom accuracy rates.  View accuracy rates by different entities, groups, or date ranges.",
+				"Allows the slicing and dicing your data for aggregating custom accuracy rates.  View accuracy rates by different entities, groups, or date ranges.",
+				"Allows the slicing and dicing your data for aggregating custom accuracy rates.  View accuracy rates by different entities, groups, or date ranges.",
 			],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
 			[true, true, true]
@@ -153,103 +153,60 @@ const featureList = {
 		new Module(
 			"Multifactor Authentication",
 			"Confirm fidelity with more complex sign-on options. Integration with Google Duo.",
-			[
-				"Unlimited amount of customizable templates for your firm. From branding to typography, keep your reports consistent seamlessly.",
-			],
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
+		new Module(
+			"LDAP / Active Directory",
+			"Connect directly into enterprise LDAP system from within ReviewMate. Master passwords work within ReviewMate for seamless user authentication.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
+		new Module(
+			"VPN Integration",
+			"End-to-end VPN tunneling compatibility with SOC2 certified compliance.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
+	],
+
+	analytics: [
+		new Module(
+			"Staffing Analaytics",
+			"Time tracking and progress transparency, against tasks, findings, accounts. Track goals and accountability with visual charts and dashboard plugins.",
+			[""],
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
 			[false, true, true]
 		),
 
-		{
-			title: "Multifactor Authentication",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Confirm fidelity with more complex sign-on options. Integration with Google Duo.",
-			long: "",
-			link: "/features/security/",
-			type: "EMR",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-		},
-		{
-			title: "LDAP / Active Directory",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Connect directly into enterprise LDAP system from within ReviewMate. Master passwords work within ReviewMate for seamless user authentication.",
-			long: "",
-			link: "/features/security/",
-			type: "EMR",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-		},
-		{
-			title: "VPN Integration",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"End-to-end VPN tunneling compatibility with SOC2 certified compliance.",
-			long: "",
-			link: "/features/security/",
-			type: "EMR",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-		},
-	],
+		new Module(
+			"System Metrics",
+			"Utilize visual graphs and charts to focus on performance-based results. Discover prioritization concerns as they happen.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
 
-	analytics: [
-		{
-			title: "Staffing Analaytics",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Time tracking and progress transparency, against tasks, findings, accounts. Track goals and accountability with visual charts and dashboard plugins.",
-			long: "",
-			link: "/features/analytics/",
-			type: "additional",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-		},
-		{
-			title: "System Metrics",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Utilize visual graphs and charts to focus on performance-based results. Discover prioritization concerns as they happen.",
-			long: "",
-			link: "/features/analytics/",
-			type: "additional",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-		},
-		{
-			title: "Time Tracking",
-			get slug() {
-				return formatSlug(this.title);
-			},
-			short:
-				"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
-			long: "",
-			link: "/features/analytics/",
-			type: "additional",
-			essentials: false,
-			pro: true,
-			enterprise: true,
-		},
+		new Module(
+			"Time Tracking",
+			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
 	],
 
 	additional_functionalities: [
+		new Module(
+			"Integration Manager",
+			"Import spreadsheets, universes of data, or any other third-party source of data into a central resource. Manage, maintain, and navigate sources dynamically.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
 		{
 			title: "Integration Manager",
 			get slug() {
@@ -264,6 +221,14 @@ const featureList = {
 			pro: true,
 			enterprise: true,
 		},
+
+		new Module(
+			"Time Tracking",
+			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
 		{
 			title: "Audit The Auditor",
 			get slug() {
@@ -278,6 +243,14 @@ const featureList = {
 			pro: true,
 			enterprise: true,
 		},
+
+		new Module(
+			"Time Tracking",
+			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
 		{
 			title: "Document Manager",
 			get slug() {
@@ -292,6 +265,14 @@ const featureList = {
 			pro: true,
 			enterprise: true,
 		},
+
+		new Module(
+			"Time Tracking",
+			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
 		{
 			title: "Education Tracking",
 			get slug() {
@@ -307,6 +288,14 @@ const featureList = {
 			enterprise: true,
 			enterprise: true,
 		},
+
+		new Module(
+			"Time Tracking",
+			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
 		{
 			title: "ReviewMate Insights (Benchmarking)",
 			get slug() {
@@ -321,6 +310,14 @@ const featureList = {
 			pro: true,
 			enterprise: true,
 		},
+
+		new Module(
+			"Time Tracking",
+			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
 		{
 			title: "Selector Tools",
 			get slug() {
@@ -335,6 +332,14 @@ const featureList = {
 			pro: true,
 			enterprise: true,
 		},
+
+		new Module(
+			"Time Tracking",
+			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
 		{
 			title: "Customizable Tasks",
 			get slug() {
@@ -349,6 +354,14 @@ const featureList = {
 			pro: true,
 			enterprise: true,
 		},
+
+		new Module(
+			"Time Tracking",
+			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
 		{
 			title: "Risk Manager",
 			get slug() {
@@ -363,6 +376,14 @@ const featureList = {
 			pro: false,
 			enterprise: true,
 		},
+
+		new Module(
+			"Time Tracking",
+			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
 		{
 			title: "Record Tracker",
 			get slug() {
@@ -377,6 +398,14 @@ const featureList = {
 			pro: false,
 			enterprise: true,
 		},
+
+		new Module(
+			"Time Tracking",
+			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
 		{
 			title: "Retrospective Physician Queries",
 			get slug() {
@@ -391,6 +420,14 @@ const featureList = {
 			pro: true,
 			enterprise: true,
 		},
+
+		new Module(
+			"Time Tracking",
+			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+			[""],
+			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			[false, true, true]
+		),
 		{
 			title: "CDI Communication",
 			get slug() {

@@ -1,19 +1,18 @@
 ---
 import FlexDiv from './FlexDiv.astro'
 import Button from './Button.astro'
-const {explain, module} = Astro.props;
-
+const {explain, previousButton} = Astro.props;
 ---
 
 <FlexDiv style="margin-top: 3rem;" justify="space-around" align="center">
+  {previousButton && <Button as="link" outline leftArrow text={previousButton.text} href={previousButton.href}/>}
   {explain ? <p class="explanation">Any further questions</p> : ''}
-  {module !== undefined ? <Button text={`${module}`}> : ''}
+  
   <slot />
   <Button as="link" href="/contact/" color="yellow" text="Contact Us" size="2" >Contact</Button>
 </FlexDiv>
 <style lang="scss">
   .explanation{
     font-size: 120%;
-    // margin-bottom: 10rem;
   }
 </style>

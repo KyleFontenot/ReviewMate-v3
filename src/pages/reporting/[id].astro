@@ -2,7 +2,8 @@
 import FeatureLayout from '../../layouts/FeatureLayout.astro'
 import Feature from '../../components/Feature.astro'
 import CallToAction from '../../components/CallToAction.astro'
-import Tidbit from '../../components/Tidbit.astro'
+import Button from '../../components/Button.astro'
+// import Tidbit from '../../components/Tidbit.astro'
 import CommonTraits from "../../components/CommonTraits.jsx"
 import featureList from '../../featureList.js'
 export function getStaticPaths() {
@@ -18,7 +19,7 @@ export function getStaticPaths() {
 const {feature} = Astro.props;
 ---
 <FeatureLayout>
-<Feature title={feature.title} imgSrc={feature?.imgSrc} imgAlt={feature?.imgAlt} commontraits> 
+<Feature title={feature.title} imgSrc={feature?.imgSrc} imgAlt={feature?.imgAlt} > 
   <div slot="paragraphs">
     {feature?.long.map(paragraph => {
       return (
@@ -34,14 +35,16 @@ const {feature} = Astro.props;
       )
     }
     )}</ul> : 
-    (feature?.bullets?.length !== undefined && feature?.bullets?.length > 0) ? <ul class="list" >{feature?.bullets?.map(point => {
+    (feature?.bullets?.length !== undefined && feature?.bullets?.length > 0) ? 
+    <ul class="list" >{feature?.bullets?.map(point => {
       return (
         <li class="bullet">{point}</li>
       )
     }
     )}</ul> : ''} 
-  </ul>
-<CallToAction explain module={{ title: "Reporting", link: "/reporting/" }}></CallToAction>
+  
+  <CallToAction explain previousButton={{text: `Reporting`, href: "/reporting/"}}></CallToAction>
+
 </Feature>
 </FeatureLayout>
 <style lang="scss">

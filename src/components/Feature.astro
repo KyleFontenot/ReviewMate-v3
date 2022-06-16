@@ -32,6 +32,10 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
     flex-flow: column wrap;
     width: 100%;
     max-width: 100%;
+    & > :global(img) {
+      margin-inline: auto;
+        display: block;
+    }
   }
   .paragraph {
       padding: 1.3rem 2.3rem 3rem 1.3rem;

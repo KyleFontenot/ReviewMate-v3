@@ -2,38 +2,61 @@
 import {FAQ} from './FAQ.jsx'
 const {style} = Astro.props;
 ---
-<div id="faqs" class="faqdiv" style="padding-left: 2rem; padding-right: 2rem;border-radius: 6px;"> 
+<div id="faqs" class="faqdiv" > 
  <h2 style="color: white;margin: 0 auto;padding:2rem 0 1rem; text-align: center;font-size: 2.6rem;margin-inline: -2rem;">FAQs</h2>
-    <FAQ header="What is ReviewMate?" body="ReviewMate provides your company with one centralized platform where audits take place and will replace any manual processes your auditing team currently uses. Shareholders in the audit process will be able to transparently view how audits are going, how far along the audit is in the process and run reports. According to time studies, ReviewMate saves about 30% of an auditors’ time by automating some of their processes." style="margin-top: 2rem;" client:idle />
+    <FAQ header="What is ReviewMate?" style="margin-top: 2rem;" client:idle ><p>"ReviewMate provides your company with one centralized platform where audits take place and will replace any manual processes your auditing team currently uses. Shareholders in the audit process will be able to transparently view how audits are going, how far along the audit is in the process and run reports. According to time studies, ReviewMate saves about 30% of an auditors’ time by automating some of their processes."</p>
+  </FAQ>
 
-  <FAQ header="How will ReviewMate benefit my company?" body="Save hours and even days per week by keeping all of your data, sources, and communication consolidated into one browser-based web-app. There's a great variety of tools to help auditors, but there are out-facing utilities for clients and coders as well. ReviewMate automatically generates 'coder report cards' for individual coders to login and view their performance directly. Additionally, all findings are generated into reports for clients made exactly how your particular report needs to be." client:idle />
+  <FAQ header="How will ReviewMate benefit my company?"  client:idle >
+    <p>"Save hours and even days per week by keeping all of your data, sources, and communicatio consolidated into one browser-based web-app. There's a great variety of tools to help auditors, but there are out-facing utilities for clients and coders as well. ReviewMate automatically generates 'coder report cards' for individual coders to login and view their performance directly. Additionally, all findings are generated into reports for clients made exactly how your particular report needs to be."</p>
+  </FAQ>
     
-    <FAQ header="How will ReviewMate make my life as an auditor easier?" body="Auditors will find that their processes will take less time by automation of reporting, reconciliation, and communication. Auditors can communicate with coders within ReviewMate through tasks making the reconciliation process seamless. Having coding references imbedded in ReviewMate eliminates the toggling back and forth between groupers and auditing tools. Also eliminated is the requirement to enter demographics and codes into a grouper to make sequencing decisions or price an account." client:idle />
+    <FAQ header="How will ReviewMate make my life as an auditor easier?" client:idle >
+      <p>Auditors will find that their processes will take less time by automation of reporting, reconciliation, and communication. Auditors can communicate with coders within ReviewMate through tasks making the reconciliation process seamless. Having coding references imbedded in ReviewMate eliminates the toggling back and forth between groupers and auditing tools. Also eliminated is the requirement to enter demographics and codes into a grouper to make sequencing decisions or price an account.</p>
+    </FAQ>
 
-    <FAQ header="How does my data get incorporated into ReviewMate?" body="There are multiple ways to get data (demographics and coded data) into ReviewMate. You can: 1) Manually enter the data into the screens. 2) Manually upload an Excel template containing the data for your sample into the tool. 3) Electronically send the templated sample data via an FTP. 4) Create an electronic interface to accept incorporated data in a particular review. 5) From a universe of data, electronically interface to a data “pool” where samples can be created using a randomizer or a variety of rules to start a review." client:idle />
+    <FAQ header="How does my data get incorporated into ReviewMate?" client:idle > 
+      <p>There are multiple ways to get data (demographics and coded data) into ReviewMate. You can: 1) Manually enter the data into the screens. 2) Manually upload an Excel template containing the data for your sample into the tool. 3) Electronically send the templated sample data via an FTP. 4) Create an electronic interface to accept incorporated data in a particular review. 5) From a universe of data, electronically interface to a data “pool” where samples can be created using a randomizer or a variety of rules to start a review.</p>
+    </FAQ>
 
-    <FAQ header="Is ReviewMate secure?" body="ReviewMate is hosted on secure servers which are SOC2 Type 2 and SOC 3 Type 2 certified and HIPAA and HITECH audited, designed to secure and protect critical healthcare data, and electronic protected health information (ePHI) and records." client:idle />
+    <FAQ header="Is ReviewMate secure?" client:idle >
+      <p>ReviewMate is hosted on secure servers which are SOC2 Type 2 and SOC 3 Type 2 certified and HIPAA and HITECH audited, designed to secure and protect critical healthcare data, and electronic protected health information (ePHI) and records.</p>
+      </FAQ>
 
-    <FAQ header="How does pricing work?" body="Pricing is based on a subscription model and is stratified by how many reviewers and managers access the system. Two different models are available: 1) Static monthly subscription based on your known volumes (usually for hospital systems). 2) Static monthly subscription plus a per-record fee so that you only pay for what you use (usually for firms who have variable work from month to month)." client:idle />
+    <FAQ header="How does pricing work?" client:idle >
+      <p>Our <a href=""></a></p>
+      <p>Pricing is based on a subscription model stratified by how many reviewers and managers access the system, in addition to features necessary. Two different models are available: 1) Static monthly subscription based on your known volumes (usually for hospital systems). 2) Static monthly subscription plus a per-record fee so that you only pay for what you use (usually for firms who have variable work from month to month).</p>
+    </FAQ>
 
-    <FAQ header="Are the reports customizable?" body="Most of our reports are customizable. Users can create an unlimited number of templates for their reports and can change the look and feel of reports down to color, text and formatting." client:idle />
+    <FAQ header="Are the reports customizable?" client:idle >
+      <p>Most of our reports are customizable. Users can create an unlimited number of templates for their reports and can change the look and feel of reports down to color, text and formatting. Fields and sections of the reports can be automatically populated directly from findings within ReviweMate</p>
+    </FAQ>
 
-    <FAQ header="Do you have APR-DRGs?" body="APR-DRGs can be incorporated into ReviewMate for 3M partners or if a license is obtained from 3M." client:idle />
+    <FAQ header="Do you have APR-DRGs?" client:idle >
+      <p>APR-DRGs can be incorporated into ReviewMate for 3M partners or if a license is obtained from 3M.</p>
+    </FAQ>
 
-    <FAQ header="Do I need to download anything to use the software?" body="No. ReviewMate is completely browser-based. Users just need an internet connection and one of the popular web-browsers such as Mozilla Firefox, Google Chrome, Apple Safari or Microsoft Internet Explorer." client:idle />
+    <FAQ header="Do I need to download anything to use the software?" body="No. ReviewMate is completely browser-based and cloud-based. Users just need an internet connection from any modern internet browser to be able to access everything in your firm's system." client:idle >
+      <p>No. ReviewMate is completely browser-based and cloud-based. Users just need an internet connection from any modern internet browser to be able to access everything in your firm's system.</p>
+    </FAQ>
 
-    <FAQ header="Does ReviewMate have reporting functions/reports?" body="Yes. ReviewMate has many ways of running reports for audits. Different users can access reporting and use the system as a “help yourself” type of software. There are seven different reporting modules in ReviewMate." client:idle />
+    <FAQ header="Does ReviewMate have reporting functions/reports?" last client:idle >
+      <p>Yes. ReviewMate has many ways of running reports for audits. Different users can access reporting and use the system as a “help yourself” type of software. There are even many ways to create templated reports for your firm for consistent reporting directed toward coders, clients, or other auditors.</p>
+    </FAQ>
  </div> 
  <style lang="scss"> 
  .faqdiv {
-		/* margin-top: 4rem; */
-		margin-bottom: 5rem;
     padding-top: 1rem;
-		padding-bottom: 2.5rem;
+		padding-bottom: 6rem;
     border-top: 2px solid hsl(var(--color1h), 50% 20%);
 		width: 114%;
 		margin-inline: -7%;
+    margin-bottom: -3rem;
 		background-color: hsl(var(--color1hsl));
+    padding-left: 2rem; 
+    padding-right: 2rem;
+    border-radius: 6px;
+    
 		& button {
 			display: block;
 		}
