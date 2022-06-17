@@ -20,7 +20,7 @@ class Module {
 		this.long = long;
 		this.imgSrc = img.src || "/src/images/photos/rodnae.jpg";
 		this.imgAlt = img.alt;
-		this.essentials = tiers;
+		this.essentials = tiers[0];
 		this.pro = tiers[1];
 		this.enterprise = tiers[2];
 		this.bullets = bullets;
@@ -304,7 +304,7 @@ const featureList = {
 			"Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool.",
 			[""],
 			{ src: "/src/images/photos/selection.jpg", alt: "Customer group circled" },
-			[false, true, true]
+			[true, true, true]
 		),
 
 		new Module(
@@ -312,7 +312,7 @@ const featureList = {
 			"Customizable task responses allow all users to focus on pertinent issues. Field or view verbose responses based on user preferences.",
 			[""],
 			{ src: "/src/images/photos/postitnotes.jpg", alt: "Three differentl colored Post-it notes on a window" },
-			[false, true, true]
+			[true, true, true]
 		),
 
 		new Module(

@@ -1,13 +1,14 @@
 ---
 import styles from './ConcernBlob.module.scss'
-// import Rellax from '../scripts/Rellax.astro'
+import CheckMark from './CheckMark.astro'
 const {variant, tagline, description, answer} = Astro.props
 ---
 <div class:list={[styles.container, {[styles.variant2] : variant === 2}]}>
   <h4 class:list={[ styles.tagline, 'rellax2', 'concerntagline' ]}  >{tagline}</h4>
   <div class:list={[ styles.div,  'concerndiv' ]} >
-    <p class:list={[ styles.description ]}><img src="/icons/exclamation.svg" class={styles.exclamation} role="presentation" aria-label="hidden" /> {description}</p>
-    <p class={styles.answer}>  {answer}</p>
+    <p class:list={[ styles.description ]}>
+      <img src="/icons/exclamation.svg" class={styles.exclamation} role="presentation" aria-label="hidden" /> {description}</p>
+    <p class={styles.answer}> <CheckMark/> {answer}</p>
   </div>
   <img class:list={[ styles.image, 'rellax1' ]} src="/favicon(withoutbg).svg" alt="placeholder" />
 </div>

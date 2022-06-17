@@ -1,6 +1,6 @@
 ---
 import StandardLayout from "../layouts/StandardLayout.astro"
-import Checkmark from "../components/Checkmark.astro"
+import PlanCheck from "../components/PlanCheck.astro"
 import { FeatureDropdown} from '../components/FeatureDropdown.jsx'
 import FlexDiv from '../components/FlexDiv.astro'
 import Tidbit from '../components/Tidbit.astro'
@@ -72,9 +72,9 @@ contrast(88%); margin-right: 1rem; padding-top: 10px; margin-left:10px;"/></h4>
         return (
           <tr>
             <td><FeatureDropdown header={feature.title} body={feature.short} link={feature.link} client:idle /></td>
-            <td><Checkmark bool={feature.essentials} /></td>
-            <td><Checkmark bool={feature.pro}  /></td>
-            <td><Checkmark bool={feature.enterprise}  /></td>
+            <td><PlanCheck bool={feature.essentials} /></td>
+            <td><PlanCheck bool={feature.pro}  /></td>
+            <td><PlanCheck bool={feature.enterprise}  /></td>
           </tr>
         )
       })}

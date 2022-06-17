@@ -6,16 +6,19 @@ import SmallLink from "../components/SmallLink.astro"
 import ConcernBlob from '../components/ConcernBlob.astro'
 import Timeline from "../components/Timeline.astro"
 import BlogStream from "../components/BlogStream.astro"
+import {formatSlug} from "../featureList.js"
 ---
 <HomepageLayout>
     <div class="shapeintro" >
       <div class="shapeintrobg" id="shapeintrobg"></div>
-      <h2>Elevate your medical code auditing workflow</h2>
-      <p >Streamline auditing,
-      integrate your data seamlessly, and consolidate communication in one platform.</p>
-      <h3 style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
+      <div class="introtext">
+        <h2>Elevate your medical code auditing workflow</h2>
+        <p >Streamline auditing,
+        integrate your data seamlessly, and consolidate communication in one platform.</p>
+        <h3 style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
+      </div>
       <div id="productintroscreen">
-        <img src="/product-preview.svg" alt="screenshot of ReviewMate web-app" />
+        <img src="/product-preview(2).svg" alt="screenshot of ReviewMate web-app" />
       </div>
     </div>
 
@@ -45,13 +48,13 @@ import BlogStream from "../components/BlogStream.astro"
   </FlexDiv>
 
 <div class="rellaxwrapper">
-    <ConcernBlob tagline={` Spreadsheet Friction `} description="Juggling between spreadsheets and different program resources is not only frustrating, but it wastes time, and can contribute to inconsistency." answer="ReviewMate consolidates all of your sources of information into one platform. Log in and take care of business." client:load>
+    <ConcernBlob tagline={`"Spreadsheet Friction" `} description="Juggling between spreadsheets and different program resources is not only frustrating, but it wastes time, and can contribute to inconsistency." answer="ReviewMate consolidates all of your sources of information into one platform. Log in and take care of business." client:load>
     </ConcernBlob>
-    <ConcernBlob variant={2} tagline={`Game of Telephone `} description="While reviewers are providing insights and comments on findings, having a single document being constantly carbon copied blurs lines of accountability, and opens up gaps for miscommunication." answer="Synchronized communication allows for every single audit, finding, comment, and task to be completely transparent for all authorized parties. " client:load>
+    <ConcernBlob variant={2} tagline={`The "Game of Telephone" `} description="While reviewers are providing insights and comments on findings, having a single document being constantly carbon copied blurs lines of accountability, and opens up gaps for miscommunication." answer="Synchronized communication allows for every single audit, finding, comment, and task to be completely transparent for all authorized parties. " client:load>
     </ConcernBlob>
-    <ConcernBlob tagline={` "Email Traffic-Jam" `} description="Email threads become messy and burdensome, sometimes overlooking pertinent information in pages and pages of history." answer="ReviewMate brings modern central communication to auditing deliberation, by integrating direct references, explicit notes, and party transparency so that everyone is heard concisely." client:idle>
+    <ConcernBlob tagline={`The "Email Traffic-Jam" `} description="Email threads become messy and burdensome, sometimes overlooking pertinent information in pages and pages of history." answer="ReviewMate brings modern central communication to auditing deliberation, by integrating direct references, explicit notes, and party transparency so that everyone is heard concisely." client:idle>
     </ConcernBlob>
-    <ConcernBlob variant={2} tagline={` "Opaque" `} description="Managers, and most importantly, clients, need to be able to keep track of active progression in auditing tasks to utilize a pro-active approach to the teams' work." answer="Tasks in ReviewMate are groups of assigned work which can be traced on factual, present data. ReviewMate even extends special transparency tools for clients and coders alike." client:load>
+    <ConcernBlob variant={2} tagline={` The "Opaque" problem`} description="Managers, and most importantly, clients, need to be able to keep track of active progression in auditing tasks to utilize a pro-active approach to the teams' work." answer="Tasks in ReviewMate are groups of assigned work which can be traced on factual, present data. ReviewMate even extends special transparency tools for clients and coders alike." client:load>
     </ConcernBlob>
 </div>
   
@@ -62,11 +65,16 @@ import BlogStream from "../components/BlogStream.astro"
         <h2>Integrate</h2> 
         <p>Securely connect to the universe of data seamlessly with ease. Imported
         data is available platform-wide and ready for selection.</p> 
-        <SmallLink href="/security/integration/" text="Integration Manager"/> 
-        <SmallLink href="/security/integration/" text="Document Manager"/> 
-        <SmallLink href="/security/multifactor-authentication/" text="Multifactor Authentication"/>
-        <SmallLink href="/security/ldap-active-directory" text="LDAP / Active Directory"/>
-        <SmallLink href="/security/vpn-integration/" text="VPN Integration"/>
+        <SmallLink href={`/security/${formatSlug("Integration Manager")}/`} text="Integration Manager"/> 
+        
+        <SmallLink href={`/security/${formatSlug("Document Manager")}/`} text="Document Manager"/> 
+
+        <SmallLink href={`/security/${formatSlug("Multifactor Authentication")}/`} text="Multifactor Authentication"/> 
+        
+        <SmallLink href={`/security/${formatSlug("LDAP / Active Directory")}/`} text="LDAP / Active Directory"/> 
+
+        <SmallLink href={`/security/${formatSlug("VPN Integration")}/`} text="VPN Integration"/> 
+
         </div> 
         <!-- <div><lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> </div> -->
         </div>
@@ -74,11 +82,12 @@ import BlogStream from "../components/BlogStream.astro"
   <div slot="2">
     <div class="timelinediv">
       <div>
-      <h2>Sample Selection</h2> 
-      <p>Apply flexible rules and parameters to efficiently gather
-      accounts to audit or through random selection.</p>
-      <SmallLink href="/" text="Sample Selector"/>
-      <SmallLink href="/" text="Risk Manager"/>
+      <h2>Sample</h2> 
+      <p>Apply flexible rules and parameters to concisely gather
+      accounts for auditing audit. Randomizer tools are also available.</p>
+        <SmallLink href={`/security/${formatSlug("Sample Selector")}/`} text="Sample Selector"/> 
+
+        <SmallLink href={`/security/${formatSlug("Risk Manager")}/`} text="Risk Manager"/> 
     </div>
       <!-- <div><lottie-player src="/lotties/RM-refine.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
@@ -90,10 +99,15 @@ import BlogStream from "../components/BlogStream.astro"
    <p>Conduct audits in a transparent consolidated platform. Relay audit findings
    to other users easily.</p>
    <SmallLink href="/auditingaccounts/inpatient/" text="IPPS"/>
+
    <SmallLink href="/auditingaccounts/outpatient/" text="OPPS"/>
+
    <SmallLink href="/auditingaccounts/profee/" text="Profee"/>
+
    <SmallLink href="/auditingaccounts/asc/" text="ASC"/>
+
    <SmallLink href="/auditingaccounts/cms-hcc/" text="CMS-HCC"/>
+        
    </div>
    <!-- <div><lottie-player src="/lotties/RM-audit.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
@@ -102,8 +116,9 @@ import BlogStream from "../components/BlogStream.astro"
   <div class="timelinediv">
       <div>
    <h2>Report</h2> 
-   <p>Choose from a variety of standard or custom reporting options.</p>
+   <p>Either choose from a variety of standard options or create custom reports as seen fit. </p>
    <SmallLink href="/" text="Report Cards"/>
+
    <SmallLink href="/" text="Accuracy Manager"/>
    <SmallLink href="/" text="Code Finder"/>
    <SmallLink href="/" text="Dashboards"/>
@@ -150,40 +165,85 @@ import BlogStream from "../components/BlogStream.astro"
     color: white; 
     width: 100%;
     margin-inline: auto;
-    height: clamp(46rem, 87vh, 60rem);
+    height: clamp(48rem, 48rem, 60rem);
     display: block;
     max-width: 100%;
     top: -1px;
     text-align: center;
     position: relative;
     z-index: 30;
-    margin-bottom: 16rem;
-    & > h2 {
-      line-height: 3rem;
-      font-weight: bolder;
-      text-align: center;
-      max-width: 70vw;
-      position: relative;
-      top: 2rem;
-      margin: 0 auto 2rem;
-      display: block;
+    margin-bottom: 26vw;
+    .introtext {
+      position: absolute;
+      width: 80%;
+      left: 50%;
+      bottom: calc(20vw * 0.9 + 18rem);
+      transform: translate(-50%, 0);
+      & h2, & p, & h3 {
+        color: white;
+      }
+      & > h2 {
+        line-height: 3rem;
+        font-weight: bolder;
+        text-align: center;
+        max-width: 70vw;
+        position: relative;
+        top: 2rem;
+        margin: 0 auto 2rem;
+        display: block;
+      }
+      & > p {
+        margin-top: 4rem;
+        text-indent: 0;
+        padding-inline: 5%;
+      }
+      & > h3 {
+        margin-top: 1.5rem;
+        font-size: 1.3rem;
+        letter-spacing: 0;
+        font-weight: bolder;
+      }
     }
-    & > p {
-      margin-top: 3.5rem;
-      text-indent: 0;
-      color: white;
-      padding-inline: 5%;
-    }
-    
-    & > h3 {
-      color: white;
-      margin-top: 1.5rem;
-      font-size: 1.2rem;
-      letter-spacing: 0;
-      font-weight: bolder;
-    }
-
   }
+  @media (max-width: 446px ){
+    .shapeintro > .introtext {
+      width: 90%;
+      bottom: calc(20vw + 12rem);
+    }
+  }
+  @media (min-width: 1110px ){
+    .shapeintro > .introtext {
+      bottom: calc(22vw * 0.80 + 12rem);
+    }
+  }
+  #productintroscreen{
+     max-width: 70rem;
+     width: 100%;
+     height: 70vw;
+     max-height: 34rem;
+    //  max-height: 24rem;
+      width: clamp(8rem, 80%, 70rem);
+      margin-inline: auto;
+     border-radius: 8px;
+     position: absolute;
+     display: inline-block;
+     left: 50%;
+     bottom: -16vw;
+     overflow: hidden;
+     box-shadow: 0 0 14px -3px #333;
+     transform-origin: 50% 50%;
+     transform: translate3d(-50%, 0, 0) ;
+     & > img {
+       position: relative;
+       top: 0;
+       width: 100%;
+      //  height: 100%;
+       display: block;
+       z-index: 100;
+      //  object-fit: cover;
+
+     }
+   }
   .shapeintrobg {
     // background: url('/marc-mueller(4).webp'), url('/marc-mueller(4).jpeg'); 
     background-color: #888;
@@ -243,43 +303,7 @@ import BlogStream from "../components/BlogStream.astro"
     height: 25rem;
     object-fit:contain;
   }
-   #productintroscreen{
-     max-width: 70rem;
-     width: 100%;
-     max-height: 34rem;
-    //  height: 20rem;
-    width: clamp(8rem, 80%, 70rem);
-    margin-inline: auto;
-     border-radius: 8px;
-     position: absolute;
-     display: inline-block;
-     left: 50%;
-     bottom: -25%;
-     overflow: hidden;
-     box-shadow: 0 0 14px -3px #333;
-     transform-origin: 50% 50%;
-     transform: translate3d(-50%, 0, 0) ;
-     & > img {
-       position: relative;
-       width: 100%;
-       height: 100%;
-       display: block;
-       z-index: 100;
-      //  transform: rotate3d(10deg, 10deg, 0);
-      //  transform: rotate3d(1, 1, 1, 3deg);
-     }
-    //  &::after {
-    //    content: '';
-    //    position: absolute;
-    //    top: 0;
-    //    left: 0;
-    //    width: 100%;
-    //    height: 100%;
-    //    display: block;
-    //    background: linear-gradient(to bottom, transparent, white);
-    //    background-color:  white;
-    //  }
-   }
+   
    .producttraits{
       flex-flow: row wrap;
       justify-content: space-around;

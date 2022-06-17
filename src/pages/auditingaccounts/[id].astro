@@ -7,11 +7,7 @@ import CommonTraits from "../../components/CommonTraits.jsx"
 
 import featureList from '../../featureList.js'
 
-// const features = await featureList.auditing_modules.map(module => module)
-// console.log(features.map(feature => feature.title))
-
 export function getStaticPaths() {
-
   return featureList.auditing_modules.map(feature => 
   {
     return({
@@ -23,7 +19,6 @@ export function getStaticPaths() {
 // const {id} = Astro.params;
 const {feature} = Astro.props;
 
-console.log(feature.bullets)
 ---
 <FeatureLayout>
 <Feature title={feature.title} imgSrc={feature?.imgSrc} imgAlt={feature?.imgAlt} commontraits> 
