@@ -4,11 +4,8 @@
   import "../styles/global.scss"
   import { SEO } from "astro-seo"
   import Quicklink from "../scripts/Quicklink.astro"
-  // import Rellax from "../scripts/Rellax.astro"
-  import Rellax from "rellax"
-  // import "@lottiefiles/lottie-player";
-  // import ScrollReveal from 'scrollreveal'
-  // import ScrollReveal from "../scripts/ScrollReveal.astro"
+  import Rellax from "../scripts/Rellax.astro"
+  import ScrollReveal from "../scripts/ScrollReveal.astro"
 
   const {title } = metadata;
 
@@ -45,19 +42,24 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- <ScrollReveal /> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"> -->
+
+    <!-- optionally increase loading priority -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Inter:wght@300;400;600&display=swap">
+    <!-- async CSS -->
+    <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Inter:wght@300;400;600&display=swap">
+    <!-- no-JS fallback -->
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Inter:wght@300;400;600&display=swap">
+    </noscript>
+
 
   </head>
   
-  <body>
+  <body style="width: 100%;">
     <slot />
   </body>
-  <!-- <Quicklink /> -->
-  <script defer>
-    // quicklink.prefetch("/projects");
-    quicklink.listen();
-  </script>
+  <Quicklink />
   
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VPCMB0035"></script>
@@ -67,23 +69,8 @@
       gtag('js', new Date());
       gtag('config', 'G-8VPCMB0035');
     </script>
-
-
-    <!-- <Rellax /> -->
-    <script defer>
-      var rellax1 = new Rellax(".rellax1", {
-          speed: 0.3,
-          center: true,
-        });
-      var rellax2 = new Rellax(".rellax2", {
-        speed: 0.5,
-        center: true,
-      });
-    </script>
-
-    <script defer >
-      import('scrollreveal')
-    </script>
+    <Rellax />
+    <ScrollReveal />
 
     <script defer>
     function hideDropdowns() {
@@ -109,4 +96,5 @@
       }
     })
     </script>
+    <!-- <LottiePlayer /> -->
 </html>

@@ -9,7 +9,7 @@ import BlogStream from "../components/BlogStream.astro"
 ---
 <HomepageLayout>
     <div class="shapeintro" >
-      <div class="shapeintrobg"></div>
+      <div class="shapeintrobg" id="shapeintrobg"></div>
       <h2>Elevate your medical code auditing workflow</h2>
       <p >Streamline auditing,
       integrate your data seamlessly, and consolidate communication in one platform.</p>
@@ -78,7 +78,7 @@ import BlogStream from "../components/BlogStream.astro"
       <p>Apply flexible rules and parameters to efficiently gather
       accounts to audit or through random selection.</p>
       <SmallLink href="/" text="Sample Selector"/>
-      <SmallLink href="#" text="Risk Manager"/>
+      <SmallLink href="/" text="Risk Manager"/>
     </div>
       <!-- <div><lottie-player src="/lotties/RM-refine.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
@@ -89,11 +89,11 @@ import BlogStream from "../components/BlogStream.astro"
    <h2>Audit</h2> 
    <p>Conduct audits in a transparent consolidated platform. Relay audit findings
    to other users easily.</p>
-   <SmallLink href="/auditingaccounts/inpatient" text="IPPS"/>
-   <SmallLink href="/auditingaccounts/outpatient" text="OPPS"/>
-   <SmallLink href="/auditingaccounts/profee" text="Profee"/>
-   <SmallLink href="/auditingaccounts/asc" text="ASC"/>
-   <SmallLink href="/auditingaccounts/cms-hcc" text="CMS-HCC"/>
+   <SmallLink href="/auditingaccounts/inpatient/" text="IPPS"/>
+   <SmallLink href="/auditingaccounts/outpatient/" text="OPPS"/>
+   <SmallLink href="/auditingaccounts/profee/" text="Profee"/>
+   <SmallLink href="/auditingaccounts/asc/" text="ASC"/>
+   <SmallLink href="/auditingaccounts/cms-hcc/" text="CMS-HCC"/>
    </div>
    <!-- <div><lottie-player src="/lotties/RM-audit.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
@@ -103,12 +103,12 @@ import BlogStream from "../components/BlogStream.astro"
       <div>
    <h2>Report</h2> 
    <p>Choose from a variety of standard or custom reporting options.</p>
-   <SmallLink href="#" text="Report Cards"/>
-   <SmallLink href="#" text="Accuracy Manager"/>
-   <SmallLink href="#" text="Code Finder"/>
-   <SmallLink href="#" text="Dashboards"/>
-   <SmallLink href="#" text="Summary Templates"/>
-   <SmallLink href="#" text="Exportability"/>
+   <SmallLink href="/" text="Report Cards"/>
+   <SmallLink href="/" text="Accuracy Manager"/>
+   <SmallLink href="/" text="Code Finder"/>
+   <SmallLink href="/" text="Dashboards"/>
+   <SmallLink href="/" text="Summary Templates"/>
+   <SmallLink href="/" text="Exportability"/>
    </div>
    <!-- <div><lottie-player src="/lotties/RM-report.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
@@ -118,8 +118,8 @@ import BlogStream from "../components/BlogStream.astro"
       <div>
    <h2>Monitor</h2> 
    <p>Track findings in one centralized platform while augmenting workflows with artificial intelligence.</p>
-   <SmallLink href="#" text="Sample Selector"/>
-   <SmallLink href="#" text="Sample Selector"/>
+   <SmallLink href="/" text="Sample Selector"/>
+   <SmallLink href="/" text="Sample Selector"/>
    </div>
    <!-- <div><lottie-player src="/lotties/RM-monitor.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
@@ -132,11 +132,17 @@ import BlogStream from "../components/BlogStream.astro"
     <Button color="white" as="link" href="/plans/" text="Explore our plans and features" size="2" style="z-index:30;margin-top: 2rem;"/>
     <Button color="yellow" as="link" href="/contact/" text="Contact Us" size="2" style="z-index:30;margin-top: 2rem;"/>
   </div>
-    
 </FlexDiv>
 
-
 </main>
+<script>
+  const introbgS = document.querySelector('#shapeintrobg').style
+  window.onload = () => {
+    introbgS.backgroundImage = `url('/marc-mueller(4).webp'), url('/marc-mueller(4).jpeg')`
+    introbgS.backgroundRepeat = `no-repeat` 
+    introbgS.backgroundSize = `cover` 
+  }
+</script>
 </HomepageLayout>
 
 <style lang="scss">
@@ -144,7 +150,7 @@ import BlogStream from "../components/BlogStream.astro"
     color: white; 
     width: 100%;
     margin-inline: auto;
-    height: clamp(34rem, 87vh, 60rem);
+    height: clamp(46rem, 87vh, 60rem);
     display: block;
     max-width: 100%;
     top: -1px;
@@ -158,7 +164,7 @@ import BlogStream from "../components/BlogStream.astro"
       text-align: center;
       max-width: 70vw;
       position: relative;
-      top: 4%;
+      top: 2rem;
       margin: 0 auto 2rem;
       display: block;
     }
@@ -179,7 +185,8 @@ import BlogStream from "../components/BlogStream.astro"
 
   }
   .shapeintrobg {
-    background: url('/marc-mueller(4).webp'), url('/marc-mueller(4).jpeg'); 
+    // background: url('/marc-mueller(4).webp'), url('/marc-mueller(4).jpeg'); 
+    background-color: #888;
     background-repeat: norepeat;  
     background-size: cover;
     clip-path: polygon(0% 79.25%, 0% -0.5%, 100% -0.5%, 100% 79.25%, 50% 100%);
@@ -189,6 +196,7 @@ import BlogStream from "../components/BlogStream.astro"
     top: -20px;
     transform: translate(0, -2px);
     z-index: -1;
+    // transition: background 0.3s;
     &::after {
       content: '';
       height: 100%;
@@ -237,14 +245,16 @@ import BlogStream from "../components/BlogStream.astro"
   }
    #productintroscreen{
      max-width: 70rem;
-     width: 80%;
+     width: 100%;
      max-height: 34rem;
     //  height: 20rem;
+    width: clamp(8rem, 80%, 70rem);
+    margin-inline: auto;
      border-radius: 8px;
-     margin-inline: auto;
      position: absolute;
+     display: inline-block;
      left: 50%;
-     bottom: -8rem;
+     bottom: -25%;
      overflow: hidden;
      box-shadow: 0 0 14px -3px #333;
      transform-origin: 50% 50%;
@@ -258,17 +268,17 @@ import BlogStream from "../components/BlogStream.astro"
       //  transform: rotate3d(10deg, 10deg, 0);
       //  transform: rotate3d(1, 1, 1, 3deg);
      }
-     &::after {
-       content: '';
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100%;
-       height: 100%;
-       display: block;
-       background: linear-gradient(to bottom, transparent, white);
-       background-color:  white;
-     }
+    //  &::after {
+    //    content: '';
+    //    position: absolute;
+    //    top: 0;
+    //    left: 0;
+    //    width: 100%;
+    //    height: 100%;
+    //    display: block;
+    //    background: linear-gradient(to bottom, transparent, white);
+    //    background-color:  white;
+    //  }
    }
    .producttraits{
       flex-flow: row wrap;

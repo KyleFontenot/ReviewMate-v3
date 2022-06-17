@@ -1,11 +1,26 @@
-<script async src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js" ></script>
+<script hoisted src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js" ></script>
 <script defer>
-  var rellax1 = new Rellax(".rellax1", {
+  // var rellax1 = new Rellax(".rellax1", {
+  //     speed: 0.3,
+  //     center: true,
+  //   });
+  //   var rellax2 = new Rellax(".rellax2", {
+  //     speed: 0.5,
+  //     center: true,
+  //   });
+
+  window.onload = () => {
+    setTimeout(() => {
+      var rellax1 = new Rellax(".rellax1", {
       speed: 0.3,
       center: true,
     });
-  var rellax2 = new Rellax(".rellax2", {
-    speed: 0.5,
-    center: true,
-  });
+    var rellax2 = new Rellax(".rellax2", {
+      speed: 0.5,
+      center: true,
+    });
+    }, 1000)
+    
+  }
+  
 </script>

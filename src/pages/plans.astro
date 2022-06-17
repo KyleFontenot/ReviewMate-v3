@@ -236,7 +236,6 @@ contrast(88%); margin-right: 1rem; padding-top: 10px; margin-left:10px;"/></h4>
           border-bottom-left-radius: 10px;
           border-bottom-right-radius: 10px;
           margin-bottom: 0;
-          
         }
         &:nth-of-type(1){
           box-shadow: 0 1px 10px -4px #ccc;
@@ -248,26 +247,26 @@ contrast(88%); margin-right: 1rem; padding-top: 10px; margin-left:10px;"/></h4>
           }
         }
         &:nth-of-type(2){
-          box-shadow: 0 1px 10px -4px hsl(var(--color2hsl));
+          box-shadow: 0 1px 10px -4px hsla(var(--color1h), var(--color1s), var(--color1l), 50%);
           & > h3 {
-            background-color: hsla(var(--color2hsl), 20%);
-            border-color: hsl(var(--color2hsl));
+            background-color: hsla(var(--color2h), var(--color2s), var(--color2l), 15%);
+            border-color: hsla(var(--color2h), var(--color2s), var(--color2l), 70%);
           }
           & > p {
             background-color: hsla(var(--color2hsl), 5%);
-            border-color: hsl(var(--color2hsl));
+            border-color: hsla(var(--color2h), var(--color2s), var(--color2l), 70%);
           }
         }
         &:nth-of-type(3){
-          box-shadow: 0 1px 10px -4px hsla(var(--color1hsl), 60%);
+          box-shadow: 0 1px 10px -4px hsla(var(--color1h), var(--color1s), var(--color1l), 60%);
           border-radius: 10px;
           & > h3 {
-            background-color: hsla(var(--color1hsl), 10%);
-            border-color: hsla(var(--color1hsl), 40%);
+            background-color: hsla(var(--color1h), var(--color1s), var(--color1l), 15%);
+            border-color: hsla(var(--color1h), var(--color1s), var(--color1l), 30%);
           }
           & > p {
-            background-color: hsla(var(--color1hsl), 5%);
-            border-color: hsla(var(--color1hsl), 40%);
+            background-color: hsla(var(--color1h), var(--color1s), var(--color1l), 2%);
+            border-color: hsla(var(--color1h), var(--color1s), var(--color1l), 30%);
           }
         }
       }
