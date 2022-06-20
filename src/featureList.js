@@ -1,4 +1,4 @@
-const formatSlug = (title) => {
+ const formatSlug = (title) => {
 	let fmtTitle = title;
 	if (fmtTitle.includes(" ")) {
 		fmtTitle = fmtTitle.replaceAll(" ", "-");
@@ -13,7 +13,7 @@ const formatSlug = (title) => {
 };
 
 class Module {
-	constructor(title, short, long, img, tiers, bullets) {
+	constructor(title, short, long, img, tiers, bullets, ) {
 		this.title = title;
 		this.slug = formatSlug(title);
 		this.short = short;
@@ -25,6 +25,7 @@ class Module {
 		this.enterprise = tiers[2];
 		this.bullets = bullets;
 		this.commontraits = false;
+		this.tag = this.title
 	}
 }
 class AuditingModule extends Module {

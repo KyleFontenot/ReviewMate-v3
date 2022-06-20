@@ -4,12 +4,13 @@ import StandardLayout from "../../layouts/StandardLayout.astro"
 import Feature from "../../components/Feature.astro"
 import featureList, {formatSlug} from "../../featureList.js"
 const auditModules = featureList.auditing_modules;
+// console.log(formatSlug(auditModules[0].title))
 ---
 <StandardLayout>
   <FeatureCategory title="Auditing Accounts">
   {auditModules.map(module => {
     return (
-      <Feature size="small" title={module.title} href={`/auditingaccounts/${formatSlug(module.title)}`}><p>{module.short}</p></Feature>
+      <Feature size="small" title={module.title} href={`/auditingaccounts/${formatSlug(module.title)}/`}><p>{module.short}</p></Feature>
     )
   })}
   

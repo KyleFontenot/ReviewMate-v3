@@ -9,7 +9,7 @@ const securityModules = featureList.security;
   <FeatureCategory title="Security Modules">
   {securityModules.map(module => {
     return (
-      <Feature size="small" title={module.title} href={`/security/${formatSlug(module.title)}`}><p>{module.short}</p></Feature>
+      <Feature size="small" title={module.title} href={`/security/${formatSlug(module.title)}/`}><p>{module.short}</p></Feature>
     )
   })}
   

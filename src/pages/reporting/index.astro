@@ -9,7 +9,7 @@ const reportingModules = featureList.reporting;
   <FeatureCategory title="Reporting">
   {reportingModules.map(module => {
     return (
-      <Feature size="small" title={module.title} href={`/reporting/${formatSlug(module.title)}`}><p>{module.short}</p></Feature>
+      <Feature size="small" title={module.title} href={`/reporting/${formatSlug(module.title)}/`}><p>{module.short}</p></Feature>
     )
   })}
   

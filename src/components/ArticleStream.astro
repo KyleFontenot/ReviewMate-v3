@@ -1,14 +1,9 @@
 ---
 import Stream from "./Stream.astro"
 import Article from "./Article.astro"
-import contentful from 'contentful'
+import {contentfulClient } from './contentfulClient.js'
 
-const client = contentful.createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || import.meta.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_CONTENT_DELIVERY || import.meta.env.CONTENTFUL_CONTENT_DELIVERY,
-});
-
-let articles = await client.getEntries({
+let articles = await contentfulClient.getEntries({
   content_type: 'articlePost'
   }).then(entries => {
     return entries.items

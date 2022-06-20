@@ -10,7 +10,7 @@ export default defineConfig({
   srcDir: "./src",
   outDir: "./dist",
   publicDir: "./public",
-  trailingSlash: "always",
+  // trailingSlash: "always",
   site: "https://main--deft-cuchufli-bfd7e3.netlify.app/",
   integrations: [astroImageTools, solid(), sitemap()],
   vite: {

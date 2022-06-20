@@ -1,37 +1,24 @@
 ---
 import Stream from "./Stream.astro"
 import Article from "./Article.astro"
-import contentful from 'contentful'
+import { contentfulItems} from './contentfulClient.js'
+import {formatSlug} from '../featureList.js'
 
 const {size = "small"} = Astro.props;
 
-const client = contentful.createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || import.meta.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_CONTENT_DELIVERY || import.meta.env.CONTENTFUL_CONTENT_DELIVERY,
-});
-
-let blogPosts = await client.getEntries({
-  content_type: 'blogPost',
-  order: '-sys.createdAt',
-  limit: size === "large" ? 20 : 3
-  }).then(entries => {
-    return entries.items
-    }
-).catch(err => {
-  console.log(err)
-});
+let posts = await contentfulItems('blogPost')
 
 const months = ['January', 'February',
 'March','April','May','June','July','August','September','October','November','December',]
 const descriptionCutoff = 90
 ---
 <Stream title="Blog Articles" size={ size } >
-  {blogPosts.map(post => {
+  {posts.map(post => {
     const blogBody = post.fields.body.content[0].content[0].value;
-    let formatDate =  new Date(post.fields.dateCreated)
+    let formatDate = new Date(post.fields.dateCreated)
     return (
       <Article 
-        href={`/blog/${post.fields.title.toLowerCase().replaceAll(' ', '-')}`} 
+        href={`/blog/${formatSlug(post.fields.title)}/`} 
         imgSrc={post.fields.poster.fields.file.url} 
         imgAlt="something" 
         articleTitle={post.fields.title}

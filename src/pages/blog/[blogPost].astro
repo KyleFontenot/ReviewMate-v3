@@ -6,24 +6,15 @@ import { Img } from "astro-imagetools/components";
 import LinkedinIcon from '../../components/LinkedinIcon.astro';
 import TwitterIcon from '../../components/TwitterIcon.astro';
 import Button from '../../components/Button.astro'
+import { contentfulItems} from '../../components/contentfulClient.js'
 
 export async function getStaticPaths() {
+  const {formatSlug} = await import("../../featureList.js")
+  let blogPosts = await contentfulItems('blogPost')
 
-  const client =  contentful.createClient({
-    space: process.env.CONTENTFUL_SPACE_ID || import.meta.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_CONTENT_DELIVERY || import.meta.env.CONTENTFUL_CONTENT_DELIVERY,
-  });
-  let blogPosts = await client.getEntries({
-  content_type: 'blogPost'
-  }).then(entries => {
-    return entries.items
-    }
-  ).catch(err => {
-    console.log(err)
-  });
   return blogPosts.map(post => {
     return {
-      params: { blogPost: post.fields.title.toLowerCase().replaceAll(' ', '-') },
+      params: { blogPost: formatSlug(post.fields.title) },
       props: { 
         title: post.fields.title, 
         body: documentToHtmlString(post.fields.body), 
@@ -34,12 +25,8 @@ export async function getStaticPaths() {
   });
 }
 const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-// const {blogPost} = Astro.params;
 const {title, body, poster, date, author} = Astro.props;
-// let dateparsed = new Date(date)
-
 const url = new URL(Astro.canonicalURL);
-// console.log(title)
 ---
 
 <StandardLayout slug={title} openGraph={{

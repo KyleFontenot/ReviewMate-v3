@@ -3,13 +3,13 @@ import FeatureCategory from "../../components/FeatureCategory.astro"
 import StandardLayout from "../../layouts/StandardLayout.astro"
 import Feature from "../../components/Feature.astro"
 import featureList, {formatSlug} from "../../featureList.js"
-const analyticsModules = featureList.security;
+const analyticsModules = featureList.analytics;
 ---
 <StandardLayout>
-  <FeatureCategory title="Security Modules">
+  <FeatureCategory title="Analytics">
   {analyticsModules.map(module => {
     return (
-      <Feature size="small" title={module.title} href={`/analytics/${formatSlug(module.title)}`}><p>{module.short}</p></Feature>
+      <Feature size="small" title={module.title} href={`/analytics/${formatSlug(module.title)}/`}><p>{module.short}</p></Feature>
     )
   })}
   
