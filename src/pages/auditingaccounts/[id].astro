@@ -2,11 +2,7 @@
 import FeatureLayout from '../../layouts/FeatureLayout.astro'
 import Feature from '../../components/Feature.astro'
 import CallToAction from '../../components/CallToAction.astro'
-// import Tidbit from '../../components/Tidbit.astro'
 import CommonTraits from "../../components/CommonTraits.jsx"
-// import {contentfulClient} from "../../components/contentfulClient.js"
-// import {contentfulBlogArticles} from "../../components/contentfulBlogArticles.js"
-
 import featureList from '../../featureList.js'
 
 export function getStaticPaths() {
@@ -17,10 +13,7 @@ export function getStaticPaths() {
       props: {feature: feature}
     })})
 }
-
-// const {id} = Astro.params;
 const {feature} = Astro.props;
-console.log(feature)
 ---
 <FeatureLayout>
 <Feature title={feature.title} imgSrc={feature?.imgSrc} imgAlt={feature?.imgAlt} commontraits> 
@@ -33,23 +26,22 @@ console.log(feature)
   </div>
   {feature?.commontraits === true ? <CommonTraits client:idle /> : ''}
   
-    {(feature?.commontraits === true && feature.bullets) ? <h3 style="width: 100%;">In addition, our IPPS module features:</h3><ul class="list" >{feature?.bullets?.map(point => {
-      return (
-        <li class="bullet">{point}</li>
-      )
-    }
-    )}</ul> : 
-    (feature?.bullets?.length !== undefined && feature?.bullets?.length > 0) ? <ul class="list" >{feature?.bullets?.map(point => {
-      return (
-        <li class="bullet">{point}</li>
-      )
-    }
-    )}</ul> : ''} 
+  { feature.bullets ? <h3 style="width: 100%;margin-bottom: 2rem;">{feature.bullets.header}</h3><ul class="list" >{feature?.bullets?.bullets?.map(point => {
+    return (
+      <li class="bullet">{point}</li>
+    )
+  }
+  )}</ul> : 
 
+  (feature?.bullets !== undefined && feature?.bullets?.length > 0) ? <ul class="list" >{feature?.bullets?.map(point => {
+    return (
+      <li class="bullet">{point}</li>
+    )
+  }
+  )}</ul> 
+  : ''} 
 
-    
   <CallToAction explain previousButton={{text: 'Auditing Accounts', href: "/resources/"}}></CallToAction>
-
 </Feature>
 
 </FeatureLayout>
@@ -62,7 +54,6 @@ console.log(feature)
     flex-flow: row wrap;
     & li {
       flex: 2 1 40rem;
-      
     }
   }
 .featurelist {
