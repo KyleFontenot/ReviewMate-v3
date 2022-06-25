@@ -1,8 +1,9 @@
 ---
 import StandardLayout from '../../layouts/StandardLayout.astro'
 import BlogStream from '../../components/BlogStream.astro'
+import Stream from '../../components/Stream.astro'
 
 ---
 <StandardLayout >
-  <BlogStream size="large" style="margin-top: -2rem;" />
+  <Stream postType="blogPost" size="large"  title="Blog Articles"/>
 </StandardLayout>

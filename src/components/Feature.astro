@@ -2,15 +2,14 @@
 import { Img } from "astro-imagetools/components"
 import CommonTraits from "./CommonTraits.jsx"
 const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
-
 ---
-
 {size === "large" ? 
-<article>
-  <h1 class="title">{title}</h1>
-  <span class="subtitle"></span>
+<article class="largefeature">
   <div class="largediv">
-    <div class="paragraph"><slot name="paragraphs" /></div>
+    <div class="intro">
+      <h1 class="title">{title}</h1>
+      <div class="paragraph"><slot name="paragraphs" /></div>
+    </div>
     <Img src={imgSrc} alt={imgAlt} height={800}/>
     <slot name="common" />
     <slot name="bulletpoints" />
@@ -18,41 +17,70 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
     
   </div>
 </article> :
+
 <section class="smallfeature">
   <a href={href} class="title"><h3>{title}</h3></a>
   <slot />
   <slot name="bulletpoints" />
+  <slot name="relatedblog" />
   <a href={href} class="readmore">Read more <img src="/icons/diagonal-arrow.svg" class="readmorearrow"/></a>
 </section>
 }
 
 <style lang="scss">
+
+  $mtop: 2rem;
+  $mi: 6%;
+  
   .largediv {
     display: flex;
     flex-flow: column wrap;
     width: 100%;
     max-width: 100%;
     & > :global(img) {
+      
       margin-inline: auto;
-        display: block;
+      display: block;
     }
   }
   .paragraph {
       padding: 1.3rem 2.3rem 3rem 1.3rem;
   }
-  @media (min-width: 820px){
+  @media (min-width: 890px){
+    .largefeature{
+      .intro {
+        flex: 1 1 50%;
+        padding: 2rem 3%;
+      }
+      & > .title{
+        // position: absolute;
+        // max-width: 46%;
+        // top: 2rem;
+        // left: 3rem;
+      }
+    }
+    .largefeature{
+      position: relative;
+      width: 114%;
+      margin-inline: -$mi;
+      margin-top: -$mtop;
+      // padding-inline: $mi;
+      // padding-top: $mtop;
+    }
     .largediv {
       flex-flow: row wrap;
       &  > :global(img) { 
         flex: 1 1 50%;
-        // border-left: 1px solid hsl(var(--color1hsl));
-        position: relative;
+        margin-top: 0;
+        min-height: 40rem;
         max-height: 34rem;
        }
     }
     .paragraph {
-      flex: 1 1 50%;
-      width: 50%;
+      // flex: 1 1 50%;
+      // width: 50%;
+      // padding-top: 9rem;
+      // padding-inline: 6%;
       position: relative;
       overflow:hidden;
     }
@@ -89,4 +117,5 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
   .subtitle {
     color: #ccc;
   }
+
 </style>

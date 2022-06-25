@@ -8,6 +8,7 @@ export const contentfulClient = contentful.createClient({
 });
 
 export const contentfulItems = async (content) => {
+
 	let contentfulItems = await contentfulClient.getEntries({
 		content_type: content,
 		order: '-sys.createdAt',

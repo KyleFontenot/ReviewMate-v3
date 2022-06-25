@@ -1,6 +1,6 @@
 ---
 import { Img } from "astro-imagetools/components";
-const {href, imgSrc, imgAlt, articleTitle, description, author, date} = Astro.props;
+const {href, imgSrc, imgAlt, articleTitle, body, author, date} = Astro.props;
 ---
 <a href={`${href}`} class="article">
   <div class="image">
@@ -8,7 +8,7 @@ const {href, imgSrc, imgAlt, articleTitle, description, author, date} = Astro.pr
   </div>
   <div class="textbody">
     <h4>{articleTitle}</h4>
-    <p >{description}</p>
+    <p >{body}</p>
     <p class="author">{author}</p>
     <p class="date">{date}</p>
   </div>

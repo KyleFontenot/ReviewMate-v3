@@ -1,13 +1,58 @@
 ---
-import { Img } from "astro-imagetools/components";
+// import { Img } from "astro-imagetools/components";
+import {formatSlug} from '../featureList.js'
 import Article from "./Article.astro"
-const {size = "small", title} = Astro.props;
+import { contentfulItems} from './contentfulClient.js'
+const {size = "small", title, postType, style} = Astro.props;
+
+let posts = await contentfulItems(postType)
+
+const months = ['January', 'February',
+'March','April','May','June','July','August','September','October','November','December',]
+const descriptionCutoff = 240
+
+// console.log(posts[0].fields.tags)
 ---
-<div class='blogwrapper' id="blog">
+<div class='blogwrapper' id="blog" {style}>
   {size === 'large' ? 
   <h1 style="width: 100%;">{title}</h1> : 
   <h3 style="width: 100%;">{title}</h3>}<br/>
-  <div class="container"><slot/></div>
+  <div class="container">
+    <!-- <slot/> -->
+
+    {posts.map(post => 
+      {
+        let blogBody = post?.fields?.body?.content[0]?.content[0]?.value;
+        let formatDate = new Date(post.fields.dateCreated);
+        return (<Article 
+          articleTitle={post.fields.title}
+          href={post.fields.url ? post.fields.url : `/blog/${formatSlug(post.fields.title)}/`}
+          imgSrc={post.fields.thumbnail.fields.file.url}
+          imgAlt={post.fields.thumbnailAlt}
+          body={blogBody.length > descriptionCutoff ? blogBody.split('').splice(0, descriptionCutoff).join('').concat('...') : blogBody}
+          author={post.fields.author}
+          date={`${months[formatDate.getMonth()]} ${formatDate.getDate()}, ${formatDate.getFullYear()}`}
+      />)
+    }
+    )}
+
+    <!-- {posts.map(post => {
+    const blogBody = post.fields.body.content[0].content[0].value;
+    let formatDate = new Date(post.fields.dateCreated)
+    return (
+      <Article 
+        href={`/blog/${formatSlug(post.fields.title)}/`} 
+        imgSrc={post.fields.poster.fields.file.url} 
+        imgAlt="something" 
+        articleTitle={post.fields.title}
+        description={blogBody.length > descriptionCutoff ? blogBody.split('').splice(0, descriptionCutoff).join('').concat('...') : blogBody}
+        author={post.fields.author} 
+        date={`${months[formatDate.getMonth()]} ${formatDate.getDate()}, ${formatDate.getFullYear()}`}
+      />
+    )
+  }
+)} -->
+  </div>
 
 </div>
 <style lang="scss">

@@ -12,7 +12,7 @@ const months = ['January', 'February',
 'March','April','May','June','July','August','September','October','November','December',]
 const descriptionCutoff = 90
 ---
-<Stream title="Blog Articles" size={ size } >
+<Stream title="Blog Articles" size={ size } contenfulItems="blogPosts" >
   {posts.map(post => {
     const blogBody = post.fields.body.content[0].content[0].value;
     let formatDate = new Date(post.fields.dateCreated)
