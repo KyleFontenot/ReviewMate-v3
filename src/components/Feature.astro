@@ -1,6 +1,6 @@
 ---
 import { Img } from "astro-imagetools/components"
-import CommonTraits from "./CommonTraits.astro"
+import CommonTraits from "./CommonTraits.jsx"
 const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
 
 ---
@@ -18,12 +18,12 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
     
   </div>
 </article> :
-<div class="div">
+<section class="smallfeature">
   <a href={href} class="title"><h3>{title}</h3></a>
   <slot />
   <slot name="bulletpoints" />
-  <a href={href} class="seemore">See more <img src="/icons/diagonal-arrow.svg" class="seemorearrow"/></a>
-</div>
+  <a href={href} class="readmore">Read more <img src="/icons/diagonal-arrow.svg" class="readmorearrow"/></a>
+</section>
 }
 
 <style lang="scss">
@@ -58,19 +58,22 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
     }
   }
 
-  div.div {
+  section.smallfeature {
     padding-inline: 2rem;
+    width: 100%;
+    // outline: 1px solid green;
   }
-  .seemore {
+  .readmore {
     color: hsl(var(--color1hsl));
     display: inline-block;
     margin-left: auto;
+    margin-top: 0.8rem;
     border-bottom: 1px solid transparent;
     &:hover {
       border-bottom: 1px solid hsl(var(--color1hsl));
     }
   }
-  .seemorearrow {
+  .readmorearrow {
     width: 10px;
     height: 10px;
     filter: invert(24%) sepia(27%) saturate(4898%) hue-rotate(348deg) brightness(91%) contrast(83%);

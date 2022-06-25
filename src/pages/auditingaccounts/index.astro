@@ -10,7 +10,7 @@ const auditModules = featureList.auditing_modules;
   <FeatureCategory title="Auditing Accounts">
   {auditModules.map(module => {
     return (
-      <Feature size="small" title={module.title} href={`/auditingaccounts/${formatSlug(module.title)}/`}><p>{module.short}</p></Feature>
+      <Feature size="small" title={module.title} href={`/auditingaccounts/${formatSlug(module.title)}/`}><p style="text-indent: 0;">{module.short}</p></Feature>
     )
   })}
   

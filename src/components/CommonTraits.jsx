@@ -1,20 +1,46 @@
-import { createSignal, createEffect } from "solid-js";
+import { createSignal, createEffect, onMount } from "solid-js";
 import styles from './CommonTraits.module.scss'
 
 export default function CommonTraits(props) {
 	const [open, setOpen] = createSignal(false);
-  
-	let dropdownRef;
-	let arrowRef;
+	const [initialHeight, setInitialHeight] = createSignal('');
+	let dropdown;
+	onMount(() => {
+		dropdown.style.maxHeight = "unset"
+		setInitialHeight(
+			dropdown.scrollHeight
+		);
+		// console.log(dropdown.scrollHeight);
+		dropdown.style.height = "28rem";
+	});
 
+  createEffect(() => {
+		window.onresize = setInitialHeight(dropdown.scrollHeight);
+		if (open()) {
+			const height = window.getComputedStyle(dropdown).height;
+			dropdown.style.height = `${initialHeight()}px`;
+		} else {
+			dropdown.style.height = "28rem";
+		}
+	})
+	createEffect(() => {
+		window.onresize = setInitialHeight(dropdown.scrollHeight);
+	})
+	
 	return (
-		<div classList={{ [styles.div]: true, [styles.show]: open() }}>
+		<div
+			classList={{ [styles.div]: true, [styles.show]: open() }}
+			ref={dropdown}
+		>
 			<h2 class={styles.header}>
 				All auditing account types are considered part of the core of
 				ReviewMate's auditing system that covers many features such as:
 			</h2>
 			<ul classList={{ [styles.ul]: true, [styles.show]: open() }}>
-				<li>Customizable settings for overall accuracy rates</li>
+				<li>
+					Customizable settings for analyzing overall accuracy rates. Adjust for
+					particular coders, tasks or firms.
+				</li>
 				<li>
 					Grouping and pricing take place within the software eliminating the
 					need for auditor to “toggle” between an encoder and ReviewMate for

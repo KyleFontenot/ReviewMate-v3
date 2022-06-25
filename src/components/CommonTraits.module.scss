@@ -5,17 +5,15 @@ $seemoreheight: 10rem;
 	display: block;
 	margin-bottom: 3rem;
 	background-color: #f6f6f6;
-	padding: 2.5rem 5% calc($seemoreheight + 6rem);
+	padding: 2.5rem 5% calc($seemoreheight - 2rem);
 	border-radius: 4px;
 	position: relative;
-	height: auto;
-	max-height: 30rem;
+	// height: 100%;
+	max-height: 28rem;
 	overflow-y: hidden;
+	transition: max-height 0.4s, height 0.3s;
 	&.show {
 		max-height: unset;
-    & > ul {
-      row-gap: 0.3rem;
-    }
 	}
 }
 @media (max-width:819px){
@@ -34,24 +32,24 @@ $seemoreheight: 10rem;
   grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
   grid-template-rows: repeat(auto-fill, 1fr);
   grid-auto-columns: minmax(5rem, 30rem);
-  grid-auto-rows: 1fr;
+grid-auto-rows: auto;
   row-gap: 1.5rem;
 	justify-content: center;
 	margin-inline: auto;
   width: 100%;
 	height: auto;
 	max-width: 80rem;
-	margin-top: 3rem;
+	margin-top: 2.6rem;
 	overflow: visible;
 	position: relative;
 	& li {
 		margin-bottom: 0;
     height: 100%;
 	}
-	&.show {
-		height: 100%;
-		overflow-y: visible;
-	}
+	// &.show {
+	// 	height: 100%;
+	// 	overflow-y: visible;
+	// }
 	& li {
 		color: #666;
 		margin-left: 1rem;

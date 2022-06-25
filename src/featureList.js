@@ -40,7 +40,7 @@ const featureList = {
 	auditing_modules: [
 		new AuditingModule(
 			"Inpatient",
-			"Thorough IPPS auditing capability is one of our many core standards in ReviewMate's system.",
+			"Evaluate DRG assignment within any IPPS account type ",
 			[
 				"More than three-quarters of the nation's inpatient acute-care hospitals are paid under the inpatient prospective payment system (IPPS). The IPPS methodology pays a flat rate based on the average charges across all hospitals for specific diagnoses, regardless of whether that particular patient costs more or less.",
 				"Correct DRG assignment is critical to the health of your organization. Coding audits and using the proper tools will allow financial and compliant stability.",
