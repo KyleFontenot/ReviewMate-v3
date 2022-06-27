@@ -7,7 +7,7 @@ const {href, imgSrc, imgAlt, articleTitle, body, author, date} = Astro.props;
     <Img src={`https:${imgSrc}`} alt={`${imgAlt}`} objectFit="contain" /> 
   </div>
   <div class="textbody">
-    <h4>{articleTitle}</h4>
+    <h3>{articleTitle}</h3>
     <p >{body}</p>
     <p class="author">{author}</p>
     <p class="date">{date}</p>
@@ -22,7 +22,10 @@ const {href, imgSrc, imgAlt, articleTitle, body, author, date} = Astro.props;
     position: relative;
     display: block;
     height: 100%;
+    max-width: 50rem;
     border: 2px solid transparent;
+      border-radius: 10px;
+    box-shadow: 0 6px 16px -8px #33333388;
     transition: transform 0.3s;
     &::after {
       content: '';
@@ -34,13 +37,13 @@ const {href, imgSrc, imgAlt, articleTitle, body, author, date} = Astro.props;
       left: 0;
       z-index: 1;
       border-radius: 10px;
-      box-shadow: 0 4px 8px -2px #333333ff;
+      box-shadow: 0 10px 12px 0px #33333366;
       opacity: 0;
       transition: opacity 0.3s;
     }
     &:hover, &:focus-visible, {
       border: 2px solid hsl(var(--color1hsl));
-      transform: translate3d(0, -3px, 0);
+      transform: translate3d(0, -5px, 0);
       &::after {
         opacity: 1;
       }
@@ -73,6 +76,7 @@ const {href, imgSrc, imgAlt, articleTitle, body, author, date} = Astro.props;
    height: 100%;
    & > h3 {
      margin-top: 0;
+     font-size: 1.6rem;
    }
    & > h4 {
      font-size: 1.3rem;

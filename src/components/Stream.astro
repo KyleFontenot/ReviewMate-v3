@@ -9,7 +9,7 @@ let posts = await contentfulItems(postType)
 
 const months = ['January', 'February',
 'March','April','May','June','July','August','September','October','November','December',]
-const descriptionCutoff = 240
+const descriptionCutoff = 120
 
 // console.log(posts[0].fields.tags)
 ---
@@ -29,29 +29,12 @@ const descriptionCutoff = 240
           href={post.fields.url ? post.fields.url : `/blog/${formatSlug(post.fields.title)}/`}
           imgSrc={post.fields.thumbnail.fields.file.url}
           imgAlt={post.fields.thumbnailAlt}
-          body={blogBody.length > descriptionCutoff ? blogBody.split('').splice(0, descriptionCutoff).join('').concat('...') : blogBody}
+          body={blogBody.length > descriptionCutoff ? blogBody.split('').splice(0, descriptionCutoff).join('').concat(' . . .') : blogBody}
           author={post.fields.author}
           date={`${months[formatDate.getMonth()]} ${formatDate.getDate()}, ${formatDate.getFullYear()}`}
       />)
     }
     )}
-
-    <!-- {posts.map(post => {
-    const blogBody = post.fields.body.content[0].content[0].value;
-    let formatDate = new Date(post.fields.dateCreated)
-    return (
-      <Article 
-        href={`/blog/${formatSlug(post.fields.title)}/`} 
-        imgSrc={post.fields.poster.fields.file.url} 
-        imgAlt="something" 
-        articleTitle={post.fields.title}
-        description={blogBody.length > descriptionCutoff ? blogBody.split('').splice(0, descriptionCutoff).join('').concat('...') : blogBody}
-        author={post.fields.author} 
-        date={`${months[formatDate.getMonth()]} ${formatDate.getDate()}, ${formatDate.getFullYear()}`}
-      />
-    )
-  }
-)} -->
   </div>
 
 </div>
@@ -73,6 +56,9 @@ const descriptionCutoff = 240
 		align-items: stretch;
     align-content: stretch;
 		display:flex;
+    margin-inline: auto;
+    column-gap: 5%;
+    justify-content: center;
 	}
 	@media (min-width: 590px){
   .container {
