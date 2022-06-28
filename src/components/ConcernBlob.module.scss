@@ -33,7 +33,6 @@ justify-content: center;
   .tagline{
     box-shadow: -1px 4px 12px -4px #33333388;
     margin-bottom: 1.5rem;
-    // margin: auto auto 0.5rem auto;
     padding: 20px 30px;
     vertical-align: middle;
     text-align: center;
@@ -50,7 +49,6 @@ justify-content: center;
     position: relative;
     display: block;
     padding: 1.6rem 1rem;
-    // border: 1px solid #eee;
     text-indent: 0;
 
     flex: 2 1 20rem;
@@ -83,10 +81,24 @@ justify-content: center;
   }
   .image {
     flex: 1 1 10rem;
-
+    position: relative;
     grid-column: span 1;
     grid-row: span 1;
     margin: auto;
+    background-color: transparent;
+    // border: 2px solid green;
+    // box-shadow: 0 0 80px 60px hsl(var(--color1hsl));
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    //   display: block;
+    //   // box-shadow: 0 0 80px 300px hsl(var(--color1hsl));
+    //   top: 0;
+    //   left: 0;
+    //   z-index: 10;
+    // }
   }
   .description, .answer {
     line-height: 1.4rem;
