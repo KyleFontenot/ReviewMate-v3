@@ -4,7 +4,7 @@ import Button from './Button.astro'
 const {explain, previousButton} = Astro.props;
 ---
 
-<FlexDiv style="margin-top: 3rem;" justify="space-around" align="center">
+<FlexDiv style="margin-top: 3rem;" justify="space-around" align="center" >
   {previousButton && <Button as="link" outline leftArrow text={previousButton.text} href={previousButton.href}/>}
   {explain ? <p class="explanation">Any particular questions or inquiries? We'd like to hear from you.</p> : ''}
   
@@ -14,5 +14,6 @@ const {explain, previousButton} = Astro.props;
 <style lang="scss">
   .explanation{
     font-size: 120%;
+    max-width: 20rem;
   }
 </style>

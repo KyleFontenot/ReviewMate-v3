@@ -216,7 +216,7 @@ html.sr .load-hidden {
 
 @media (min-width: 600px) {
 	.flexdiv {
-		flex-flow: row nowrap;
+		flex-flow: row wrap;
 	}
 	.flexdiv1 > .bodylottie {
 		order: 3;
@@ -228,6 +228,8 @@ html.sr .load-hidden {
 	position: relative;
 	font-size: 1.1rem;
 	display: inline-block;
+	width: auto;
+	min-width: auto;
 	border: none;
 	border-radius: 4px;
 	margin: 0.5rem 0.5rem 1rem;
