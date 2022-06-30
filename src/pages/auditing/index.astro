@@ -7,19 +7,19 @@ import { findNumbers } from "libphonenumber-js";
 import type {Module } from "../../featureList.js"
 // const auditModules = featureList.auditing_modules;
 
-let modules : Module[] = [];
+let auditingModules : Module[] = [];
 
 Object.values(featureList).forEach(category => { 
   let testingGrab = category.filter(module => {
-    module.section === "Reporting" ? modules.push(module) : false
+    module.section === "Auditing" ? auditingModules.push(module) : false
   })
  })
 
 // console.log(auditingModules)
 ---
 <StandardLayout>
-  <FeatureCategory title="Reporting">
-  {modules.map(module => {
+  <FeatureCategory title="Auditing">
+  {auditingModules.map(module => {
     return (
       <Feature size="small" title={module.title} href={`/auditing/${module.slug}/`}><p style="text-indent: 0;">{module.short}</p></Feature>
     )

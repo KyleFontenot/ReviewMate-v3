@@ -3,13 +3,25 @@ import FeatureCategory from "../../components/FeatureCategory.astro"
 import StandardLayout from "../../layouts/StandardLayout.astro"
 import Feature from "../../components/Feature.astro"
 import featureList, {formatSlug} from "../../featureList.js"
-const securityModules = featureList.security;
+import { findNumbers } from "libphonenumber-js";
+import type {Module } from "../../featureList.js"
+// const auditModules = featureList.auditing_modules;
+
+let modules : Module[] = [];
+
+Object.values(featureList).forEach(category => { 
+  let testingGrab = category.filter(module => {
+    module.section === "Security" ? modules.push(module) : false
+  })
+ })
+
+// console.log(auditingModules)
 ---
 <StandardLayout>
-  <FeatureCategory title="Security Modules">
-  {securityModules.map(module => {
+  <FeatureCategory title="Security">
+  {modules.map(module => {
     return (
-      <Feature size="small" title={module.title} href={`/security/${formatSlug(module.title)}/`}><p>{module.short}</p></Feature>
+      <Feature size="small" title={module.title} href={`/auditing/${module.slug}/`}><p style="text-indent: 0;">{module.short}</p></Feature>
     )
   })}
   

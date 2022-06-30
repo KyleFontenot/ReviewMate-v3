@@ -11,14 +11,14 @@ let modules : Module[] = [];
 
 Object.values(featureList).forEach(category => { 
   let testingGrab = category.filter(module => {
-    module.section === "Reporting" ? modules.push(module) : false
+    module.section === "Monitoring" ? modules.push(module) : false
   })
  })
 
 // console.log(auditingModules)
 ---
 <StandardLayout>
-  <FeatureCategory title="Reporting">
+  <FeatureCategory title="Monitoring">
   {modules.map(module => {
     return (
       <Feature size="small" title={module.title} href={`/auditing/${module.slug}/`}><p style="text-indent: 0;">{module.short}</p></Feature>

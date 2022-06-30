@@ -11,7 +11,8 @@ import {formatSlug} from "../featureList.js"
 ---
 <HomepageLayout>
     <div class="shapeintro" >
-      <div class="shapeintrobg" id="shapeintrobg"></div>
+      <noscript><link rel="stylesheet" href="nojs.css" /></noscript>
+      <div  class="shapeintrobg" id="shapeintrobg"></div>
       <div class="introtext">
         <h2>Elevate your medical code auditing workflow</h2>
         <p >Streamline auditing,
@@ -22,7 +23,6 @@ import {formatSlug} from "../featureList.js"
         <img src="/product-preview(2).svg" alt="screenshot of ReviewMate web-app" />
       </div>
     </div>
-
 <main style="padding-top: 0;" id="main">
   <div class="introCTA" >
     <Button as="link" href="/resources/" text="View our Blog" outline style="z-index:30;"></Button>
@@ -141,7 +141,7 @@ import {formatSlug} from "../featureList.js"
     </div>
   </div>
 </Timeline>
-<Stream postType="blogPost" size="small"/>
+<Stream postType="blogPost" title="Blog" size="small"/>
 
 <FlexDiv  className="calltoaction">
   <h3 style="padding-inline: 6%;">Let us show you how you can start saving hours a week</h3>
@@ -153,13 +153,15 @@ import {formatSlug} from "../featureList.js"
 
 </main>
 <script >
-  const introbgS = document.querySelector('#shapeintrobg').style;
-  window.onload = () => {
+  function deferAddimage(){
+    const introbgS = document.querySelector('#shapeintrobg')?.style;
     introbgS.backgroundImage = `url('/marc-mueller(4).webp'), url('/marc-mueller(4).jpeg')`;
     introbgS.background = `url('/marc-mueller(4).webp'), url('/marc-mueller(4).jpeg')`
     introbgS.backgroundRepeat = `no-repeat` 
     introbgS.backgroundSize = `cover` 
   }
+  window.onload = deferAddimage();
+
 </script>
 </HomepageLayout>
 
@@ -331,6 +333,7 @@ import {formatSlug} from "../featureList.js"
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: nowrap;
+    max-width: 100%;
 
     
     & > div:nth-of-type(2){
@@ -421,11 +424,17 @@ import {formatSlug} from "../featureList.js"
     margin-bottom: 2rem;
   }
   .concernblobcontainer {
+    margin-top: 5rem;
     display: grid;
+    width: 110%;
     // flex-flow:row wrap;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 48%));
-    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 40vw));
+    // grid-template-rows: repeat(auto-fill, minmax(10rem, 1fr));
+    grid-auto-rows: 1fr;
     justify-content: center;
     column-gap: 2%;
+    & > :global(div) {
+      width: 100%;
+    }
   }
 </style>

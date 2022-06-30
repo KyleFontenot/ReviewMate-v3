@@ -1,4 +1,4 @@
- const formatSlug = (title) => {
+ const formatSlug = (title : string) => {
 	let fmtTitle = title;
 	if (fmtTitle.includes(" ")) {
 		fmtTitle = fmtTitle.replaceAll(" ", "-");
@@ -13,9 +13,33 @@
 };
 
 class Module {
-	constructor(title, short, long, img, tiers, bullets ) {
+	title: string;
+	slug: string;
+	section: "Auditing" | "Reporting" | "Monitoring" | "Security";
+	short : string;
+	long: string[];
+	imgSrc: string; 
+	imgAlt: string;
+	essentials: boolean;
+	enterprise : boolean;
+	pro : boolean;
+	bullets: {title: string, bullets: string[]};
+	commontraits: boolean;
+	tags: string[];
+
+	constructor(
+		title: string,
+		section: "Auditing" | "Reporting" | "Monitoring" | "Security",
+		short : string,
+		long: string[],
+		img: {src: string, alt: string},
+		tiers: [boolean, boolean, boolean],
+		bullets: {title: string, bullets: string[]},
+		tags?: string[]
+	) {
 		this.title = title;
 		this.slug = formatSlug(title);
+		this.section = section;
 		this.short = short;
 		this.long = long;
 		this.imgSrc = img.src || "/src/images/photos/rodnae.jpg";
@@ -26,12 +50,21 @@ class Module {
 		// bullets should be an object type
 		this.bullets = bullets;
 		this.commontraits = false;
-		this.tag = this.title
+		this.tags = this.tags;
 	}
 }
 class AuditingModule extends Module {
-	constructor(title, short, long, img, tiers, bullets) {
-		super(title, short, long, img, tiers, bullets);
+	constructor(
+		title: string,
+		short: string,
+		long: string[],
+		img: { src: string; alt: string },
+		tiers: [boolean, boolean, boolean],
+		bullets: { title: string; bullets: string[] },
+		tags?: string[]
+	) {
+		const section = "Auditing";
+		super(title, section, short, long, img, tiers, bullets, tags);
 		this.commontraits = true;
 	}
 }
@@ -120,6 +153,7 @@ const featureList = {
 	reporting: [
 		new Module(
 			"Accuracy Manager",
+			"Reporting",
 			"Choose from a range of parameters and gather custom accuracy rates. Arrange a group, and pull the findings you need exactly.",
 			[
 				"ReviewMate is an entirely comprehensive tool for summarizing results. Use the Accuracy Manager to compile custom accuracy rates using a variety of parameters. The Accuracy Manager is a great tool for auditors to surgically manipulate accuracy rates, but the Accuracy Manager connects directly with the rest of ReviewMate tools like: Reporting, Audit The Auditor, and Task Workflows.",
@@ -145,6 +179,7 @@ const featureList = {
 		),
 		new Module(
 			"Code Finder",
+			"Reporting",
 			"Reference specific code instances historically system-wide. Index historically used codes.",
 			[
 				"An integrated tool with ReviewMate is Code Finder. It allows auditors to view historically audited codes to correlate common findings. Instead of querying searches by tasks, facility, or any other parameter, you can query by particular codes. It provides a shortcut to particular instances and provides specific insight on coder performance.",
@@ -158,6 +193,7 @@ const featureList = {
 		),
 		new Module(
 			"Dashboards",
+			"Reporting",
 			"Customizable dashboards for organizing the data you need. Underline pertinent workflows for auditors, administrators, or create client dashboards for consuming results.",
 			[
 				"From common data formations and models, dashboards deliver important information succinctly. All dashboards feature pie charts, graphs and tables that can be arranged and customized for each user's particular need.",
@@ -173,6 +209,7 @@ const featureList = {
 		),
 		new Module(
 			"Summary Templates",
+			"Reporting",
 			"Unlimited amount of customizable templates for your firm. From branding to typography, keep your reports consistent seamlessly.",
 			[
 				"Our Summary reports offer many ways of customizing reports, but templating these reports is where users find great value. Users can generate reports from templates, or create an unlimited amount of custom templates to fit your firms' needs.",
@@ -188,6 +225,7 @@ const featureList = {
 		),
 		new Module(
 			"Coder Report Cards",
+			"Reporting",
 			"Easily digestible reports on accuracy with exact comment notes from all associated reviewers. Distributed coder login credentials allow for direct viewable transcripts for accoutability.",
 			[
 				"Reports are primarily meant for clients, but offering to involve the relevant coders in audit findings is an excellent way to expand communication and accountability for all parties. Coder Report Cards are a smaller, more concise, and automatic version of reports meant specifically coders.",
@@ -203,6 +241,7 @@ const featureList = {
 		),
 		new Module(
 			"Exportability",
+			"Reporting",
 			"All reports can be exported into PDFs, Excel spreadsheets, Word documents.",
 			[
 				"After aggregating your results into a report of your choosing, ReviewMate offers standard ways of exporting your report into usable documents, including PDF, Excel and Word. The auditing industry has many interoperability challenges, so these standard document formats are treated as first-class citizens within ReviewMate. ",
@@ -218,6 +257,7 @@ const featureList = {
 	security: [
 		new Module(
 			"Multifactor Authentication",
+			"Security",
 			"Confirm fidelity with more complex sign-on options. Integration with Google Duo.",
 			[
 				"ReviewMate treats HIPAA requirements with the utmost importance. Multi-factor Authentication is one way that secures each user's login. By using modern email authentication and Google's Duo service, user fidelity is guaranteed.",
@@ -232,6 +272,7 @@ const featureList = {
 		),
 		new Module(
 			"LDAP / Active Directory",
+			"Security",
 			"Connect directly into enterprise LDAP system from within ReviewMate. Master passwords work within ReviewMate for seamless user authentication.",
 			[
 				`A common industry standard for connecting to a hospital or firm's database –or as we call the firm's "universe of data"– is using LDAP or Active Directory. It is a file-sharing tool for networking connections between computers to other computers or resources. ReviewMate can use LDAP or Active Directory natively in the platform so that data is easy to obtain in a secure, point-to-point method.`,
@@ -244,6 +285,7 @@ const featureList = {
 		),
 		new Module(
 			"VPN Integration",
+			"Security",
 			"End-to-end VPN tunneling compatibility with SOC2 certified compliance.",
 			[
 				"With many hospitals and institutions, connecting remotely to servers or even to individual computers almost always requires the use of connection to a private VPN. ReviewMate fully supports VPN connections for directly tunneling connections to the source for ensuring safety and security for PHI in a HIPAA-compliant manner.",
@@ -259,6 +301,7 @@ const featureList = {
 	analytics: [
 		new Module(
 			"Staffing Analytics",
+			"Extras",
 			"Time tracking and progress transparency, against tasks, findings, accounts. Track goals and accountability with visual charts and dashboard plugins.",
 			[""],
 			{
@@ -270,6 +313,7 @@ const featureList = {
 
 		new Module(
 			"System Metrics",
+			"Extras",
 			"Utilize visual graphs and charts to focus on performance-based results. Discover prioritization concerns as they happen.",
 			[
 				"Analyzing coder accuracy is the primary use for accumulating accuracy rates, but ReviewMate offers visual insight on other systematic details across a user's and even a firm's usage. Particularly when working with a team, performance statistics and workload can be viewed at a glance.",
@@ -284,6 +328,7 @@ const featureList = {
 		),
 		new Module(
 			"Time Tracking",
+			"Extras",
 			// !!! Needs to change based 
 			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
 			["Some tasks take longer to finish than others. Overall, staffing analytics offers "],
@@ -298,6 +343,8 @@ const featureList = {
 	additional_functionalities: [
 		new Module(
 			"Integration Manager",
+			"Security",
+			// !!! maybe in security?
 			"Import spreadsheets, universes of data, or any other third-party source of data into a central resource. Manage, maintain, and navigate sources dynamically.",
 			[
 				`For the many ways a user can integrate and receive data from a source such as a "universe of data", ReviewMate allows in interface for configuring all of the users' connections to the data sources. These connections are what we consider integrations. `,
@@ -312,7 +359,9 @@ const featureList = {
 
 		new Module(
 			"Audit The Auditor",
-			"Review completed audits and reviews by adding  layered documentation. Original data is referential and integrated.",
+			"Monitoring",
+			// !!! idk
+			"Review completed audits and reviews by adding layered documentation. Original data is referential and integrated.",
 			[
 				"Every auditor has the ability to interact with already-finished audits. Comments and notes can be attached directly to a specific code, a coder, or for maybe the auditor themselves. By doing this, it creates a layer of communication on top of the rest of the finding's communication shared by coder, auditor, and potentially client.",
 				"This way of stacking communication is similar to modern thread-based messaging that enhances transparency for every user of the chain of interaction.",
@@ -326,6 +375,8 @@ const featureList = {
 
 		new Module(
 			"Document Manager",
+			"Reporting",
+			// !!! super neutral
 			"Share files such as reports, imported spreadsheets, and training materials between different administration levels. HIPAA compliant, and supported by clear version controlling.",
 			[
 				"Within ReviewMate, users may import and export documents such as Word documents and Excel spreadsheets right into the system. Document Manager is the overview tool for organizing your documents from all sources.",
@@ -341,6 +392,7 @@ const featureList = {
 
 		new Module(
 			"Education Tracking",
+			"Monitoring",
 			"Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules. Create and assign quizzes",
 			// !!! quizzes? ?
 			[
@@ -355,6 +407,7 @@ const featureList = {
 		),
 		new Module(
 			"ReviewMate Insights (Benchmarking)",
+			"Monitoring", // !!! or reporting?
 			"Benchmark and compare performance against other ReviewMate users. Offers advice, community and insight within local scopes, global scopes, or 'millions of records within our community'. Exposes common coding errors that integrate with your Risk Manager.",
 			[
 				"ReviewMate Insights is an community of all ReviewMate users, assembled on the intent of improving common issues. With the community, users can leverage insight for addressing topics such as most problematic coding errors. These types of insight are viewable to users, but they also contribute into artificial intelligence within ReviewMate to enhance user experience. ",
@@ -367,6 +420,7 @@ const featureList = {
 		),
 		new Module(
 			"Selector Tools",
+			"Audit",
 			"Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool.",
 			[
 				"Selector tools are essential to any auditor, and ReviewMate focuses on creating easy tools for every scenario to empower the auditor. An assortment of querying parameters are integrated for every auditing account, used for extracting the exact accounts that you need. The randomizer is an additional way to query a random set of accounts for initiating routine checks.",
@@ -383,6 +437,7 @@ const featureList = {
 
 		new Module(
 			"Customizable Tasks",
+			"Monitoring",
 			"Customizable task responses allow all users to focus on pertinent issues. Field or view verbose responses based on user preferences.",
 			[
 				"Tasks in ReviewMate are units or sets of accounts that index progression and communication notes. Tasks offer convenient ways to interact with a compartmentalized set of findings by being able to add this information to any dashboard, export into a report, or to isolate accountability using online logins with end-users.",
@@ -397,6 +452,7 @@ const featureList = {
 
 		new Module(
 			"Risk Manager",
+			"Monitoring",
 			"Leverage artificial intelligence and historical findings to monitor and stay on-top of potential risks.",
 			[
 				"Based on standard information being imported and evaluated, ReviewMate can offer automatic guidance for typically overlooked issues.",
@@ -410,6 +466,7 @@ const featureList = {
 
 		new Module(
 			"Record Tracker",
+			"Audit",
 			"View full narratives of records in one integrated place by using timelines within each record.",
 			[
 				"ReviewMate offers an intuitive way of observing and analyzing a thread of changes regarding a record. The auditor is empowered full transparency of the conversations between all parties from beginning of the diagnosis, to the rebuttal process without having to switch with external tools.",
@@ -422,6 +479,8 @@ const featureList = {
 		),
 		new Module(
 			"Retrospective Physician Queries",
+			"Auditing",
+			//  !!! This was to be re-written
 			"Intuitively analyze and report coders' physician queries on compliance, appropriateness, and efficiency.",
 			[""],
 			{
@@ -433,6 +492,8 @@ const featureList = {
 
 		new Module(
 			"CDI Communication",
+			"Report",
+			// !!! probably in reporting section
 			"Integrate communication with any first-party or third-party CDI team.",
 			[""],
 			{
@@ -446,3 +507,4 @@ const featureList = {
 
 export default featureList;
 export {formatSlug}
+export type {Module}

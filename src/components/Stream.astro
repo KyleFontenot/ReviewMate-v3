@@ -1,9 +1,8 @@
 ---
-// import { Img } from "astro-imagetools/components";
 import {formatSlug} from '../featureList.js'
 import Article from "./Article.astro"
 import { contentfulItems} from './contentfulClient.js'
-const {size = "small", title, postType, style} = Astro.props;
+const {size = "small", title, postType = "blogPost", style}  = Astro.props;
 
 let posts = await contentfulItems(postType)
 
