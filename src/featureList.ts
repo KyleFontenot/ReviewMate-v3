@@ -23,7 +23,7 @@ class Module {
 	essentials: boolean;
 	enterprise : boolean;
 	pro : boolean;
-	bullets: {title: string, bullets: string[]};
+	bullets?: {header: string, bullets: string[]};
 	commontraits: boolean;
 	tags: string[];
 
@@ -34,8 +34,7 @@ class Module {
 		long: string[],
 		img: {src: string, alt: string},
 		tiers: [boolean, boolean, boolean],
-		bullets: {title: string, bullets: string[]},
-		tags?: string[]
+		bullets?: {header: string, bullets: string[]},
 	) {
 		this.title = title;
 		this.slug = formatSlug(title);
@@ -50,7 +49,6 @@ class Module {
 		// bullets should be an object type
 		this.bullets = bullets;
 		this.commontraits = false;
-		this.tags = this.tags;
 	}
 }
 class AuditingModule extends Module {
@@ -60,11 +58,10 @@ class AuditingModule extends Module {
 		long: string[],
 		img: { src: string; alt: string },
 		tiers: [boolean, boolean, boolean],
-		bullets: { title: string; bullets: string[] },
-		tags?: string[]
+		bullets?: { header: string; bullets: string[] },
 	) {
 		const section = "Auditing";
-		super(title, section, short, long, img, tiers, bullets, tags);
+		super(title, section, short, long, img, tiers, bullets);
 		this.commontraits = true;
 	}
 }
@@ -301,7 +298,7 @@ const featureList = {
 	analytics: [
 		new Module(
 			"Staffing Analytics",
-			"Extras",
+			"Monitoring",
 			"Time tracking and progress transparency, against tasks, findings, accounts. Track goals and accountability with visual charts and dashboard plugins.",
 			[""],
 			{
@@ -313,7 +310,7 @@ const featureList = {
 
 		new Module(
 			"System Metrics",
-			"Extras",
+			"Monitoring",
 			"Utilize visual graphs and charts to focus on performance-based results. Discover prioritization concerns as they happen.",
 			[
 				"Analyzing coder accuracy is the primary use for accumulating accuracy rates, but ReviewMate offers visual insight on other systematic details across a user's and even a firm's usage. Particularly when working with a team, performance statistics and workload can be viewed at a glance.",
@@ -328,7 +325,7 @@ const featureList = {
 		),
 		new Module(
 			"Time Tracking",
-			"Extras",
+			"Monitoring",
 			// !!! Needs to change based 
 			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
 			["Some tasks take longer to finish than others. Overall, staffing analytics offers "],
@@ -420,7 +417,7 @@ const featureList = {
 		),
 		new Module(
 			"Selector Tools",
-			"Audit",
+			"Auditing",
 			"Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool.",
 			[
 				"Selector tools are essential to any auditor, and ReviewMate focuses on creating easy tools for every scenario to empower the auditor. An assortment of querying parameters are integrated for every auditing account, used for extracting the exact accounts that you need. The randomizer is an additional way to query a random set of accounts for initiating routine checks.",
@@ -432,7 +429,6 @@ const featureList = {
 			},
 			[true, true, true],
 			// !!! add in specific bulletpoints
-			[""]
 		),
 
 		new Module(
@@ -466,7 +462,7 @@ const featureList = {
 
 		new Module(
 			"Record Tracker",
-			"Audit",
+			"Auditing",
 			"View full narratives of records in one integrated place by using timelines within each record.",
 			[
 				"ReviewMate offers an intuitive way of observing and analyzing a thread of changes regarding a record. The auditor is empowered full transparency of the conversations between all parties from beginning of the diagnosis, to the rebuttal process without having to switch with external tools.",
@@ -492,10 +488,9 @@ const featureList = {
 
 		new Module(
 			"CDI Communication",
-			"Report",
-			// !!! probably in reporting section
-			"Integrate communication with any first-party or third-party CDI team.",
-			[""],
+			"Reporting",
+			"Integrate communication with any first-party or third-party CDI team right from within ReviewMate.",
+			["ReviewMate aims to be an all-in-one solution, so communication solutions for connecting with a CDI team are integrated right within standard workflows. "],
 			{
 				src: "/src/images/photos/CDIcommunication.jpg",
 				alt: "Young woman scrutinizing charts on a monitor",

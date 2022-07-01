@@ -4,26 +4,31 @@ import { contentfulItems} from './contentfulClient.js'
 import { formatSlug } from '../featureList.ts'
 const {style}  = Astro.props;
 
-let whatsNew = await contentfulItems('releaseNotes')
-console.log(whatsNew[0].fields)
+let whatsNew = await contentfulItems('releaseNotes');
+whatsNew = whatsNew.slice(0, 2);
+// console.log(whatsNew[0].fields)
+
+const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+// console.log(formatSlug(whatsNew[0].fields.title))
 ---
 
-<section class="whatsnew">
+<section id="whatsnew" class="whatsnew">
   <h2>What's New:</h2>
-  <div class="list">
+  <ul class="list">
     
     {whatsNew.map(release => {
+      let formatDate = new Date(release.fields.month)
       return (
-        <a href="#"  class="whatsnewentry"><h3>{release.fields.title}</h3></a>
+        <a href={`/releasenotes/${formatSlug(release.fields.title)}/`} class="div">
+          <li class="entry">{release.fields.title}</li>
+          <p class="description">{release.fields.smallDescription}</p>
+          <span class="date">{month[formatDate.getMonth()]}, {formatDate.getFullYear()}</span>
+          <span class="version">Release {release.fields.versionNumber.toFixed(1)}</span>
+        </a>
       )
     })}
-  </div>
-  <a href="/releasenotes/" class="seeall">See All Releases</a>
-
-  <!-- <h3 style="text-indent: 3rem;margin-bottom: 2rem;text-align: center;">{whatsNew[0].fields.title}</h3>
-  <hr style=" margin-bottom:2.5rem;"/>
-  <div class="body" set:html={documentToHtmlString(whatsNew[0].fields.body)}>
-  </div> -->
+  </ul>
+  <a href="/releasenotes/" class="seeall">See All Release Notes</a>
 </section>
 
 
@@ -31,105 +36,72 @@ console.log(whatsNew[0].fields)
   .whatsnew {
     background-color: hsl(var(--color1hsl));
     background-color: #fff;
-    max-width: 70rem;
+    // max-width: 70rem;
     color: white;
-    color: hsl(var(--color1hsl));
+    
     width: 114%;
     margin-inline: -7%;
-    padding-top: 4rem;
+    padding-top: 3rem;
     padding-bottom: 2.5rem;
     padding-inline: 10%;
     padding-left: calc(10% + 2rem);
-    box-shadow: 0 0 26px 3px #00000022 inset;
-  }
-  .body {
-    & :global(table){
-      margin-bottom: 1rem;
-      background-color: white;
-      width: 96%;
-      margin-inline: auto;
-      // border-collapse: collapse;
-      border-collapse: separate;
-      border-spacing: 0;
-      & :global(th) {
-        text-align: center;
-        color: white;
-        background-color: hsl(var(--color1hsl));
-        padding: 10px 20px;
-        :global(p){
-          color: white;
-          margin-bottom: 0;
-        }
-      }
-      & :global(th):first-of-type {
-        border-top-left-radius: 10px;
-      }
-      & :global(th):last-of-type {
-        border-top-right-radius: 10px;
-      }
-
-      & :global(tr):last-of-type > :global(td):first-of-type{
-        border-top-width: 0;
-        border-bottom-left-radius: 10px;
-      }
-      & :global(tr):last-of-type > :global(td):last-of-type {
-        border-bottom-right-radius: 10px;
-        border-right-width: 1px;
-      }
-      & :global(tr) > :global(td):last-of-type {
-        border-left-width: 0;
-        // border: 3px solid purple;
-      }
-      & :global(td) {
-        border: 1px solid #ccc;
-        padding: 10px 16px;
-        border-top-width: 0;
-        & :global(p) {
-          text-indent: 0;
-          margin-bottom: 0;
-        }
-      }
-
-      
-    }
-    & :global(li){
-      list-style-position: unset;
-      list-style-position: inside;
-      list-style-type: square;
-      list-style-image: none;
-      // list-style-image: url('/icons/right-arrow(list2).svg');
-      margin-bottom: 2rem;
-      // text-indent: 0;
-      & :global(*) {
-        
-      }
-      & :global(p){
-        font-size: 102%;
-        display: inline;
-      }
-
-      & :global(li){
-        margin-left: 2rem;
-        list-style-type: lower-alpha;
-        list-style-image: none;
-        margin-bottom: 0.2rem;
-        padding-right: 4rem;
-        & :global(p){
-        font-size: 95%;
-        color: #888;
-      }
-        & :global(li){
-        margin-left: 2rem;
-        list-style-type: lower-roman;
-        list-style-image: none;
-      }
-      }
-    }
-    & > :global(p){
-      margin-bottom: 1.6rem;
-      // display: inline;
+    // box-shadow: 0 0 26px 3px #00000022 inset;
+    & h2 {
+      color: hsl(var(--color1hsl));
     }
   }
+  .list {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 3rem;
+    border-left: 3px solid #999;
+    width: 80%;
+    margin-inline: auto;
+  }
+  .date{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    
+  }
+  .version {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: #999;
+  }
+  .div{
+    margin-bottom: 6rem;
+    margin-bottom: 2rem;
+    position: relative;
+    margin-inline: auto;
+    margin-left: 1rem;
+    // max-width: 25rem;
+    padding: 2rem 0 1rem 1rem;
+    // outline: 1px solid #ccc;
+    border-top: 1px solid #999;
+    border: 1px solid transparent;
+    // width: 80%;
+    border-radius: 10px;
+    transition: border 0.2s;
+    width: 100%;
+    & :global(h3){
+      display: inline-block;
+    }
+    &:hover {
+      border: 1px solid #999;
+    }
+  }
+  .entry {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #666;
+  }
+  .description {
+    color: #999;
+  }
+
+  
   .seeall{
     font-size: 120%;
     display: inline-block;
@@ -143,14 +115,5 @@ console.log(whatsNew[0].fields)
     display: flex;
     flex-flow: column nowrap;
   }
-  .whatsnewentry{
-    margin-bottom: 6rem;
-    // text-indent: 3rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    width: 100%;
-    & :global(h3){
-      display: inline-block;
-    }
-  }
+  
 </style>

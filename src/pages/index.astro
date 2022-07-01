@@ -2,11 +2,11 @@
 import HomepageLayout from '../layouts/HomepageLayout.astro'
 import FlexDiv from '../components/FlexDiv.astro'
 import Button from "../components/Button.astro"
+import { Img } from "astro-imagetools/components";
 import Stream from "../components/Stream.astro"
 import SmallLink from "../components/SmallLink.astro"
 import ConcernBlob from '../components/ConcernBlob.astro'
 import Timeline from "../components/Timeline.astro"
-import BlogStream from "../components/BlogStream.astro"
 import {formatSlug} from "../featureList.js"
 ---
 <HomepageLayout>
@@ -20,7 +20,8 @@ import {formatSlug} from "../featureList.js"
         <h3 style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
       </div>
       <div id="productintroscreen">
-        <img src="/product-preview(2).svg" alt="screenshot of ReviewMate web-app" />
+        <Img src="/src/images/AppScreenshot1.png" alt="screenshot of ReviewMate web-app"/>
+        <!-- <img src="/product-preview(2).svg" alt="screenshot of ReviewMate web-app" /> -->
       </div>
     </div>
 <main style="padding-top: 0;" id="main">
@@ -55,7 +56,7 @@ import {formatSlug} from "../featureList.js"
     </ConcernBlob>
     <ConcernBlob tagline={`The "Email Traffic-Jam" `} description="Email threads become messy and burdensome, sometimes overlooking pertinent information in pages and pages of history." answer="ReviewMate brings modern central communication to auditing deliberation, by integrating direct references, explicit notes, and party transparency so that everyone is heard concisely." img="/EmailTrafficJam.svg" imgAlt="Woman dissecting and analyzing an email thread." client:idle>
     </ConcernBlob>
-    <ConcernBlob variant={2} tagline={` The "Opaque" problem`} description="Managers, and most importantly, clients, need to be able to keep track of active progression in auditing tasks to utilize a pro-active approach to the teams' work." answer="Tasks in ReviewMate are groups of assigned work which can be traced on factual, present data. ReviewMate even extends special transparency tools for clients and coders alike." img="/OpaqueProblem.svg" imgAlt=`Man hiding his computer screen with a "TBD" sign` client:load>
+    <ConcernBlob variant={2} tagline={` The "Opaque" problem`} description="Managers, and most importantly, clients, need to be able to keep track of active progression in auditing tasks to utilize a pro-active approach to the teams' work." answer="Tasks in ReviewMate are groups of assigned work which can be traced on factual, present data. ReviewMate even extends special transparency tools for clients and coders alike." img="/OpaqueProblem.svg" imgAlt={`Man hiding his computer screen with a "TBD" sign`} client:load>
     </ConcernBlob>
 </div>
   
