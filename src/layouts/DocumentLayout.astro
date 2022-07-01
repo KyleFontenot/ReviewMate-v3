@@ -7,15 +7,16 @@
   import Rellax from "../scripts/Rellax.astro"
   import ScrollReveal from "../scripts/ScrollReveal.astro"
 
-  const {title } = metadata;
+  const { title } = metadata;
 
   const description = Astro.props.description || metadata.description || "descriptions of something"
   const image = "/ReviewMate-op.jpg"
   const canonical = Astro.props.canonical || metadata.canonical || undefined
   const slug = Astro.props.slug || undefined
+
   const openGraph = {
     basic: {
-      title: Astro.props.title || `ReviewMate${Astro.request.pathname !== '/' ? ' | ' + Astro.request.pathname : ''}`,
+      title: Astro.props.title || `ReviewMate`,
       type: "website",
       image: Astro.props.image || "/ReviewMate-op.jpg",
       url: canonical,
