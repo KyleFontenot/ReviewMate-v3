@@ -3,13 +3,15 @@ import StandardLayout from '../layouts/StandardLayout.astro'
 import FlexDiv from '../components/FlexDiv.astro'
 // import { Img } from "astro-imagetools/components";
 import FAQSection from "../components/FAQSection.astro"
-import BlogStream from '../components/BlogStream.astro'
+import WhatsNew from '../components/WhatsNew.astro'
 import Stream from '../components/Stream.astro'
 ---
 <StandardLayout>
     <h1 style="margin-bottom: 2rem;">Resources</h1>
 
 <Stream postType="blogPost" title="Blog Posts" size="small" />
+<WhatsNew/>
+
 <Stream postType="articlePost" title="Relevant Articles" size="small" />
 
 <FAQSection/>

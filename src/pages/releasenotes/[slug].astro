@@ -1,0 +1,21 @@
+---
+import { contentfulItems} from './contentfulClient.js'
+import { formatSlug } from '../featureList.ts'
+import StandardLayout from "../../layouts/StandardLayout.astro"
+
+
+let whatsNew = await contentfulItems('releaseNotes')
+
+export function getStaticPaths() {
+  return whatsNew.map(release => 
+  {
+    return({
+      params: {slug: formatSlug(release.fields.title)}, 
+      props: {release: release}
+    })})
+}
+const {release}  = Astro.props;
+---
+<StandardLayout>
+  <h1>{release.fields.title}</h1>
+</StandardLayout>
