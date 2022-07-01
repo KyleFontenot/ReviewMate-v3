@@ -300,10 +300,14 @@ const featureList = {
 			"Staffing Analytics",
 			"Monitoring",
 			"Time tracking and progress transparency, against tasks, findings, accounts. Track goals and accountability with visual charts and dashboard plugins.",
-			[""],
+			[
+				"ReviewMate offers many ways of tracking time that empower both subjective progression and for external transparency.",
+				"Tasks are the typical unit of grouping records together for the use of analyzing progression on. ReviewMate records metadata on each one of these tasks which shares directly with clients and users. On teams over-looking auditors, this boon offers essential accountability.",
+				"Tasks are automatically tracked and indexed, but audits are never completely predictable within time contraints. Users have tools for augmenting the built-in time tracking software for claiming additional time into more-intensive auditing tasks."
+			],
 			{
 				src: "/src/images/photos/krukov.jpg",
-				alt: "Man nd woman sharing statistics result",
+				alt: "Man and woman sharing statistics result",
 			},
 			[false, true, true]
 		),
@@ -323,18 +327,20 @@ const featureList = {
 			},
 			[false, true, true]
 		),
-		new Module(
-			"Time Tracking",
-			"Monitoring",
-			// !!! Needs to change based 
-			"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
-			["Some tasks take longer to finish than others. Overall, staffing analytics offers "],
-			{
-				src: "/src/images/photos/timetracking.jpg",
-				alt: "Physician checking the time on his watch",
-			},
-			[false, true, true]
-		),
+		// new Module(
+		// 	"Time Tracking",
+		// 	"Monitoring",
+		// 	// !!! Needs to change based
+		// 	"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+		// 	[
+		// 		"Some tasks take longer to finish than others. Overall, staffing analytics offers ",
+		// 	],
+		// 	{
+		// 		src: "/src/images/photos/timetracking.jpg",
+		// 		alt: "Physician checking the time on his watch",
+		// 	},
+		// 	[false, true, true]
+		// ),
 	],
 
 	additional_functionalities: [
@@ -427,7 +433,7 @@ const featureList = {
 				src: "/src/images/photos/selection.jpg",
 				alt: "Customer group circled",
 			},
-			[true, true, true],
+			[true, true, true]
 			// !!! add in specific bulletpoints
 		),
 
@@ -475,10 +481,12 @@ const featureList = {
 		),
 		new Module(
 			"Retrospective Physician Queries",
+			//  !!! This title was to be re-written
 			"Auditing",
-			//  !!! This was to be re-written
 			"Intuitively analyze and report coders' physician queries on compliance, appropriateness, and efficiency.",
-			[""],
+			["Context is incredibly important for auditing. For broadening the scope of communication within ReviewMate, Retrospective Physician Queries allows auditors to examine coders' submitted physician queries.",
+			"Physician queries are important for both compliance, and for providing context into the record's narrative. Auditors may simply inspect and refer to physician queries right in the timeline of the record."
+		],
 			{
 				src: "/src/images/photos/physicianquery.jpg",
 				alt: "Doctor greeting and collaborating with businessman",
@@ -490,7 +498,10 @@ const featureList = {
 			"CDI Communication",
 			"Reporting",
 			"Integrate communication with any first-party or third-party CDI team right from within ReviewMate.",
-			["ReviewMate aims to be an all-in-one solution, so communication solutions for connecting with a CDI team are integrated right within standard workflows. "],
+			[
+				"ReviewMate aims to be an all-in-one solution, so communication solutions for connecting with a CDI team are integrated right within standard reporting workflows.",
+				"Oftentimes auditors report not only to clients, but to an adjacent Clinical Documentation Improvement team as well. Once an auditor has aggregated findings and is ready to report, ReviewMate allows connecting to a designated external CDI team via email, exported documents, or a special client-facing login portal. The login portal ensures reports give the most accurate up-to-date information.",
+			],
 			{
 				src: "/src/images/photos/CDIcommunication.jpg",
 				alt: "Young woman scrutinizing charts on a monitor",
