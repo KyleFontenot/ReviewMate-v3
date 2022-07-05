@@ -20,7 +20,13 @@ import {formatSlug} from "../featureList.js"
         <h3 style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
       </div>
       <div id="productintroscreen">
-        <Img src="/src/images/AppScreenshot1.png" alt="screenshot of ReviewMate web-app"/>
+        <Img src="/src/images/AppScreenshot1.png" alt="screenshot of ReviewMate web-app" placeholder="tracedSVG" loading="eager" formatOptions={{
+          tracedSVG: {
+            function: "trace",
+            options: {
+            turdSize: 4 , color: '#923B2D'}
+          }
+        }}/>
         <!-- <img src="/product-preview(2).svg" alt="screenshot of ReviewMate web-app" /> -->
       </div>
     </div>
@@ -427,7 +433,7 @@ import {formatSlug} from "../featureList.js"
   .concernblobcontainer {
     margin-top: 5rem;
     display: grid;
-    width: 110%;
+    width: 100%;
     // flex-flow:row wrap;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 40vw));
     // grid-template-rows: repeat(auto-fill, minmax(10rem, 1fr));
