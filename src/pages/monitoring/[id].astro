@@ -4,9 +4,17 @@ import Feature from '../../components/Feature.astro'
 import CallToAction from '../../components/CallToAction.astro'
 import CommonTraits from "../../components/CommonTraits.jsx"
 import featureList from '../../featureList.js'
+import type {Module} from "../../featureList.js"
 
 export function getStaticPaths() {
-  return featureList.auditing_modules.map(feature => 
+    let monitoringModules : Module[] = [];
+    Object.values(featureList).forEach(category => { 
+    let testingGrab = category.filter(module => {
+      module.section === "Monitoring" ? monitoringModules.push(module) : false
+    })
+  })
+
+  return monitoringModules.map(feature => 
   {
     return({
       params: {id: feature.slug}, 

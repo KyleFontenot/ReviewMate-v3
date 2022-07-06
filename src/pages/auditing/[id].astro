@@ -4,9 +4,18 @@ import Feature from '../../components/Feature.astro'
 import CallToAction from '../../components/CallToAction.astro'
 import CommonTraits from "../../components/CommonTraits.jsx"
 import featureList from '../../featureList.js'
+import type {Module} from "../../featureList.js"
+
 
 export function getStaticPaths() {
-  return featureList.auditing_modules.map(feature => 
+    let auditingModules : Module[] = [];
+    Object.values(featureList).forEach(category => { 
+    let testingGrab = category.filter(module => {
+      module.section === "Auditing" ? auditingModules.push(module) : false
+    })
+  })
+
+  return auditingModules.map(feature => 
   {
     return({
       params: {id: feature.slug}, 
@@ -40,9 +49,6 @@ const {feature} = Astro.props;
   }
   )}</ul> 
   : ''} 
-
-  
-
   <CallToAction explain previousButton={{text: 'Auditing Accounts', href: "/resources/"}}></CallToAction>
 </Feature>
 
