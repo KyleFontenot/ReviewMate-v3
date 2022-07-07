@@ -66,85 +66,14 @@ import {formatSlug} from "../featureList.js"
     </ConcernBlob>
 </div>
   
-<Timeline>
-  <div slot="1">
-    <div class="timelinediv">
-      <div>
-        <h2>Integrate</h2> 
-        <p>Securely connect to the universe of data seamlessly with ease. Imported
-        data is available platform-wide and ready for selection.</p> 
-        <SmallLink href={`/security/${formatSlug("Integration Manager")}/`} text="Integration Manager"/> 
-        
-        <SmallLink href={`/security/${formatSlug("Document Manager")}/`} text="Document Manager"/> 
 
-        <SmallLink href={`/security/${formatSlug("Multifactor Authentication")}/`} text="Multifactor Authentication"/> 
-        
-        <SmallLink href={`/security/${formatSlug("LDAP / Active Directory")}/`} text="LDAP / Active Directory"/> 
-
-        <SmallLink href={`/security/${formatSlug("VPN Integration")}/`} text="VPN Integration"/> 
-
-        </div> 
-        </div>
-  </div>
-  <div slot="2">
-    <div class="timelinediv">
-      <div>
-      <h2>Sample</h2> 
-      <p>Apply flexible rules and parameters to concisely gather
-      accounts for auditing audit. Randomizer tools are also available.</p>
-        <SmallLink href={`/security/${formatSlug("Sample Selector")}/`} text="Sample Selector"/> 
-
-        <SmallLink href={`/security/${formatSlug("Risk Manager")}/`} text="Risk Manager"/> 
-    </div>
-    </div>
-  </div>
-  <div slot="3">
-  <div class="timelinediv">
-      <div>
-   <h2>Audit</h2> 
-   <p>Conduct audits in a transparent consolidated platform. Relay audit findings
-   to other users easily.</p>
-   <SmallLink href="/auditingaccounts/inpatient/" text="IPPS"/>
-   <SmallLink href="/auditingaccounts/outpatient/" text="OPPS"/>
-   <SmallLink href="/auditingaccounts/profee/" text="Profee"/>
-   <SmallLink href="/auditingaccounts/asc/" text="ASC"/>
-   <SmallLink href="/auditingaccounts/cms-hcc/" text="CMS-HCC"/>
-        
-   </div>
-    </div>
-  </div>
-  <div slot="4">
-  <div class="timelinediv">
-      <div>
-   <h2>Report</h2> 
-   <p>Either choose from a variety of standard options or create custom reports as seen fit. </p>
-   <SmallLink href="/" text="Report Cards"/>
-   <SmallLink href="/" text="Accuracy Manager"/>
-   <SmallLink href="/" text="Code Finder"/>
-   <SmallLink href="/" text="Dashboards"/>
-   <SmallLink href="/" text="Summary Templates"/>
-   <SmallLink href="/" text="Exportability"/>
-   </div>
-    </div>
-  </div>
-  <div slot="5">
-  <div class="timelinediv">
-      <div>
-   <h2>Monitor</h2> 
-   <p>Track findings in one centralized platform while augmenting workflows with artificial intelligence.</p>
-   <SmallLink href="/" text="Sample Selector"/>
-   <SmallLink href="/" text="Sample Selector"/>
-   </div>
-    </div>
-  </div>
-</Timeline>
-
-
-
-<FlexDiv className="red">
-  <h4>Partners</h4>
+<!-- Neeed to add in brands
+ -->
+<FlexDiv padding="3rem 6% 5rem" className="red" style="margin-top: 4rem;">
+  <h3 style="margin-bottom: 2rem;">Trusted By:</h3>
   <div class="partnersdiv">
-
+    <img class="partnerlogo" src="/brandsvgs/comforcehealth.svg" alt="Comforce Health logo" />
+    <img class="partnerlogo" src="/brandsvgs/ciox.svg" alt="Ciox's logo" />
   </div>
   
 </FlexDiv>
@@ -282,7 +211,7 @@ import {formatSlug} from "../featureList.js"
       height: 100%;
       width: 100%;
       background-color: hsl(var(--color1hsl));
-      background: linear-gradient(172deg, hsl(var(--color1hsl)) 35%, hsla(var(--color1h), 70%, 20%, 50%) );
+      background: linear-gradient(172deg, hsl(var(--color1hsl)) 20%, hsla(var(--color1h), 70%, 20%, 80%) );
       position: absolute;
       top: -30px;
       left: 0;
@@ -450,9 +379,16 @@ import {formatSlug} from "../featureList.js"
   .partnersdiv {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 1rem;
     width: 100%;
-    & > div { 
-      flex: 1.5 1 6rem;
-     }
+  }
+  .partnerlogo{
+    // fill:#a53926;
+
+    filter: invert(23%) sepia(18%) saturate(7185%) hue-rotate(347deg) brightness(95%) contrast(84%);
+    max-width: 14rem;
+    max-height: 10rem;
+
   }
 </style>

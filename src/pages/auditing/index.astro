@@ -21,7 +21,10 @@ Object.values(featureList).forEach(category => {
   <FeatureCategory title="Auditing">
   {auditingModules.map(module => {
     return (
-      <Feature size="small" title={module.title} href={`/auditing/${module.slug}/`}><p style="text-indent: 0;">{module.short}</p><h5>hello?</h5></Feature>
+      <Feature size="small" title={module.title} href={`/auditing/${module.slug}/`}>
+        <p style="text-indent: 0;">{module.short}</p>
+        <h5>hello?</h5>
+        </Feature>
     )
   })}
   

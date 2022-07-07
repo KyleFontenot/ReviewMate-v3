@@ -1,5 +1,5 @@
 ---
-const arrofLinks = ["Plans", "Resources", "Contact"]
+const arrofLinks = ["Key Features", "Plans", "Resources", "Contact"]
 const arrofSubLinks = ["Auditing", "Reporting", "Security", "Monitoring" ]
 ---
   
@@ -23,9 +23,9 @@ const arrofSubLinks = ["Auditing", "Reporting", "Security", "Monitoring" ]
     <nav>
       <ul>
         {arrofLinks.map(each => 
-          <li class=`${each === "Contact" ? 'contact' : ''}`>
+          {return (<li class={`${each === "Contact" ? 'contact' : ''}`}>
             <a href={`/${each.replace(' ', '').toLowerCase()}/`}>{ each }</a>
-          </li>
+          </li>)}
         )}
       </ul>
       <ul>
