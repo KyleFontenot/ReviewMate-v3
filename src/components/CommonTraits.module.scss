@@ -29,10 +29,10 @@ $seemoreheight: 10rem;
 }
 .ul {
   display: grid;
-  grid-template-columns: repeat(audo-fill, minmax(23rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
   grid-template-rows: repeat(auto-fill, 1fr);
   grid-auto-columns: minmax(5rem, 30rem);
-grid-auto-rows: auto;
+	grid-auto-rows: auto;
   row-gap: 1.5rem;
 	justify-content: center;
 	margin-inline: auto;

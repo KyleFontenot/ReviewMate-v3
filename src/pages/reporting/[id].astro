@@ -32,10 +32,7 @@ const {feature} = Astro.props;
         <p>{paragraph}</p>
       )
     })}
-  </div>
-  {feature?.commontraits === true ? <CommonTraits client:idle /> : ''}
-  
-  { feature.bullets ? <h3 style="margin-bottom: 2rem;margin-top: 1rem;margin-inline:auto;">{feature.bullets.header}</h3><ul class="list" >{feature?.bullets?.bullets?.map(point => {
+    { feature.bullets ? <h3 style="margin-bottom: 2rem;margin-top: 2rem;margin-inline:auto;">{feature.bullets.header}</h3><ul class="list" >{feature?.bullets?.bullets?.map(point => {
     return (
       <li class="bullet">{point}</li>
     )
@@ -49,7 +46,9 @@ const {feature} = Astro.props;
   }
   )}</ul> 
   : ''} 
-
+  </div>
+  {feature?.commontraits === true ? <CommonTraits client:idle /> : ''}
+  
   
 
   <CallToAction explain previousButton={{text: 'Auditing Accounts', href: "/resources/"}}></CallToAction>

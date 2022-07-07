@@ -6,7 +6,6 @@ import CommonTraits from "../../components/CommonTraits.jsx"
 import featureList from '../../featureList.js'
 import type {Module} from "../../featureList.js"
 
-
 export function getStaticPaths() {
     let auditingModules : Module[] = [];
     Object.values(featureList).forEach(category => { 
@@ -14,7 +13,6 @@ export function getStaticPaths() {
       module.section === "Auditing" ? auditingModules.push(module) : false
     })
   })
-
   return auditingModules.map(feature => 
   {
     return({
@@ -32,10 +30,7 @@ const {feature} = Astro.props;
         <p>{paragraph}</p>
       )
     })}
-  </div>
-  {feature?.commontraits === true ? <CommonTraits client:idle /> : ''}
-  
-  { feature.bullets ? <h3 style="margin-bottom: 2rem;margin-top: 1rem;margin-inline:auto;">{feature.bullets.header}</h3><ul class="list" >{feature?.bullets?.bullets?.map(point => {
+    {feature.bullets ? <h3 class="bulleth3" >{feature.bullets.header}</h3><ul class="list" >{feature?.bullets?.bullets?.map(point => {
     return (
       <li class="bullet">{point}</li>
     )
@@ -49,6 +44,9 @@ const {feature} = Astro.props;
   }
   )}</ul> 
   : ''} 
+  </div>
+  {feature?.commontraits === true ? <CommonTraits client:idle /> : ''}
+  
   <CallToAction explain previousButton={{text: 'Auditing Accounts', href: "/resources/"}}></CallToAction>
 </Feature>
 
@@ -73,6 +71,10 @@ const {feature} = Astro.props;
   & li {
     margin-bottom: 1rem;
   }
+}
+.bulleth3 {
+margin-bottom: 2rem;margin-top: 2rem;margin-inline:auto;
+text-indent: 2rem;
 }
 .accuracyrate {
   font-size: 3.2rem;

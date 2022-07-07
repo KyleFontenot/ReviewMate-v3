@@ -15,15 +15,18 @@ Object.values(featureList).forEach(category => {
   })
  })
 
-// console.log(auditingModules)
 ---
 <StandardLayout>
+
   <FeatureCategory title="Auditing">
   {auditingModules.map(module => {
     return (
-      <Feature size="small" title={module.title} href={`/auditing/${module.slug}/`}><p style="text-indent: 0;">{module.short}</p></Feature>
+      <Feature size="small" title={module.title} href={`/auditing/${module.slug}/`}><p style="text-indent: 0;">{module.short}</p><h5>hello?</h5></Feature>
     )
   })}
   
   </FeatureCategory>
 </StandardLayout>
+<style>
+
+</style>

@@ -79,7 +79,7 @@ const featureList = {
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
 			[true, true, true],
 			{
-				header: "In addition, our IPPS module features:",
+				header: "In addition to ReviewMate's standard features for auditing, our IPPS module features:",
 				bullets: [
 					"Identification on the screen of codes with MCC/CC/HAC and CMS-HCC values.",
 					"Support for Profee audit within the IPPS module.",

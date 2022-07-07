@@ -14,13 +14,13 @@ import {formatSlug} from "../featureList.js"
       <noscript><link rel="stylesheet" href="nojs.css" /></noscript>
       <div  class="shapeintrobg" id="shapeintrobg"></div>
       <div class="introtext">
-        <h2>Elevate your medical code auditing workflow</h2>
-        <p >Streamline auditing,
+        <h2 class="scrollrevealtext1">Elevate your medical code auditing workflow</h2>
+        <p class="scrollrevealtext2">Streamline auditing,
         integrate your data seamlessly, and consolidate communication in one platform.</p>
-        <h3 style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
+        <h3 class="scrollrevealtext3" style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
       </div>
       <div id="productintroscreen">
-        <Img src="/src/images/AppScreenshot2.jpg" alt="screenshot of ReviewMate web-app" placeholder="tracedSVG" loading="eager" formatOptions={{
+        <Img src="/src/images/AppScreenshot1.png" alt="screenshot of ReviewMate web-app" placeholder="tracedSVG" loading="eager" formatOptions={{
           tracedSVG: {
             function: "trace",
             options: {
@@ -38,17 +38,17 @@ import {formatSlug} from "../featureList.js"
   </div>
 
   <FlexDiv gap="0.2rem" className="producttraits">
-    <div >
+    <div class="scrollreveal">
       <img src="/Integrate(kf).svg" width="128" height="143"  alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
       <h3 style="letter-spacing:0;">Consolidate data from any source</h3>
       <p>Connect ReviewMate right into your universe of data or import loose resources independently, for gathering samples.</p>
     </div>
-    <div>
+    <div class="scrollreveal">
       <img src="/Audit(kf).svg" width="128" height="143" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
       <h3 style="letter-spacing:0;">Audit and extrapolate findings seamlessly</h3>
       <p>Integrated tools keep both the auditor closer to the data, and expands more accountable, transparent communication.</p>
     </div>
-    <div>
+    <div class="scrollreveal">
       <img src="/Report(kf).svg" width="128" height="143" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
       <h3 style="letter-spacing:0;">Report and Monitor</h3>
       <p>Customizable reports and integrated communication channels expedite results right to the end-user.</p>
@@ -56,13 +56,13 @@ import {formatSlug} from "../featureList.js"
   </FlexDiv>
 
 <div class="rellaxwrapper concernblobcontainer">
-    <ConcernBlob tagline={`"Spreadsheet Friction" `} description="Juggling between spreadsheets and different program resources is not only frustrating, but it wastes time, and can contribute to inconsistency." answer="ReviewMate consolidates all of your sources of information into one platform. Log in and take care of business." img="/SpreadSheetFriction.svg" imgAlt="Woman working in the center of many spreadsheets." client:load>
+    <ConcernBlob tagline={`"Spreadsheet Friction" `} description="Juggling between spreadsheets and different program resources is not only frustrating, but it wastes time, and can contribute to inconsistency." answer="ReviewMate consolidates all of your sources of information into one platform. Log in and take care of business." img="/SpreadSheetFriction.svg" imgAlt="Woman working in the center of many spreadsheets." className="scrollreveal" client:load>
     </ConcernBlob>
-    <ConcernBlob variant={2} tagline={`The "Game of Telephone" `} description="While reviewers are providing insights and comments on findings, having a single document being constantly carbon copied blurs lines of accountability, and opens up gaps for miscommunication." answer="Synchronized communication allows for every single audit, finding, comment, and task to be completely transparent for all authorized parties. " img="/GameOfTelephone.svg" imgAlt="Man with four rams holding many different phone alerts in between many different emails and ICD-10 codes" client:load>
+    <ConcernBlob variant={2} tagline={`The "Game of Telephone" `} description="While reviewers are providing insights and comments on findings, having a single document being constantly carbon copied blurs lines of accountability, and opens up gaps for miscommunication." answer="Synchronized communication allows for every single audit, finding, comment, and task to be completely transparent for all authorized parties. " img="/GameOfTelephone.svg" imgAlt="Man with four rams holding many different phone alerts in between many different emails and ICD-10 codes" className="scrollreveal" client:load>
     </ConcernBlob>
-    <ConcernBlob tagline={`The "Email Traffic-Jam" `} description="Email threads become messy and burdensome, sometimes overlooking pertinent information in pages and pages of history." answer="ReviewMate brings modern central communication to auditing deliberation, by integrating direct references, explicit notes, and party transparency so that everyone is heard concisely." img="/EmailTrafficJam.svg" imgAlt="Woman dissecting and analyzing an email thread." client:idle>
+    <ConcernBlob tagline={`The "Email Traffic-Jam" `} description="Email threads become messy and burdensome, sometimes overlooking pertinent information in pages and pages of history." answer="ReviewMate brings modern central communication to auditing deliberation, by integrating direct references, explicit notes, and party transparency so that everyone is heard concisely." img="/EmailTrafficJam.svg" imgAlt="Woman dissecting and analyzing an email thread." className="scrollreveal" client:idle>
     </ConcernBlob>
-    <ConcernBlob variant={2} tagline={` The "Opaque" problem`} description="Managers, and most importantly, clients, need to be able to keep track of active progression in auditing tasks to utilize a pro-active approach to the teams' work." answer="Tasks in ReviewMate are groups of assigned work which can be traced on factual, present data. ReviewMate even extends special transparency tools for clients and coders alike." img="/OpaqueProblem.svg" imgAlt={`Man hiding his computer screen with a "TBD" sign`} client:load>
+    <ConcernBlob variant={2} tagline={` The "Opaque" problem`} description="Managers, and most importantly, clients, need to be able to keep track of active progression in auditing tasks to utilize a pro-active approach to the teams' work." answer="Tasks in ReviewMate are groups of assigned work which can be traced on factual, present data. ReviewMate even extends special transparency tools for clients and coders alike." img="/OpaqueProblem.svg" imgAlt={`Man hiding his computer screen with a "TBD" sign`} className="scrollreveal" client:load>
     </ConcernBlob>
 </div>
   
@@ -84,7 +84,6 @@ import {formatSlug} from "../featureList.js"
         <SmallLink href={`/security/${formatSlug("VPN Integration")}/`} text="VPN Integration"/> 
 
         </div> 
-        <!-- <div><lottie-player src="/lotties/RM-interface.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> </div> -->
         </div>
   </div>
   <div slot="2">
@@ -97,7 +96,6 @@ import {formatSlug} from "../featureList.js"
 
         <SmallLink href={`/security/${formatSlug("Risk Manager")}/`} text="Risk Manager"/> 
     </div>
-      <!-- <div><lottie-player src="/lotties/RM-refine.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
   </div>
   <div slot="3">
@@ -107,17 +105,12 @@ import {formatSlug} from "../featureList.js"
    <p>Conduct audits in a transparent consolidated platform. Relay audit findings
    to other users easily.</p>
    <SmallLink href="/auditingaccounts/inpatient/" text="IPPS"/>
-
    <SmallLink href="/auditingaccounts/outpatient/" text="OPPS"/>
-
    <SmallLink href="/auditingaccounts/profee/" text="Profee"/>
-
    <SmallLink href="/auditingaccounts/asc/" text="ASC"/>
-
    <SmallLink href="/auditingaccounts/cms-hcc/" text="CMS-HCC"/>
         
    </div>
-   <!-- <div><lottie-player src="/lotties/RM-audit.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
   </div>
   <div slot="4">
@@ -126,14 +119,12 @@ import {formatSlug} from "../featureList.js"
    <h2>Report</h2> 
    <p>Either choose from a variety of standard options or create custom reports as seen fit. </p>
    <SmallLink href="/" text="Report Cards"/>
-
    <SmallLink href="/" text="Accuracy Manager"/>
    <SmallLink href="/" text="Code Finder"/>
    <SmallLink href="/" text="Dashboards"/>
    <SmallLink href="/" text="Summary Templates"/>
    <SmallLink href="/" text="Exportability"/>
    </div>
-   <!-- <div><lottie-player src="/lotties/RM-report.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
   </div>
   <div slot="5">
@@ -144,10 +135,22 @@ import {formatSlug} from "../featureList.js"
    <SmallLink href="/" text="Sample Selector"/>
    <SmallLink href="/" text="Sample Selector"/>
    </div>
-   <!-- <div><lottie-player src="/lotties/RM-monitor.json" background="transparent"  speed="0.8" class="timelinelottie scrollrevealright" loop autoplay  slot="image"></lottie-player></div> -->
     </div>
   </div>
 </Timeline>
+
+
+
+<FlexDiv className="red">
+  <h4>Partners</h4>
+  <div class="partnersdiv">
+
+  </div>
+  
+</FlexDiv>
+
+
+
 <Stream postType="blogPost" title="Blog" size="small"/>
 
 <FlexDiv  className="calltoaction">
@@ -196,6 +199,7 @@ import {formatSlug} from "../featureList.js"
       }
       & > h2 {
         line-height: 3rem;
+        font-size: 2.4rem;
         font-weight: bolder;
         text-align: center;
         max-width: 70vw;
@@ -206,6 +210,7 @@ import {formatSlug} from "../featureList.js"
       }
       & > p {
         margin-top: 4rem;
+        font-size: 110%;
         text-indent: 0;
         padding-inline: 5%;
       }
@@ -441,5 +446,13 @@ import {formatSlug} from "../featureList.js"
     & > :global(div) {
       width: 100%;
     }
+  }
+  .partnersdiv {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    & > div { 
+      flex: 1.5 1 6rem;
+     }
   }
 </style>

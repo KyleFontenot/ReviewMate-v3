@@ -31,23 +31,25 @@ const {feature} = Astro.props;
         <p>{paragraph}</p>
       )
     })}
-  </div>
+
+      { feature.bullets ? <h3 style="margin-bottom: 2rem;margin-top: 1rem;margin-inline:auto;">{feature.bullets.header}</h3><ul class="list" >{feature?.bullets?.bullets?.map(point => {
+      return (
+        <li class="bullet">{point}</li>
+      )
+    }
+    )}</ul> : 
+
+    (feature?.bullets !== undefined && feature?.bullets?.length > 0) ? <ul class="list" >{feature?.bullets?.map(point => {
+      return (
+        <li class="bullet">{point}</li>
+      )
+    }
+    )}</ul> 
+    : ''} 
+    </div>
   {feature?.commontraits === true ? <CommonTraits client:idle /> : ''}
   
-  { feature.bullets ? <h3 style="margin-bottom: 2rem;margin-top: 1rem;margin-inline:auto;">{feature.bullets.header}</h3><ul class="list" >{feature?.bullets?.bullets?.map(point => {
-    return (
-      <li class="bullet">{point}</li>
-    )
-  }
-  )}</ul> : 
-
-  (feature?.bullets !== undefined && feature?.bullets?.length > 0) ? <ul class="list" >{feature?.bullets?.map(point => {
-    return (
-      <li class="bullet">{point}</li>
-    )
-  }
-  )}</ul> 
-  : ''} 
+  
 
   
 
