@@ -69,19 +69,33 @@ import {formatSlug} from "../featureList.js"
 
 <!-- Neeed to add in brands
  -->
-<FlexDiv padding="3rem 6% 5rem" className="red" style="margin-top: 4rem;">
-  <h3 style="margin-bottom: 2rem;">Trusted By:</h3>
+<FlexDiv padding="3rem 0 7rem" className="red scrollreveal" style="margin-top: 4rem;background: radial-gradient(hsla(var(--color2hsl), 40%), hsla(var(--color2hsl), 20%) 20%, white 60%); ">
+  <h3 style="margin-bottom: 5rem;">Trusted By:</h3>
   <div class="partnersdiv">
+<a href="https://www.comforcehealth.com/" target="__blank" rel="noopener">
     <img class="partnerlogo" src="/brandsvgs/comforcehealth.svg" alt="Comforce Health logo" />
+</a>
+<a href="">
     <img class="partnerlogo" src="/brandsvgs/ciox.svg" alt="Ciox's logo" />
+</a>
+<a href="">
+    <img class="partnerlogo" src="/brandsvgs/eCatalyst.svg" alt="eCatalyst's logo" />
+</a>
+<a href="">
+    <img class="partnerlogo" src="/brandsvgs/Essentia.svg" alt="Essentia's logo" />
+</a>
+<a href="">
+    <img class="partnerlogo" src="/brandsvgs/intellis.svg" alt="Intellis' logo" />
+</a>
+<a href="">
+    <img class="partnerlogo" src="/brandsvgs/lifebridge.svg" alt="Intellis' logo" />
+</a>
+<a href="">
+    <img class="partnerlogo" src="/brandsvgs/maxim.svg" alt="Maxim Healthcare's logo" />
+</a>
   </div>
-  
 </FlexDiv>
-
-
-
 <Stream postType="blogPost" title="Blog" size="small"/>
-
 <FlexDiv  className="calltoaction">
   <h3 style="padding-inline: 6%;">Let us show you how you can start saving hours a week</h3>
   <div >
@@ -377,18 +391,22 @@ import {formatSlug} from "../featureList.js"
     }
   }
   .partnersdiv {
+    position: relative;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
-    gap: 1rem;
+    justify-content: center;
+    gap: 8rem;
     width: 100%;
   }
   .partnerlogo{
-    // fill:#a53926;
-
     filter: invert(23%) sepia(18%) saturate(7185%) hue-rotate(347deg) brightness(95%) contrast(84%);
-    max-width: 14rem;
-    max-height: 10rem;
-
+    max-width: 20rem;
+    max-height: 6rem;
+    position: relative;
+      transform: scale(1);
+      transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 </style>
