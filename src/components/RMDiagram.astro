@@ -1,7 +1,7 @@
 
-<div class="RMDiagram" style="position:relative;margin-inline: auto;max-width: 60rem;margin-top:3rem;">
-  <h3 style="top: 1rem;position: absolute;text-align: center;display:block;left: 50%;transform:translate(-50%, 0);width: 100%;">ReviewMate solves these common industry problems with: </h3>
-  <div class="diagrampara" id="paragraph1" style="top: 10%;left: 0%;">
+<div class="RMDiagram" style="">
+  <h3 style="top: 1rem;text-align: center;display:block;">ReviewMate solves these common industry problems with: </h3>
+  <div class="diagrampara" id="paragraph1" style="top: 15%;left: 0%;">
     <h4>Consolidated forms instead of disparate spreadsheets.</h4> 
     <ul>
       <li>Clean, concise organization of account data</li>
@@ -9,7 +9,7 @@
       <li>Groupable sets of relevant accounts</li>
     </ul>
   </div>
-  <div class="diagrampara" id="paragraph2" style="top: 10%;right: 0%;">
+  <div class="diagrampara" id="paragraph2" style="top: 15%;right: 0%;">
     <h4>Synchronized and centralized communication between all parties.</h4> 
     <ul>
       <li>Simplified, modern communication with traceable to each party.</li>
@@ -17,14 +17,14 @@
       <li>Email directly from within ReviewMate</li>
     </ul>
   </div>
-  <div class="diagrampara" id="paragraph3" style="bottom: 15%;left: 0%;">
+  <div class="diagrampara" id="paragraph3" style="bottom: 30%;left: 0%;">
     <h4>Complete narratives for each review.</h4> 
     <ul>
       <li>Transparent, chronologic timelines</li>
       <li>Full insight into coders' decisions like physician queries.</li>
     </ul>
   </div>
-  <div class="diagrampara" id="paragraph4" style="bottom: 15%;right: 0%;">
+  <div class="diagrampara" id="paragraph4" style="bottom: 30%;right: 0%;">
     <h4>Trackable tasks that relay progress.</h4> 
     <ul>
       <li>Keeps jobs grouped into sets of findings or accounts</li>
@@ -34,10 +34,16 @@
   </div>
 <style lang="scss">
   .RMDiagram {
-
+    position:relative;
+    margin-inline: auto;
+    max-width: 70rem;
+    margin-top:3rem;
+    width: 112%;
   }
-  @media (min-width: 480px){
-
+  @media (max-width: 570px){
+    .RMDiagram svg {
+      display: none;
+    }
   }
 .diagrampara {
   position: absolute;
@@ -48,7 +54,7 @@
   text-indent: 0;
   opacity: 0;
   transition: opacity 0.4s;
-  width: clamp( 8rem, 49%, 40rem);
+  width: clamp( 8rem, calc(50% - 2.5rem), 40rem);
   & h3 {
     text-align:center;
   }
@@ -58,59 +64,141 @@
 }
 </style>
 <script>
-    const windowWidth = window.innerWidth;
-    window.onresize = () => {windowWidth = window.innerWidth};
+  const MEDIA571 = window.matchMedia("(min-width: 571px)")
+    let windowWidth = window.innerWidth;
     const animationEnum = {
         1: "topLeft",
         2: "topRight",
         3: "bottomLeft",
         4: "bottomRight",
       }
-      const translateEnum = {
-        0: 'translate(0, 0)',
-        1: 'translate(-10px, -10px)',
-        2: 'translate(10px, -10px)',
-        3: 'translate(-10px, 10px)',
-        4: 'translate(10px, 10px)',
+    const translateEnum = {
+      0: 'translate(0, 0)',
+      1: 'translate(-10px, -10px)',
+      2: 'translate(10px, -10px)',
+      3: 'translate(-10px, 10px)',
+      4: 'translate(10px, 10px)',
+    }
+    window.onresize = () => {
+      windowWidth = window.innerWidth
+      checkMediaWidth()
+    };
+    function checkMediaWidth() {
+      if(MEDIA571.matches){
+        let hovering = {
+          enum: 4,
+          timer: true,
+        };
+        function activateAnim(number){
+          let curve = document.querySelector(`#curve${number}`)
+          let paragraph = document.querySelector(`#paragraph${number}`)
+          paragraph.style.opacity = "1"
+          curve.style.animationName = animationEnum[number].concat('Hover');
+          curve.style.transform = translateEnum[number];
+        }
+        function deactivateAnim(number){
+          let curve = document.querySelector(`#curve${number}`)
+          let paragraph = document.querySelector(`#paragraph${number}`)
+          paragraph.style.opacity = "0"
+          curve.style.animationName = animationEnum[number];
+          curve.style.transform = translateEnum[0];
+        }
+
+        function assignMouseEvents (number) {
+          let curve = document.querySelector(`#curve${number}`)
+          let paragraph = document.querySelector(`#paragraph${number}`)
+          curve.addEventListener("mouseover", (e) => {
+            deactivateAll()
+            activateAnim(number);
+            hovering = {
+              enum: number,
+              timer: false
+            };
+          }) 
+          curve.addEventListener("mouseout", (e) => {
+            deactivateAnim(number);
+            hovering = {
+              enum: number,
+              timer: true
+            };
+            checkAuto()
+          }) 
+          paragraph.addEventListener("mouseover", (e) => {
+            deactivateAll()
+            activateAnim(number)
+            hovering = {
+              enum: number,
+              timer: false
+            };
+          }) 
+          paragraph.addEventListener("mouseout", (e) => {
+            deactivateAnim(number)
+            hovering = {
+              enum: number,
+              timer: true
+            };
+            checkAuto()
+          }) 
+        }
+      document.querySelectorAll('.circlesegment').forEach((each, index) => {
+        assignMouseEvents(index + 1)
+      })
+
+      function deactivateAll() {
+        deactivateAnim(1)
+        deactivateAnim(2)
+        deactivateAnim(3)
+        deactivateAnim(4)
       }
-    function activateAnim(number){
-      let curve = document.querySelector(`#curve${number}`)
-      let paragraph = document.querySelector(`#paragraph${number}`)
-      paragraph.style.opacity = "1"
-      curve.style.animationName = animationEnum[number].concat('Hover');
-      curve.style.transform = translateEnum[number];
-    }
-    function deactivateAnim(number){
-      let curve = document.querySelector(`#curve${number}`)
-      let paragraph = document.querySelector(`#paragraph${number}`)
-      paragraph.style.opacity = "0"
-      curve.style.animationName = animationEnum[number];
-      curve.style.transform = translateEnum[0];
-    }
 
-    function assignMouseEvents (number) {
-      let curve = document.querySelector(`#curve${number}`)
-      let paragraph = document.querySelector(`#paragraph${number}`)
-      curve.addEventListener("mouseover", (e) => {
-        activateAnim(number);
-      }) 
-      curve.addEventListener("mouseout", (e) => {
-        deactivateAnim(number)
-      }) 
-      paragraph.addEventListener("mouseover", (e) => {
-        activateAnim(number)
-      }) 
-      paragraph.addEventListener("mouseout", (e) => {
-        deactivateAnim(number)
-      }) 
-    }
-  document.querySelectorAll('.circlesegment').forEach((each, index) => {
-    assignMouseEvents(index + 1)
-  })
-    
+      let currentActive = 1;
+      let observer = new IntersectionObserver(checkAuto, {
+        root: null,
+        rootMargin: '20px',
+        threshold: 1.0
+      });
+      document.querySelector('#RMDiagram') && observer.observe(document.querySelector('#RMDiagram'))
 
+      let ticker;
+      let determineTimer;
+      function checkAuto() {
+        let timer = 0;
+        setTimeout(() => {
+          if(hovering.timer){
+            activateAnim(hovering.enum)
+          }
+        }, 200)
+        clearInterval(ticker)
+        clearInterval(determineTimer)
+        ticker = setInterval(() => {
+          timer += 300
+        }, 300);
+        determineTimer = setInterval(() => {
+          if(timer > 2000 && hovering.timer){
+            deactivateAll()
+            if(hovering.enum === 4) {
+              activateAnim(1)
+              hovering.enum = 1
+            }
+            else {
+              activateAnim(hovering.enum + 1)
+              hovering.enum++
+            }
+            timer = 0;
+          }
+        }, 800);
+      }
+      }
+      else {
+        let hovering = {
+          enum: 4,
+          timer: true,
+        };
+      }
+    }
+    checkMediaWidth()
   </script>
-<svg width="100%" height="100%" viewBox="0 0 750 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="margin-inline:auto;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg id="RMDiagram" width="100%" height="100%" viewBox="0 0 750 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="margin-inline:auto;fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;margin-bottom:5rem;">
   
   <style>
     .shadow {
