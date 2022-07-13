@@ -79,7 +79,8 @@ const featureList = {
 			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
 			[true, true, true],
 			{
-				header: "In addition to ReviewMate's standard features for auditing, our IPPS module features:",
+				header:
+					"In addition to ReviewMate's standard features for auditing, our IPPS module features:",
 				bullets: [
 					"Identification on the screen of codes with MCC/CC/HAC and CMS-HCC values.",
 					"Support for Profee audit within the IPPS module.",
@@ -303,7 +304,7 @@ const featureList = {
 			[
 				"ReviewMate offers many ways of tracking time that empower both subjective progression and for external transparency.",
 				"Tasks are the typical unit of grouping records together for the use of analyzing progression on. ReviewMate records metadata on each one of these tasks which shares directly with clients and users. On teams over-looking auditors, this boon offers essential accountability.",
-				"Tasks are automatically tracked and indexed, but audits are never completely predictable within time contraints. Users have tools for augmenting the built-in time tracking software for claiming additional time into more-intensive auditing tasks."
+				"Tasks are automatically tracked and indexed, but audits are never completely predictable within time contraints. Users have tools for augmenting the built-in time tracking software for claiming additional time into more-intensive auditing tasks.",
 			],
 			{
 				src: "/src/images/photos/krukov.jpg",
@@ -347,12 +348,10 @@ const featureList = {
 		new Module(
 			"Integration Manager",
 			"Security",
-			// !!! maybe in security?
 			"Import spreadsheets, universes of data, or any other third-party source of data into a central resource. Manage, maintain, and navigate sources dynamically.",
 			[
-				`For the many ways a user can integrate and receive data from a source such as a "universe of data", ReviewMate allows in interface for configuring all of the users' connections to the data sources. These connections are what we consider integrations. `,
+				`For the many ways a user can integrate and receive data from a source such as a "universe of data". ReviewMate allows an interface for configuring and managing all of the users' connections to data sources. These connections are what we consider integrations. For setting up new connections, an easy setup process enables a stream of data right into reviews and tasks.`,
 			],
-			// !!! more third-party integrations would be good to mention.
 			{
 				src: "/src/images/photos/sayles.jpg",
 				alt: "Many cords plugged into electronic",
@@ -379,11 +378,9 @@ const featureList = {
 		new Module(
 			"Document Manager",
 			"Reporting",
-			// !!! super neutral
 			"Share files such as reports, imported spreadsheets, and training materials between different administration levels. HIPAA compliant, and supported by clear version controlling.",
 			[
-				"Within ReviewMate, users may import and export documents such as Word documents and Excel spreadsheets right into the system. Document Manager is the overview tool for organizing your documents from all sources.",
-				// !!! I dont know what othe features to talk about.
+				"Within ReviewMate, users may import and export documents such as Word documents and Excel spreadsheets right into the system. HIPAA security, and version control of each document, allow for keeping a user's documents organized in one central cloud-based solution. Document Manager is the overview tool for organizing your documents from all sources.",
 			],
 
 			{
@@ -426,7 +423,7 @@ const featureList = {
 			"Auditing",
 			"Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool.",
 			[
-				"Selector tools are essential to any auditor, and ReviewMate focuses on creating easy tools for every scenario to empower the auditor. An assortment of querying parameters are integrated for every auditing account, used for extracting the exact accounts that you need. The randomizer is an additional way to query a random set of accounts for initiating routine checks.",
+				"Selector tools are essential to any auditor, and ReviewMate focuses on creating easy tools for every scenario to empower the auditor. An assortment of querying parameters are integrated for every auditing account, used for extracting the exact accounts that you need. The randomizer is an additional way to query a random set of accounts.",
 				//  !!! roiutine checks?
 			],
 			{
@@ -434,7 +431,6 @@ const featureList = {
 				alt: "Customer group circled",
 			},
 			[true, true, true]
-			// !!! add in specific bulletpoints
 		),
 
 		new Module(
@@ -480,13 +476,14 @@ const featureList = {
 			[false, false, true]
 		),
 		new Module(
-			"Retrospective Physician Queries",
+			"Physician Query Analysis",
 			//  !!! This title was to be re-written
 			"Auditing",
 			"Intuitively analyze and report coders' physician queries on compliance, appropriateness, and efficiency.",
-			["Context is incredibly important for auditing. For broadening the scope of communication within ReviewMate, Retrospective Physician Queries allows auditors to examine coders' submitted physician queries.",
-			"Physician queries are important for both compliance, and for providing context into the record's narrative. Auditors may simply inspect and refer to physician queries right in the timeline of the record."
-		],
+			[
+				"Context is incredibly important for auditing. For broadening the scope of communication within ReviewMate, Physician Query Analyses allows auditors to examine coders' submitted physician queries.",
+				"Physician queries are important for both compliance, and for providing context into the record's narrative. Auditors may simply inspect and refer to physician queries right in the timeline of the record.",
+			],
 			{
 				src: "/src/images/photos/physicianquery.jpg",
 				alt: "Doctor greeting and collaborating with businessman",

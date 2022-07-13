@@ -6,6 +6,7 @@ import { Img } from "astro-imagetools/components";
 import Stream from "../components/Stream.astro"
 import SmallLink from "../components/SmallLink.astro"
 import ConcernBlob from '../components/ConcernBlob.astro'
+import RMDiagram from '../components/RMDiagram.astro'
 import Timeline from "../components/Timeline.astro"
 import {formatSlug} from "../featureList.js"
 ---
@@ -65,11 +66,11 @@ import {formatSlug} from "../featureList.js"
     <ConcernBlob variant={2} tagline={` The "Opaque" problem`} description="Managers, and most importantly, clients, need to be able to keep track of active progression in auditing tasks to utilize a pro-active approach to the teams' work." answer="Tasks in ReviewMate are groups of assigned work which can be traced on factual, present data. ReviewMate even extends special transparency tools for clients and coders alike." img="/OpaqueProblem.svg" imgAlt={`Man hiding his computer screen with a "TBD" sign`} className="scrollreveal" client:load>
     </ConcernBlob>
 </div>
+
+<RMDiagram />
   
 
-<!-- Neeed to add in brands
- -->
-<FlexDiv padding="3rem 0 7rem" className="red scrollreveal" style="margin-top: 4rem;background: radial-gradient(hsla(var(--color2hsl), 40%), hsla(var(--color2hsl), 20%) 20%, white 60%); ">
+<FlexDiv padding="0rem 0 7rem" className="red scrollreveal" style="margin-top: 0rem;background: radial-gradient(hsla(var(--color2hsl), 40%), hsla(var(--color2hsl), 20%) 20%, white 60%); ">
   <h3 style="margin-bottom: 5rem;">Trusted By:</h3>
   <div class="partnersdiv">
 <a href="https://www.comforcehealth.com/" target="__blank" rel="noopener">
@@ -395,7 +396,8 @@ import {formatSlug} from "../featureList.js"
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    gap: 8rem;
+    align-items: center;
+    gap: 4rem;
     width: 100%;
   }
   .partnerlogo{
@@ -407,6 +409,24 @@ import {formatSlug} from "../featureList.js"
       transition: transform 0.2s;
     &:hover {
       transform: scale(1.1);
+    }
+  }
+  .rmanswer {
+    display: flex;
+    flex-flow: row wrap;
+    margin-inline: auto;
+    // width: 70%;
+    padding: 5rem 5% 3rem;
+    & h3 {
+      display: inline-block;
+    } 
+    & > div {
+      flex: 2 1 60%;
+      min-width: 30rem;
+      padding: 1rem 1.5rem;
+    }
+    & > :global(img) {
+      flex: 2 1 40%;
     }
   }
 </style>

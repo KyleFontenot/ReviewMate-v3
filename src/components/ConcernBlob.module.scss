@@ -1,23 +1,12 @@
 .container {
   min-height: 22rem;
   position: relative;
-  // display:grid;
-  // grid-template-columns: auto;
-  // grid-auto-rows: auto;
-  // grid-template-columns: 100%;
-
-  // flex: 2 1 30rem;
   width: 100%;
   width: 100vw;
-  // max-width: 40rem;
-
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-
   margin-inline: auto;
-  // margin-bottom: 6rem;
-  // margin-top: 5rem;
   z-index: 10;
   .tagline, .div, .answer, .image {
     position: relative;
@@ -35,7 +24,7 @@
   .tagline{
     box-shadow: -1px 4px 12px -4px #33333388;
     margin-bottom: 1.5rem;
-    padding: 20px 30px;
+    padding: 20px 10px;
     vertical-align: middle;
     text-align: center;
     margin-inline: auto;
