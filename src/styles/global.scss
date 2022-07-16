@@ -105,6 +105,7 @@ body {
 main {
 	background-color: white;
 	max-width: 100%;
+	max-width: 90rem;
 	padding: 2rem 6% 3rem;
 	line-height: 1.3rem;
 	color: #555;
@@ -407,4 +408,8 @@ html.sr .load-hidden {
 
 .smalllink{
 margin-top: 0.3rem;
+}
+
+.hover {
+	transform: scale(1.1);
 }

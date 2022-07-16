@@ -1,5 +1,5 @@
 ---
-import LeftArrow from "./LeftArrow.astro"
+import Arrow from "./Arrow.astro"
   interface ButtonProps {
     text: string;
     as: "link" | "input" | "link"; 
@@ -8,15 +8,15 @@ import LeftArrow from "./LeftArrow.astro"
     color?: "maroon" | "yellow" | "white";
     style?: string; 
     size?: number;
-    leftarrow?: boolean
+    leftArrow?: boolean
   }
-const {text, as, href, outline, color = "maroon", style, size = 1, leftArrow} = Astro.props
+const {text, as = "link", href, outline, color = "maroon", style, size = 1, leftArrow} = Astro.props as ButtonProps
 ---
 {as === "link" ? 
-  <a href={href} class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}, {[`button--${size}`] : size}]} {style}>{leftArrow ? <LeftArrow/> : ''}{text}</a> : 
-as === "submit" || as === "input" ? 
+  <a href={href} class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}, {[`button--${size}`] : size}]} {style}>{leftArrow ? <Arrow/> : ''}{text}</a> : 
+as === ("submit" || "input") ? 
 
   <input type="submit" class:list={['button', {'button--outline': outline, 'button--leftarrow': leftArrow}, {[`button--${color}`] : color}, {[`button--${size}`] : size}]} value={text} {style}/> : 
 
-<button class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}, {[`button--${size}`] : size}]} {style}>{leftArrow ? <LeftArrow/> : ''}{text}</button>
+<button class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}, {[`button--${size}`] : size}]} {style}>{leftArrow ? <Arrow/> : ''}{text}</button>
   }

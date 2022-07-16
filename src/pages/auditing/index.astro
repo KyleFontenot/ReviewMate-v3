@@ -3,10 +3,7 @@ import FeatureCategory from "../../components/FeatureCategory.astro"
 import StandardLayout from "../../layouts/StandardLayout.astro"
 import Feature from "../../components/Feature.astro"
 import featureList, {formatSlug} from "../../featureList.js"
-import { findNumbers } from "libphonenumber-js";
 import type {Module } from "../../featureList.js"
-// const auditModules = featureList.auditing_modules;
-
 let auditingModules : Module[] = [];
 
 Object.values(featureList).forEach(category => { 

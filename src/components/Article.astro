@@ -1,8 +1,8 @@
 ---
 import { Img } from "astro-imagetools/components";
-const {href, imgSrc, imgAlt, articleTitle, body, author, date} = Astro.props;
+const {href, imgSrc, imgAlt, articleTitle, body, author, date, size} = Astro.props;
 ---
-<a href={`${href}`} class="article">
+<a href={`${href}`} class={ `article${size === 'small' ? ' article--small' : ''}` }>
   <div class="image">
     <Img src={`https:${imgSrc}`} alt={`${imgAlt}`} objectFit="contain" /> 
   </div>
@@ -49,6 +49,14 @@ const {href, imgSrc, imgAlt, articleTitle, body, author, date} = Astro.props;
       }
     }
    }
+   .article--small{
+    & .image {
+      height: 10rem;
+    }
+    & .textbody {
+
+    }
+   }
    .image {
       display: block;
       overflow: hidden;
@@ -67,8 +75,7 @@ const {href, imgSrc, imgAlt, articleTitle, body, author, date} = Astro.props;
 
 .textbody {
    background-color: white;
-   padding: 20px 30px;
-   padding-bottom: 4rem;
+   padding: 20px 30px 3rem;
    position: relative;
    border-bottom-left-radius: 10px;
    border-bottom-right-radius: 10px;
@@ -76,6 +83,7 @@ const {href, imgSrc, imgAlt, articleTitle, body, author, date} = Astro.props;
    height: 100%;
    & > h3 {
      margin-top: 0;
+     margin-bottom: 0.7rem;
      font-size: 1.6rem;
    }
    & > h4 {
@@ -83,6 +91,8 @@ const {href, imgSrc, imgAlt, articleTitle, body, author, date} = Astro.props;
    }
    & p {
      text-indent: 0;
+     line-height: 1.7rem;
+     font-size: 85%;
    }
    & .url {
      font-size: 0.8rem;

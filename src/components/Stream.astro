@@ -1,6 +1,7 @@
 ---
 import {formatSlug} from '../featureList.js'
 import Article from "./Article.astro"
+import Arrow from "./Arrow.astro"
 import { contentfulItems} from './contentfulClient.js'
 const {size = "small", title, postType = "blogPost", style}  = Astro.props;
 
@@ -10,7 +11,6 @@ const months = ['January', 'February',
 'March','April','May','June','July','August','September','October','November','December',]
 const descriptionCutoff = 120
 
-// console.log(posts[0].fields)
 ---
 <div class='blogwrapper' id="blog" {style}>
   {size === 'large' ? 
@@ -31,11 +31,13 @@ const descriptionCutoff = 120
           body={blogBody.length > descriptionCutoff ? blogBody.split('').splice(0, descriptionCutoff).join('').concat(' . . .') : blogBody}
           author={post.fields.author}
           date={`${months[formatDate.getMonth()]} ${formatDate.getDate()}, ${formatDate.getFullYear()}`}
+          size={size}
       />)
     }
     )}
+    
   </div>
-
+  {size === "small" && <a href="" style="display:block;text-align:right;font-size: 140%;margin: 0 0 2.5rem auto;">See more blog posts <Arrow direction="upright"/></a>}
 </div>
 <style lang="scss">
 .blogwrapper {
@@ -47,8 +49,9 @@ const descriptionCutoff = 120
 	height: 100%;
 	display: block;
 	& > h3, & > h2 {
-    margin-top: 1.6rem;
-    margin-bottom: 2rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    text-align:center;
   }
 	.container {
     flex: row wrap;
