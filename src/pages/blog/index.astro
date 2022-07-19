@@ -2,8 +2,11 @@
 import StandardLayout from '../../layouts/StandardLayout.astro'
 import BlogStream from '../../components/BlogStream.astro'
 import Stream from '../../components/Stream.astro'
+import {pageOpenGraph} from '../../utils.js'
 
 ---
-<StandardLayout >
+<StandardLayout 
+  openGraph={new pageOpenGraph('Blog', 
+  "ReviewMate's blog, covering new features, releases, relevant information on the medical code auditing landscape, conventions, events, and more. ")}>
   <Stream postType="blogPost" size="large"  title="Blog Articles"/>
 </StandardLayout>

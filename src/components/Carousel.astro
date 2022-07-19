@@ -1,6 +1,4 @@
----
-// const {childWidth} = Astro.props
----
+
 <div class="carousel" id="partnercarousel">
     <a href="https://www.maximhealthcare.com/" target="__blank" rel="noopener" class="carousel__child">
       <img class="partnerlogo" src="/brandsvgs/maxim.svg" alt="Maxim Healthcare's logo" height="300" width="500" />
@@ -36,7 +34,7 @@
     rootMargin: '20px',
     threshold: 1.0
   });
-  document.querySelector('#partnercarousel') && carouselObserver.observe(document.querySelector('#partnercarousel'));
+  carouselObserver.observe(document.querySelector('#partnercarousel'));
   
   let carouselTicker;
   let carouselDetermineTimer;
@@ -102,7 +100,7 @@
     gap: 8vw;
     scroll-snap-type: x mandatory;
     position: relative;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     width: 100%;
   }
   * {

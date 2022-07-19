@@ -5,7 +5,7 @@ import Feature from "../../components/Feature.astro"
 import featureList, {formatSlug} from "../../featureList.js"
 import { findNumbers } from "libphonenumber-js";
 import type {Module } from "../../featureList.js"
-// const auditModules = featureList.auditing_modules;
+import {pageOpenGraph} from '../../utils.js'
 
 let modules : Module[] = [];
 
@@ -14,10 +14,10 @@ Object.values(featureList).forEach(category => {
     module.section === "Monitoring" ? modules.push(module) : false
   })
  })
-
-// console.log(auditingModules)
 ---
-<StandardLayout>
+<StandardLayout 
+  openGraph={new pageOpenGraph('Monitoring Features', 
+  "For top-down administration uses, ReviewMate enhances capabilities of many managers, clients, and end-users of the auditing process. Time tracking, staffing analytics, integrations, and an elaborate risk management software are focuses of ReviewMate.")}>
   <FeatureCategory title="Monitoring">
   {modules.map(module => {
     return (

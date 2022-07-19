@@ -1,6 +1,7 @@
 ---
 import FeatureLayout from '../../layouts/FeatureLayout.astro'
 import Feature from '../../components/Feature.astro'
+import Button from '../../components/Button.astro'
 import CallToAction from '../../components/CallToAction.astro'
 import CommonTraits from "../../components/CommonTraits.jsx"
 import featureList from '../../featureList.js'
@@ -47,9 +48,12 @@ const {feature} = Astro.props;
   </div>
   {feature?.commontraits === true ? <CommonTraits client:idle /> : ''}
   
-  <CallToAction explain previousButton={{text: 'Auditing Accounts', href: "/resources/"}}></CallToAction>
+<p class="explanation" style="margin-top:1rem;text-align: center;width:100%;font-size: 120%;">Any particular questions or inquiries? We'd like to hear from you.</p>
+<CallToAction padding="1rem 2% 2rem">
+  <Button as="link" outline text="More Auditing Features" href="/auditing/" ></Button>
+  <Button as="link" color="yellow" text="Contact Us" >Contact Us</Button>
+</CallToAction>
 </Feature>
-
 </FeatureLayout>
 <style lang="scss">
   .list {

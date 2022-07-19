@@ -6,36 +6,22 @@
   import Quicklink from "../scripts/Quicklink.astro"
   import Rellax from "../scripts/Rellax.astro"
   import ScrollReveal from "../scripts/ScrollReveal.astro"
+  import {defaultOpenGraph} from "../utils.js"
 
-  const { title } = metadata;
+  const description = Astro.props.description || metadata.description 
 
-  const description = Astro.props.description || metadata.description || "descriptions of something"
-  const image = "/ReviewMate-op.jpg"
-  const canonical = Astro.props.canonical || metadata.canonical || undefined
-  const slug = Astro.props.slug || undefined
-
-  const openGraph = {
-    basic: {
-      title: Astro.props.title || `ReviewMate`,
-      type: "website",
-      image: Astro.props.image || "/ReviewMate-op.jpg",
-      url: canonical,
-    },
-    image: {
-      alt: 'Logo Overview of ReviewMate'
-    },
-    optional: {
-      description: Astro.props.description || description,
-    }
-  }
-  // const {openGraph} = Astro.props;
-  // console.log(Astro.request)
+  const canonical = Astro.props.canonical || metadata.canonical || "https://deft-cuchufli-bfd7e3.netlify.app/";
+  const image = Astro.props.image || metadata.openGraph.basic.image
+  const imageAlt = Astro.props.imageAlt || "ReviewMate's brand logo"
+  const url = Astro.props.url || "https://deft-cuchufli-bfd7e3.netlify.app/"
+  let openGraph = Astro.props.openGraph || new defaultOpenGraph(metadata.title, description, image, imageAlt, url)
+  // console.log(openGraph)
 ---
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <title set:html={title}></title> -->
-    <SEO title={slug ? `${title} | ${slug}` : title} description={description} canonical={canonical} {openGraph}/>
+    <SEO title={openGraph.basic.title} description={openGraph.description} canonical={canonical} type={openGraph.basic.type} {openGraph}/>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -54,11 +40,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Inter:wght@300;400;600&display=swap">
     </noscript>
     <ScrollReveal/>
-
-
-
   </head>
-  
+
   <body style="width: 100%;">
     <slot />
   </body>
@@ -99,5 +82,4 @@
       }
     })
     </script>
-    <!-- <LottiePlayer /> -->
 </html>

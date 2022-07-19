@@ -6,36 +6,37 @@ import LinkedinIcon from '../../components/LinkedinIcon.astro';
 import TwitterIcon from '../../components/TwitterIcon.astro';
 import Button from '../../components/Button.astro'
 import { contentfulItems} from '../../components/contentfulClient.js'
+import {months, ArticleOpenGraph} from "../../utils.js"
+import { file } from "dist/entry.c660d539";
+// import { formatSlug } from "../../featureList.js";
+import metadata from "src/layouts/metadata";
+import { formatSlug } from "../../featureList.js";
 
 export async function getStaticPaths() {
   const {formatSlug} = await import("../../featureList.js")
   let blogPosts = await contentfulItems('blogPost')
-
-  return blogPosts.map(post => {
+  
+  return blogPosts.map(({fields} :any) => {
     return {
-      params: { blogPost: formatSlug(post.fields.title) },
+      params: { blogPost: formatSlug(fields.title) },
       props: { 
-        title: post.fields.title, 
-        body: documentToHtmlString(post.fields.body), 
-        author: post.fields.author,
-        poster: post.fields.thumbnail.fields.file.url,
-        date: new Date(post.fields.dateCreated),
+        title: fields.title, 
+        // description: fields.body.split('').substring(0, 100).join().concat('...'), 
+        body: documentToHtmlString(fields.body), 
+        author: fields.author,
+        date: new Date(fields.dateCreated),
+        img: `https://${fields.thumbnail.fields.file.url}`,
+        imgAlt: fields.thumbnail.fields.description,
       }
     };
   });
 }
-const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-const {title, body, poster, date, author} = Astro.props;
-const url = new URL(Astro.canonicalURL);
+const {title, body, date, author, img, imgAlt} = Astro.props;
+
+const articleOG = new ArticleOpenGraph(title, "something", img, imgAlt, date, author)
+let url = Astro.canonicalURL.toString().concat(`/${formatSlug(title)}`)
 ---
-<StandardLayout slug={title} openGraph={{
-  basic: {
-    title: title,
-    type: "website",
-    image: '/ReviewMate-op.jpg',
-    url: url,
-  },
-}} >
+<StandardLayout slug={title} openGraph={articleOG} >
 <article>
   <div class="navcrumbs">
     <Button as="link" leftArrow color="grey" href="/blog/" text="All Blog Posts" outline style="margin-left: auto;margin-right: 0;text-align: right;position: absolute;"  ></Button>
@@ -45,16 +46,16 @@ const url = new URL(Astro.canonicalURL);
     <h1>{title}</h1>
     <div class="metadata">
       <p class="author">{author &&  ' ' + author}</p>
-      <p class="date">{month[date.getMonth()]} {date.getDate()}, {date.getFullYear()}</p>
+      <p class="date">{months[date.getMonth()]} {date.getDate()}, {date.getFullYear()}</p>
     </div>
   </div>
   <div class="right">
       <a href={`http://twitter.com/share?url=ReviewMate%3A%20${title}%0A${url}`} target="__blank" rel="noopener" class="sharelink" style="background-color:#6FCCF5;text-align:center;box-shadow: 0 0 2px 2px #6FCCF5;" ><TwitterIcon style="fill:white;margin-top: 0;"/>Share on Twitter</a>
 
-      <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url.href}`} target="__blank" rel="noopener" class="sharelink" style="background-color: #3B688D;text-align:center;box-shadow: 0 0 2px 2px #3B688D;"  ><LinkedinIcon style="margin-top:0;"/>Share on Linkedin</a>
+      <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`} target="__blank" rel="noopener" class="sharelink" style="background-color: #3B688D;text-align:center;box-shadow: 0 0 2px 2px #3B688D;"  ><LinkedinIcon style="margin-top:0;"/>Share on Linkedin</a>
   </div>
 </div>
-  <Img src={`https://${poster}`} alt="something" objectFit="cover" />
+  <Img src={img} alt={imgAlt} objectFit="cover" />
   <div class="blogbody" set:html={body}></div>
 </article>
   
@@ -85,7 +86,6 @@ const url = new URL(Astro.canonicalURL);
     height: 4rem;
     & > a {
       width: 11.5rem;
-      // margin-inline: auto;
     }
   }
 }
@@ -110,7 +110,6 @@ const url = new URL(Astro.canonicalURL);
       flex-flow: column nowrap;
       justify-content: flex-start;
       margin-bottom: 2rem;
-
       & > * {
         display: block;
       }
@@ -129,7 +128,6 @@ const url = new URL(Astro.canonicalURL);
   & .date{
     font-size: 120%;
     text-indent: 2rem;
-    // color: hsl(var(--color1hsl));
   }
 }
 

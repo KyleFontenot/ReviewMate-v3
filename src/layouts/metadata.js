@@ -1,8 +1,8 @@
 
 const title = "ReviewMate";
 const description =
-	"Streamline medical code auditing workflows by expediting findings, integrating communication, and maintaining fidelity.";
-const canonical = "https://review-mate.com" | undefined;
+	"An all-in-one software platform for medical code auditing. Streamline medical code auditing workflows by expediting findings, integrating communication, maintaining fidelity, and optimizing workflow through automation.";
+const canonical = "https://review-mate.com" || "https://deft-cuchufli-bfd7e3.netlify.app/" || undefined;
 const image = "/ReviewMate-op.jpg"
 
 const metadata = {
@@ -20,11 +20,6 @@ const metadata = {
 			description: description,
 			locale: "en_US", 
 		}
-	},
-	twitter: {
-		card: "<twitter:card>" || null,
-		site: "<twitter:site>" || null,
-		creator: "<twitter:creator>" || null,
 	},
 };
 export default metadata;

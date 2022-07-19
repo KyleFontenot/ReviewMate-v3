@@ -2,7 +2,8 @@
 import FeatureCategory from "../../components/FeatureCategory.astro"
 import StandardLayout from "../../layouts/StandardLayout.astro"
 import Feature from "../../components/Feature.astro"
-import featureList, {formatSlug} from "../../featureList.js"
+import featureList from "../../featureList.js"
+import {pageOpenGraph} from "../../utils.js"
 import type {Module } from "../../featureList.js"
 let auditingModules : Module[] = [];
 
@@ -11,9 +12,10 @@ Object.values(featureList).forEach(category => {
     module.section === "Auditing" ? auditingModules.push(module) : false
   })
  })
-
 ---
-<StandardLayout>
+<StandardLayout 
+  openGraph={new pageOpenGraph('Auditing Features', 
+  "Spanning every auditing acount type from IPPS, OPPS, to Profee and CMS-HCC, ReviewMate works with the vast majority of users in the field.")}>
 
   <FeatureCategory title="Auditing">
   {auditingModules.map(module => {

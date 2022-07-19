@@ -16,6 +16,7 @@ class Module {
 	title: string;
 	slug: string;
 	section: "Auditing" | "Reporting" | "Monitoring" | "Security";
+	link : string;
 	short : string;
 	long: string[];
 	imgSrc: string; 
@@ -39,6 +40,7 @@ class Module {
 		this.title = title;
 		this.slug = formatSlug(title);
 		this.section = section;
+		this.link = `/${section.toLowerCase()}/${formatSlug(title)}`;
 		this.short = short;
 		this.long = long;
 		this.imgSrc = img.src || "/src/images/photos/rodnae.jpg";
