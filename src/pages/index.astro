@@ -63,11 +63,11 @@ import {formatSlug} from "../featureList.js"
 
 <RMDiagram />
   
-  <h3 style="margin-bottom: 2rem;text-align:center;">Trusted By:</h3>
-<Carousel/>
+  <!-- <h3 style="margin-bottom: 2rem;text-align:center;">Trusted By:</h3>
+<Carousel/> -->
   
 
-<!-- <FlexDiv padding="0rem 0 7rem" className="red scrollreveal" style="margin-top: 0rem;background: radial-gradient(hsla(var(--color2hsl), 40%), hsla(var(--color2hsl), 20%) 20%, white 60%); ">
+<FlexDiv padding="0rem 0 7rem" className="red scrollreveal" style="margin-top: 0rem;background: radial-gradient(hsla(var(--color2hsl), 40%), hsla(var(--color2hsl), 20%) 20%, white 60%); ">
   <h3 style="margin-bottom: 5rem;">Trusted By:</h3>
   <div class="partnersdiv">
       <a href="https://www.comforcehealth.com/" target="__blank" rel="noopener">
@@ -92,7 +92,7 @@ import {formatSlug} from "../featureList.js"
           <img class="partnerlogo" src="/brandsvgs/maxim.svg" alt="Maxim Healthcare's logo" height="300" width="500" />
       </a>
   </div>
-</FlexDiv> -->
+</FlexDiv>
 <Stream postType="blogPost" title="Blog" size="small"/>
 
 <CallToAction color="red" header="Let us show you how you can start saving hours a week" style="margin-bottom: -3rem;" >
@@ -336,6 +336,21 @@ import {formatSlug} from "../featureList.js"
     align-items: center;
     gap: 4rem;
     width: 100%;
+    & > a { 
+      filter: invert(23%) sepia(18%) saturate(7185%) hue-rotate(347deg) brightness(95%) contrast(84%);
+      max-width: 16rem;
+      max-height: 6rem;
+      position: relative;
+      transform: scale(1);
+      transition: transform 0.2s;
+      & > img {
+        height: 100%;
+        max-width: 16rem;
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
+     }
   }
   
   .rmanswer {
