@@ -72,7 +72,7 @@ const featureList = {
 	auditing_modules: [
 		new AuditingModule(
 			"Inpatient",
-			"Evaluate DRG assignment within any IPPS account type ",
+			"Evaluate DRG assignment within any IPPS account type.",
 			[
 				"More than three-quarters of the nation's inpatient acute-care hospitals are paid under the inpatient prospective payment system (IPPS). The IPPS methodology pays a flat rate based on the average charges across all hospitals for specific diagnoses, regardless of whether that particular patient costs more or less.",
 				"Correct DRG assignment is critical to the health of your organization. Coding audits and using the proper tools will allow financial and compliant stability.",
@@ -395,8 +395,7 @@ const featureList = {
 		new Module(
 			"Education Tracking",
 			"Monitoring",
-			"Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules. Create and assign quizzes",
-			// !!! quizzes? ?
+			"Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules.",
 			[
 				"While auditors review coders' evaluations, auditors have the option of suggesting training materials. Communication with the coder is optional though training suggestions –especially for common coding mistakes– is a very impactful feature that intuitively helps coder, auditor, and client alike.",
 				"Training materials are provided by nThrive, a developed service that provides AHIMA compliant tutorials and relevant articles for assisting in billing education. All codes within ReviewMate are indexable toward training materials, so suggesting training materials is a matter of blicking a button.",

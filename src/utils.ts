@@ -15,7 +15,7 @@ export const months = [
 	"December",
 ];
 
-const formatSlug = (title : string) => {
+export const formatSlug = (title : string) => {
 	let fmtTitle = title;
 	if (fmtTitle.includes(" ")) {
 		fmtTitle = fmtTitle.replaceAll(" ", "-");
@@ -29,11 +29,14 @@ const formatSlug = (title : string) => {
 	return fmtTitle.toLowerCase();
 };
 
+export const assessShort = (short: string, long: string): string =>
+	short.length < 181 ? short.concat(" " + long[0]).substring(0, 210) : short;
+
 export class defaultOpenGraph {
 	title: string;
+	// length between 180 and 220 characters
 	description: string;
 	canonical: string;
-	// image: URL;
 	imageAlt: string;
 	basic: {
 		title: string;

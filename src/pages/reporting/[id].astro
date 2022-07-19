@@ -5,6 +5,7 @@ import Button from '../../components/Button.astro'
 import CallToAction from '../../components/CallToAction.astro'
 import CommonTraits from "../../components/CommonTraits.jsx"
 import featureList from '../../featureList.js'
+import {pageOpenGraph, assessShort} from "../../utils.js"
 import type {Module} from "../../featureList.js"
 
 
@@ -25,7 +26,9 @@ export function getStaticPaths() {
 }
 const {feature} = Astro.props;
 ---
-<FeatureLayout>
+<FeatureLayout 
+  openGraph={new pageOpenGraph(feature.title, 
+  assessShort(feature.short, feature.long))}>
 <Feature title={feature.title} imgSrc={feature?.imgSrc} imgAlt={feature?.imgAlt} commontraits> 
   <div slot="paragraphs">
     {feature.long.map(paragraph => {
