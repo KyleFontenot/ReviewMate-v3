@@ -1,8 +1,9 @@
 ---
-
 import StandardLayout from '../layouts/StandardLayout.astro'
 import Timeline from '../components/Timeline.astro'
 import SmallLink from '../components/SmallLink.astro'
+import CallToAction from '../components/CallToAction.astro'
+import Button from '../components/Button.astro'
 import {formatSlug} from '../featureList.js'
 ---
 <StandardLayout>
@@ -30,8 +31,7 @@ import {formatSlug} from '../featureList.js'
       <div class="timelinediv">
         <div>
         <h2>Sample</h2> 
-        <p>Apply flexible rules and parameters to concisely gather
-        accounts for auditing audit. Randomizer tools are also available.</p>
+        <p>Apply flexible rules and parameters to concisely gather accounts for auditing using a multitude of parameters and options. Randomization and automation tools augment any sampling need.</p>
           <SmallLink href={`/security/${formatSlug("Sample Selector")}/`} text="Sample Selector"/> 
   
           <SmallLink href={`/security/${formatSlug("Risk Manager")}/`} text="Risk Manager"/> 
@@ -78,4 +78,9 @@ import {formatSlug} from '../featureList.js'
       </div>
     </div>
   </Timeline>
+
+<CallToAction color="red" header="Let us show you how you can start saving hours a week" style="margin-bottom: -3rem;" >
+  <Button color="white" as="link" href="/plans/" text="Explore our plans and features" size="2" style="z-index:30;margin-top: 2rem;"/>
+  <Button color="yellow" as="link" href="/contact/" text="Contact Us" size="2" style="z-index:30;margin-top: 2rem;"/>
+</CallToAction>
 </StandardLayout>

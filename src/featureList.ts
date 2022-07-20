@@ -425,7 +425,7 @@ const featureList = {
 			"Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool.",
 			[
 				"Selector tools are essential to any auditor, and ReviewMate focuses on creating easy tools for every scenario to empower the auditor. An assortment of querying parameters are integrated for every auditing account, used for extracting the exact accounts that you need. The randomizer is an additional way to query a random set of accounts.",
-				//  !!! roiutine checks?
+				"In addition to flexible manual selections, all queries and sample selections can be customized to run automatically. Routine audits are standard expectations for end-user firms. ReviewMate can automate these tasks with a few clicks, which can automatically populate tasks/findings."
 			],
 			{
 				src: "/src/images/photos/selection.jpg",
@@ -433,7 +433,6 @@ const featureList = {
 			},
 			[true, true, true]
 		),
-
 		new Module(
 			"Customizable Tasks",
 			"Monitoring",

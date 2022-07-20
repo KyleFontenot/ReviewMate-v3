@@ -13,7 +13,7 @@ import {formatSlug} from "../featureList.js"
 <HomepageLayout>
     <div class="shapeintro" >
       <noscript><link rel="stylesheet" href="nojs.css" /></noscript>
-      <div  class="shapeintrobg" id="shapeintrobg"></div>
+      <div class="shapeintrobg" id="shapeintrobg"></div>
       <div class="introtext">
         <h2 class="scrollrevealtext1">Elevate your medical code auditing workflow</h2>
         <p class="scrollrevealtext2">Streamline auditing,
@@ -21,6 +21,10 @@ import {formatSlug} from "../featureList.js"
         <h3 class="scrollrevealtext3" style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
       </div>
       <div id="productintroscreen">
+        <img src="/HomeDashboard.svg" alt="screenshot of ReviewMate's graphical user interface" />
+        <!-- <img src="/product-preview(2).svg" alt="screenshot of ReviewMate web-app" /> -->
+      </div>
+      <div id="testscreen">
         <img src="/HomeDashboard.svg" alt="screenshot of ReviewMate's graphical user interface" />
         <!-- <img src="/product-preview(2).svg" alt="screenshot of ReviewMate web-app" /> -->
       </div>
@@ -124,35 +128,39 @@ import {formatSlug} from "../featureList.js"
     display: block;
     max-width: 100%;
     top: -1px;
-    text-align: center;
+    text-align: left;
+    text-indent: 0;
     position: relative;
     z-index: 30;
     margin-bottom: 26vw;
     .introtext {
       position: absolute;
       width: 80%;
-      left: 50%;
-      bottom: calc(20vw * 0.9 + 18rem);
-      transform: translate(-50%, 0);
+      left: 10vw;
+      top: 3rem;
       & h2, & p, & h3 {
         color: white;
+      }
+      & p, & h3 {
+        max-width: 60vw;
       }
       & > h2 {
         line-height: 3rem;
         font-size: 2.4rem;
         font-weight: bolder;
-        text-align: center;
+        text-align: left;
+        text-indent: 0;
         max-width: 70vw;
         position: relative;
         top: 2rem;
-        margin: 0 auto 2rem;
+        margin: 0 0 2rem;
         display: block;
       }
       & > p {
         margin-top: 4rem;
         font-size: 110%;
         text-indent: 0;
-        padding-inline: 5%;
+        padding-right: 5%;
       }
       & > h3 {
         margin-top: 1.5rem;
@@ -192,20 +200,16 @@ import {formatSlug} from "../featureList.js"
      overflow: hidden;
      box-shadow: 0 0 14px -3px #333;
      transform-origin: 50% 50%;
-     transform: translate3d(-50%, 0, 0) ;
+     transform: translate3d(-50%, 0, 0);
      & > img {
        position: relative;
        top: 0;
        width: 100%;
-      //  height: 100%;
        display: block;
        z-index: 100;
-      //  object-fit: cover;
-
      }
    }
   .shapeintrobg {
-    // background: url('/marc-mueller(4).webp'), url('/marc-mueller(4).jpeg'); 
     background-color: #888;
     background-repeat: no-repeat;  
     background-size: cover;
@@ -371,5 +375,25 @@ import {formatSlug} from "../featureList.js"
       flex: 2 1 40%;
     }
   }
-  
+ #testscreen{
+  perspective: 500px;
+  bottom: -10vw;
+  height: 90%;
+  width: 40vw;
+  position: absolute;
+  left: 80vw;
+  z-index: 10;
+  & > img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    display: block;
+    z-index: 100;
+    border-radius: 4px;
+    transform-origin: 50% 50%;
+    transform: rotate3d(0, -20, 0, 10deg);
+    box-shadow: 0 0 20px -3px #333;
+  }
+ }
 </style>

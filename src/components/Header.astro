@@ -56,7 +56,7 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
   }
   .logo {
     // max-width: 60vw;
-    width: clamp(10rem, 20rem, 80%);
+    width: clamp(10rem, 20rem, calc(100% - 425px));
     // width: 100%;
     margin-top: 16px;
     display: inline-block;
@@ -123,7 +123,7 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
       list-style-image: none;	
       & a {
         color: hsl(var(--color1hsl));
-        padding: 10px 30px;
+        padding: 10px 10px;
         display: block;
       }
     }
@@ -147,6 +147,10 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
       transform: translate3d(200px,0,0);
       will-change: transform;
       z-index: 900;
+      
+    }
+    .logo{
+      width: clamp(10rem, 50%, 30rem);
     }
   }
   @media(min-width:670px){
@@ -156,7 +160,7 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
     nav {
       position: relative;
       top: 0.3rem;
-      right: 0.5rem;
+      right: 0.3rem;
       margin-left: auto;
       float: right;
       background-color: transparent;
@@ -169,12 +173,11 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
       justify-content: flex-end;
       & li {
         list-style-type: none;
-        margin-bottom: 12px;
-        
+        margin-bottom: 6px;
         color: hsl(var(--color1hsl));
       & a {
         color: white;
-        padding: 15px;
+        padding: 15px 10px;
         display: block;
         font-size: 1.15rem;
         position: relative;
@@ -208,11 +211,11 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
     &:nth-of-type(2) {
       justify-content: flex-end;
       margin-top:5px;
-      gap: 0.8rem;
+      gap: 0.3rem;
       & li {
         & a {
           font-size: 0.75rem;
-          padding: 2px 6px 8px;
+          padding: 6px 8px;
         }
       } 
     }
