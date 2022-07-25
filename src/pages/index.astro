@@ -20,10 +20,13 @@ import {formatSlug} from "../featureList.js"
         integrate your data seamlessly, and consolidate communication in one platform.</p>
         <h3 class="scrollrevealtext3" style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
       </div>
-      <div id="productintroscreen">
+
+      <div id="productintroscreen"><iframe width="560" height="315" src="https://www.youtube.com/embed/R3sWHrkMTfY&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" autoplay allowfullscreen style="width: 100%;"></iframe></div>
+
+      <!-- <div id="productintroscreen">
         <img src="/HomeDashboard.svg" alt="screenshot of ReviewMate's graphical user interface" />
-        <!-- <img src="/product-preview(2).svg" alt="screenshot of ReviewMate web-app" /> -->
-      </div>
+        <img src="/product-preview(2).svg" alt="screenshot of ReviewMate web-app" />
+      </div> -->
       <div id="testscreen">
         <img src="/HomeDashboard.svg" alt="screenshot of ReviewMate's graphical user interface" />
         <!-- <img src="/product-preview(2).svg" alt="screenshot of ReviewMate web-app" /> -->
@@ -101,8 +104,8 @@ import {formatSlug} from "../featureList.js"
 
 <CallToAction color="red" header="Let us show you how you can start saving hours a week" style="margin-bottom: -3rem;" >
   <Button color="white" as="link" href="/keyfeatures/" text="Discover our Key Features" size="2" style="z-index:30;margin-top: 2rem;"/>
-  <Button color="yellow" as="link" href="/contact/" text="Contact Us" size="2" style="z-index:30;margin-top: 2rem;"/>
   <Button color="white" as="link" href="/plans/" text="Explore our plans and features" size="2" style="z-index:30;margin-top: 2rem;"/>
+  <Button color="yellow" as="link" href="/contact/" text="Contact Us" size="2" style="z-index:30;margin-top: 2rem;"/>
 </CallToAction>
 
 </main>
@@ -128,47 +131,57 @@ import {formatSlug} from "../featureList.js"
     display: block;
     max-width: 100%;
     top: -1px;
-    text-align: left;
     text-indent: 0;
     position: relative;
     z-index: 30;
-    margin-bottom: 26vw;
+    margin-bottom: calc(80vw + 7rem);
     .introtext {
       position: absolute;
       width: 80%;
-      left: 10vw;
+      left: 8vw;
       top: 3rem;
+      z-index: 100;
+
       & h2, & p, & h3 {
         color: white;
-      }
-      & p, & h3 {
-        max-width: 60vw;
+        text-align: center;
+        width: 100%;
       }
       & > h2 {
         line-height: 3rem;
         font-size: 2.4rem;
         font-weight: bolder;
-        text-align: left;
         text-indent: 0;
-        max-width: 70vw;
         position: relative;
         top: 2rem;
         margin: 0 0 2rem;
         display: block;
+        text-shadow: 0 4px 14px #22222299;
       }
       & > p {
         margin-top: 4rem;
         font-size: 110%;
         text-indent: 0;
         padding-right: 5%;
+        text-shadow: 0 3px 9px  #44444499;
       }
       & > h3 {
         margin-top: 1.5rem;
         font-size: 1.3rem;
         letter-spacing: 0;
         font-weight: bolder;
+        text-shadow: 0 2px 4px #66666699;
       }
     }
+  }
+  #productintroscreen {
+    z-index: 300;
+    // height: 30rem;
+  }
+  #testscreen {
+    // height: auto;
+    height: 80vw;
+    overflow: hidden;
   }
   @media (max-width: 446px ){
     .shapeintro > .introtext {
@@ -185,22 +198,32 @@ import {formatSlug} from "../featureList.js"
     }
   }
   #productintroscreen{
-     max-width: 70rem;
-     width: 100%;
-     height: 70vw;
-     max-height: 34rem;
+    //  max-width: 70rem;
+    //  width: 100%;
+    //  height: 70vw;
+    //  max-height: 34rem;
     //  max-height: 24rem;
-      width: clamp(8rem, 80%, 70rem);
-      margin-inline: auto;
+      // width: clamp(8rem, 80%, 70rem);
+      width: 80%;
+      max-width: 60rem;
+      min-width: 560px;
+      min-height: 315px;
+      width: minmax();
+      height: minmax();
+     margin-inline: auto;
      border-radius: 8px;
+     padding-bottom: 16%;
      position: absolute;
      display: inline-block;
      left: 50%;
-     bottom: -16vw;
+     bottom: -8vw;
      overflow: hidden;
-     box-shadow: 0 0 14px -3px #333;
+     box-shadow: 0 8px 14px -3px #000;
      transform-origin: 50% 50%;
      transform: translate3d(-50%, 0, 0);
+     & > iframe {
+      margin-bottom: -7px;
+     }
      & > img {
        position: relative;
        top: 0;
@@ -220,7 +243,6 @@ import {formatSlug} from "../featureList.js"
     top: -20px;
     transform: translate(0, -2px);
     z-index: -1;
-    // transition: background 0.3s;
     &::after {
       content: '';
       height: 100%;
@@ -242,6 +264,18 @@ import {formatSlug} from "../featureList.js"
     gap: 1rem; 
     align-items: center;
   }
+  #testscreen{
+    perspective: 500px;
+    bottom: calc(-80vw - 3rem);
+    width: 88vw;
+    max-width: 70rem;
+    margin-inline: auto;
+    position: absolute;
+    left: 6%;
+    z-index: 10;
+    overflow: visible;
+  }
+
   @media (min-width: 690px ){
     .introCTA{
     flex-flow: row nowrap;
@@ -250,6 +284,76 @@ import {formatSlug} from "../featureList.js"
     .producttraits {
       margin-top: 1rem;
     }
+    .shapeintro {
+      margin-bottom: calc(8rem * 1.2);
+    }
+    .introtext {
+      position: absolute;
+      width: 80%;
+      left: 8vw;
+      top: 3rem;
+      z-index: 100;
+      & h2, & p, & h3 {
+        color: white;
+        text-align: left!important;
+      }
+      & p, & h3 {
+        max-width: 44vw;
+        
+      }
+      & > h2 {
+        line-height: 3rem;
+        font-size: 2.4rem;
+        font-weight: bolder;
+        text-align: left;
+        text-indent: 0;
+        max-width: 70vw;
+        position: relative;
+        top: 2rem;
+        margin: 0 0 2rem;
+        display: block;
+        text-shadow: 0 4px 14px #22222299;
+      }
+      & > p {
+        margin-top: 4rem;
+        font-size: 110%;
+        text-indent: 0;
+        padding-right: 5%;
+        text-shadow: 0 3px 9px  #44444499;
+      }
+      & > h3 {
+        margin-top: 1.5rem;
+        font-size: 1.3rem;
+        letter-spacing: 0;
+        font-weight: bolder;
+        text-shadow: 0 2px 4px #66666699;
+      }
+    }
+
+    .introtext p, .introtext h3 {
+      // max-width: 44vw;
+      width: 45vw;
+    }    
+    #testscreen{
+      perspective: 500px;
+      bottom: -12vw;
+      height: 90%;
+      width: clamp(20rem, 40vw, 90rem);
+      position: absolute;
+      left: calc(53vw + 1rem);
+      z-index: 10;
+      & > img {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        display: block;
+        z-index: 100;
+        border-radius: 4px;
+        transform: rotate3d(0, -20, 0, 10deg);
+        box-shadow: 0 0 20px -3px #333;
+      }
+    } 
   }
   .lottieintro{
     width: 100%;  
@@ -375,25 +479,5 @@ import {formatSlug} from "../featureList.js"
       flex: 2 1 40%;
     }
   }
- #testscreen{
-  perspective: 500px;
-  bottom: -10vw;
-  height: 90%;
-  width: 40vw;
-  position: absolute;
-  left: 80vw;
-  z-index: 10;
-  & > img {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    display: block;
-    z-index: 100;
-    border-radius: 4px;
-    transform-origin: 50% 50%;
-    transform: rotate3d(0, -20, 0, 10deg);
-    box-shadow: 0 0 20px -3px #333;
-  }
- }
+   
 </style>
