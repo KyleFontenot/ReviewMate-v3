@@ -3,8 +3,7 @@ import HomepageLayout from '../layouts/HomepageLayout.astro'
 import FlexDiv from '../components/FlexDiv.astro'
 import Button from "../components/Button.astro"
 import Carousel from "../components/Carousel.astro"
-import CallToAction from "../components/CallToAction.astro"
-// import { Img } from "astro-imagetools/components";
+import CallToAction from "../components/CallToAction.astro" // import { Img } from "astro-imagetools/components";
 import Stream from "../components/Stream.astro"
 import ConcernBlob from '../components/ConcernBlob.astro'
 import RMDiagram from '../components/RMDiagram.astro'
@@ -21,15 +20,10 @@ import {formatSlug} from "../featureList.js"
         <h3 class="scrollrevealtext3" style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
       </div>
 
-      <div id="productintroscreen"><iframe width="560" height="315" src="https://www.youtube.com/embed/R3sWHrkMTfY&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" autoplay allowfullscreen style="width: 100%;"></iframe></div>
+      <div id="productintroscreen"><iframe width="560" height="315" src="https://www.youtube.com/embed/R3sWHrkMTfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" autoplay allowfullscreen style="width: 100%;"></iframe></div>
 
-      <!-- <div id="productintroscreen">
-        <img src="/HomeDashboard.svg" alt="screenshot of ReviewMate's graphical user interface" />
-        <img src="/product-preview(2).svg" alt="screenshot of ReviewMate web-app" />
-      </div> -->
       <div id="testscreen">
         <img src="/HomeDashboard.svg" alt="screenshot of ReviewMate's graphical user interface" />
-        <!-- <img src="/product-preview(2).svg" alt="screenshot of ReviewMate web-app" /> -->
       </div>
     </div>
 <main style="padding-top: 0;" id="main">
@@ -197,27 +191,35 @@ import {formatSlug} from "../featureList.js"
       bottom: calc(22vw * 0.80 + 12rem);
     }
   }
-  #productintroscreen{
-    //  max-width: 70rem;
-    //  width: 100%;
-    //  height: 70vw;
-    //  max-height: 34rem;
-    //  max-height: 24rem;
-      // width: clamp(8rem, 80%, 70rem);
+  #productintroscreen iframe{
       width: 80%;
       max-width: 60rem;
       min-width: 560px;
       min-height: 315px;
-      width: minmax();
-      height: minmax();
+      height: 100%;
+      aspect-ratio: 4 / 3;
      margin-inline: auto;
      border-radius: 8px;
-     padding-bottom: 16%;
+     position: absolute;
+     display: inline-block;
+     left: 50%;
+     bottom: 0;
+    //  box-shadow: 0 8px 14px -3px #000;
+     transform-origin: 50% 50%;
+     transform: translate3d(-50%, 0, 0);
+  }
+  #productintroscreen{
+      width: 80%;
+      max-width: 55rem;
+      max-height: 30vw;
+      height: 100%;
+      aspect-ratio: 6 / 4;
+     margin-inline: auto;
+     border-radius: 8px;
      position: absolute;
      display: inline-block;
      left: 50%;
      bottom: -8vw;
-     overflow: hidden;
      box-shadow: 0 8px 14px -3px #000;
      transform-origin: 50% 50%;
      transform: translate3d(-50%, 0, 0);
@@ -273,7 +275,7 @@ import {formatSlug} from "../featureList.js"
     position: absolute;
     left: 6%;
     z-index: 10;
-    overflow: visible;
+    // overflow: visible;
   }
 
   @media (min-width: 690px ){
@@ -342,6 +344,10 @@ import {formatSlug} from "../featureList.js"
       position: absolute;
       left: calc(53vw + 1rem);
       z-index: 10;
+      overflow:hidden;
+      overflow-y:visible;
+      overflow-y:hidden;
+      transform:  translate(15%, 0);
       & > img {
         position: absolute;
         left: 0;

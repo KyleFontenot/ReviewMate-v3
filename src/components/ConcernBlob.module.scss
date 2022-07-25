@@ -13,7 +13,6 @@
   }
   .image {
     min-height: 24rem;
-    // max-height: 34rem;
     max-width: 100%;
   }
   .tagline,  .answer {
@@ -38,13 +37,9 @@
   }
   .div {
     position: relative;
-    // display: flex;
     padding: 1.6rem 1rem;
     text-indent: 0;
     grid-column: span 1;
-    // grid-row: 2 / 3;
-
-    // max-width: 40rem;
 
     &::after {
       content: '';
@@ -62,8 +57,6 @@
     border-radius: 6px;
     box-shadow: 0px 6px 14px -4px #66666644;
     background-color: white;
-    // width: 90%;
-    
     margin-inline: auto;
     flex: 1 1 8rem;
   }
@@ -72,7 +65,7 @@
     position: relative;
     grid-column: span 1;
     grid-row: span 1;
-    margin: -2rem auto;
+    margin: -4rem auto 0;
     background-color: transparent;
     max-height: 32rem;
   }
