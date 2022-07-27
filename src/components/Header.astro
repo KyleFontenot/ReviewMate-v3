@@ -1,5 +1,6 @@
 ---
-const arrofLinks = ["Key Features", "Plans", "Resources", "Contact"]
+import Button from "./Button.astro"
+const arrofLinks = ["Key Features", "Plans", "Resources", 'Contact']
 const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monitoring" ]
 ---
   
@@ -27,13 +28,16 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
             <a href={`/${each.replace(' ', '').toLowerCase()}/`}>{ each }</a>
           </li>)}
         )}
+        <!-- <a href={`/contact/`}>Contact</a>
+        <Button as='link' text="Contact" color="yellow" style="margin: 0;padding: 12px 10px;font-size: 1.15rem;" className="" /> -->
       </ul>
       <ul>
         {arrofSubLinks.map(each => 
-        <li>
-          <a href={`/${each.replace(' ', '').toLowerCase()}/`}>{ each }</a>
+        <li class="headersublink">
+          <a href={`/${each.replace(' ', '').toLowerCase()}/`} >{ each }</a>
         </li>
         )}
+        
       </ul>
     </nav>
 </header>
@@ -119,6 +123,7 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
     & li {
       list-style-type: none;
       line-height: 1rem;
+      text-align: center;
       color: white;
       list-style-image: none;	
       & a {
@@ -143,14 +148,33 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
       position: absolute;
       top: 5rem;
       right: 1rem;
-      box-shadow: 0 2px 7px -1px #33333333;
+      box-shadow: 0 4px 13px -2px #33333399;
       transform: translate3d(200px,0,0);
       will-change: transform;
       z-index: 900;
-      
+      & ul li {
+        padding: 6px 20px;
+      }
     }
     .logo{
       width: clamp(10rem, 50%, 30rem);
+    }
+    :global(.headersublink) {
+      font-size: 0.9rem;
+      text-indent: 0.5rem;
+      padding: 3px 12px;
+      color: hsl(var(--color2hsl))!important;
+      & > a {
+        padding: 3px 12px!important;
+        // margin-left: 1rem;
+        color: #999!important;
+      }
+        &:first-of-type{
+        margin-top: 0.3rem;
+      }
+      &:last-of-type{
+        margin-bottom: 0.8rem;
+      }
     }
   }
   @media(min-width:670px){
@@ -173,7 +197,7 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
       justify-content: flex-end;
       & li {
         list-style-type: none;
-        margin-bottom: 6px;
+        // margin-bottom: 6px;
         color: hsl(var(--color1hsl));
       & a {
         color: white;

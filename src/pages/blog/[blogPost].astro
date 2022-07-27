@@ -7,8 +7,6 @@ import TwitterIcon from '../../components/TwitterIcon.astro';
 import Button from '../../components/Button.astro'
 import { contentfulItems} from '../../components/contentfulClient.js'
 import {months, ArticleOpenGraph} from "../../utils.js"
-import { file } from "dist/entry.c660d539";
-// import { formatSlug } from "../../featureList.js";
 import metadata from "src/layouts/metadata";
 import { formatSlug } from "../../featureList.js";
 
@@ -37,7 +35,7 @@ const articleOG = new ArticleOpenGraph(title, "something", img, imgAlt, date, au
 let url = Astro.canonicalURL.toString().concat(`/${formatSlug(title)}`)
 ---
 <StandardLayout slug={title} openGraph={articleOG} >
-<article>
+<article class="blogArticle">
   <div class="navcrumbs">
     <Button as="link" leftArrow color="grey" href="/blog/" text="All Blog Posts" outline style="margin-left: auto;margin-right: 0;text-align: right;position: absolute;"  ></Button>
   </div>
@@ -62,9 +60,15 @@ let url = Astro.canonicalURL.toString().concat(`/${formatSlug(title)}`)
   
 </StandardLayout>
 <style lang="scss">
+  .blogArticle{
+    max-width: 65rem;
+    margin-inline: auto;
+  }
 .heading{
   flex-flow: column nowrap;
   position: relative;
+  // margin-bottom: 10vw;
+
   & > .left, & > .right { 
     position: relative;
     margin-bottom: 1rem;
@@ -84,6 +88,7 @@ let url = Astro.canonicalURL.toString().concat(`/${formatSlug(title)}`)
     margin-top: 2rem;
     gap: 1rem;
     height: 4rem;
+    margin-bottom: 3rem;
     & > a {
       width: 11.5rem;
     }
@@ -155,7 +160,8 @@ article {
     border-radius: 8px;
     font-size: 0.9rem;
     padding-left: 2.6rem;
-    margin-left: 1rem;
+    // margin-left: 1rem;
+    margin: 8px 1rem;
     position: relative;
     transition: transform 0.2s;
     &:hover {
@@ -174,6 +180,7 @@ article {
       top: 6px;
      }
   }
+
   .sharecontainer {
     display:flex;
     flex-flow: row nowrap; 

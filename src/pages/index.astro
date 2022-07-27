@@ -2,12 +2,13 @@
 import HomepageLayout from '../layouts/HomepageLayout.astro'
 import FlexDiv from '../components/FlexDiv.astro'
 import Button from "../components/Button.astro"
-import Carousel from "../components/Carousel.astro"
-import CallToAction from "../components/CallToAction.astro" // import { Img } from "astro-imagetools/components";
+// import Carousel from "../components/Carousel.astro"
+import CallToAction from "../components/CallToAction.astro" 
+// import { Img } from "astro-imagetools/components";
 import Stream from "../components/Stream.astro"
 import ConcernBlob from '../components/ConcernBlob.astro'
 import RMDiagram from '../components/RMDiagram.astro'
-import {formatSlug} from "../featureList.js"
+// import {formatSlug} from "../featureList.js"
 ---
 <HomepageLayout>
     <div class="shapeintro" >
@@ -20,7 +21,9 @@ import {formatSlug} from "../featureList.js"
         <h3 class="scrollrevealtext3" style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
       </div>
 
-      <div id="productintroscreen"><iframe width="560" height="315" src="https://www.youtube.com/embed/R3sWHrkMTfY?modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" autoplay allowfullscreen style="width: 100%;"></iframe></div>
+      <div id="productintroscreen">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/TGe97xQyex8?modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%;"></iframe>
+        </div>
 
       <div id="testscreen">
         <img src="/HomeDashboard.svg" alt="screenshot of ReviewMate's graphical user interface" />
@@ -218,7 +221,7 @@ import {formatSlug} from "../featureList.js"
      position: absolute;
      display: inline-block;
      left: 50%;
-     bottom: -8vw;
+     bottom: 2vw;
      box-shadow: 0 8px 14px -3px #000;
      transform-origin: 50% 50%;
      transform: translate3d(-50%, 0, 0);

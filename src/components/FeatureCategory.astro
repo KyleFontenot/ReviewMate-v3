@@ -1,12 +1,42 @@
 ---
-const {title} = Astro.props
+import { Img } from "astro-imagetools/components";
+interface FeatureCategory{
+  title: string;
+  imageBG: string
+}
+const {title, imageBG = '/src/images/auditingoverview.jpg'} = Astro.props as FeatureCategory
 ---
 <section class="featurecategory">
-  <h1>{title}</h1><br/>
-  <div><slot/></div>
+  <div class="header"><h1>{title}</h1></div><br/>
+  <slot name="generalinfo" />
+  <div class="featurecategoryimage"><Img src={imageBG} alt="something" /></div>
+  <slot />
+  <slot name="secondfeaturelist"/>
 </section>
 
 <style lang="scss">
+  :global(.featurecategoryimage) {
+    position: absolute;
+    top: calc(-3rem - 1px);
+    right: -6.8%;
+    max-height: 17rem;
+    width: clamp(5rem, 60%, 80rem);
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+    box-shadow: 6px -6px 20px #000 inset;
+  
+    z-index: 10;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: block;
+      top: 0;
+      left: 0;
+      z-index: 12;
+      background: linear-gradient(to bottom, hsl(var(--color1hsl)) 0%, hsla(var(--color1h), 70%, 20%, 30%) );
+    }
+  }
   .featurecategory{
     display: block;
     margin-inline: auto;
@@ -15,22 +45,27 @@ const {title} = Astro.props
     position: relative;
     border: none;
     letter-spacing: 0.2px;
-    & > div {
+   & .header {
+
+   } 
+  }
+    .featurelist {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       flex-flow: row wrap;
-      gap: 3rem;
+      // gap: 3rem;
+        gap: 1rem;
       border-color: hsl(var(--color1hsl));
       box-shadow: 0 3px 10px -2px #bbb;
       padding: 2.5rem 1.4rem 4rem;
       border-radius: 8px;
-      & > :global(div), & > :global(article), & > :global(article){
-        flex: 3 1 30rem;
-        max-width: 30rem;
-        margin-bottom: 3rem;
+      margin-top: 3rem;
+      z-index: 30;
+      & > :global(div), & > :global(article), & > :global(article), :global(section),{
+        flex: 2 1 30rem;
+        // max-width: 30rem;
+        margin-bottom: 2rem;
         margin-inline: auto;
       }
     }
-    
-  }
 </style>

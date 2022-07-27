@@ -135,7 +135,8 @@ blockquote {
 	border-radius: 6px;
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
-	margin: 1.5rem 2rem 2rem 3rem;
+	margin: 2rem 2rem 2rem 0.3rem;
+	width: 100%;
 	position: relative;
 	&::after {
 		content: "";

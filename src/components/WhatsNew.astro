@@ -19,16 +19,16 @@ const month = ["January","February","March","April","May","June","July","August"
     {whatsNew.map(release => {
       let formatDate = new Date(release.fields.month)
       return (
-        <a href={`/releasenotes/${formatSlug(release.fields.title)}/`} class="div">
+        <div href={`/releasenotes/${formatSlug(release.fields.title)}/`} class="div">
           <li class="entry">{release.fields.title}</li>
           <p class="description">{release.fields.smallDescription}</p>
           <span class="date">{month[formatDate.getMonth()]}, {formatDate.getFullYear()}</span>
           <span class="version">Release {release.fields.versionNumber.toFixed(1)}</span>
-        </a>
+        </div>
       )
     })}
   </ul>
-  <a href="/releasenotes/" class="seeall">See All Release Notes</a>
+  <a href="/contact/" class="seeall">Contact Us for more.</a>
 </section>
 
 
@@ -88,9 +88,9 @@ const month = ["January","February","March","April","May","June","July","August"
     & :global(h3){
       display: inline-block;
     }
-    &:hover {
-      border: 1px solid #999;
-    }
+    // &:hover {
+    //   border: 1px solid #999;
+    // }
   }
   .entry {
     font-size: 2rem;

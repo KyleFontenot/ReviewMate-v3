@@ -95,10 +95,27 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
     filter: invert(24%) sepia(27%) saturate(4898%) hue-rotate(348deg) brightness(91%) contrast(83%);
   }
   a.title{
-    margin-bottom: 1rem;
     border-bottom: 1px solid transparent;
+    margin-bottom: 1rem;
     border-bottom: 1px solid hsl(var(--color1hsl));
+    padding-left: 2rem;
     display: block;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      display: block;
+      left: 0;
+      bottom: 0;
+      clip-path: polygon(0 0, 0% 100%, 100% 100%);
+      background-color: hsl(var(--color1hsl));
+    }
+    & > h3 {
+      margin-bottom: 0.6rem;
+      letter-spacing: 0;
+    }
     &:hover {
     }
   }
