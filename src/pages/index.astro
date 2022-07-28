@@ -36,42 +36,30 @@ import RMDiagram from '../components/RMDiagram.astro'
     <Button as="link" href="/plans/" text="Plans and Features" outline style="z-index:30;"></Button>
   </div>
 
-  <FlexDiv gap="0.2rem" className="producttraits">
+  <FlexDiv className="producttraits">
     <div class="scrollreveal">
-      <img src="/Integrate(kf).svg" width="128" height="143"  alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
+      <img src="/Integrate(kf).svg" width="168" height="183"  alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
       <h3 style="letter-spacing:0;">Consolidate data from any source</h3>
       <p>Connect ReviewMate right into your universe of data or import loose resources independently, for gathering samples.</p>
     </div>
     <div class="scrollreveal">
-    <img src="/Audit(kf).svg" width="128" height="143" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
+    <img src="/Audit(kf).svg" width="168" height="183" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
       <h3 style="letter-spacing:0;">Audit and extrapolate findings seamlessly</h3>
       <p>Integrated tools keep both the auditor closer to the data, and expands more accountable, transparent communication.</p>
     </div>
     <div class="scrollreveal">
-      <img src="/Report(kf).svg" width="128" height="143" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
-      <h3 style="letter-spacing:0;">Report and Monitor</h3>
+      <img src="/Report(kf).svg" width="168" height="183" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
+      <h3 style="letter-spacing:0;">Report and monitor</h3>
       <p>Customizable reports and integrated communication channels expedite results right to the end-user.</p>
+    </div>
+    <div class="scrollreveal">
+      <img src="/Automate(kf).svg" width="168" height="183" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
+      <h3 style="letter-spacing:0;">Automate and gain insight</h3>
+      <p>Leverage artificial intelligence and community-sourced data to augment workflows intuitively. Expedite discovery of auditing opportunities.</p>
     </div>
   </FlexDiv>
 
-<div class="rellaxwrapper concernblobcontainer">
-    <ConcernBlob tagline={`"Spreadsheet Friction" `} description="Juggling between spreadsheets and different program resources is not only frustrating, but it wastes time, and can contribute to inconsistency." answer="ReviewMate consolidates all of your sources of information into one platform. Log in and take care of business." img="/SpreadSheetFriction.svg" imgAlt="Woman working in the center of many spreadsheets." className="scrollreveal" client:load>
-    </ConcernBlob>
-    <ConcernBlob variant={2} tagline={`The "Game of Telephone" `} description="While reviewers are providing insights and comments on findings, having a single document being constantly carbon copied blurs lines of accountability, and opens up gaps for miscommunication." answer="Synchronized communication allows for every single audit, finding, comment, and task to be completely transparent for all authorized parties. " img="/GameOfTelephone.svg" imgAlt="Man with four rams holding many different phone alerts in between many different emails and ICD-10 codes" className="scrollreveal" client:load>
-    </ConcernBlob>
-    <ConcernBlob tagline={`The "Email Traffic-Jam" `} description="Email threads become messy and burdensome, sometimes overlooking pertinent information in pages and pages of history." answer="ReviewMate brings modern central communication to auditing deliberation, by integrating direct references, explicit notes, and party transparency so that everyone is heard concisely." img="/EmailTrafficJam.svg" imgAlt="Woman dissecting and analyzing an email thread." className="scrollreveal" client:idle>
-    </ConcernBlob>
-    <ConcernBlob variant={2} tagline={` The "Opaque" problem`} description="Managers, and most importantly, clients, need to be able to keep track of active progression in auditing tasks to utilize a pro-active approach to the teams' work." answer="Tasks in ReviewMate are groups of assigned work which can be traced on factual, present data. ReviewMate even extends special transparency tools for clients and coders alike." img="/OpaqueProblem.svg" imgAlt={`Man hiding his computer screen with a "TBD" sign`} className="scrollreveal" client:load>
-    </ConcernBlob>
-</div>
-
-<RMDiagram />
-  
-  <!-- <h3 style="margin-bottom: 2rem;text-align:center;">Trusted By:</h3>
-<Carousel/> -->
-  
-
-<FlexDiv padding="0rem 0 7rem" className="red scrollreveal" style="margin-top: 0rem;background: radial-gradient(hsla(var(--color2hsl), 40%), hsla(var(--color2hsl), 20%) 20%, white 60%); ">
+  <FlexDiv padding="0rem 0 2rem" className="red scrollreveal" style="margin-top: 5rem;background: radial-gradient(hsla(var(--color2hsl), 40%), hsla(var(--color2hsl), 20%) 20%, white 60%); ">
   <h3 style="margin-bottom: 5rem;">Trusted By:</h3>
   <div class="partnersdiv">
       <a href="https://www.comforcehealth.com/" target="__blank" rel="noopener">
@@ -97,6 +85,25 @@ import RMDiagram from '../components/RMDiagram.astro'
       </a>
   </div>
 </FlexDiv>
+
+<div class="rellaxwrapper concernblobcontainer">
+    <ConcernBlob tagline={`"Spreadsheet Friction" `} description="Juggling between spreadsheets and different program resources is not only frustrating, but it wastes time, and can contribute to inconsistency." answer="ReviewMate consolidates all of your sources of information into one platform. Log in and take care of business." img="/SpreadSheetFriction.svg" imgAlt="Woman working in the center of many spreadsheets." className="scrollreveal" client:load>
+    </ConcernBlob>
+    <ConcernBlob variant={2} tagline={`The "Game of Telephone" `} description="While reviewers are providing insights and comments on findings, having a single document being constantly carbon copied blurs lines of accountability, and opens up gaps for miscommunication." answer="Synchronized communication allows for every single audit, finding, comment, and task to be completely transparent for all authorized parties. " img="/GameOfTelephone.svg" imgAlt="Man with four rams holding many different phone alerts in between many different emails and ICD-10 codes" className="scrollreveal" client:load>
+    </ConcernBlob>
+    <ConcernBlob tagline={`The "Email Traffic-Jam" `} description="Email threads become messy and burdensome, sometimes overlooking pertinent information in pages and pages of history." answer="ReviewMate brings modern central communication to auditing deliberation, by integrating direct references, explicit notes, and party transparency so that everyone is heard concisely." img="/EmailTrafficJam.svg" imgAlt="Woman dissecting and analyzing an email thread." className="scrollreveal" client:idle>
+    </ConcernBlob>
+    <ConcernBlob variant={2} tagline={` The "Opaque" problem`} description="Managers, and most importantly, clients, need to be able to keep track of active progression in auditing tasks to utilize a pro-active approach to the teams' work." answer="Tasks in ReviewMate are groups of assigned work which can be traced on factual, present data. ReviewMate even extends special transparency tools for clients and coders alike." img="/OpaqueProblem.svg" imgAlt={`Man hiding his computer screen with a "TBD" sign`} className="scrollreveal" client:load>
+    </ConcernBlob>
+</div>
+
+<RMDiagram />
+  
+  <!-- <h3 style="margin-bottom: 2rem;text-align:center;">Trusted By:</h3>
+<Carousel/> -->
+  
+
+
 <Stream postType="blogPost" title="Blog" size="small"/>
 
 <CallToAction color="red" header="Let us show you how you can start saving hours a week" style="margin-bottom: -3rem;" >
@@ -213,7 +220,7 @@ import RMDiagram from '../components/RMDiagram.astro'
   #productintroscreen{
       width: 80%;
       max-width: 55rem;
-      max-height: 30vw;
+      max-height: 30rem;
       height: 100%;
       aspect-ratio: 6 / 4;
      margin-inline: auto;
@@ -221,10 +228,11 @@ import RMDiagram from '../components/RMDiagram.astro'
      position: absolute;
      display: inline-block;
      left: 50%;
-     bottom: 2vw;
+     bottom: -4rem;
      box-shadow: 0 8px 14px -3px #000;
      transform-origin: 50% 50%;
      transform: translate3d(-50%, 0, 0);
+     aspect-ratio: 2 / 1;
      & > iframe {
       margin-bottom: -7px;
      }
@@ -278,6 +286,21 @@ import RMDiagram from '../components/RMDiagram.astro'
     left: 6%;
     z-index: 10;
     // overflow: visible;
+  }
+
+.producttraits {
+    flex-flow: row wrap;
+    justify-content: center;
+    column-gap: 3rem;
+    row-gap: 2.5rem;
+    margin-bottom: 4rem;
+    & > div {
+      flex: 1 1 24rem;
+      min-width: 24rem;
+      max-width: 32rem;
+      // text-align: center;
+      // margin-right: 5rem;
+    }
   }
 
   @media (min-width: 690px ){
@@ -380,12 +403,12 @@ import RMDiagram from '../components/RMDiagram.astro'
   }
    
    .producttraits{
-      flex-flow: row wrap;
-      justify-content: space-around;
-      margin-top: 6rem;
+      // flex-flow: row wrap;
+      // justify-content: space-around;
+      margin-top: 3rem;
       & > div {
-        flex: 1 1 20rem;
-        max-width: 20rem;
+        // flex: 2 1 20rem;
+        // max-width: 50%;
         & > img{
           filter: invert(22%) sepia(69%) saturate(1660%) hue-rotate(345deg) brightness(100%) contrast(86%);
         }
@@ -425,23 +448,20 @@ import RMDiagram from '../components/RMDiagram.astro'
   }
   
   .introicon{
-    width: 8rem;
+    width: 9rem;
     margin-inline: auto;
     display: block;
-    margin-bottom: 2rem;
+    margin-bottom: 1.3rem;
   }
   .concernblobcontainer {
     margin-top: 5rem;
     display: grid;
     width: 106%;
     margin-left: -3%;
-    grid-template-columns: repeat(auto-fill, clamp(23rem, 100%, 38vw));
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 30rem));
     grid-auto-rows: 1fr;
     justify-content: center;
-    column-gap: 2%;
-    & > :global(div) {
-      width: 100%;
-    }
+    // column-gap: 2%;
   }
   .partnersdiv {
     position: relative;
