@@ -84,7 +84,7 @@ const featureList = {
 				header:
 					"In addition to ReviewMate's standard features for auditing, our IPPS module features:",
 				bullets: [
-					"Identification on the screen of codes with MCC/CC/HAC and CMS-HCC values.",
+					"Identification on the screen of codes with MCC/CC/HAC values.",
 					"Support for Profee audit within the IPPS module.",
 				],
 			}
@@ -101,7 +101,17 @@ const featureList = {
 				src: "/src/images/photos/mart-production.jpg",
 				alt: "Doctors meeting together",
 			},
-			[true, true, true]
+			[true, true, true],
+			{
+				header:
+					"In addition to ReviewMate's standard features for auditing, our OPPS module features:",
+				bullets: [
+					"Accuracy rates by Patient Types (observation, ED, clinic, etc).",
+					"Ability to assign responsibility on the line-item level to obtain individualized accuracy rates for the different contributors to the UB-04 (coder, charge team, radiology, etc).",
+					"Identification of line-items that were recalculated as a result of another line-item revision.",
+					"Support for Profee audit within the OPPS module.",
+				],
+			}
 			// add bulletopints here
 		),
 		new AuditingModule(
@@ -115,7 +125,14 @@ const featureList = {
 				src: "/src/images/photos/polina.jpg",
 				alt: "Female doctor analyzing a chart",
 			},
-			[true, true, true]
+			[true, true, true],
+			{
+				header:
+					"In addition to ReviewMate's standard features for auditing, our Profee module features:",
+				bullets: [
+					"Optional logic-based E&M Form tool allows auditors to analyze the provider note and determine the correct E&M level. The tool contains 1995, 1997, and the new 2021 criteria. The E&M Form is exportable for easy reporting and training.",
+				],
+			}
 			// add bulletpoints here
 		),
 		new AuditingModule(
@@ -123,14 +140,21 @@ const featureList = {
 			"Free-standing ambulatory surgery center is a first-class citizen to the standard auditing capabilities.",
 			// not in the business of providing office visits, laboratory services, diagnostic tests,
 			[
-				"Coding for Ambulatory Surgery Centers is a specialty unto itself. It is a facility service, but Medicare requires ASC’s to send their bills to the professional fee payers through the facility. There is a whole different set of regulations and bundling edits to use for ASCs, mainly pertaining to Medicare.",
+				"Coding for Ambulatory Surgery Centers is a specialty unto itself. It is a facility service, but Medicare requires ASC's to send their bills to the professional fee payers through the facility. There is a whole different set of regulations and bundling edits to use for ASCs, mainly pertaining to Medicare.",
 				"Given the more strict nature of ASC, ReviewMate excels in maintaining the punctuality needed using it's standard features of communication and transparency.",
 			],
 			{
 				src: "/src/images/photos/ambulance.jpg",
 				alt: "Nurses loading a patient into a gurney",
 			},
-			[true, true, true]
+			[true, true, true],
+			{
+				header:
+					"In addition to ReviewMate's standard features for auditing, our ASC module features:",
+				bullets: [
+					"Identification of line-items that were recalculated as a result of another line-item revision.",
+				],
+			}
 			// add bulletopints here
 		),
 		new AuditingModule(
@@ -146,7 +170,16 @@ const featureList = {
 				src: "/src/images/photos/anna-shvets.jpg",
 				alt: "Medical machines in a patient's room",
 			},
-			[true, true, true]
+			[true, true, true],
+			{
+				header:
+					"In addition to ReviewMate's standard features for auditing, our ASC module features:",
+				bullets: [
+					"Overridden HCCs due to the hierarchy structure are identified on the screen so the auditor can readily see which diagnosis codes will be considered into the patient's score.",
+					"Original, revised and net HCC weight for each calendar year.",
+					"Each calendar year for each patient has an “Analyzer” button where the auditor can view what diagnoses and HCCs are missing for a particular calendar year.",
+				],
+			}
 			// add bulletopints here
 		),
 	],
@@ -425,7 +458,7 @@ const featureList = {
 			"Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool.",
 			[
 				"Selector tools are essential to any auditor, and ReviewMate focuses on creating easy tools for every scenario to empower the auditor. An assortment of querying parameters are integrated for every auditing account, used for extracting the exact accounts that you need. The randomizer is an additional way to query a random set of accounts.",
-				"In addition to flexible manual selections, all queries and sample selections can be customized to run automatically. Routine audits are standard expectations for end-user firms. ReviewMate can automate these tasks with a few clicks, which can automatically populate tasks/findings."
+				"In addition to flexible manual selections, all queries and sample selections can be customized to run automatically. Routine audits are standard expectations for end-user firms. ReviewMate can automate these tasks with a few clicks, which can automatically populate tasks/findings.",
 			],
 			{
 				src: "/src/images/photos/selection.jpg",

@@ -134,7 +134,7 @@ blockquote {
 	padding: 30px 50px;
 	border-radius: 6px;
 	border-top-right-radius: 15px;
-	border-bottom-right-radius: 15px;
+	border-bottom-right-rastdius: 15px;
 	margin: 2rem 2rem 2rem 0.3rem;
 	width: 100%;
 	position: relative;
@@ -157,6 +157,9 @@ blockquote {
 
 li {
 	list-style-image: url('/icons/right-arrow(list).svg');	
+}
+.bullet {
+	line-height: 2rem;
 }
 footer * {
 	list-style-type: none;

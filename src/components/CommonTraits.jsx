@@ -43,8 +43,8 @@ export default function CommonTraits(props) {
 				</li>
 				<li>
 					Grouping and pricing take place within the software eliminating the
-					need for auditor to “toggle” between an encoder and ReviewMate for
-					better resequencing decisions.
+					need for auditor to &quot;toggle&quot; between an encoder and
+					ReviewMate for better resequencing decisions.
 				</li>
 				<li>
 					Full suite of references including Coding Clinic, CPT Assistant,
@@ -75,8 +75,12 @@ export default function CommonTraits(props) {
 					providing transparency within your organization.
 				</li>
 				<li>
-					“Audit the Auditor” available for a higher-level quality check of any
-					audit in ReviewMate.
+					&quot;Audit the Auditor&quot; available for a higher-level quality
+					check of any audit in ReviewMate.
+				</li>
+				<li>
+					Identification on the screen of codes with CMS-HCC
+					values.
 				</li>
 			</ul>
 			<button

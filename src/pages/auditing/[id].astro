@@ -43,13 +43,15 @@ const {feature} = Astro.props;
   }
   )}</ul> : 
 
-  (feature?.bullets !== undefined && feature?.bullets?.length > 0) ? <ul class="list" >{feature?.bullets?.map(point => {
+  (feature?.bullets !== undefined && feature?.bullets?.length > 1) ?
+   <ul class="list" >{feature?.bullets?.map(point => {
     return (
       <li class="bullet">{point}</li>
     )
   }
   )}</ul> 
-  : ''} 
+  : 
+  ''} 
   </div>
   {feature?.commontraits === true ? <CommonTraits client:idle /> : ''}
   
