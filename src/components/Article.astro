@@ -1,13 +1,27 @@
 ---
 import { Img } from "astro-imagetools/components";
-const {href, imgSrc, imgAlt, articleTitle, body, author, date, size} = Astro.props;
+import Arrow from './Arrow.astro'
+
+interface ArticleProps {
+  href: string;
+  imgSrc: string;
+  imgAlt: string;
+  articleTitle: string;
+  body: string;
+  author: string;
+  date: Date;
+  size: 'small' | 'large';
+  externallink: boolean;
+}
+
+const {href, imgSrc, imgAlt, articleTitle, body, author, date, size = 'small', externallink = false} = Astro.props as ArticleProps;
 ---
 <a href={`${href}`} class={ `article${size === 'small' ? ' article--small' : ''}` }>
   <div class="image">
     <Img src={`https:${imgSrc}`} alt={`${imgAlt}`} objectFit="contain" /> 
   </div>
   <div class="textbody">
-    <h3>{articleTitle}</h3>
+    <h3>{articleTitle}&nbsp;{(externallink === true) && <Arrow direction="upright" color="#666" />}</h3>
     <p>{body}</p>
     <p class="author">{author}</p>
     <p class="date">{date}</p>

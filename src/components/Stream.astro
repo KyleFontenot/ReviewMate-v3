@@ -32,6 +32,7 @@ const descriptionCutoff = 120
           author={post.fields.author}
           date={`${months[formatDate.getMonth()]} ${formatDate.getDate()}, ${formatDate.getFullYear()}`}
           size={size}
+          externallink={(postType === "articlePost") ? true : false}
       />)
     }
     )}

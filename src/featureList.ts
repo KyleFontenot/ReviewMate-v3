@@ -348,32 +348,18 @@ const featureList = {
 			[false, true, true]
 		),
 
-		new Module(
-			"System Metrics",
-			"Monitoring",
-			"Utilize visual graphs and charts to focus on performance-based results. Discover prioritization concerns as they happen.",
-			[
-				"Analyzing coder accuracy is the primary use for accumulating accuracy rates, but ReviewMate offers visual insight on other systematic details across a user's and even a firm's usage. Particularly when working with a team, performance statistics and workload can be viewed at a glance.",
-				"Components of both dashboards and summaries have many tools to visualize statistical data from findings. We use custom bar charts, line graphs, and pie charts to display any metric that the user sees fit.",
-				// !!! Can bars charts and graphs be put into the reports?
-			],
-			{
-				src: "/src/images/photos/negative-space.jpg",
-				alt: "Laptop showing results of query",
-			},
-			[false, true, true]
-		),
 		// new Module(
-		// 	"Time Tracking",
+		// 	"System Metrics",
 		// 	"Monitoring",
-		// 	// !!! Needs to change based
-		// 	"Keep track of time based on tasks, assignments, and projects. Modular 'tasks' keep chunks of work accountable and trackable.",
+		// 	"Utilize visual graphs and charts to focus on performance-based results. Discover prioritization concerns as they happen.",
 		// 	[
-		// 		"Some tasks take longer to finish than others. Overall, staffing analytics offers ",
+		// 		"Analyzing coder accuracy is the primary use for accumulating accuracy rates, but ReviewMate offers visual insight on other systematic details across a user's and even a firm's usage. Particularly when working with a team, performance statistics and workload can be viewed at a glance.",
+		// 		"Components of both dashboards and summaries have many tools to visualize statistical data from findings. We use custom bar charts, line graphs, and pie charts to display any metric that the user sees fit.",
+		// 		// !!! Can bars charts and graphs be put into the reports?
 		// 	],
 		// 	{
-		// 		src: "/src/images/photos/timetracking.jpg",
-		// 		alt: "Physician checking the time on his watch",
+		// 		src: "/src/images/photos/negative-space.jpg",
+		// 		alt: "Laptop showing results of query",
 		// 	},
 		// 	[false, true, true]
 		// ),

@@ -2,13 +2,10 @@
 import HomepageLayout from '../layouts/HomepageLayout.astro'
 import FlexDiv from '../components/FlexDiv.astro'
 import Button from "../components/Button.astro"
-// import Carousel from "../components/Carousel.astro"
 import CallToAction from "../components/CallToAction.astro" 
-// import { Img } from "astro-imagetools/components";
 import Stream from "../components/Stream.astro"
 import ConcernBlob from '../components/ConcernBlob.astro'
 import RMDiagram from '../components/RMDiagram.astro'
-// import {formatSlug} from "../featureList.js"
 ---
 <HomepageLayout>
     <div class="shapeintro" >
@@ -59,7 +56,7 @@ import RMDiagram from '../components/RMDiagram.astro'
     </div>
   </FlexDiv>
 
-  <FlexDiv padding="0rem 0 2rem" className="red scrollreveal" style="margin-top: 5rem;background: radial-gradient(hsla(var(--color2hsl), 40%), hsla(var(--color2hsl), 20%) 20%, white 60%); ">
+  <FlexDiv padding="2rem 0 3rem" className="red scrollreveal" style="margin-top: 5rem;background: radial-gradient(hsla(var(--color2hsl), 40%), hsla(var(--color2hsl), 20%) 20%, white 60%); ">
   <h3 style="margin-bottom: 5rem;">Trusted By:</h3>
   <div class="partnersdiv">
       <a href="https://www.comforcehealth.com/" target="__blank" rel="noopener">
@@ -216,37 +213,36 @@ import RMDiagram from '../components/RMDiagram.astro'
      display: inline-block;
      left: 50%;
      bottom: 0;
-    //  box-shadow: 0 8px 14px -3px #000;
      transform-origin: 50% 50%;
      transform: translate3d(-50%, 0, 0);
   }
   #productintroscreen{
-      width: 80%;
-      max-width: 55rem;
-      max-height: 30rem;
-      height: 100%;
-      aspect-ratio: 6 / 4;
-     margin-inline: auto;
-     border-radius: 8px;
-     position: absolute;
-     display: inline-block;
-     left: 50%;
-     bottom: -4rem;
-     box-shadow: 0 8px 14px -3px #000;
-     transform-origin: 50% 50%;
-     transform: translate3d(-50%, 0, 0);
-     aspect-ratio: 2 / 1;
-     & > iframe {
-      margin-bottom: -7px;
-     }
-     & > img {
-       position: relative;
-       top: 0;
-       width: 100%;
-       display: block;
-       z-index: 100;
-     }
-   }
+    width: 80%;
+    max-width: 55rem;
+    max-height: 30rem;
+    height: 100%;
+    aspect-ratio: 6 / 4;
+    margin-inline: auto;
+    border-radius: 8px;
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    bottom: -4rem;
+    box-shadow: 0 8px 14px -3px #000;
+    transform-origin: 50% 50%;
+    transform: translate3d(-50%, 0, 0);
+    aspect-ratio: 2 / 1;
+    & > iframe {
+    margin-bottom: -7px;
+    }
+    & > img {
+      position: relative;
+      top: 0;
+      width: 100%;
+      display: block;
+      z-index: 100;
+    }
+  }
   .shapeintrobg {
     background-color: #888;
     background-repeat: no-repeat;  
@@ -288,7 +284,6 @@ import RMDiagram from '../components/RMDiagram.astro'
     position: absolute;
     left: 6%;
     z-index: 10;
-    // overflow: visible;
   }
 
 .producttraits {
@@ -301,8 +296,6 @@ import RMDiagram from '../components/RMDiagram.astro'
       flex: 1 1 24rem;
       min-width: 24rem;
       max-width: 32rem;
-      // text-align: center;
-      // margin-right: 5rem;
     }
   }
 
@@ -361,7 +354,6 @@ import RMDiagram from '../components/RMDiagram.astro'
     }
 
     .introtext p, .introtext h3 {
-      // max-width: 44vw;
       width: 45vw;
     }    
     #testscreen{
@@ -370,7 +362,7 @@ import RMDiagram from '../components/RMDiagram.astro'
       height: 100%;
       width: clamp(20rem, 40vw, 90rem);
       position: absolute;
-      left: calc(53vw + 1rem);
+      left: calc(53vw + 2rem);
       z-index: 10;
       overflow:hidden;
       // overflow: visible;
@@ -472,13 +464,14 @@ import RMDiagram from '../components/RMDiagram.astro'
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    column-gap: 3rem;
     width: 100%;
     & > a { 
       filter: invert(23%) sepia(18%) saturate(7185%) hue-rotate(347deg) brightness(95%) contrast(84%);
-      max-width: 16rem;
-      max-height: 6rem;
+      // width: 336px;
+      // height: 180px;
       position: relative;
+      text-align: center;
       transform: scale(1);
       transition: transform 0.2s;
       & > img {
