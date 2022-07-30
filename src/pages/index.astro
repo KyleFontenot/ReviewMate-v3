@@ -6,6 +6,7 @@ import CallToAction from "../components/CallToAction.astro"
 import Stream from "../components/Stream.astro"
 import ConcernBlob from '../components/ConcernBlob.astro'
 import RMDiagram from '../components/RMDiagram.astro'
+import Carousel from '../components/Carousel.astro'
 ---
 <HomepageLayout>
     <div class="shapeintro" >
@@ -56,6 +57,9 @@ import RMDiagram from '../components/RMDiagram.astro'
     </div>
   </FlexDiv>
 
+  <!-- <h3 style="margin-bottom: 2rem;text-align:center;">Trusted By:</h3><Carousel/> -->
+
+
   <FlexDiv padding="2rem 0 3rem" className="red scrollreveal" style="margin-top: 5rem;background: radial-gradient(hsla(var(--color2hsl), 40%), hsla(var(--color2hsl), 20%) 20%, white 60%); ">
   <h3 style="margin-bottom: 5rem;">Trusted By:</h3>
   <div class="partnersdiv">
@@ -84,7 +88,7 @@ import RMDiagram from '../components/RMDiagram.astro'
           <img class="partnerlogo" src="/brandsvgs/maxim.svg" alt="Maxim Healthcare's logo" height="300" width="500" />
       </a>
   </div>
-</FlexDiv>
+</FlexDiv> --> 
 
 <div class="rellaxwrapper concernblobcontainer">
     <ConcernBlob tagline={`"Spreadsheet Friction" `} description="Juggling between spreadsheets and different program resources is not only frustrating, but it wastes time, and can contribute to inconsistency." answer="ReviewMate consolidates all of your sources of information into one platform. Log in and take care of business." img="/SpreadSheetFriction.svg" imgAlt="Woman working in the center of many spreadsheets." className="scrollreveal" client:load>
@@ -99,8 +103,6 @@ import RMDiagram from '../components/RMDiagram.astro'
 
 <RMDiagram />
   
-  <!-- <h3 style="margin-bottom: 2rem;text-align:center;">Trusted By:</h3>
-<Carousel/> -->
   
 
 
