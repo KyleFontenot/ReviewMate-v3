@@ -4,12 +4,11 @@ interface FeatureCategory{
   title: string;
   imageBG: string
 }
-const {title, imageBG = '/src/images/auditingoverview.jpg'} = Astro.props as FeatureCategory
+const {title} = Astro.props as FeatureCategory
 ---
 <section class="featurecategory">
   <div class="header"><h1>{title}</h1></div><br/>
   <slot name="generalinfo" />
-  <div class="featurecategoryimage"><Img src={imageBG} alt="something" /></div>
   <slot />
   <slot name="secondfeaturelist"/>
 </section>
