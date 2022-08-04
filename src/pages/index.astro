@@ -19,9 +19,9 @@ import Carousel from '../components/Carousel.astro'
         <h3 class="scrollrevealtext3" style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
       </div>
 
-      <div id="productintroscreen">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/TGe97xQyex8?modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%;"></iframe>
-        </div>
+        <iframe id="productintroscreen" width="560"  height="315" src="https://www.youtube.com/embed/TGe97xQyex8?modestbranding=1"
+        srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img{position:absolute;width:100%;top:0;bottom:0;margin:auto}.youtubearrow{color: white;width:50%;aspect-ratio: 1 / 1;position: absolute;left:50%;top: 50%;transform: translate(-50%, -50%);display:grid;justify-content:center;}</style><a href=https://www.youtube.com/embed/TGe97xQyex8?modestbranding=1><img src=https://img.youtube.com/vi/TGe97xQyex8/hqdefault.jpg alt='ReviewMate Overview'><span class='youtubearrow'><svg width='100' height='100' style='fill:#ffffff;position: absolute;top: 50%;left:50%;transform:translate(-50%, -50%);' viewBox='0 0 90.898514 90.898514' version='1.1' id='svg5' inkscape:export-filename='ytplay.svg' inkscape:export-xdpi='300' inkscape:export-ydpi='300' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' ><defs id='defs2'  /><g inkscape:label='Layer 1' inkscape:groupmode='layer' id='layer1' transform='translate(-1.0631373)'><path id='path241' transform='matrix(0,-0.32138075,0.32138075,0,11.079654,57.71011)' inkscape:transform-center-x='0.94132348' inkscape:transform-center-y='1.872329' d='m 106.74077,66.323128 -25.506365,44.178322 -39.2647,68.00846 a 7.9433773,7.9433773 -180 0 1 -13.758333,0 L 2.7050047,134.33158 -36.559696,66.323128 a 7.9433773,7.9433773 120 0 1 6.879167,-11.915066 h 51.012734 78.5294 a 7.9433773,7.9433773 60 0 1 6.879165,11.915066 z' style='fill:#fff;stroke-width:7.9375' /><path style='color:#fff;fill:#fff;-inkscape-stroke:none' d='M 46.511719,0 C 21.439501,0 1.0625,20.377001 1.0625,45.449219 c 0,25.072218 20.377001,45.449218 45.449219,45.449218 25.072218,0 45.449218,-20.377 45.449218,-45.449218 C 91.960937,20.377001 71.583937,0 46.511719,0 Z m 0,4.84375 c 22.454291,0 40.605468,18.151178 40.605468,40.605469 0,22.454291 -18.151177,40.605468 -40.605468,40.605468 C 24.057428,86.054687 5.90625,67.90351 5.90625,45.449219 5.90625,22.994928 24.057428,4.84375 46.511719,4.84375 Z' id='path403' /></g></svg></span></a>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen 
+        loading="lazy"></iframe>
 
       <div id="testscreen">
         <img src="/HomeDashboard.svg" alt="screenshot of ReviewMate's graphical user interface" />
@@ -192,10 +192,7 @@ import Carousel from '../components/Carousel.astro'
       }
     }
   }
-  #productintroscreen {
-    z-index: 300;
-    // height: 30rem;
-  }
+  
   #testscreen {
     // height: auto;
     height: 80vw;
@@ -214,47 +211,66 @@ import Carousel from '../components/Carousel.astro'
       bottom: calc(22vw * 0.80 + 12rem);
     }
   }
-  #productintroscreen iframe{
-      width: 80%;
-      max-width: 60rem;
-      min-width: 560px;
-      min-height: 315px;
-      height: 100%;
-      aspect-ratio: 4 / 3;
-     margin-inline: auto;
-     border-radius: 8px;
-     position: absolute;
-     display: inline-block;
-     left: 50%;
-     bottom: 0;
-     transform-origin: 50% 50%;
-     transform: translate3d(-50%, 0, 0);
-  }
+  // #productintroscreen{
+  //   // width: 80%;
+  //   max-width: 70rem;
+  //   max-height: 40rem;
+  //   min-height: 26rem;
+  //   // height: 100%;
+  //   aspect-ratio: 6 / 4;
+  //   margin-inline: auto;
+  //   border-radius: 8px;
+  //   position: absolute;
+  //   display: inline-block;
+  //   left: 50%;
+  //   bottom: -8rem;
+  //   transform-origin: 50% 50%;
+  //   transform: translate3d(-50%, 0, 0);
+  //   z-index: 300;
+  //   max-width: 98%;
+  //   & > iframe {
+  //     margin-bottom: -7px;
+  //     width: 100%;
+  //     // max-width: 98%;
+  //     height: 100%;
+  //     aspect-ratio: 4 / 3;
+  //     margin-inline: auto;
+  //     border-radius: 8px;
+  //     position: absolute;
+  //     display: inline-block;
+  //     left: 50%;
+  //     bottom: 0;
+  //     transform-origin: 50% 50%;
+  //     transform: translate3d(-50%, 0, 0);
+  //     box-shadow: 0 8px 14px -3px #000;
+  //   }
+  //   & > img {
+  //     position: relative;
+  //     top: 0;
+  //     width: 100%;
+  //     display: block;
+  //     z-index: 100;
+  //   }
+  // }
   #productintroscreen{
-    width: 80%;
-    max-width: 55rem;
-    max-height: 30rem;
-    height: 100%;
-    aspect-ratio: 6 / 4;
-    margin-inline: auto;
-    border-radius: 8px;
     position: absolute;
-    display: inline-block;
+    bottom: -8rem;
     left: 50%;
-    bottom: -4rem;
-    box-shadow: 0 8px 14px -3px #000;
     transform-origin: 50% 50%;
     transform: translate3d(-50%, 0, 0);
-    aspect-ratio: 2 / 1;
-    & > iframe {
-    margin-bottom: -7px;
-    }
-    & > img {
-      position: relative;
-      top: 0;
-      width: 100%;
-      display: block;
-      z-index: 100;
+    width: 92%;
+    height: 100%;
+    max-height: 28rem;
+    max-width: 55rem;
+    z-index: 300;
+    box-shadow: 0 12px 20px -4px #111;
+    border-radius: 12px;
+  }
+
+
+  @media(max-width:669px){
+    #productintroscreen{
+      bottom: -35vw;
     }
   }
   .shapeintrobg {
@@ -322,7 +338,7 @@ import Carousel from '../components/Carousel.astro'
       margin-top: 1rem;
     }
     .shapeintro {
-      margin-bottom: calc(8rem * 1.2);
+      margin-bottom: calc(10rem * 1.2);
     }
     .introtext {
       position: absolute;
