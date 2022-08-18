@@ -29,6 +29,14 @@ export const formatSlug = (title : string) => {
 	return fmtTitle.toLowerCase();
 };
 
+export const interpolateTags = (tag: string, paragraph: string) => {
+	let split = tag.split("");
+	split.splice(1, 0, "/");
+	let closing = split.join("");
+	let newPara = paragraph.replaceAll(tag, "").replaceAll(closing, "");
+	return newPara;
+};
+
 export const assessShort = (short: string, long: string): string =>
 	short.length < 181 ? short.concat(" " + long[0]).substring(0, 210) : short;
 

@@ -5,7 +5,7 @@ import Button from '../../components/Button.astro'
 import CallToAction from '../../components/CallToAction.astro'
 import CommonTraits from "../../components/CommonTraits.jsx"
 import featureList from '../../featureList.js'
-import {pageOpenGraph, assessShort} from "../../utils.js"
+import {pageOpenGraph, assessShort, interpolateTags} from "../../utils.js"
 import type {Module} from "../../featureList.js"
 
 
@@ -32,9 +32,16 @@ const {feature} = Astro.props;
 <Feature title={feature.title} imgSrc={feature?.imgSrc} imgAlt={feature?.imgAlt} commontraits> 
   <div slot="paragraphs">
     {feature.long.map(paragraph => {
-      return (
-        <p>{paragraph}</p>
-      )
+      if (paragraph[0] === "<"){
+        return (
+          <h2>{interpolateTags(paragraph.substring(0, paragraph.indexOf('>') + 1), paragraph)}</h2>
+          )
+      }
+      else {
+        return <p>{paragraph}</p>
+      }
+      
+    })}
     })}
     { feature.bullets ? <h3 style="margin-bottom: 2rem;margin-top: 2rem;margin-inline:auto;">{feature.bullets.header}</h3><ul class="list" >{feature?.bullets?.bullets?.map(point => {
     return (

@@ -45,7 +45,9 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
       display: block;
     }
   }
-  .paragraph {
+  .paragraph :global(h2)  {
+    margin-top: 3rem;
+    font-size: 180%;
   }
   @media (min-width: 890px){
     .largefeature{

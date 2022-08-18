@@ -6,7 +6,7 @@ import CallToAction from "../components/CallToAction.astro"
 import Stream from "../components/Stream.astro"
 import ConcernBlob from '../components/ConcernBlob.astro'
 import RMDiagram from '../components/RMDiagram.astro'
-import Carousel from '../components/Carousel.astro'
+// import Carousel from '../components/Carousel.astro'
 ---
 <HomepageLayout>
     <div class="shapeintro" >
@@ -317,15 +317,18 @@ import Carousel from '../components/Carousel.astro'
   }
 
 .producttraits {
-    flex-flow: row wrap;
+  display: grid!important;
+  grid-template-columns: repeat(auto-fit, minmax(18rem,  46%));    
+  flex-flow: row wrap;
     justify-content: center;
-    column-gap: 3rem;
+    column-gap: 5%;
     row-gap: 2.5rem;
     margin-bottom: 4rem;
     & > div {
       flex: 1 1 24rem;
-      min-width: 24rem;
+      min-width: 18rem;
       max-width: 32rem;
+      margin-inline: auto;
     }
   }
 
@@ -481,12 +484,13 @@ import Carousel from '../components/Carousel.astro'
   .concernblobcontainer {
     margin-top: 5rem;
     display: grid;
+     flex-wrap:wrap;
+    // justify-content: space-around;
     width: 106%;
     margin-left: -3%;
-    grid-template-columns: repeat(auto-fill, minmax(18rem, 30rem));
+    grid-template-columns: repeat(auto-fit, minmax(30rem,  1fr));
+    padding-inline: 4%;
     grid-auto-rows: 1fr;
-    justify-content: center;
-    // column-gap: 2%;
   }
   .partnersdiv {
     position: relative;

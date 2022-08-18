@@ -13,11 +13,11 @@
 		"postpublish": "git add --all && git commit && git push && firebase deploy"
 	},
 	"devDependencies": {
-		"@astrojs/sitemap": "^0.3.0",
-		"@astrojs/solid-js": "^0.4.1",
+		"@astrojs/sitemap": "^1.0.0",
+		"@astrojs/solid-js": "^1.0.0",
 		"autoprefixer": "^10.4.8",
-		"postcss-preset-env": "^7.7.2",
-		"prettier-plugin-astro": "^0.3.0",
+		"postcss-preset-env": "^7.8.0",
+		"prettier-plugin-astro": "^0.5.0",
 		"solid-js": "^1.4.8",
 		"typescript": "^4.7.4",
 		"vite-plugin-compress": "^2.1.1",
@@ -26,15 +26,15 @@
 	"dependencies": {
 		"@contentful/rich-text-html-renderer": "^15.13.1",
 		"@lottiefiles/lottie-player": "^1.5.7",
-		"astro": "^1.0.0-rc.6",
+		"astro": "^1.0.6",
 		"astro-imagetools": "^0.6.10",
 		"astro-seo": "^0.5.1",
-		"contentful": "^9.1.33",
-		"libphonenumber-js": "^1.10.11",
-		"quicklink": "^2.2.0",
+		"contentful": "^9.1.34",
+		"libphonenumber-js": "^1.10.12",
+		"quicklink": "^2.3.0",
 		"rellax": "^1.12.1",
-		"sass": "^1.54.2",
+		"sass": "^1.54.4",
 		"scrollreveal": "^4.0.9",
-		"vite-plugin-vsharp": "^1.1.4"
+		"vite-plugin-vsharp": "^1.1.5"
 	}
 }

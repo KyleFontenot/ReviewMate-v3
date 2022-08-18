@@ -5,8 +5,10 @@ import FlexDiv from '../components/FlexDiv.astro'
 import FAQSection from "../components/FAQSection.astro"
 import WhatsNew from '../components/WhatsNew.astro'
 import Stream from '../components/Stream.astro'
+import {pageOpenGraph} from '../utils.js'
 ---
-<StandardLayout>
+<StandardLayout openGraph={new pageOpenGraph('Resources', 
+  "ReviewMate hosts news, updates, and new discoveries in the medical auditing field through their blog. See relevant updates as they happen.")}>
     <h1 style="margin-bottom: 2rem;">Resources</h1>
 
 <Stream postType="blogPost" title="Blog Posts" size="small" />
