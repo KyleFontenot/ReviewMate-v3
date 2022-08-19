@@ -22,11 +22,18 @@
 	<div class="stepblock">
 		<slot name="5" />
 	</div>
-	<div class="timelinefilldiv"><div class="timelinefill"></div></div>
+	<div class="lineblock"></div>
+	<div class="stepblock">
+		<slot name="6" />
+	</div>
+	<div class="timelinefilldiv">
+		<div class="timelinefill">
+		</div>
+	</div>
 </div>
 
 <style lang="scss">
-	$numOfDivs: 5;
+	$numOfDivs: 6;
 	.timelinediv {
 		display: grid;
 		grid-template-columns: 3rem calc(100% - 3rem);
@@ -34,9 +41,9 @@
 		/* max-width: 50rem; */
 		margin-inline: auto;
 		position: relative;
-    width: 100%;
+    // width: 100%;
 		margin-top: 3rem;
-		width: clamp(8rem, 92%, 90rem);
+		width: clamp(8rem, 90%, 90rem);
 		margin-bottom: 3rem;
 	}
 	@media(max-width: 649px){
@@ -103,7 +110,7 @@
 		z-index: 200;
 	}
 	.stepblock {
-		padding: 1rem 0 1rem 2rem;
+		padding: 0rem 0 0.5rem 2rem;
 		height: 15rem;
 	}
 </style>

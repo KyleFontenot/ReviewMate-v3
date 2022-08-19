@@ -146,11 +146,14 @@ import {formatSlug} from '../utils'
      <h2>Audit</h2> 
      <p>Conduct audits in a transparent consolidated platform. Relay audit findings
      to other users easily.</p>
-     <SmallLink href="/auditingaccounts/inpatient/" text="IPPS"/>
-     <SmallLink href="/auditingaccounts/outpatient/" text="OPPS"/>
-     <SmallLink href="/auditingaccounts/profee/" text="Profee"/>
-     <SmallLink href="/auditingaccounts/asc/" text="ASC"/>
-     <SmallLink href="/auditingaccounts/cms-hcc/" text="CMS-HCC"/>
+     <SmallLink href="/auditing/inpatient/" text="IPPS"/>
+     <SmallLink href="/auditing/outpatient/" text="OPPS"/>
+     <SmallLink href="/auditing/profee/" text="Profee"/>
+     <SmallLink href="/auditing/asc/" text="ASC"/>
+     <SmallLink href="/auditing/cms-hcc/" text="CMS-HCC"/>
+     <SmallLink href="/auditing/selector-tools/" text="Selector Tools"/>
+     <SmallLink href="/auditing/record-tracker/" text="Record Tracker"/>
+     <SmallLink href="/auditingphysician-query-analysis/" text="Physician Query Analysis"/>
      </div>
       </div>
     </div>
@@ -159,12 +162,12 @@ import {formatSlug} from '../utils'
         <div>
      <h2>Report</h2> 
      <p>Either choose from a variety of standard options or create custom reports as seen fit. </p>
-     <SmallLink href="/" text="Report Cards"/>
-     <SmallLink href="/" text="Accuracy Manager"/>
-     <SmallLink href="/" text="Code Finder"/>
-     <SmallLink href="/" text="Dashboards"/>
-     <SmallLink href="/" text="Summary Templates"/>
-     <SmallLink href="/" text="Exportability"/>
+     <SmallLink href="/reporting/report-cards/" text="Report Cards"/>
+     <SmallLink href="/reporting/accuracy-manager/" text="Accuracy Manager"/>
+     <SmallLink href="/reporting/code-finder/" text="Code Finder"/>
+     <SmallLink href="/reporting/dashboards/" text="Dashboards"/>
+     <SmallLink href="/reporting/summary-templates/" text="Summary Templates"/>
+     <SmallLink href="/reporting/exportability/" text="Exportability"/>
      </div>
       </div>
     </div>
@@ -173,14 +176,29 @@ import {formatSlug} from '../utils'
         <div>
      <h2>Monitor</h2> 
      <p>Track findings in one centralized platform while augmenting workflows with artificial intelligence.</p>
-     <SmallLink href="/" text="Sample Selector"/>
-     <SmallLink href="/" text="Sample Selector"/>
+     <SmallLink href="/monitoring/staffing-analytics/" text="Sample Selector"/>
+     <SmallLink href="/monitoring/audit-the-auditor/" text="Audit The Auditor"/>
+     <SmallLink href="/monitoring/education-tracking/" text="Education Tracking"/>
+     <SmallLink href="/monitoring/review-insights/" text="ReviewMate Insights"/>
+     <SmallLink href="/monitoring/customizable-tasks/" text="Customizable Tasks"/>
+     <SmallLink href="/monitoring/risk-manager/" text="Risk Manager"/>
      </div>
     </div>
   </div>
+  <div slot="6">
+    <div class="timelinediv">
+        <div>
+     <h2>Educate</h2> 
+     <p>Keep training and education just peripheral to the auditing workflow for easily assigning tranining to coders, to growing knowledge, and to communicate transparently with others. </p>
+     <!-- <SmallLink href="/" text="Sample Selector"/>
+     <SmallLink href="/" text="Sample Selector"/> -->
+     </div>
+    </div>
+  </div>
+  
 </Timeline>
 
-<FlexDiv class="morecapabilities" style="background-color: #fafafa;width: 114%;margin-inline:-7%;padding: 2rem;">
+<FlexDiv class="morecapabilities" style="background-color: #fafafa;width: 114%;margin-top: -3rem;margin-inline:-7%;padding: 2rem;">
   <div class="scrollreveal" style="display:block;width:100%;text-align: center;">
     <h3>Explore more</h3>
   </div><br/>
@@ -511,7 +529,7 @@ import {formatSlug} from '../utils'
     flex-wrap:wrap;
     width: 106%;
     margin-left: -3%;
-    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(1rem, 50%));
     padding-inline: 4%;
     grid-auto-rows: 1fr;
   }
