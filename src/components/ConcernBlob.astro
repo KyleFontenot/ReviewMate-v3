@@ -1,9 +1,9 @@
 ---
 import styles from './ConcernBlob.module.scss'
 import CheckMark from './CheckMark.astro'
-const {variant, tagline, description, answer, img, imgAlt, className} = Astro.props
+const { tagline, description, answer, img, imgAlt, className} = Astro.props
 ---
-<div class:list={[styles.container, {[styles.variant2] : variant === 2}, className]}>
+<div class:list={[styles.container, className]}>
   <div class:list={[ styles.div ]} >
     <h4 class:list={[ styles.tagline, 'rellax2', 'concerntagline' ]} >{tagline}</h4> 
     <div class={ styles.body }>

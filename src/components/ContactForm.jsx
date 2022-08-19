@@ -42,7 +42,7 @@ export default function ContactForm (){
 		<div class={styles.container}>
 			<h2>
 				<img
-					src="/reviewmate-smallerlogo(regular).svg"
+					src="/reviewmate-smallerlogo-regular.svg"
 					class={styles.headerimg}
 				/>
 				Contact Us

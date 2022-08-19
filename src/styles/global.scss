@@ -1,5 +1,4 @@
-@import "FormBlock";
-// @import "Feature";
+
 
 $font1: "Inter";
 $font2: "Hind Madurai";
@@ -33,8 +32,6 @@ $color2hsl: $color2h, $color2s, $color2l;
 }
 html {
 	scroll-behavior: smooth;
-	// width: 100vw;
-	// max-width: 100vw;
 	max-width: 100%;
 }
 
@@ -84,7 +81,6 @@ p {
 }
 body {
 	width: 100%;
-	// background-color: #eee;
 	max-width: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -94,13 +90,9 @@ body {
 	perspective: 1px;
 	transform-style: preserve-3d;
 	height: 100%;
-	// overflow-y: scroll;
-	// overflow-x: hidden;
 }
 body {
 	height: 100%;
-	// overflow-y: hidden;
-	// overflow-x: hidden;
 }
 main {
 	background-color: white;
@@ -112,11 +104,8 @@ main {
 	color: #555;
 	margin: 0 auto;
 }
-
-
 a {
 	text-decoration: none;
-	// color:  #555;
 	color: hsl(var(--color1hsl));
 }
 dl {
@@ -125,7 +114,6 @@ dl {
 dt,
 dd {
 	margin-top: 0.6rem;
-	// margin-bottom: 1rem;
 }
 dd {
 	margin-left: 3rem;
@@ -135,7 +123,7 @@ blockquote {
 	padding: 30px 50px;
 	border-radius: 6px;
 	border-top-right-radius: 15px;
-	border-bottom-right-rastdius: 15px;
+	border-bottom-right-radius: 15px;
 	margin: 2rem 2rem 2rem 0.3rem;
 	width: 100%;
 	position: relative;
@@ -157,7 +145,7 @@ blockquote {
 }
 
 li {
-	list-style-image: url('/icons/right-arrow(list).svg');	
+	list-style-image: url('/icons/right-arrow-list.svg');	
 }
 .bullet {
 	line-height: 2rem;
@@ -191,7 +179,6 @@ footer * {
 	}
 	&:hover,
 	&:focus-visible {
-		// border-bottom: 1px solid hsl(var(--color1hsl));
 		color: white;
 	}
 	&:hover::after,
@@ -201,7 +188,6 @@ footer * {
 }
 html.sr .load-hidden {
 	visibility: hidden;
-	// opacity: 0;
 }
 
 .flexdiv {
@@ -209,7 +195,6 @@ html.sr .load-hidden {
 	flex-flow: column nowrap;
 	align-items: center;
 	width: 100%;
-	// justify-content: space-around;
 	justify-content: center;
 	margin-bottom: 0;
 }
@@ -320,14 +305,9 @@ html.sr .load-hidden {
 	transition: background-color 0.2s;
 	width: 100%;
 	margin: 0;
-	// &:hover {
-	//   background-color: #fcfcfc;
-	// }
 }
 
 #skiptocontent {
-	// visibility: hidden;
-	// outline: 2px solid purple;
 	opacity: 0;
 	position: absolute;
 	left: 1rem;

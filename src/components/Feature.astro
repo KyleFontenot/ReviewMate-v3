@@ -50,11 +50,9 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
     font-size: 180%;
   }
   @media (min-width: 890px){
-    .largefeature{
-      .intro {
+    .largefeature .intro{
         flex: 1 1 60%;
         padding: 2rem 3%;
-      }
     }
     .largefeature{
       position: relative;
@@ -117,8 +115,6 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
     & > h3 {
       margin-bottom: 0.6rem;
       letter-spacing: 0;
-    }
-    &:hover {
     }
   }
   .subtitle {

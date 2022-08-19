@@ -8,7 +8,6 @@ import featureList from '../../featureList.js'
 import {pageOpenGraph, assessShort, interpolateTags} from "../../utils.js"
 import type {Module} from "../../featureList.js"
 
-
 export function getStaticPaths() {
     let monitoringModules : Module[] = [];
     Object.values(featureList).forEach(category => { 

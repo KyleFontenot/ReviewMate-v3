@@ -6,7 +6,6 @@ import Tidbit from '../components/Tidbit.astro'
 import featureList from '../featureList.js'
 import {pageOpenGraph} from '../utils.js'
 
-
 const capitalizeString = (str : string) => {
   if (!str.includes('_')){
     let strArr = str.split('')
@@ -67,11 +66,9 @@ contrast(88%); margin-right: 1rem; padding-top: 10px; margin-left:10px;"/></h4>
     <tbody>
 
     {Object.entries(featureList).map(category => {
-      
       return (<>
         <tr><td colspan={ 4 } class="moduleheading"><h3>{capitalizeString(category[0])}</h3></td></tr>
         {category[1].map(feature => {
-          // console.log(feature)
           return (
             <tr>
               <td><FeatureDropdown header={feature.title} body={feature.short} link={feature.link} client:idle /></td>
@@ -82,24 +79,10 @@ contrast(88%); margin-right: 1rem; padding-top: 10px; margin-left:10px;"/></h4>
           )
         })}
       </>)
-      
     } ) }
-
     </tbody>
   </table>
 </div>
-
-<script>
-  let headtop = document.querySelector('#wholetable').offsetTop;
-  let scrollTop = window.scrollY;
-
-
-  window.onresize = () => {
-      headtop = document.querySelector('#wholetable').offsetTop;
-    }
-
-</script>
-
 </StandardLayout>
 
 <style lang="scss">

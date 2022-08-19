@@ -1,5 +1,4 @@
 ---
-import FlexDiv from './FlexDiv.astro'
 import Button from './Button.astro'
 interface CTAProps {
   explain?: boolean;
@@ -9,9 +8,9 @@ interface CTAProps {
   style?: string;
   padding?: string;
 }
-const {explain, previousButton, color = 'white', header, style, padding} = Astro.props as CTAProps;
+const {previousButton, color = 'white', header, style, padding} = Astro.props as CTAProps;
 
-const punner = (prop, cssProp) => prop ? (cssProp + ':' + prop + ';') : ''
+const punner = (prop: any, cssProp: any) => prop ? (cssProp + ':' + prop + ';') : ''
 ---
 <div class={ `ctadiv cta--${color}` } style={punner(padding, 'padding') + style}>
   {previousButton && <Button as="link" outline leftArrow text={previousButton.text} href={previousButton.href}/>}

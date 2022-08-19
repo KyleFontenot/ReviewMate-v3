@@ -14,13 +14,10 @@ interface StandardLayoutProps {
 const {slug, featureHeader = { src :'',alt: ''} } = Astro.props as StandardLayoutProps
 
 let openGraph = Astro.props.openGraph || new pageOpenGraph(slug, "An all-in-one software platform for medical code auditing. Streamline medical code auditing workflows by expediting findings, integrating communication, maintaining fidelity, and optimizing workflow through automation.")
-
 ---
 
 <DocumentLayout {openGraph}>
   {featureHeader.src !== '' ? <FeatureHeader featureHeader={featureHeader}/> : <Header/>}
-
   <main id="main"><slot /></main>
-    
   <Footer/>
 </DocumentLayout>

@@ -29,46 +29,46 @@ const {feature} = Astro.props;
 <FeatureLayout 
   openGraph={new pageOpenGraph(feature.title, 
   assessShort(feature.short, feature.long))}>
-<Feature title={feature.title} imgSrc={feature?.imgSrc} imgAlt={feature?.imgAlt} commontraits> 
-  <div slot="paragraphs">
-    {feature.long.map(paragraph => {
-      if (paragraph[0] === "<"){
-        return (
-          <h2>{interpolateTags(paragraph.substring(0, paragraph.indexOf('>') + 1), paragraph)}</h2>
+  <Feature title={feature.title} imgSrc={feature?.imgSrc} imgAlt={feature?.imgAlt} commontraits> 
+    <div slot="paragraphs">
+      {feature.long.map(paragraph => {
+        if (paragraph[0] === "<"){
+          return (
+            <h2>{interpolateTags(paragraph.substring(0, paragraph.indexOf('>') + 1), paragraph)}</h2>
+          
+            )
+        }
+        else {
+          return <p>{paragraph}</p>
+        }
         
-          )
-      }
-      else {
-        return <p>{paragraph}</p>
-      }
-      
-    })}
-    })}
-    {feature.bullets ? <h3 class="bulleth3" >{feature.bullets.header}</h3><ul class="list" >{feature?.bullets?.bullets?.map(point => {
-    return (
-      <li class="bullet">{point}</li>
-    )
-  }
-  )}</ul> : 
+      })}
+      })}
+      {feature.bullets ? <h3 class="bulleth3" >{feature.bullets.header}</h3><ul class="list" >{feature?.bullets?.bullets?.map(point => {
+      return (
+        <li class="bullet">{point}</li>
+      )
+    }
+    )}</ul> : 
 
-  (feature?.bullets !== undefined && feature?.bullets?.length > 1) ?
-   <ul class="list" >{feature?.bullets?.map(point => {
-    return (
-      <li class="bullet">{point}</li>
-    )
-  }
-  )}</ul> 
-  : 
-  ''} 
-  </div>
-  {feature?.commontraits === true ? <CommonTraits client:idle /> : ''}
-  
-<p class="explanation" style="margin-top:1rem;text-align: center;width:100%;font-size: 120%;">Any particular questions or inquiries? We'd like to hear from you.</p>
-<CallToAction padding="1rem 2% 2rem">
-  <Button as="link" outline text="More Auditing Features" href="/auditing/" ></Button>
-  <Button as="link" color="yellow" text="Contact Us" >Contact Us</Button>
-</CallToAction>
-</Feature>
+    (feature?.bullets !== undefined && feature?.bullets?.length > 1) ?
+    <ul class="list" >{feature?.bullets?.map(point => {
+      return (
+        <li class="bullet">{point}</li>
+      )
+    }
+    )}</ul> 
+    : 
+    ''} 
+    </div>
+    {feature?.commontraits === true ? <CommonTraits client:idle /> : ''}
+    
+    <p class="explanation" style="margin-top:1rem;text-align: center;width:100%;font-size: 120%;">Any particular questions or inquiries? We'd like to hear from you.</p>
+    <CallToAction padding="1rem 2% 2rem">
+      <Button as="link" outline text="More Auditing Features" href="/auditing/" ></Button>
+      <Button as="link" color="yellow" text="Contact Us" >Contact Us</Button>
+    </CallToAction>
+  </Feature>
 </FeatureLayout>
 <style lang="scss">
   .list {

@@ -5,11 +5,9 @@ import { formatSlug } from '../../featureList.js'
 import StandardLayout from "../../layouts/StandardLayout.astro"
 import Button from "../../components/Button.astro"
 
-
-
 export async function getStaticPaths() {
   let whatsNew = await contentfulItems('releaseNotes')
-  return whatsNew.map(release => 
+  return whatsNew.map((release: any) => 
   {
     return({
       params: {slug: formatSlug(release.fields.title)}, 
@@ -46,7 +44,6 @@ let formatDate = new Date(release.fields.month)
 </StandardLayout>
 
 <style lang="scss">
-
   .navcrumbs {
     position: relative;
     display: block;
