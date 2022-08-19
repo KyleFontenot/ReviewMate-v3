@@ -33,6 +33,7 @@ const {title, body, date, author, img, imgAlt} = Astro.props;
 
 const articleOG = new ArticleOpenGraph(title, "something", img, imgAlt, date, author)
 let url = Astro.canonicalURL.toString().concat(`/${formatSlug(title)}`)
+console.log(body)
 ---
 <StandardLayout slug={title} openGraph={articleOG} >
 <article class="blogArticle">
@@ -148,6 +149,7 @@ article {
     margin-inline: auto!important;
     text-align: center;
     margin-bottom: 3rem!important;
+    max-height: 30rem;
   }
   .twitter-share-button {
     display: block;
@@ -181,6 +183,21 @@ article {
      }
   }
 
+  .blockquote { 
+    background-color: #f2f2f2;
+    border-radius: 6px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: 1.1rem;
+    margin: 2rem 2rem 2rem 0.3rem;
+    padding: 30px 50px;
+    position: relative;
+    width: 100%;
+   }
+   .blogimage {
+    max-height: 20rem!important;
+    outline: 5px solid red!important;
+   }
   .sharecontainer {
     display:flex;
     flex-flow: row nowrap; 

@@ -24,6 +24,7 @@
 	},
 	"dependencies": {
 		"@contentful/rich-text-html-renderer": "^15.13.1",
+		"@contentful/rich-text-plain-text-renderer": "^15.12.1",
 		"@lottiefiles/lottie-player": "^1.5.7",
 		"astro": "^1.0.6",
 		"astro-imagetools": "^0.6.10",
