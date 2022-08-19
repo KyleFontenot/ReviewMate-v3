@@ -10,11 +10,11 @@ const {moduleType, customDescription, featureHeader = {
     src: '',
     alt: '',
   }} = Astro.props;
-let auditingModules : Module[] = [];
+let modules : Module[] = [];
 
 Object.values(featureList).forEach(category => { 
   let testingGrab = category.filter(module => {
-    module.section === moduleType ? auditingModules.push(module) : false
+    module.section === moduleType ? modules.push(module) : false
   })
  })
 ---
@@ -26,10 +26,13 @@ Object.values(featureList).forEach(category => {
 
   <FeatureCategory title={moduleType} >
     <div slot="generalinfo" class="intoparagraph" style="">
-      <slot/>
+      <slot name="introparagraph"/>
     </div>
-    <div class="featurelist">
-      {auditingModules.map(module => {
+    <slot />
+
+    {modules.length > 0 && 
+      <div class="featurelist">
+      {modules.map(module => {
         return (
           <Feature size="small" title={module.title} href={`/${moduleType.toLowerCase()}/${module.slug}/`}>
             <p style="text-indent: 0;">{module.short}</p>
@@ -37,6 +40,8 @@ Object.values(featureList).forEach(category => {
         )
       })}
     </div>
+    }
+    
   </FeatureCategory>
 </StandardLayout>
 <style lang="scss">

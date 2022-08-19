@@ -1,0 +1,57 @@
+---
+import { Img } from "astro-imagetools/components"
+const {imgBorder} = Astro.props;
+---
+<div class="card">
+  {imgBorder && 
+    <div class="imgBorder">
+      <Img src={imgBorder} alt="some picture" objectFit="cover" />
+    </div>
+  }
+  <div class="body">
+    <slot name="header"/>
+    <slot name="subheader" />
+    <slot />
+  </div>
+</div>
+<style lang="scss">
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    margin: 1rem;
+    position: relative;
+
+  }
+  .imgBorder {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4rem;
+    height: 100%;
+    & :global(img) {
+      position: relative!important;
+      height: 100%!important;
+      overflow: hidden;
+      z-index: 2;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to bottom, hsl(var(--color1hsl)) 0%, hsla(var(--color1h), 70%, 20%, 30%) );
+        // background-color: hsla(var(--color1hsl), 30%);
+        z-index: 10;
+      }
+    }
+  }
+  .body {
+    padding: 1.5rem;
+    margin-left: 4rem;
+  }
+</style>

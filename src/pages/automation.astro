@@ -1,27 +1,58 @@
 ---
-import StandardLayout from "../layouts/StandardLayout.astro"
-import Feature from "../components/Feature.astro"
-import FeatureCategory from "../components/FeatureCategory.astro"
-import {pageOpenGraph} from '../utils.js'
----
-<StandardLayout 
-  openGraph={new pageOpenGraph('Automation Features', 
-  "For top-down administration uses, ReviewMate enhances capabilities of many managers, clients, and end-users of the auditing process. Time tracking, staffing analytics, integrations, and elaborate risk management are focuses of ReviewMate.")}>
-  <FeatureCategory title="Automation" imageBG="/src/images/automationoverview.jpg">
-    <div slot="generalinfo" class="intoparagraph">
-      <p></p>
-    </div>
-    <!-- Insert body here -->
-  
-  </FeatureCategory>
-</StandardLayout>
 
+import FeatureCategoryLayout from "../layouts/FeatureCategoryLayout.astro"
+import CallToAction from '../components/CallToAction.astro'
+import Card from '../components/Card.astro'
+---
+<FeatureCategoryLayout moduleType="Automation" customTitle="Automation and artificial intelligence extends the auditors capabilities in ReviewMate by using collective insight in addition to insight from each individual institution." featureHeader={{src:'/src/images/automationoverview.jpg', alt: "Empty factory warehouse."}}>
+  <p slot="introparagraph">Artificial intelligence and automation of medical code auditing is the future. ReviewMate innovates the industry by intelligently assisting the auditor with expedient insight pulled directly from real data in real-time.</p>
+  <br>
+
+  <div class="riskmanager">
+    <Card imgBorder="/src/images/automationoverview.jpg">
+      <h2 slot="header">Risk Manager</h2>
+      <p>Risk Manager is the hub of ReviewMate that facilitates methods of interactive insight. Auditors can assess all suggested risks, configure how the risks interact with the auditor's workflow, and view general insight from the community using ReviewMate Insights.</p>
+      <p>Everything in Risk Manager is configurable, from setting how an auditor receives a notification from changing HL7 data from the medical records, or from common coding mistakes from any scalable community.</p>
+      <ul class="list">
+        <li>
+          Discover opportunities 
+        </li>
+        <li>
+          Reveal common coding faults
+        </li>
+        <li>
+          Apply guidance intuitively
+        </li>
+      </ul>
+    </Card>
+  </div>
+
+<CallToAction>
+
+</CallToAction>
+  </FeatureCategoryLayout>
 <style lang="scss">
-  .intoparagraph{ 
+  .riskmanager {
+    background-color: #fafafa;
+    width: 114%;
+    margin-inline:-7%;
+    padding:2rem 10%;
+    
+    display: grid;
+    place-items: center;
+
+  }
+  .list{
+    margin-top: 1.5rem;
+    & > li {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .introparagraph{ 
     width: 100%;
    }
   @media(min-width:540px){
-  .intoparagraph{ 
+  .introparagraph{ 
     width: clamp(4rem, 76%, 40rem);
    }
   }
