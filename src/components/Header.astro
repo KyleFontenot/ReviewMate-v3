@@ -6,7 +6,9 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
   
 <header>
 <a href="#main" aria-label="Skip to content" id="skiptocontent" tab-index="0">Skip to content</a>
-  <a href="/" class="logo" style=""><img src="/reviewmate-mainlogo(white).svg" alt="ReviewMate logo" style="max-width:20rem;" width="320" height="73" /></a>
+  <a href="/" class="logo" style="">
+    <img src="/reviewmate-mainlogo(white).svg" alt="ReviewMate logo" style="max-width:20rem;" width="320" height="73" />
+  </a>
   
   <div id="mobilenavbutton" onClick="
     if (document.querySelector('nav').classList.contains('mobilemenu--open')){
@@ -60,7 +62,8 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
   }
   .logo {
     // max-width: 60vw;
-    width: clamp(10rem, 20rem, calc(100% - 425px));
+    // width: clamp(10rem, 20rem, calc(100% - 425px));
+    height: 8rem;
     // width: 100%;
     margin-top: 16px;
     display: inline-block;

@@ -6,7 +6,9 @@ import CallToAction from "../components/CallToAction.astro"
 import Stream from "../components/Stream.astro"
 import ConcernBlob from '../components/ConcernBlob.astro'
 import RMDiagram from '../components/RMDiagram.astro'
-// import Carousel from '../components/Carousel.astro'
+import Timeline from '../components/Timeline.astro'
+import SmallLink from '../components/SmallLink.astro'
+import {formatSlug} from '../utils'
 ---
 <HomepageLayout>
     <div class="shapeintro" >
@@ -57,11 +59,8 @@ import RMDiagram from '../components/RMDiagram.astro'
     </div>
   </FlexDiv>
 
-  <!-- <h3 style="margin-bottom: 2rem;text-align:center;">Trusted By:</h3><Carousel/> -->
-
-
   <FlexDiv padding="2rem 0 3rem" className="red scrollreveal" style="margin-top: 5rem;background: radial-gradient(hsla(var(--color2hsl), 40%), hsla(var(--color2hsl), 20%) 20%, white 60%); ">
-  <h3 style="margin-bottom: 5rem;">Trusted By:</h3>
+  <h3 style="margin-bottom: 3rem;">Trusted By:</h3>
   <div class="partnersdiv">
       <a href="https://www.comforcehealth.com/" target="__blank" rel="noopener">
           <img class="partnerlogo" src="/brandsvgs/comforcehealth.svg" height="180" width="336" alt="Comforce Health logo" />
@@ -114,13 +113,88 @@ import RMDiagram from '../components/RMDiagram.astro'
 </div>
 
 <RMDiagram />
+
+<Timeline>
+    <div slot="1">
+      <div class="timelinediv">
+        <div>
+          <h2>Integrate</h2> 
+          <p>Securely connect to your universe of data seamlessly. Imported
+          data is available platform-wide and ready for selection. Data sources keep a subscription that keep all selected data live.</p> 
+          <SmallLink href={`/security/${formatSlug("Integration Manager")}/`} text="Integration Manager"/> 
+          <SmallLink href={`/security/${formatSlug("Document Manager")}/`} text="Document Manager"/> 
+          <SmallLink href={`/security/${formatSlug("Multifactor Authentication")}/`} text="Multifactor Authentication"/> 
+          <SmallLink href={`/security/${formatSlug("LDAP / Active Directory")}/`} text="LDAP / Active Directory"/> 
+          <SmallLink href={`/security/${formatSlug("VPN Integration")}/`} text="VPN Integration"/> 
+        </div> 
+      </div>
+    </div>
+    <div slot="2">
+      <div class="timelinediv">
+        <div>
+        <h2>Sample</h2> 
+        <p>Apply flexible rules and parameters to concisely gather accounts for auditing using a multitude of parameters and options. Randomization and automation tools augment any sampling need.</p>
+          <SmallLink href={`/security/${formatSlug("Sample Selector")}/`} text="Sample Selector"/> 
   
+          <SmallLink href={`/security/${formatSlug("Risk Manager")}/`} text="Risk Manager"/> 
+      </div>
+      </div>
+    </div>
+    <div slot="3">
+    <div class="timelinediv">
+        <div>
+     <h2>Audit</h2> 
+     <p>Conduct audits in a transparent consolidated platform. Relay audit findings
+     to other users easily.</p>
+     <SmallLink href="/auditingaccounts/inpatient/" text="IPPS"/>
+     <SmallLink href="/auditingaccounts/outpatient/" text="OPPS"/>
+     <SmallLink href="/auditingaccounts/profee/" text="Profee"/>
+     <SmallLink href="/auditingaccounts/asc/" text="ASC"/>
+     <SmallLink href="/auditingaccounts/cms-hcc/" text="CMS-HCC"/>
+     </div>
+      </div>
+    </div>
+    <div slot="4">
+    <div class="timelinediv">
+        <div>
+     <h2>Report</h2> 
+     <p>Either choose from a variety of standard options or create custom reports as seen fit. </p>
+     <SmallLink href="/" text="Report Cards"/>
+     <SmallLink href="/" text="Accuracy Manager"/>
+     <SmallLink href="/" text="Code Finder"/>
+     <SmallLink href="/" text="Dashboards"/>
+     <SmallLink href="/" text="Summary Templates"/>
+     <SmallLink href="/" text="Exportability"/>
+     </div>
+      </div>
+    </div>
+    <div slot="5">
+    <div class="timelinediv">
+        <div>
+     <h2>Monitor</h2> 
+     <p>Track findings in one centralized platform while augmenting workflows with artificial intelligence.</p>
+     <SmallLink href="/" text="Sample Selector"/>
+     <SmallLink href="/" text="Sample Selector"/>
+     </div>
+    </div>
+  </div>
+</Timeline>
+
+<FlexDiv class="morecapabilities" style="background-color: #fafafa;width: 114%;margin-inline:-7%;padding: 2rem;">
+  <div class="scrollreveal" style="display:block;width:100%;text-align: center;">
+    <h3>Explore more</h3>
+  </div><br/>
+
+  <Button text="Auditing" href="/auditing/" outline className="scrollreveal"></Button>
+  <Button text="Automation" href="/automation/" outline className="scrollreveal"></Button>
+  <Button text="Reporting" href="/reporting/" outline className="scrollreveal"></Button>
+  <Button text="Security" href="/security/" outline className="scrollreveal"></Button>
+  <Button text="Monitoring" href="/monitoring/" outline className="scrollreveal"></Button>
+</FlexDiv>
   
+<Stream postType="blogPost" title="Blog" size="small" className="scrollreveal"/>
 
-
-<Stream postType="blogPost" title="Blog" size="small"/>
-
-<CallToAction color="red" header="Let us show you how you can start saving hours a week" style="margin-bottom: -3rem;" >
+<CallToAction color="red" header="Let us show you how you can start saving hours a week" style="margin-bottom: -3rem;padding-left:10%;padding-right:10%;" >
   <Button color="white" as="link" href="/keyfeatures/" text="Discover our Key Features" size="2" style="z-index:30;margin-top: 2rem;"/>
   <Button color="white" as="link" href="/plans/" text="Explore our plans and features" size="2" style="z-index:30;margin-top: 2rem;"/>
   <Button color="yellow" as="link" href="/contact/" text="Contact Us" size="2" style="z-index:30;margin-top: 2rem;"/>
@@ -271,6 +345,8 @@ import RMDiagram from '../components/RMDiagram.astro'
   @media(max-width:669px){
     #productintroscreen{
       bottom: -35vw;
+      bottom: -4rem;
+      box-shadow:none;
     }
   }
   .shapeintrobg {
@@ -395,7 +471,7 @@ import RMDiagram from '../components/RMDiagram.astro'
       height: 100%;
       width: clamp(20rem, 40vw, 90rem);
       position: absolute;
-      left: calc(53vw + 2rem);
+      left: calc(53vw + 1rem);
       z-index: 10;
       overflow:hidden;
       // overflow: visible;
@@ -488,7 +564,7 @@ import RMDiagram from '../components/RMDiagram.astro'
     // justify-content: space-around;
     width: 106%;
     margin-left: -3%;
-    grid-template-columns: repeat(auto-fit, minmax(30rem,  1fr));
+    grid-template-columns: repeat(auto-fit, 1fr);
     padding-inline: 4%;
     grid-auto-rows: 1fr;
   }
@@ -498,7 +574,7 @@ import RMDiagram from '../components/RMDiagram.astro'
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    column-gap: 3rem;
+    column-gap: 1rem;
     width: 100%;
     & > a { 
       filter: invert(23%) sepia(18%) saturate(7185%) hue-rotate(347deg) brightness(95%) contrast(84%);
@@ -536,5 +612,7 @@ import RMDiagram from '../components/RMDiagram.astro'
       flex: 2 1 40%;
     }
   }
-   
+ .morecapabilities{
+  outline: 2px solid purple;
+ }  
 </style>

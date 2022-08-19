@@ -8,17 +8,18 @@ import Arrow from "./Arrow.astro"
     color?: "maroon" | "yellow" | "white";
     style?: string; 
     size?: number;
-    leftArrow?: boolean
+    leftArrow?: boolean;
+    className?: string
   }
-const {text, as = "link", href, outline, color = "maroon", style, size = 1, leftArrow} = Astro.props as ButtonProps
+const {text, as = "link", href, outline, color = "maroon", style, size = 1, leftArrow, className} = Astro.props as ButtonProps
 ---
 {as === "link" ? 
-  <a href={href} class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}, {[`button--${size}`] : size}]} {style}>{leftArrow ? <Arrow/> : ''}{text}</a> : 
+  <a href={href} class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}, {[`button--${size}`] : size}, className]} {style}>{leftArrow ? <Arrow/> : ''}{text}</a> : 
 as === ("submit" || "input") ? 
 
-  <input type="submit" class:list={['button', {'button--outline': outline, 'button--leftarrow': leftArrow}, {[`button--${color}`] : color}, {[`button--${size}`] : size}]} value={text} {style}/> : 
+  <input type="submit" class:list={['button', {'button--outline': outline, 'button--leftarrow': leftArrow}, {[`button--${color}`] : color}, {[`button--${size}`] : size}, className]} value={text} {style}/> : 
 
-<button class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}, {[`button--${size}`] : size}]} {style}>{leftArrow ? <Arrow/> : ''}{text}</button>
+<button class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}, {[`button--${size}`] : size}, className]} {style}>{leftArrow ? <Arrow/> : ''}{text}</button>
   }
 
 <style lang="scss" is:global>

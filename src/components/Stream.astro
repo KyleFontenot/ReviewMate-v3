@@ -3,7 +3,7 @@ import {formatSlug} from '../featureList.js'
 import Article from "./Article.astro"
 import Arrow from "./Arrow.astro"
 import { contentfulItems} from './contentfulClient.js'
-const {size = "small", title, postType = "blogPost", style}  = Astro.props;
+const {size = "small", title, postType = "blogPost", style, className}  = Astro.props;
 
 let posts = await contentfulItems(postType)
 
@@ -12,10 +12,10 @@ const months = ['January', 'February',
 const descriptionCutoff = 120
 
 ---
-<div class='blogwrapper' id="blog" {style}>
+<div class:list={ [ 'blogwrapper', className ] } id="blog" {style}>
   {size === 'large' ? 
-  <h1 style="width: 100%;">{title}</h1> : 
-  <h3 style="width: 100%;">{title}</h3>}
+  <h1 style="width: 100%;margin-bottom:4rem;">{title}</h1> : 
+  <h3 style="width: 100%;margin-bottom: 2rem;">{title}</h3>}
   <div class="container">
     <!-- <slot/> -->
 
@@ -39,7 +39,7 @@ const descriptionCutoff = 120
     
   </div>
 
-  {size === "small" && <a href={postType === "blogPost" ? '/blog/' : postType === 'articlePost' ? '/articles' : '/'} style="display:block;text-align:right;font-size: 140%;margin: 0 0 2.5rem auto;">See more blog posts <Arrow direction="upright"/></a>}
+  {size === "small" && <a href={postType === "blogPost" ? '/blog/' : postType === 'articlePost' ? '/articles' : '/'} style="display:block;text-align:right;font-size: 110%;margin: 0 0 2.5rem auto;">See more blog posts <Arrow direction="upright"/></a>}
 </div>
 <style lang="scss">
 .blogwrapper {
@@ -47,7 +47,7 @@ const descriptionCutoff = 120
   background-color: #f2f2f2;
   width: 114%;
   margin-inline: -7%;
-  padding: 2% 5%;
+  padding: 2% 9%;
 	height: 100%;
 	display: block;
 	& > h3, & > h2 {
