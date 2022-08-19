@@ -195,7 +195,7 @@ import {formatSlug} from '../utils'
 <Stream postType="blogPost" title="Blog" size="small" className="scrollreveal"/>
 
 <CallToAction color="red" header="Let us show you how you can start saving hours a week" style="margin-bottom: -3rem;padding-left:10%;padding-right:10%;" >
-  <Button color="white" as="link" href="/keyfeatures/" text="Discover our Key Features" size="2" style="z-index:30;margin-top: 2rem;"/>
+  <!-- <Button color="white" as="link" href="/keyfeatures/" text="Discover our Key Features" size="2" style="z-index:30;margin-top: 2rem;"/> -->
   <Button color="white" as="link" href="/plans/" text="Explore our plans and features" size="2" style="z-index:30;margin-top: 2rem;"/>
   <Button color="yellow" as="link" href="/contact/" text="Contact Us" size="2" style="z-index:30;margin-top: 2rem;"/>
 </CallToAction>
@@ -248,7 +248,7 @@ import {formatSlug} from '../utils'
         top: 2rem;
         margin: 0 0 2rem;
         display: block;
-        text-shadow: 0 4px 14px #22222299;
+        text-shadow: 0 4px 12px #000000aa;
       }
       & > p {
         margin-top: 4rem;
@@ -268,7 +268,6 @@ import {formatSlug} from '../utils'
   }
   
   #testscreen {
-    // height: auto;
     height: 80vw;
   }
   @media (max-width: 446px ){
@@ -285,47 +284,6 @@ import {formatSlug} from '../utils'
       bottom: calc(22vw * 0.80 + 12rem);
     }
   }
-  // #productintroscreen{
-  //   // width: 80%;
-  //   max-width: 70rem;
-  //   max-height: 40rem;
-  //   min-height: 26rem;
-  //   // height: 100%;
-  //   aspect-ratio: 6 / 4;
-  //   margin-inline: auto;
-  //   border-radius: 8px;
-  //   position: absolute;
-  //   display: inline-block;
-  //   left: 50%;
-  //   bottom: -8rem;
-  //   transform-origin: 50% 50%;
-  //   transform: translate3d(-50%, 0, 0);
-  //   z-index: 300;
-  //   max-width: 98%;
-  //   & > iframe {
-  //     margin-bottom: -7px;
-  //     width: 100%;
-  //     // max-width: 98%;
-  //     height: 100%;
-  //     aspect-ratio: 4 / 3;
-  //     margin-inline: auto;
-  //     border-radius: 8px;
-  //     position: absolute;
-  //     display: inline-block;
-  //     left: 50%;
-  //     bottom: 0;
-  //     transform-origin: 50% 50%;
-  //     transform: translate3d(-50%, 0, 0);
-  //     box-shadow: 0 8px 14px -3px #000;
-  //   }
-  //   & > img {
-  //     position: relative;
-  //     top: 0;
-  //     width: 100%;
-  //     display: block;
-  //     z-index: 100;
-  //   }
-  // }
   #productintroscreen{
     position: absolute;
     bottom: -8rem;
@@ -431,7 +389,6 @@ import {formatSlug} from '../utils'
       }
       & p, & h3 {
         max-width: 44vw;
-        
       }
       & > h2 {
         line-height: 3rem;
@@ -474,7 +431,6 @@ import {formatSlug} from '../utils'
       left: calc(53vw + 1rem);
       z-index: 10;
       overflow:hidden;
-      // overflow: visible;
       transform:  translate(15%, 0) rotate3d(0, -20, 0, 10deg);
       & > img {
         position: absolute;
@@ -507,17 +463,12 @@ import {formatSlug} from '../utils'
   }
    
    .producttraits{
-      // flex-flow: row wrap;
-      // justify-content: space-around;
       margin-top: 3rem;
       & > div {
-        // flex: 2 1 20rem;
-        // max-width: 50%;
         & > img{
           filter: invert(22%) sepia(69%) saturate(1660%) hue-rotate(345deg) brightness(100%) contrast(86%);
         }
       }
-
      & h3 {
        letter-spacing: 0;
      }
@@ -528,8 +479,6 @@ import {formatSlug} from '../utils'
     flex-direction: row;
     flex-wrap: nowrap;
     max-width: 100%;
-
-    
     & > div:nth-of-type(2){
       flex: 1 1 30rem;
       height: 15rem;
@@ -538,7 +487,6 @@ import {formatSlug} from '../utils'
       height: 100%;
       margin: auto 0 auto auto;
       max-width: 13rem;
-
     }
   }
   @media (max-width: 790px){
@@ -560,8 +508,7 @@ import {formatSlug} from '../utils'
   .concernblobcontainer {
     margin-top: 5rem;
     display: grid;
-     flex-wrap:wrap;
-    // justify-content: space-around;
+    flex-wrap:wrap;
     width: 106%;
     margin-left: -3%;
     grid-template-columns: repeat(auto-fit, 1fr);
@@ -578,8 +525,6 @@ import {formatSlug} from '../utils'
     width: 100%;
     & > a { 
       filter: invert(23%) sepia(18%) saturate(7185%) hue-rotate(347deg) brightness(95%) contrast(84%);
-      // width: 336px;
-      // height: 180px;
       position: relative;
       text-align: center;
       transform: scale(1);
@@ -593,12 +538,10 @@ import {formatSlug} from '../utils'
       }
      }
   }
-  
   .rmanswer {
     display: flex;
     flex-flow: row wrap;
     margin-inline: auto;
-    // width: 70%;
     padding: 5rem 5% 3rem;
     & h3 {
       display: inline-block;
