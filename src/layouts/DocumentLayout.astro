@@ -15,12 +15,13 @@
   const imageAlt = Astro.props.imageAlt || "ReviewMate's brand logo"
   const url = Astro.props.url || "https://deft-cuchufli-bfd7e3.netlify.app/"
   let openGraph = Astro.props.openGraph || new defaultOpenGraph(metadata.title, description, image, imageAlt, url)
+  // console.log(openGraph.title)
 ---
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <title set:html={title}></title> -->
-    <SEO title={openGraph.basic.title} description={openGraph.description} canonical={canonical} type={openGraph.basic.type} {openGraph}/>
+    <SEO title={openGraph.title} description={openGraph.description} canonical={canonical} type={openGraph.basic.type} {openGraph}/>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">

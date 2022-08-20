@@ -1,13 +1,13 @@
 ---
-import { Img } from "astro-imagetools/components"
+// import { Img } from "astro-imagetools/components"
 const {imgBorder} = Astro.props;
 ---
 <div class="card">
-  {imgBorder && 
+  <!-- {imgBorder && 
     <div class="imgBorder">
       <Img src={imgBorder} alt="some picture" objectFit="cover" />
     </div>
-  }
+  } -->
   <div class="body">
     <slot name="header"/>
     <slot name="subheader" />

@@ -1,7 +1,8 @@
 ---
-import { Img } from "astro-imagetools/components"
 import CommonTraits from "./CommonTraits.jsx"
-const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
+import {Img } from 'astro-imagetools/components'
+const {size = "large", title, href, imgSrc, imgAlt} = Astro.props;
+
 ---
 {size === "large" ? 
 <article class="largefeature">
@@ -13,9 +14,8 @@ const {size = "large", title, href, imgSrc, imgAlt, commontraits} = Astro.props
         <slot name="bulletpoints" />
         </div>
     </div>
-    <Img src={imgSrc} alt={imgAlt} height={800}/>
     <slot name="common" />
-    
+    <Img src={imgSrc} alt={imgAlt} height={800}/>
     <slot/>
     
   </div>

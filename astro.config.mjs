@@ -4,6 +4,8 @@ import solid from "@astrojs/solid-js";
 import compress from 'vite-plugin-compress';
 import sitemap from "@astrojs/sitemap";
 
+import image from "@astrojs/image";
+
 // https://astro.build/config
 export default defineConfig({
   root: ".",
@@ -12,7 +14,7 @@ export default defineConfig({
   publicDir: "./public",
   // trailingSlash: "always",
   site: "https://main--deft-cuchufli-bfd7e3.netlify.app/",
-  integrations: [astroImageTools, solid(), sitemap()],
+  integrations: [astroImageTools, solid(), sitemap(), image()],
   vite: {
     plugins: [compress]
   }

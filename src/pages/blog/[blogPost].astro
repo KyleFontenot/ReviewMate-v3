@@ -1,7 +1,8 @@
 ---
 import StandardLayout from "../../layouts/StandardLayout.astro"
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import { Img } from "astro-imagetools/components";
+import {documentToPlainTextString} from '@contentful/rich-text-plain-text-renderer'
+// import { Img } from "astro-imagetools/components";
 import LinkedinIcon from '../../components/LinkedinIcon.astro';
 import TwitterIcon from '../../components/TwitterIcon.astro';
 import Button from '../../components/Button.astro'
@@ -10,16 +11,23 @@ import {months, ArticleOpenGraph} from "../../utils.js"
 import metadata from "src/layouts/metadata";
 import { formatSlug } from "../../featureList.js";
 
+
+
 export async function getStaticPaths() {
   const {formatSlug} = await import("../../featureList.js")
   let blogPosts = await contentfulItems('blogPost')
+  function substringdescription(description : string) {
+    let split = description.split('');
+    // split.substring(0, 100);
+    return description.substring(0,190).concat('...')
+  }
   
   return blogPosts.map(({fields} :any) => {
     return {
       params: { blogPost: formatSlug(fields.title) },
       props: { 
         title: fields.title, 
-        // description: fields.body.split('').substring(0, 100).join().concat('...'), 
+        description: substringdescription(documentToPlainTextString(fields.body)), 
         body: documentToHtmlString(fields.body), 
         author: fields.author,
         date: new Date(fields.dateCreated),
@@ -29,11 +37,12 @@ export async function getStaticPaths() {
     };
   });
 }
-const {title, body, date, author, img, imgAlt} = Astro.props;
+const {title, description, body, date, author, img, imgAlt} = Astro.props;
 
-const articleOG = new ArticleOpenGraph(title, "something", img, imgAlt, date, author)
-let url = Astro.canonicalURL.toString().concat(`/${formatSlug(title)}`)
-console.log(body)
+const articleOG = new ArticleOpenGraph(title, description, img, imgAlt, date, author)
+let url = Astro.canonicalURL.toString().concat(`/blog/${formatSlug(title)}/`)
+console.log(img)
+
 ---
 <StandardLayout slug={title} openGraph={articleOG} >
 <article class="blogArticle">
@@ -55,7 +64,7 @@ console.log(body)
   </div>
 </div>
 
-  <Img src={img} alt={imgAlt} objectFit="cover" attributes={{img: {class: 'blogimage'}}} />
+  <!-- <Img src={img} alt={imgAlt} objectFit="cover" attributes={{img: {class: 'blogimage'}}} /> -->
   <div class="blogbody" set:html={body}></div>
 </article>
   

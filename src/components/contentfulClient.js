@@ -1,10 +1,9 @@
 import contentful from "contentful";
 
 export const contentfulClient = contentful.createClient({
-	space: process.env.CONTENTFUL_SPACE_ID || import.meta.env.CONTENTFUL_SPACE_ID,
-	accessToken:
-		process.env.CONTENTFUL_CONTENT_DELIVERY ||
-		import.meta.env.CONTENTFUL_CONTENT_DELIVERY,
+	space:  import.meta.env.CONTENTFUL_SPACE_ID || process.env.CONTENTFUL_SPACE_ID,
+	accessToken: import.meta.env.CONTENTFUL_CONTENT_DELIVERY ||
+		process.env.CONTENTFUL_CONTENT_DELIVERY,
 });
 
 export const contentfulItems = async (content) => {

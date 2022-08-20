@@ -68,6 +68,7 @@ export class defaultOpenGraph {
 		imageAlt: string = "ReviewMate's overview of main features.",
 		url: string = metadata.canonical
 	) {
+		this.title = title;
 		this.canonical = metadata.canonical || "https://deft-cuchufli-bfd7e3.netlify.app/";
 		this.description = description;
 		this.basic = {
@@ -126,26 +127,26 @@ export class ArticleOpenGraph extends defaultOpenGraph {
 	};
 
 	constructor(
-		title: string,
+		articleTitle: string,
 		description: string,
 		image: string,
 		imageAlt: string,
 		published?: Date,
 		author?: string
 	) {
-		title = `${title}`;
+		let title = `ReviewMate | ${articleTitle}`;
 		super(
 			title,
 			description,
 			image,
 			imageAlt,
-			metadata.canonical.concat(formatSlug(title))
+			metadata.canonical.concat(formatSlug(articleTitle))
 		);
 		this.basic = {
 			type: "article",
-			title: title,
+			title: articleTitle,
 			image: image,
-			url: metadata.canonical.concat(formatSlug(title)),
+			url: metadata.canonical.concat(formatSlug(articleTitle)),
 		};
 		this.image = {
 			url: image,
@@ -160,7 +161,7 @@ export class ArticleOpenGraph extends defaultOpenGraph {
 			author: author,
 		};
 		this.optional = {
-			title: title,
+			title: articleTitle,
 			description: description,
 			siteName: "review-mate.com",
 		};
