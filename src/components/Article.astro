@@ -20,13 +20,12 @@ const concatsrc = `https:${imgSrc}`
 ---
 <a href={`${href}`} class={ `article${size === 'small' ? ' article--small' : ''}` }>
   <div class="image">
-    <slot name="img"/>
-    <!-- <Img src={concatsrc} alt={`${imgAlt}`} objectFit="contain" />  -->
+    <img src={concatsrc} alt={ imgAlt } />
   </div>
   <div class="textbody">
     <h3>{articleTitle}&nbsp;{(externallink === true) && <Arrow direction="upright" color="#666" />}</h3>
     <p>{body}</p>
-    <p class="author">{author}</p>
+    <!-- <p class="author">{author}</p> -->
     <p class="date">{date}</p>
   </div>
 </a>

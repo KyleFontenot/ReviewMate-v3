@@ -28,4 +28,86 @@ const month = ["January","February","March","April","May","June","July","August"
   <a href="/contact/" class="seeall">Contact Us for more.</a>
 </section>
 
-
+<style lang="scss"> 
+  .whatsnew {
+    background-color: hsl(var(--color1hsl));
+    background-color: #fff;
+    // max-width: 70rem;
+    color: white;
+    
+    width: 114%;
+    margin-inline: -7%;
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+    padding-inline: 10%;
+    padding-left: calc(10% + 2rem);
+    // box-shadow: 0 0 26px 3px #00000022 inset;
+    & h2 {
+      color: hsl(var(--color1hsl));
+    }
+  }
+  .list {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 3rem;
+    border-left: 3px solid #999;
+    width: 80%;
+    margin-inline: auto;
+  }
+  .date{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    
+  }
+  .version {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: #999;
+  }
+  .div{
+    margin-bottom: 6rem;
+    margin-bottom: 2rem;
+    position: relative;
+    margin-inline: auto;
+    margin-left: 1rem;
+    // max-width: 25rem;
+    padding: 2rem 0 1rem 1rem;
+    // outline: 1px solid #ccc;
+    border-top: 1px solid #999;
+    border: 1px solid transparent;
+    // width: 80%;
+    border-radius: 10px;
+    transition: border 0.2s;
+    width: 100%;
+    & :global(h3){
+      display: inline-block;
+    }
+    // &:hover {
+    //   border: 1px solid #999;
+    // }
+  }
+  .entry {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #666;
+  }
+  .description {
+    color: #999;
+  }
+  
+  .seeall{
+    font-size: 120%;
+    display: inline-block;
+    margin-inline: auto;
+    text-align: center;
+    margin-top: 1.4rem;
+    width: 100%;
+  }
+  .list {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  
+</style>
