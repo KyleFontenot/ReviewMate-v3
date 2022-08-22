@@ -1,5 +1,6 @@
 ---
 import {formatSlug} from '../featureList.js'
+import { Img } from "astro-imagetools/components";
 import Article from "./Article.astro"
 import Arrow from "./Arrow.astro"
 import { contentfulItems} from './contentfulClient.js'
@@ -10,7 +11,7 @@ let posts = await contentfulItems(postType)
 const months = ['January', 'February',
 'March','April','May','June','July','August','September','October','November','December',]
 const descriptionCutoff = 120
-console.log(posts[0].fields.thumbnail.fields.file.url)
+// console.log(posts[0].fields.thumbnail.fields.file.url)
 ---
 <div class:list={ [ 'blogwrapper', className ] } id="blog" {style}>
   {size === 'large' ? 
@@ -33,7 +34,9 @@ console.log(posts[0].fields.thumbnail.fields.file.url)
           date={`${months[formatDate.getMonth()]} ${formatDate.getDate()}, ${formatDate.getFullYear()}`}
           size={size}
           externallink={(postType === "articlePost") ? true : false}
-      />)
+      >
+      <Img slot="img" src={`https://${post.fields.thumbnail.fields.file.url}`} alt={`${post.fields.thumbnailAlt}`}/>
+      </Article>)
     }
     )}
     
