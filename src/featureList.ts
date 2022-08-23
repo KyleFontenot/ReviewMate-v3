@@ -367,6 +367,48 @@ const featureList = {
 
 	additional_functionalities: [
 		new Module(
+			"Document Manager",
+			"Reporting",
+			"Share files such as reports, imported spreadsheets, and training materials between different administration levels. HIPAA compliant, and supported by clear version controlling.",
+			[
+				"Within ReviewMate, users may import and export documents such as Word documents and Excel spreadsheets right into the system. HIPAA security, and version control of each document, allow for keeping a user's documents organized in one central cloud-based solution. Document Manager is the overview tool for organizing your documents from all sources.",
+			],
+
+			{
+				src: "/photos/documentmanager.jpg",
+				alt: "Man examining a document",
+			},
+			[true, true, true]
+		),
+		new Module(
+			"Selector Tools",
+			"Auditing",
+			"Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool.",
+			[
+				"Selector tools are essential to any auditor, and ReviewMate focuses on creating easy tools for every scenario to empower the auditor. An assortment of querying parameters are integrated for every auditing account, used for extracting the exact accounts that you need. The randomizer is an additional way to query a random set of accounts.",
+				"In addition to flexible manual selections, all queries and sample selections can be customized to run automatically. Routine audits are standard expectations for end-user firms. ReviewMate can automate these tasks with a few clicks, which can automatically populate tasks/findings.",
+			],
+			{
+				src: "/photos/selection.jpg",
+				alt: "Customer group circled",
+			},
+			[true, true, true]
+		),
+		new Module(
+			"Customizable Tasks",
+			"Monitoring",
+			"Customizable task responses allow all users to focus on pertinent issues. Field or view verbose responses based on user preferences.",
+			[
+				"Tasks in ReviewMate are units or sets of accounts that index progression and communication notes. Tasks offer convenient ways to interact with a compartmentalized set of findings by being able to add this information to any dashboard, export into a report, or to isolate accountability using online logins with end-users.",
+				"Tasks not only provide ways to chunk the auditor's work, but it's very important for differentiating whole audits between different clients and/or firms. Auditors often balance whole jobs with communication post-evaluation, so ReviewMate keeps these tasks still at arms-reach.",
+			],
+			{
+				src: "/photos/postitnotes.jpg",
+				alt: "Three differentl colored Post-it notes on a window",
+			},
+			[true, true, true]
+		),
+		new Module(
 			"Integration Manager",
 			"Security",
 			"Import spreadsheets, universes of data, or any other third-party source of data into a central resource. Manage, maintain, and navigate sources dynamically.",
@@ -397,21 +439,6 @@ const featureList = {
 		),
 
 		new Module(
-			"Document Manager",
-			"Reporting",
-			"Share files such as reports, imported spreadsheets, and training materials between different administration levels. HIPAA compliant, and supported by clear version controlling.",
-			[
-				"Within ReviewMate, users may import and export documents such as Word documents and Excel spreadsheets right into the system. HIPAA security, and version control of each document, allow for keeping a user's documents organized in one central cloud-based solution. Document Manager is the overview tool for organizing your documents from all sources.",
-			],
-
-			{
-				src: "/photos/documentmanager.jpg",
-				alt: "Man examining a document",
-			},
-			[true, true, true]
-		),
-
-		new Module(
 			"Education Tracking",
 			"Monitoring",
 			"Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules.",
@@ -431,41 +458,13 @@ const featureList = {
 			"Benchmark and compare performance against other ReviewMate users. Offers advice, community and insight within local scopes, global scopes, or 'millions of records within our community'. Exposes common coding errors that integrate with your Risk Manager.",
 			[
 				"ReviewMate Insights is an community of all ReviewMate users, assembled on the intent of improving common issues. With the community, users can leverage insight for addressing topics such as most problematic coding errors. These types of insight are viewable to users, but they also contribute into artificial intelligence within ReviewMate to enhance user experience. ",
-				"<h2>Help!!</h2>"
+				"<h2>Help!!</h2>",
 			],
 			{
 				src: "/photos/groupidea.jpg",
 				alt: "Group of happy diverse business people standing in studio and holding glowing light",
 			},
 			[false, true, true]
-		),
-		new Module(
-			"Selector Tools",
-			"Auditing",
-			"Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool.",
-			[
-				"Selector tools are essential to any auditor, and ReviewMate focuses on creating easy tools for every scenario to empower the auditor. An assortment of querying parameters are integrated for every auditing account, used for extracting the exact accounts that you need. The randomizer is an additional way to query a random set of accounts.",
-				"In addition to flexible manual selections, all queries and sample selections can be customized to run automatically. Routine audits are standard expectations for end-user firms. ReviewMate can automate these tasks with a few clicks, which can automatically populate tasks/findings.",
-			],
-			{
-				src: "/photos/selection.jpg",
-				alt: "Customer group circled",
-			},
-			[true, true, true]
-		),
-		new Module(
-			"Customizable Tasks",
-			"Monitoring",
-			"Customizable task responses allow all users to focus on pertinent issues. Field or view verbose responses based on user preferences.",
-			[
-				"Tasks in ReviewMate are units or sets of accounts that index progression and communication notes. Tasks offer convenient ways to interact with a compartmentalized set of findings by being able to add this information to any dashboard, export into a report, or to isolate accountability using online logins with end-users.",
-				"Tasks not only provide ways to chunk the auditor's work, but it's very important for differentiating whole audits between different clients and/or firms. Auditors often balance whole jobs with communication post-evaluation, so ReviewMate keeps these tasks still at arms-reach.",
-			],
-			{
-				src: "/photos/postitnotes.jpg",
-				alt: "Three differentl colored Post-it notes on a window",
-			},
-			[true, true, true]
 		),
 
 		new Module(
