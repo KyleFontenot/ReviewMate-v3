@@ -26,7 +26,7 @@ export default function ContactForm (){
 		}
 		else if (type == "phone") {
 			if (ayt.isValid()) {
-				console.log("hoorary");
+				console.log("hooray");
 				e.target.value = phoneValue;
 			} else {
 				ayt.reset();
@@ -122,7 +122,7 @@ export default function ContactForm (){
 						/>
 						<label for="auditor">Interested in Demo</label>
 					</div>
-					<div>
+					{/* <div>
 						<input
 							type="checkbox"
 							id="administration"
@@ -130,7 +130,7 @@ export default function ContactForm (){
 							value="administration"
 						/>
 						<label for="administration">Administration Interest </label>
-					</div>
+					</div> */}
 
 					<div>
 						<input
@@ -146,7 +146,7 @@ export default function ContactForm (){
 				<label htmlFor="commentField">Comments:</label>
 				<input
 					type="textarea"
-					rows={2}
+					rows="2"
 					cols={10}
 					name="Info"
 					id="commentField"
