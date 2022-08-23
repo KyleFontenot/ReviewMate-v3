@@ -10,7 +10,7 @@ interface FeatureProps {
 }
 
 const { title, imgSrc, imgAlt} = Astro.props as FeatureProps;
-
+console.log(imgSrc)
 ---
 <article class="largefeature">
   <div class="largediv">
@@ -22,7 +22,7 @@ const { title, imgSrc, imgAlt} = Astro.props as FeatureProps;
       </div>
     </div>
   
-    <Image src={import(imgSrc)} alt={imgAlt} widths={[800, 1200, 1600, 3200]} sizes="(max-width: 800px) 100%, 100%"  formats={['avif', 'jpeg', 'webp']}  aspectRatio="3:2" style="margin-inline: auto;display: block;object-fit: cover;" class="featureimg" />
+    <Image src={import('../images/something.jpg')} alt={imgAlt} widths={[800, 1200, 1600, 3200]} sizes="(max-width: 800px) 100%, 100%" height={600} formats={['avif', 'jpeg', 'webp']}  aspectRatio="3:2" style="margin-inline: auto;display: block;object-fit: cover;" class="featureimg" />
       <slot name="common" />
     <slot/>
   </div>

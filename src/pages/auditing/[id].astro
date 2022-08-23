@@ -23,6 +23,7 @@ export function getStaticPaths() {
     })})
 }
 const {feature} = Astro.props;
+console.log(feature?.imgSrc)
 ---
 <FeatureLayout 
   openGraph={new pageOpenGraph(feature.title, 
