@@ -78,7 +78,7 @@ const featureList = {
 				"Correct DRG assignment is critical to the health of your organization. Coding audits and using the proper tools will allow financial and compliant stability.",
 				"The ReviewMate platform assists medical coding auditors analyze specific elements affecting DRG assignment and reimbursement.",
 			],
-			{ src: "/src/images/photos/rodnae.jpg", alt: "Doctors meeting together" },
+			{ src: "/photos/rodnae.jpg", alt: "Doctors meeting together" },
 			[true, true, true],
 			{
 				header:

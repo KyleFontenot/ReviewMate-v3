@@ -2,7 +2,6 @@
 import StandardLayout from "../../layouts/StandardLayout.astro"
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import {documentToPlainTextString} from '@contentful/rich-text-plain-text-renderer'
-import { Img } from "astro-imagetools/components";
 import LinkedinIcon from '../../components/LinkedinIcon.astro';
 import TwitterIcon from '../../components/TwitterIcon.astro';
 import Button from '../../components/Button.astro'
@@ -41,8 +40,7 @@ const {title, description, body, date, author, img, imgAlt} = Astro.props;
 
 const articleOG = new ArticleOpenGraph(title, description, img, imgAlt, date, author)
 let url = Astro.url.pathname.toString().concat(`/blog/${formatSlug(title)}/`)
-console.log(img)
-
+// console.log(img)
 ---
 <StandardLayout slug={title} openGraph={articleOG} >
 <article class="blogArticle">
@@ -65,7 +63,7 @@ console.log(img)
 </div>
 
   <!-- <Img src={img} alt={imgAlt} objectFit="cover" attributes={{img: {class: 'blogimage'}}} /> -->
-  <img src={img} alt={imgAlt} class="blogimage" defer/>
+  <img src={img} alt={imgAlt} class="blogimage" loading="lazy" defer/>
   <div class="blogbody" set:html={body}></div>
 </article>
   

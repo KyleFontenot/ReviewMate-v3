@@ -1,6 +1,6 @@
 ---
 import CommonTraits from "./CommonTraits.jsx"
-import {Img } from 'astro-imagetools/components'
+// import {Img } from 'astro-imagetools/components'
 const {size = "large", title, href, imgSrc, imgAlt} = Astro.props;
 
 ---
@@ -15,7 +15,7 @@ const {size = "large", title, href, imgSrc, imgAlt} = Astro.props;
         </div>
     </div>
     <slot name="common" />
-    <Img src={imgSrc} alt={imgAlt} height={800}/>
+    <img src={imgSrc} alt={imgAlt} height={800}/>
     <slot/>
     
   </div>
