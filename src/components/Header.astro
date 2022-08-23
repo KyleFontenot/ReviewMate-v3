@@ -2,15 +2,16 @@
 import Button from "./Button.astro"
 const arrofLinks = [ "Plans", "Resources", 'Contact']
 const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monitoring" ]
+const {featureHeader = {src: '', alt: ''}} = Astro.props;
 ---
   
 <header>
 <a href="#main" aria-label="Skip to content" id="skiptocontent" tab-index="0">Skip to content</a>
   <a href="/" class="logo" style="">
-    <img src="/reviewmate-mainlogo(white).svg" alt="ReviewMate logo" style="max-width:20rem;" width="320" height="73" />
+    <img src="/reviewmate-mainlogo(white).svg" alt="ReviewMate logo" style="max-width:20rem;" width="320" height="73" loading="lazy" />
   </a>
   
-  <div id="mobilenavbutton" onClick="
+  <div id="mobilenavbutton" onclick="
     if (document.querySelector('nav').classList.contains('mobilemenu--open')){
       document.querySelector('nav').classList.remove('mobilemenu--open');
       document.querySelector('#mobilenavbutton').classList.remove('mobilenavbutton--open');
@@ -42,6 +43,10 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
         
       </ul>
     </nav>
+    {(featureHeader.src !== '') && 
+    <div class="featureimg">
+      <img src={featureHeader.src} alt={featureHeader.alt} style="object-fit:cover;max-width:100%;max-height:100%;" />
+    </div>}
 </header>
 
 <style lang="scss">
@@ -258,4 +263,27 @@ const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monit
       // box-shadow: 0 1px 5px 0px white;
     }
    }
+
+   .featureimg {
+  position: absolute;
+  top: 8rem;
+  right: -6.8%;
+  max-height: 17rem;
+  width: clamp(5rem, 60%, 80rem);
+  clip-path: polygon(0 0, 100% 100%, 100% 0);
+  box-shadow: 6px -6px 20px #000 inset;
+  z-index: 10;
+  outline: 2px solid purple;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    background: linear-gradient(to bottom, hsl(var(--color1hsl)) 0%, hsla(var(--color1h), 70%, 20%, 30%) );
+  }
+}
 </style>

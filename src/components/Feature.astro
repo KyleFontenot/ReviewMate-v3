@@ -15,7 +15,7 @@ const {size = "large", title, href, imgSrc, imgAlt} = Astro.props;
         </div>
     </div>
     <slot name="common" />
-    <img src={imgSrc} alt={imgAlt} height={800}/>
+    <img src={imgSrc} alt={imgAlt} class="featureimage"/>
     <slot/>
     
   </div>
@@ -49,16 +49,26 @@ const {size = "large", title, href, imgSrc, imgAlt} = Astro.props;
     margin-top: 3rem;
     font-size: 180%;
   }
+  .featureimage {
+    min-height: 100%;
+    object-fit: cover;
+  }
   @media (min-width: 890px){
-    .largefeature .intro{
-        flex: 1 1 60%;
-        padding: 2rem 3%;
-    }
+   
     .largefeature{
       position: relative;
       width: 114%;
       margin-inline: -$mi;
       margin-top: -$mtop;
+      & .intro{
+        flex: 1 1 60%;
+        max-width: 60%;
+        padding: 2rem 3%;
+      }
+      & .featureimage {
+        flex: 1 1 40%;
+        max-width: 40%;
+      }
     }
     .largediv {
       flex-flow: row wrap;
