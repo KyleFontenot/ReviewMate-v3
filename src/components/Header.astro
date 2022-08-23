@@ -1,8 +1,8 @@
 ---
 import Button from "./Button.astro"
-const arrofLinks = [ "Plans", "Resources", 'Contact']
-const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monitoring" ]
-const {featureHeader = {src: '', alt: ''}} = Astro.props;
+const arrofLinks = [ "Plans", "Resources", 'Contact'];
+const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monitoring" ];
+const {featureHeader = { bool: false, src: '', alt: ''}} = Astro.props;
 ---
   
 <header>
@@ -43,7 +43,7 @@ const {featureHeader = {src: '', alt: ''}} = Astro.props;
         
       </ul>
     </nav>
-    {(featureHeader.src !== '') && 
+    {(featureHeader.bool) && 
     <div class="featureimg">
       <img src={featureHeader.src} alt={featureHeader.alt} style="object-fit:cover;max-width:100%;max-height:100%;" />
     </div>}
@@ -61,6 +61,7 @@ const {featureHeader = {src: '', alt: ''}} = Astro.props;
     position: static;
     top:0;
     left: 0;
+    height: 10rem;
     // margin-bottom: 12rem;
     // padding-bottom: 12rem;
     // overflow-y: visible;
@@ -68,9 +69,9 @@ const {featureHeader = {src: '', alt: ''}} = Astro.props;
   .logo {
     // max-width: 60vw;
     // width: clamp(10rem, 20rem, calc(100% - 425px));
-    height: 8rem;
+    height: 6rem;
     // width: 100%;
-    margin-top: 16px;
+    margin-top: 8px;
     display: inline-block;
     & img {
       display: block;
@@ -266,7 +267,7 @@ const {featureHeader = {src: '', alt: ''}} = Astro.props;
 
    .featureimg {
   position: absolute;
-  top: 8rem;
+  top: 9rem;
   right: -6.8%;
   max-height: 17rem;
   width: clamp(5rem, 60%, 80rem);
