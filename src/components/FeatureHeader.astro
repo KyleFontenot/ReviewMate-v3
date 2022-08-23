@@ -1,6 +1,7 @@
 ---
 import Button from "./Button.astro"
-// import { Img } from 'astro-imagetools/components'
+// import { Image } from '@astrojs/image/components';
+import { Img } from "astro-imagetools/components";
 
 const arrofLinks = ["Key Features", "Plans", "Resources", 'Contact']
 const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monitoring" ]
@@ -45,7 +46,8 @@ console.log(featureHeader.src)
       </ul>
     </nav>
     <div class="featureimg">
-      <!-- <Img src={featureHeader.src} alt={featureHeader.alt}  /> -->
+      <Img src={featureHeader.src} alt={featureHeader.alt}  />
+      <!-- <Image src={featureHeader.src} alt={featureHeader.alt} width={700} height={300} /> -->
     </div>
 </header>
 

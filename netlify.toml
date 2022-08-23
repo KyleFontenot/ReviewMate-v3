@@ -2,6 +2,6 @@
   command = "NODE_ENV=production yarn run build"
   publish = "dist"
 [[headers]]
-  for ="/*"
+  for ="*"
   [headers.values]
-    Access-Control-Allow-Origin = "https://images.ctfassets.net/"
+    Access-Control-Allow-Origin = "*"

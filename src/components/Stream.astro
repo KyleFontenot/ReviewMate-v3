@@ -23,7 +23,8 @@ const descriptionCutoff = 120
       {
         let blogBody = post?.fields?.body?.content[0]?.content[0]?.value;
         let formatDate = new Date(post.fields.dateCreated);
-        return (<Article 
+        return (
+        <Article 
           articleTitle={post.fields.title}
           href={post.fields.url ? post.fields.url : `/blog/${formatSlug(post.fields.title)}/`}
           imgSrc={post.fields.thumbnail.fields.file.url}

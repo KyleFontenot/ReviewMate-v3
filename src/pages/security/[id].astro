@@ -41,7 +41,6 @@ const {feature} = Astro.props;
       }
       
     })}
-    })}
     {feature.bullets ? <h3 style="margin-bottom: 2rem;margin-top: 2rem;margin-inline:auto;">{feature.bullets.header}</h3><ul class="list" >{feature?.bullets?.bullets?.map((point: string) => {
     return (
       <li class="bullet">{point}</li>

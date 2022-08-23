@@ -1,0 +1,16 @@
+---
+interface SmallFeatureProps {
+  href: string;
+  title: string;
+}
+const {href, title } = Astro.props as SmallFeatureProps;
+---
+
+
+<section class="smallfeature">
+  <a href={href} class="title"><h3>{title}</h3></a>
+  <slot />
+  <slot name="bulletpoints" />
+  <slot name="relatedblog" />
+  <a href={href} class="readmore">Read more <img src="/icons/diagonal-arrow.svg" class="readmorearrow"/></a>
+</section>

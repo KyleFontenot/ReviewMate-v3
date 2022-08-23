@@ -1,7 +1,7 @@
 ---
 import FeatureCategory from "../components/FeatureCategory.astro"
 import StandardLayout from "../layouts/StandardLayout.astro"
-import Feature from "../components/Feature.astro"
+import SmallFeature from "../components/SmallFeature.astro"
 import featureList from "../featureList.js"
 import {pageOpenGraph} from "../utils.js"
 import type {Module } from "../featureList.js"
@@ -34,9 +34,11 @@ Object.values(featureList).forEach(category => {
       <div class="featurelist">
       {modules.map(module => {
         return (
-          <Feature size="small" title={module.title} href={`/${moduleType.toLowerCase()}/${module.slug}/`}>
+          <SmallFeature  
+          title={module.title} 
+          href={`/${moduleType.toLowerCase()}/${module.slug}/`}>
             <p style="text-indent: 0;">{module.short}</p>
-          </Feature>
+          </SmallFeature>
         )
       })}
     </div>

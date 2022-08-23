@@ -23,15 +23,13 @@ export function getStaticPaths() {
     })})
 }
 const {feature} = Astro.props;
-
-
 ---
 <FeatureLayout 
   openGraph={new pageOpenGraph(feature.title, 
   assessShort(feature.short, feature.long))}>
   <Feature title={feature.title} imgSrc={feature?.imgSrc} imgAlt={feature?.imgAlt} commontraits> 
     <div slot="paragraphs">
-      {feature.long.map(paragraph => {
+      {feature.long.map((paragraph : string) => {
         if (paragraph[0] === "<"){
           return (
             <h2>{interpolateTags(paragraph.substring(0, paragraph.indexOf('>') + 1), paragraph)}</h2>
@@ -43,8 +41,7 @@ const {feature} = Astro.props;
         }
         
       })}
-      })}
-      {feature.bullets ? <h3 class="bulleth3" >{feature.bullets.header}</h3><ul class="list" >{feature?.bullets?.bullets?.map(point => {
+      {feature.bullets ? <h3 class="bulleth3" >{feature.bullets.header}</h3><ul class="list" >{feature?.bullets?.bullets?.map((point : any) => {
       return (
         <li class="bullet">{point}</li>
       )
@@ -52,7 +49,7 @@ const {feature} = Astro.props;
     )}</ul> : 
 
     (feature?.bullets !== undefined && feature?.bullets?.length > 1) ?
-    <ul class="list" >{feature?.bullets?.map(point => {
+    <ul class="list" >{feature?.bullets?.map((point: any) => {
       return (
         <li class="bullet">{point}</li>
       )

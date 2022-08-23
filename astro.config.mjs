@@ -12,7 +12,6 @@ export default defineConfig({
   srcDir: "./src",
   outDir: "./dist",
   publicDir: "./public",
-  // trailingSlash: "always",
   site: "https://review-mate.com/",
-  integrations: [astroImageTools, solid(), sitemap(),  compress()],
+  integrations: [astroImageTools, solid(), sitemap(),  compress(), image()],
 });

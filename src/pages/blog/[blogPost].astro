@@ -10,7 +10,7 @@ import { contentfulItems} from '../../components/contentfulClient.js'
 import {months, ArticleOpenGraph} from "../../utils.js"
 import metadata from "src/layouts/metadata";
 import { formatSlug } from "../../featureList.js";
-// import Image from '@astrojs/image';
+// import { Picture } from '@astrojs/image/components';
 
 
 
@@ -32,8 +32,8 @@ export async function getStaticPaths() {
         body: documentToHtmlString(fields.body), 
         author: fields.author,
         date: new Date(fields.dateCreated),
-        img: `https://${fields.thumbnail.fields.file.url}`,
-        imgAlt: fields.thumbnail.fields.description,
+        img: `https:${fields.thumbnail.fields.file.url}`,
+        imgAlt: fields.thumbnail.fields.description || "something",
       }
     };
   });
@@ -42,7 +42,7 @@ const {title, description, body, date, author, img, imgAlt} = Astro.props;
 
 const articleOG = new ArticleOpenGraph(title, description, img, imgAlt, date, author)
 let url = Astro.url.pathname.toString().concat(`/blog/${formatSlug(title)}/`)
-console.log(img)
+// console.log(img)
 ---
 <StandardLayout slug={title} openGraph={articleOG} >
 <article class="blogArticle">
@@ -64,9 +64,11 @@ console.log(img)
   </div>
 </div>
 
-  <Img src={img} alt={imgAlt} objectFit="cover" attributes={{img: {class: 'blogimage'}}} />
+  <!-- <Img src={img} alt={imgAlt} objectFit="cover" attributes={{img: {class: 'blogimage'}}} /> -->
+
+  <!-- <Picture src={`${ img }`} alt={ imgAlt } widths={[200, 400, 800]} aspectRatio="4:3" sizes="(max-width: 800px) 100vw, 800px" formats={['avif', 'jpeg', 'png', 'webp']}  /> -->
   <!-- <img src={img} alt={imgAlt} class="blogimage" defer/> -->
-  <!-- <Img src={img} alt={ imgAlt } width={400} height={600} />  -->
+  <Img src={img} alt={ imgAlt } width={400} height={600} /> 
   <div class="blogbody" set:html={body}></div>
 </article>
   
