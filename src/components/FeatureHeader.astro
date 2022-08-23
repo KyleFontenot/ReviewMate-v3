@@ -1,7 +1,6 @@
 ---
 import Button from "./Button.astro"
-// import { Image } from '@astrojs/image/components';
-import { Img } from "astro-imagetools/components";
+import { Image } from '@astrojs/image/components';
 
 const arrofLinks = ["Key Features", "Plans", "Resources", 'Contact']
 const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monitoring" ]
@@ -46,8 +45,8 @@ console.log(featureHeader.src)
       </ul>
     </nav>
     <div class="featureimg">
-      <Img src={featureHeader.src} alt={featureHeader.alt}  />
-      <!-- <Image src={featureHeader.src} alt={featureHeader.alt} width={700} height={300} /> -->
+      <!-- <Picture src='/auditingoverview.jpg' alt={featureHeader.alt} height={800} width={800} aspectRatio={4/3} format='webp' /> -->
+      <Image src={import(featureHeader.src)} alt={featureHeader.alt} widths={[600, 1200]} sizes="(max-width: 800px) 100%, 100%"  formats={['avif', 'jpeg', 'webp']} width={1200} aspectRatio="3:2" style="object-fit: contain;padding-bottom: 10rem;" />
     </div>
 </header>
 
@@ -67,7 +66,7 @@ console.log(featureHeader.src)
   }
   .logo {
     width: clamp(10rem, 20rem, calc(100% - 425px));
-    margin-top: 16px;
+    margin-top: 12px;
     display: inline-block;
     & img {
       display: block;
@@ -112,13 +111,15 @@ console.log(featureHeader.src)
   
   nav {
     position: absolute;
-    top: 4.5rem;
+    top: 4rem;
     right: 0.5rem;
     margin-left: auto;
     float: right;
     background-color: white;
     z-index: 800;
     border-radius: 8px;
+    // max-height: 20px;
+    // overflow: hidden;
     
   & ul {
     display: flex;
@@ -256,20 +257,19 @@ console.log(featureHeader.src)
       background-color: white;
       color: hsl(var(--color1hsl))!important;
       border-radius: 6px;
-      // box-shadow: 0 1px 5px 0px white;
     }
   }
 
 .featureimg {
   position: absolute;
   top: 8rem;
-  right: -6.8%;
+  right: 0;
   max-height: 17rem;
   width: clamp(5rem, 60%, 80rem);
   clip-path: polygon(0 0, 100% 100%, 100% 0);
   box-shadow: 6px -6px 20px #000 inset;
   z-index: 10;
-  outline: 2px solid purple;
+  // outline: 2px solid purple;
   &::after {
     content: '';
     position: absolute;

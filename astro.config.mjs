@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 import solid from "@astrojs/solid-js";
 import sitemap from "@astrojs/sitemap";
 import image from "@astrojs/image";
-import { astroImageTools } from "astro-imagetools";
 
 import compress from "astro-compress";
 
@@ -13,5 +12,5 @@ export default defineConfig({
   outDir: "./dist",
   publicDir: "./public",
   site: "https://review-mate.com/",
-  integrations: [astroImageTools, solid(), sitemap(),  compress(), image()],
+  integrations: [ solid(), sitemap(),  compress(), image()],
 });

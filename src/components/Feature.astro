@@ -1,9 +1,8 @@
 ---
 import CommonTraits from "./CommonTraits.jsx"
-import {Img } from 'astro-imagetools/components'
+import { Image } from '@astrojs/image/components';
 
 interface FeatureProps {
-  size: 'small' | 'large';
   title: string;
   imgSrc: string;
   imgAlt: string;
@@ -20,43 +19,48 @@ const { title, imgSrc, imgAlt} = Astro.props as FeatureProps;
       <div class="paragraph">
         <slot name="paragraphs" />
         <slot name="bulletpoints" />
-        </div>
+      </div>
     </div>
-    <slot name="common" />
-    <Img src={imgSrc} alt={imgAlt} height={800}/>
+  
+    <Image src={import(imgSrc)} alt={imgAlt} widths={[800, 1200, 1600, 3200]} sizes="(max-width: 800px) 100%, 100%"  formats={['avif', 'jpeg', 'webp']}  aspectRatio="3:2" style="margin-inline: auto;display: block;object-fit: cover;" class="featureimg" />
+      <slot name="common" />
     <slot/>
   </div>
 </article> 
+
 
 <style lang="scss">
 
   $mtop: 2rem;
   $mi: 6%;
   
+  
   .largediv {
     display: flex;
     flex-flow: column wrap;
     width: 100%;
     max-width: 100%;
-    & > :global(img) {
-      margin-inline: auto;
-      display: block;
-    }
   }
   .paragraph :global(h2)  {
     margin-top: 3rem;
     font-size: 180%;
   }
   @media (min-width: 890px){
-    .largefeature .intro{
-        flex: 1 1 60%;
-        padding: 2rem 3%;
-    }
     .largefeature{
       position: relative;
       width: 114%;
       margin-inline: -$mi;
       margin-top: -$mtop;
+      & .intro {
+        flex: 1 1 60%;
+        max-width: 60%;
+        padding: 2rem 3%;
+      }
+      & .featureimg {
+        flex: 1 1 40%;
+        max-width: 40%;
+        // width: 100%;
+      }
     }
     .largediv {
       flex-flow: row wrap;

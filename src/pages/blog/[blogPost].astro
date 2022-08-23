@@ -2,7 +2,6 @@
 import StandardLayout from "../../layouts/StandardLayout.astro"
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import {documentToPlainTextString} from '@contentful/rich-text-plain-text-renderer'
-import { Img } from "astro-imagetools/components";
 import LinkedinIcon from '../../components/LinkedinIcon.astro';
 import TwitterIcon from '../../components/TwitterIcon.astro';
 import Button from '../../components/Button.astro'
@@ -10,9 +9,7 @@ import { contentfulItems} from '../../components/contentfulClient.js'
 import {months, ArticleOpenGraph} from "../../utils.js"
 import metadata from "src/layouts/metadata";
 import { formatSlug } from "../../featureList.js";
-// import { Picture } from '@astrojs/image/components';
-
-
+import { Picture } from '@astrojs/image/components';
 
 export async function getStaticPaths() {
   const {formatSlug} = await import("../../featureList.js")
@@ -66,9 +63,7 @@ let url = Astro.url.pathname.toString().concat(`/blog/${formatSlug(title)}/`)
 
   <!-- <Img src={img} alt={imgAlt} objectFit="cover" attributes={{img: {class: 'blogimage'}}} /> -->
 
-  <!-- <Picture src={`${ img }`} alt={ imgAlt } widths={[200, 400, 800]} aspectRatio="4:3" sizes="(max-width: 800px) 100vw, 800px" formats={['avif', 'jpeg', 'png', 'webp']}  /> -->
-  <!-- <img src={img} alt={imgAlt} class="blogimage" defer/> -->
-  <Img src={img} alt={ imgAlt } width={400} height={600} /> 
+  <Picture src={img} alt={ imgAlt } widths={[400, 800, 1400]} aspectRatio="3:2" sizes="(max-width: 800px) 100%, 100%" formats={['avif', 'jpeg', 'webp']} />
   <div class="blogbody" set:html={body}></div>
 </article>
   

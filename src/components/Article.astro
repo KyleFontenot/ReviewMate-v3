@@ -1,6 +1,5 @@
 ---
-import { Img } from "astro-imagetools/components";
-// import { Picture } from '@astrojs/image/components';
+import { Picture } from '@astrojs/image/components';
 import Arrow from './Arrow.astro'
 
 interface ArticleProps {
@@ -20,8 +19,7 @@ const concatsrc = `https:${imgSrc}`
 ---
 <a href={`${href}`} class={ `article${size === 'small' ? ' article--small' : ''}` }>
   <div class="image">
-    <Img src={concatsrc} alt={imgAlt} />
-    <!-- <Picture src={`${ concatsrc }`} alt={ imgAlt } widths={[200, 400, 800]} aspectRatio="4:3" sizes="(max-width: 800px) 100vw, 800px" formats={['avif', 'jpeg', 'png', 'webp']}  /> -->
+    <Picture src={`${ concatsrc }`} alt={ imgAlt } widths={[200, 400, 800]} aspectRatio="4:3" sizes="(max-width: 800px) 100vw, 800px" formats={['avif', 'jpeg', 'png', 'webp']}  />
   </div>
   <div class="textbody">
     <h3>{articleTitle}&nbsp;{(externallink === true) && <Arrow direction="upright" color="#666" />}</h3>
