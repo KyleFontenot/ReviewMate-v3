@@ -8,14 +8,14 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  root: ".",
-  srcDir: "./src",
-  outDir: "./dist",
-  publicDir: "./public",
-  // trailingSlash: "always",
-  site: "https://main--deft-cuchufli-bfd7e3.netlify.app/",
-  integrations: [astroImageTools, solid(), sitemap(), image()],
-  vite: {
-    plugins: [compress]
-  }
+	root: ".",
+	srcDir: "./src",
+	outDir: "./dist",
+	publicDir: "./public",
+	// trailingSlash: "always",
+	site: "https://review-mate.com/",
+	integrations: [astroImageTools, solid(), sitemap(), image()],
+	vite: {
+		plugins: [compress],
+	},
 });
