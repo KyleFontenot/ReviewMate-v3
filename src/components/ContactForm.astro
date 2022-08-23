@@ -7,10 +7,9 @@ import { AsYouType } from "libphonenumber-js";
 	);
 ---
 <script>
-  // let ayt = new AsYouType("US");
-
 
 const handleSubmit = (e: Event) => {
+  console.log("testing")
   e.preventDefault();
   let myForm = document.getElementById("contactform");
   let formData = new FormData(myForm);
