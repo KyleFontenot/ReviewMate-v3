@@ -20,6 +20,7 @@ const descriptionCutoff = 120
     <!-- <slot/> -->
 
     {posts.map(post => 
+    
       {
         let blogBody = post?.fields?.body?.content[0]?.content[0]?.value;
         let formatDate = new Date(post.fields.dateCreated);

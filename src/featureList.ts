@@ -371,7 +371,9 @@ const featureList = {
 			"Reporting",
 			"Share files such as reports, imported spreadsheets, and training materials between different administration levels. HIPAA compliant, and supported by clear version controlling.",
 			[
-				"Within ReviewMate, users may import and export documents such as Word documents and Excel spreadsheets right into the system. HIPAA security, and version control of each document, allow for keeping a user's documents organized in one central cloud-based solution. Document Manager is the overview tool for organizing your documents from all sources.",
+				"Document manager is a simple ECM system, in which you can easily update, track and manage your documents in a secure and HIPPA compliant environment. Document Manager is module in the ReviewMate platform that allows users to store their audit related files in a centralized and secure location.",
+				"In addition, they can easily share files with other users, departments, or certain user roles. Every file being imported into the ReviewMate platform will reside in the Document Manager module, including files that are loaded via Integration Manager from an EMR or an abstracting system. Each document will be assigned a unique identifier to help manage version control and ensure proper availability and backup procedures are performed. The system will capture all necessary logging information to identify users that accessed the document and download it.", 
+				"Only users with active credentials and have the proper access privileges can access files from the Document Manager.Document manager work on all popular browsers and supports all known file extensions including Microsoft Word, Excel and PowerPoint, PDF, CSV, XML, JSON, TXT, JPG, PNG, BMP, GIF, HL7, EDI Files such as 837 and others."
 			],
 
 			{
