@@ -453,7 +453,7 @@ const featureList = {
 			[false, true, true]
 		),
 		new Module(
-			"ReviewMate Insights (Benchmarking)",
+			"ReviewMate Insights",
 			"Monitoring", // !!! or reporting?
 			"Benchmark and compare performance against other ReviewMate users. Offers advice, community and insight within local scopes, global scopes, or 'millions of records within our community'. Exposes common coding errors that integrate with your Risk Manager.",
 			[
