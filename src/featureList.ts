@@ -460,7 +460,7 @@ const featureList = {
 			"Benchmark and compare performance against other ReviewMate users. Offers advice, community and insight within local scopes, global scopes, or 'millions of records within our community'. Exposes common coding errors that integrate with your Risk Manager.",
 			[
 				"ReviewMate Insights is an community of all ReviewMate users, assembled on the intent of improving common issues. With the community, users can leverage insight for addressing topics such as most problematic coding errors. These types of insight are viewable to users, but they also contribute into artificial intelligence within ReviewMate to enhance user experience. ",
-				"<h2>Help!!</h2>",
+				"",
 			],
 			{
 				src: "/photos/groupidea.jpg",

@@ -15,7 +15,7 @@ interface ArticleProps {
 
 const {href, imgSrc, imgAlt, articleTitle, body, author, date, size = 'small', externallink = false} = Astro.props as ArticleProps;
 const concatsrc = `https:${imgSrc}`
-console.log(imgAlt)
+// console.log(imgAlt)
 ---
 <a href={`${href}`} class={ `article${size === 'small' ? ' article--small' : ''}` }>
   <div class="image">

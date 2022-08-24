@@ -17,10 +17,7 @@ const descriptionCutoff = 120
   <h1 style="width: 100%;margin-bottom:4rem;">{title}</h1> : 
   <h3 style="width: 100%;margin-bottom: 2rem;">{title}</h3>}
   <div class="container">
-    <!-- <slot/> -->
-
     {posts.map(post => 
-    
       {
         let blogBody = post?.fields?.body?.content[0]?.content[0]?.value;
         let formatDate = new Date(post.fields.dateCreated);
@@ -36,12 +33,13 @@ const descriptionCutoff = 120
           externallink={(postType === "articlePost") ? true : false}
       >
       </Article>)
-    }
+      }
     )}
-    
   </div>
 
-  {size === "small" && <a href={postType === "blogPost" ? '/blog/' : postType === 'articlePost' ? '/articles' : '/'} style="display:block;text-align:right;font-size: 110%;margin: 0 0 2.5rem auto;">See more blog posts <Arrow direction="upright"/></a>}
+  {size === "small" && 
+  <a href={postType === "blogPost" ? '/blog/' : postType === 'articlePost' ? '/articles/' : '/'} style="position: absolute; right: 9%;bottom: 0;display:inline-block;text-align:right;font-size: 110%;margin: 0 0 2.5rem auto;">
+  See more {postType === "blogPost" ? 'blog' : 'article'} posts <Arrow direction="upright"/></a>}
 </div>
 
 <style lang="scss">
@@ -53,6 +51,7 @@ const descriptionCutoff = 120
   padding: 2% 9%;
 	height: 100%;
 	display: block;
+  position: relative;
 	& > h3, & > h2 {
     margin-top: 1.2rem;
     margin-bottom: 1.2rem;
@@ -66,6 +65,7 @@ const descriptionCutoff = 120
     margin-inline: auto;
     column-gap: 5%;
     justify-content: center;
+    
 	}
 	@media (min-width: 590px){
   .container {
@@ -86,7 +86,7 @@ const descriptionCutoff = 120
   display: flex;
   flex-flow: row wrap;
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 .image { 
   display: block;

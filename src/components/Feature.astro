@@ -51,10 +51,14 @@ const {size = "large", title, href, imgSrc, imgAlt} = Astro.props;
   }
   .featureimage {
     min-height: 100%;
+    width: 100%;
     object-fit: cover;
   }
+  .intro {
+    width: 100%;
+    padding-bottom: 3rem;
+  }
   @media (min-width: 890px){
-   
     .largefeature{
       position: relative;
       width: 114%;
@@ -63,7 +67,7 @@ const {size = "large", title, href, imgSrc, imgAlt} = Astro.props;
       & .intro{
         flex: 1 1 60%;
         max-width: 60%;
-        padding: 2rem 3%;
+        padding: 2rem 5% 3rem ;
       }
       & .featureimage {
         flex: 1 1 40%;

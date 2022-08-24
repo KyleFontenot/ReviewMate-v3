@@ -163,6 +163,7 @@ footer * {
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
 	font-size: 0.9rem;
+	margin-top: 0.3rem;
 	z-index: 10;
 	&::after {
 		content: "";
@@ -174,7 +175,7 @@ footer * {
 		left: 0;
 		background-color: hsl(var(--color1hsl));
 		opacity: 0;
-		// transition: opacity 0.1s;
+		transition: opacity 0.2s;
 		z-index: -1;
 	}
 	&:hover,
@@ -186,6 +187,7 @@ footer * {
 		opacity: 1;
 	}
 }
+
 html.sr .load-hidden {
 	visibility: hidden;
 }
@@ -197,6 +199,7 @@ html.sr .load-hidden {
 	width: 100%;
 	justify-content: center;
 	margin-bottom: 0;
+	position: relative;
 }
 .flexdiv1 > div {
 	order: 2;
@@ -326,10 +329,9 @@ html.sr .load-hidden {
 	}
 }
 
-.smalllink{
-margin-top: 0.3rem;
-}
-
 .hover {
 	transform: scale(1.1);
+}
+.iconsvg {
+	filter: invert(23%) sepia(18%) saturate(7185%) hue-rotate(347deg) brightness(95%) contrast(84%);
 }
