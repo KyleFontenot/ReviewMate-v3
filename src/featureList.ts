@@ -441,7 +441,7 @@ const featureList = {
 		new Module(
 			"Education Tracking",
 			"Monitoring",
-			"Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules.",
+			"Directly assign training materils from either custom uploaded training resources such as videos, PDFs, and powerpoints, or use integrated nThrive's training modules.",
 			[
 				"While auditors review coders' evaluations, auditors have the option of suggesting training materials. Communication with the coder is optional though training suggestions –especially for common coding mistakes– is a very impactful feature that intuitively helps coder, auditor, and client alike.",
 				"Training materials are provided by nThrive, a developed service that provides AHIMA compliant tutorials and relevant articles for assisting in billing education. All codes within ReviewMate are indexable toward training materials, so suggesting training materials is a matter of blicking a button.",

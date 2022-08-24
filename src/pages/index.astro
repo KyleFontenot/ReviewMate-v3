@@ -122,7 +122,6 @@ import {formatSlug} from '../utils'
           <p>Securely connect to your universe of data seamlessly. Imported
           data is available platform-wide and ready for selection. Data sources keep a subscription that keep all selected data live.</p> 
           <SmallLink href={`/security/${formatSlug("Integration Manager")}/`} text="Integration Manager"/> 
-          <SmallLink href={`/security/${formatSlug("Document Manager")}/`} text="Document Manager"/> 
           <SmallLink href={`/security/${formatSlug("Multifactor Authentication")}/`} text="Multifactor Authentication"/> 
           <SmallLink href={`/security/${formatSlug("LDAP / Active Directory")}/`} text="LDAP / Active Directory"/> 
           <SmallLink href={`/security/${formatSlug("VPN Integration")}/`} text="VPN Integration"/> 
@@ -134,7 +133,7 @@ import {formatSlug} from '../utils'
         <div>
         <h2>Sample</h2> 
         <p>Apply flexible rules and parameters to concisely gather accounts for auditing using a multitude of parameters and options. Randomization and automation tools augment any sampling need.</p>
-          <SmallLink href={`/security/${formatSlug("Sample Selector")}/`} text="Sample Selector"/> 
+          <SmallLink href={`/auditing/${formatSlug("Selector Tools")}/`} text="Selector Tools"/> 
   
           <SmallLink href={`/security/${formatSlug("Risk Manager")}/`} text="Risk Manager"/> 
       </div>
@@ -144,7 +143,7 @@ import {formatSlug} from '../utils'
     <div class="timelinediv">
         <div>
      <h2>Audit</h2> 
-     <p>Conduct audits in a transparent consolidated platform. Relay audit findings
+     <p>Conduct audits in a transparent consolidated platform that makes it easy to maneuver. Relay audit findings
      to other users easily.</p>
      <SmallLink href="/auditing/inpatient/" text="IPPS"/>
      <SmallLink href="/auditing/outpatient/" text="OPPS"/>
@@ -153,7 +152,7 @@ import {formatSlug} from '../utils'
      <SmallLink href="/auditing/cms-hcc/" text="CMS-HCC"/>
      <SmallLink href="/auditing/selector-tools/" text="Selector Tools"/>
      <SmallLink href="/auditing/record-tracker/" text="Record Tracker"/>
-     <SmallLink href="/auditingphysician-query-analysis/" text="Physician Query Analysis"/>
+     <SmallLink href="/auditing/physician-query-analysis/" text="Physician Query Analysis"/>
      </div>
       </div>
     </div>
@@ -161,9 +160,10 @@ import {formatSlug} from '../utils'
     <div class="timelinediv">
         <div>
      <h2>Report</h2> 
-     <p>Either choose from a variety of standard options or create custom reports as seen fit. </p>
+     <p>Either choose from a variety of standard options or create an infinite amount of flexible, custom reports as one sees fit. </p>
      <SmallLink href="/reporting/report-cards/" text="Report Cards"/>
      <SmallLink href="/reporting/accuracy-manager/" text="Accuracy Manager"/>
+     <SmallLink href={`/reporting/${formatSlug("Document Manager")}/`} text="Document Manager"/> 
      <SmallLink href="/reporting/code-finder/" text="Code Finder"/>
      <SmallLink href="/reporting/dashboards/" text="Dashboards"/>
      <SmallLink href="/reporting/summary-templates/" text="Summary Templates"/>
@@ -175,13 +175,12 @@ import {formatSlug} from '../utils'
     <div class="timelinediv">
         <div>
      <h2>Monitor</h2> 
-     <p>Track findings in one centralized platform while augmenting workflows with artificial intelligence.</p>
-     <SmallLink href="/monitoring/staffing-analytics/" text="Sample Selector"/>
+     <p>Track findings in one centralized platform while augmenting workflows with artificial intelligence. Engineer quickerr workflow solutions.</p>
+     <SmallLink href={`/monitoring/${formatSlug('Risk Manager')}/`} text="Risk Manager"/>
      <SmallLink href="/monitoring/audit-the-auditor/" text="Audit The Auditor"/>
-     <SmallLink href="/monitoring/education-tracking/" text="Education Tracking"/>
+     
      <SmallLink href="/monitoring/review-insights/" text="ReviewMate Insights"/>
      <SmallLink href="/monitoring/customizable-tasks/" text="Customizable Tasks"/>
-     <SmallLink href="/monitoring/risk-manager/" text="Risk Manager"/>
      </div>
     </div>
   </div>
@@ -190,8 +189,8 @@ import {formatSlug} from '../utils'
         <div>
      <h2>Educate</h2> 
      <p>Keep training and education just peripheral to the auditing workflow for easily assigning tranining to coders, to growing knowledge, and to communicate transparently with others. </p>
-     <!-- <SmallLink href="/" text="Sample Selector"/>
-     <SmallLink href="/" text="Sample Selector"/> -->
+     <SmallLink href="/monitoring/education-tracking/" text="Education Tracking"/>
+     <SmallLink href="/reporting/exportability/" text="Exportability"/>
      </div>
     </div>
   </div>
