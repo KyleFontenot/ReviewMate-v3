@@ -1,36 +1,63 @@
 
 .container {
   background-color: white;
-  // min-height:30rem;
-	// height:20rem;
 	background-color:white;
 	display:block;
 	border-radius:15px;
-  position: absolute;
+  position: relative;
   max-width: 80%;
 	width: 40rem;
-  // padding-top: 2rem;
-  // padding-bottom: 2rem;
-	padding: 1rem 3rem 3rem;
+	padding: 2rem 7% 3rem;
   border: 2px solid #eee;
   & > h2 {
     text-align: center;
+		line-height: 3rem;
   }
 }
 .inputdiv {
 	display: block;
+	margin-inline: auto;
+	text-align: center;
 	& > label {
 		display: block;
 	}
-	& > input {
+	& > input[type='text'], & > input[type='tel'], & > input[type='email'], & > input[type='textarea'] {
 		display: block;
 		width: 100%;
 	}
 }
+.specialDemoMenu {
+	width: 100%;
+	// margin-inline: -7%;
+	// padding: 7%;
+	// display:none;
+	visibility: hidden;
+	background-color: #f2f2f2;
+	opacity: 0;
+	height: 0;
+	max-height: 1px;
+	transition: height 0.4s, visibility 0.4s, opacity 0.4s;
+	&.open {
+		padding: 7%;
+		max-height: unset;
+		height: auto;
+		opacity: 1;
+		visibility: visible;
+		// display:block;
+	}
+}
 .headerimg {
-  height: 70px;
-  width: 70px;
-  padding-top: 2rem;
+  height: 3rem;
+	// line-height: 3rem;
+  // width: 70px;
+	margin-right: 20px;
+  // padding-top: 2rem;
+	display: none;
+}
+@media(min-width:415px){
+	.headerimg{
+		display: inline-block;
+	}
 }
 #formBlockBackground {
 	background-color:red;
@@ -43,6 +70,7 @@
 }
 .form {
 	margin:0;
+	width: 100%;
 	& input {
 		margin:0.5rem auto 0.5rem auto;
 	}
@@ -114,13 +142,10 @@ input[type=email]:focus, input[type=number]:focus, input[type=password]:focus, i
 
  .radiodiv {
    display: flex;
-   flex-flow: row wrap;
+   flex-flow: column nowrap;
    justify-content: space-around;
    max-width: 30rem;
    margin-inline: auto;
-   & > div {
-     flex: 2 1 14rem;
-   }
    & label {
      display: inline-block;
      width: auto;
@@ -129,4 +154,35 @@ input[type=email]:focus, input[type=number]:focus, input[type=password]:focus, i
  }
  .check {
   border: 1px solid red;
+ }
+
+ .modal{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #ffffff99;
+	background-image: radial-gradient(circle, #ffffff00, #f2f2f222);
+	opacity: 0;
+	z-index: -1;
+	transition: opacity 0.4s;
+	border-radius: 15px;
+	padding-left: 6%;
+	padding-right: 6%;
+	display: grid;
+	justify-content: center;
+	align-content: flex-end;
+	padding-bottom: 10%;
+	backdrop-filter: blur(5px);
+	// outline: 5px solid #9bea78;
+	& * {
+		text-indent: 0;
+		font-size: 130%;
+	}
+ }
+ .openModal{
+	// outline: 10px solid green;
+	opacity: 1;
+	// z-index: 10;
  }

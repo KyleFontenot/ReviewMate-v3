@@ -5,14 +5,14 @@ import { AsYouType } from "libphonenumber-js";
 
 export default function ContactForm(){
 	const [demoMenuOpen, setDemoMenuOpen] = createSignal(false)
+	const [nameInput, setNameInput] = createSignal('')
+	let nameRef;
   let phoneFieldRef;
   let emailFieldRef;
   let errorRef;
-  // let demoMenuRef;
-
-
+	let modalRef;
+	let demoMenuRef;
   const [errorMessage, seterrorMessage] = createSignal(' ');
-
 
 	let phoneValue;
 	let ayt = new AsYouType("US");
@@ -20,6 +20,24 @@ export default function ContactForm(){
 	let regEmailtest = new RegExp(
 		/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 	);
+	const modalOpenClass = styles.openModal;
+
+	const modalAlert = (message, color = 'green') => {
+		modalRef.style.outline = `5px solid ${
+			color === "red" ? "#db4736" : "#9bea78"
+		}`;
+		console.log(modalRef.style)
+		console.log(color)
+		modalRef.innerHTML = message;
+		modalRef.style.zIndex = 10;
+		modalRef.classList.add(modalOpenClass);
+		setTimeout(() => {
+			modalRef.classList.remove(modalOpenClass);
+			setTimeout(() => {
+				modalRef.style.zIndex = "-1"
+			}, 400)
+		}, 3000);
+	}
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -30,8 +48,21 @@ export default function ContactForm(){
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
 			body: new URLSearchParams(formData).toString(),
 		})
-			.then(() => console.log("Form successfully submitted"))
-			.catch((error) => alert(error));
+			.then(() => {
+				console.log("Form successfully submitted")
+				modalAlert(`
+						<div>
+							<h3>Thank you, ${nameInput()}!</h3>
+							<p>We'll get back to you as soon as possible</p>
+						</div>`, 'green');
+			})
+			.catch((error) => {
+				modalAlert(`
+						<div>
+							<h3>Uh Oh</h3>
+							<p>Something went wrong. Try again in a few moments.</p>
+						</div>`, 'red');
+			});
 	};
 
 
@@ -40,7 +71,6 @@ export default function ContactForm(){
 			if (!regEmailtest.test(event.target.value)) {
 				emailFieldRef.classList.add(styles.error);
 				seterrorMessage("Please provide an email address");
-				// event.target.focus();
 			} else {
 			}
 		}
@@ -53,10 +83,18 @@ export default function ContactForm(){
 				event.target.value = "";
 				seterrorMessage("Is that phone number right?");
 				phoneFieldRef.classList.add(styles.warning);
-				
 			}
 		}
 	}
+
+	const resetCheckmarks = () => {
+		for (let div of demoMenuRef.children){
+			if ((div.children.length > 1) && 
+			(div.children[0].checked === true)){
+				div.children[0].checked = false;
+			}
+		}
+	};
 
   return (
 		<div class={styles.container}>
@@ -89,7 +127,11 @@ export default function ContactForm(){
 						placeholder="Name"
 						id="nameField"
 						classList={{ [styles.input]: true }}
+						ref={nameRef}
 						required
+						oninput={e => {
+							setNameInput(nameRef.value)
+						}}
 					/>
 				</div>
 
@@ -127,8 +169,7 @@ export default function ContactForm(){
 						}}
 						classList={{ [styles.input]: true }}
 					/>
-
-				</div>	
+				</div>
 
 				<div class={styles.inputDiv}>
 					<label htmlFor="entityField">Entity:</label>
@@ -149,23 +190,34 @@ export default function ContactForm(){
 							name="inquiry"
 							value="auditing"
 							class={styles.check}
-							onclick={() => {
-								
+							onclick={(e) => {
+								setDemoMenuOpen(true);
+								// assessChecked()
 							}}
 						/>
 						<label for="auditor">Interested in Demo</label>
+
+						<div
+							classList={{
+								[styles.specialDemoMenu]: true,
+								[styles.open]: demoMenuOpen(),
+							}}
+							ref={demoMenuRef}
+						>
+							<h3>What are you most interested in?</h3>
+
+							<div class={styles.inputdiv}>
+								<input
+									type="checkbox"
+									id="demoIPPS"
+									name="demoIPPS"
+									value="Inpatient"
+								/>
+								<label for="demoIPPS">Inpatient Auditing</label>
+							</div>
+						</div>
+
 					</div>
-					<div classList={{ [ styles.specialDemoMenu ]: true, [styles.open]: demoMenuOpen }} ref={demoMenuRef}>
-					</div>
-					{/* <div>
-						<input
-							type="checkbox"
-							id="administration"
-							name="inquiry"
-							value="administration"
-						/>
-						<label for="administration">Administration Interest </label>
-					</div> */}
 
 					<div>
 						<input
@@ -173,6 +225,10 @@ export default function ContactForm(){
 							id="generalquestions"
 							name="inquiry"
 							value="general"
+							onclick={() => {
+								setDemoMenuOpen(false);
+								resetCheckmarks();
+							}}
 						/>
 						<label for="generalquestions">General Questions</label>
 					</div>
@@ -194,13 +250,18 @@ export default function ContactForm(){
 					type="button"
 					onClick={() => {
 						handleSubmit()
-						// checkForm
+						// modalAlert(`
+						// <div>
+						// 	<h3>Thank you, ${nameInput()}!</h3>
+						// 	<p>We'll get back to you as soon as possible</p>
+						// </div>`, 'red');
 					}}
 					classList={{ [styles.button]: true }}
 				>
 					Send
 				</button>
 			</form>
+			<div class={styles.modal} ref={modalRef}></div>
 		</div>
 	);
 }
