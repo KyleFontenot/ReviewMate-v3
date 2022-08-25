@@ -1,13 +1,19 @@
 
-import {createSignal} from "solid-js"
+import {createEffect, createSignal} from "solid-js"
 import styles from './ContactForm.module.scss'
 import { AsYouType } from "libphonenumber-js";
 
 export default function ContactForm(){
+	const [demoMenuOpen, setDemoMenuOpen] = createSignal(false)
   let phoneFieldRef;
   let emailFieldRef;
-  let errorRef
+  let errorRef;
+  // let demoMenuRef;
+
+
   const [errorMessage, seterrorMessage] = createSignal(' ');
+
+
 	let phoneValue;
 	let ayt = new AsYouType("US");
 
@@ -75,67 +81,81 @@ export default function ContactForm(){
 				<input type="hidden" name="bot-field" id="formbotfield" />
 				<input type="hidden" name="form-name" value="contact" />
 
-				<label htmlFor="name">Name:</label>
-				<input
-					type="text"
-					name="Name"
-					placeholder="Name"
-					id="nameField"
-					classList={{ [styles.input]: true }}
-					required
-				/>
+				<div class={styles.inputdiv}>
+					<label htmlFor="name">Name:</label>
+					<input
+						type="text"
+						name="Name"
+						placeholder="Name"
+						id="nameField"
+						classList={{ [styles.input]: true }}
+						required
+					/>
+				</div>
 
-				<label htmlFor="emailField">Email:</label>
-				<input
-					type="email"
-					ref={emailFieldRef}
-					name="Email"
-					placeholder="email@email.com"
-					id="emailField"
-					onFocusOut={(e) => {
-						checkValidInput(e, "email");
-					}}
-					classList={{ [styles.input]: true }}
-					required
-				/>
-				<label htmlFor="emailField">Phone (Optional):</label>
-				{/* Need a number formatter in solidjs */}
-				<input
-					type="tel"
-					name="Phone"
-					placeholder="+1 (123) 867-5309"
-					id="phoneField"
-					ref={phoneFieldRef}
-					onInput={(e) => {
-						ayt.reset();
-						phoneValue = ayt.input(e.target.value);
-					}}
-					onFocusOut={(e) => {
-						checkValidInput(e, "phone");
-					}}
-					classList={{ [styles.input]: true }}
-				/>
+				<div class={styles.inputdiv}>
+					<label htmlFor="emailField">Email:</label>
+					<input
+						type="email"
+						ref={emailFieldRef}
+						name="Email"
+						placeholder="email@email.com"
+						id="emailField"
+						onFocusOut={(e) => {
+							checkValidInput(e, "email");
+						}}
+						classList={{ [styles.input]: true }}
+						required
+					/>
+				</div>
 
-				<label htmlFor="entityField">Entity:</label>
-				<input
-					type="text"
-					name="Entity"
-					placeholder="Company"
-					id="entityField"
-					classList={{ [styles.input]: true }}
-				/>
+				<div class={styles.inputdiv}>
+					<label htmlFor="emailField">Phone (Optional):</label>
+					{/* Need a number formatter in solidjs */}
+					<input
+						type="tel"
+						name="Phone"
+						placeholder="+1 (123) 867-5309"
+						id="phoneField"
+						ref={phoneFieldRef}
+						onInput={(e) => {
+							ayt.reset();
+							phoneValue = ayt.input(e.target.value);
+						}}
+						onFocusOut={(e) => {
+							checkValidInput(e, "phone");
+						}}
+						classList={{ [styles.input]: true }}
+					/>
+
+				</div>	
+
+				<div class={styles.inputDiv}>
+					<label htmlFor="entityField">Entity:</label>
+					<input
+						type="text"
+						name="Entity"
+						placeholder="Company"
+						id="entityField"
+						classList={{ [styles.input]: true }}
+					/>
+				</div>
 
 				<div class={styles.radiodiv}>
-					
 					<div>
 						<input
-							type="checkbox"
+							type="radio"
 							id="auditor"
 							name="inquiry"
 							value="auditing"
 							class={styles.check}
+							onclick={() => {
+								
+							}}
 						/>
 						<label for="auditor">Interested in Demo</label>
+					</div>
+					<div classList={{ [ styles.specialDemoMenu ]: true, [styles.open]: demoMenuOpen }} ref={demoMenuRef}>
 					</div>
 					{/* <div>
 						<input
@@ -149,7 +169,7 @@ export default function ContactForm(){
 
 					<div>
 						<input
-							type="checkbox"
+							type="radio"
 							id="generalquestions"
 							name="inquiry"
 							value="general"

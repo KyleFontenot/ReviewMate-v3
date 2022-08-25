@@ -17,6 +17,16 @@
     text-align: center;
   }
 }
+.inputdiv {
+	display: block;
+	& > label {
+		display: block;
+	}
+	& > input {
+		display: block;
+		width: 100%;
+	}
+}
 .headerimg {
   height: 70px;
   width: 70px;
