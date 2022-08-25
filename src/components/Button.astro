@@ -19,7 +19,7 @@ as === ("submit" || "input") ?
 
   <input type="submit" class:list={['button', {'button--outline': outline, 'button--leftarrow': leftArrow}, {[`button--${color}`] : color}, {[`button--${size}`] : size}, className]} value={text} {style}/> : 
 
-<button class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}, {[`button--${size}`] : size}, className]} {style}>{leftArrow ? <Arrow/> : ''}{text}</button>
+<button class:list={['button', {'button--outline': outline}, {[`button--${color}`] : color}, {[`button--${size}`] : size}, className]} {style}>{leftArrow ? <Arrow/> : ''} {text}</button>
   }
 
 <style lang="scss" is:global>

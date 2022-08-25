@@ -17,7 +17,7 @@ const {href, imgSrc, imgAlt, articleTitle, body, author, date, size = 'small', e
 const concatsrc = `https:${imgSrc}`
 // console.log(imgAlt)
 ---
-<a href={`${href}`} class={ `article${size === 'small' ? ' article--small' : ''}` }>
+<a href={`${href}`}  {externallink ? `target='__blank' rel='noopener'` : ''} class={ `article${size === 'small' ? ' article--small' : ''}` }>
   <div class="image">
     <img src={concatsrc} alt={ imgAlt.toString() } />
   </div>

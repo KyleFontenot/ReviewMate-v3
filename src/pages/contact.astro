@@ -1,6 +1,6 @@
 ---
 import StandardLayout from "../layouts/StandardLayout.astro"
-import ContactForm from '../components/ContactForm.astro'
+import ContactForm from '../components/ContactForm.jsx'
 import FAQSection from '../components/FAQSection.astro'
 ---
 <StandardLayout>
@@ -8,7 +8,7 @@ import FAQSection from '../components/FAQSection.astro'
       <div style=" width: 115%;height:135%;max-height:59rem;">
          <img src="/fauxels-meeting.jpg" alt="people meeting over a table." class="bgimage"/>
       </div>
-      <ContactForm />
+      <ContactForm client:idle />
    </div>
    <FAQSection />
 </StandardLayout>

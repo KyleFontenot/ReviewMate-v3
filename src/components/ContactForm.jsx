@@ -3,7 +3,7 @@ import {createSignal} from "solid-js"
 import styles from './ContactForm.module.scss'
 import { AsYouType } from "libphonenumber-js";
 
-export default function ContactForm (){
+export default function ContactForm(){
   let phoneFieldRef;
   let emailFieldRef;
   let errorRef
@@ -14,6 +14,20 @@ export default function ContactForm (){
 	let regEmailtest = new RegExp(
 		/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 	);
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		let myForm = document.getElementById("contactform");
+		let formData = new FormData(myForm);
+		fetch("/", {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			body: new URLSearchParams(formData).toString(),
+		})
+			.then(() => console.log("Form successfully submitted"))
+			.catch((error) => alert(error));
+	};
+
 
 	function checkValidInput( event, type) {
 		if (type == "email"){
@@ -55,6 +69,7 @@ export default function ContactForm (){
 				formNoValidate
 				noValidate
 				action="/submitted"
+				id="contactform"
 				class={styles.form}
 			>
 				<input type="hidden" name="bot-field" id="formbotfield" />
@@ -158,6 +173,7 @@ export default function ContactForm (){
 				<button
 					type="button"
 					onClick={() => {
+						handleSubmit()
 						// checkForm
 					}}
 					classList={{ [styles.button]: true }}

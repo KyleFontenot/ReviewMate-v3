@@ -1,5 +1,14 @@
 ---
-const {variant, style, id, className, justify, gap, padding } = Astro.props;
+export interface FlexDivProps {
+  variant?: 0 | 1 | 2 ;
+  style?: string;
+  id?: string;
+  justify?: 'center' | 'flex-end' | 'flex-start' | 'space-around' | 'space-between';
+  className?: string;
+  gap?: string;
+  padding?: string;
+}
+const {variant, style, id, className, justify, gap, padding } = Astro.props as FlexDivProps;
 let procStyle = new String();
 // console.log(className);
 if (style ) {
@@ -14,7 +23,6 @@ if (gap ) {
 if (padding ) {
   procStyle = procStyle.concat('padding:' + padding + ';');
 }
-
 ---
 
 {variant === 0 ? <div class:list={["flexdiv", "flexdiv0", className]} {id} style={procStyle}>
