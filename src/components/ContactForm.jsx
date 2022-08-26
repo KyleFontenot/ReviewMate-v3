@@ -40,7 +40,7 @@ export default function ContactForm(){
 	}
 
 	const handleSubmit = (e) => {
-		e.preventDefault();
+		// e.preventDefault();
 		let myForm = document.getElementById("contactform");
 		let formData = new FormData(myForm);
 		fetch("/", {
@@ -126,7 +126,7 @@ export default function ContactForm(){
 						name="Name"
 						placeholder="Name"
 						id="nameField"
-						classList={{ [styles.input]: true }}
+						classList={{ [styles.input]: true, [styles.inputfield]: true }}
 						ref={nameRef}
 						required
 						oninput={e => {
@@ -146,7 +146,7 @@ export default function ContactForm(){
 						onFocusOut={(e) => {
 							checkValidInput(e, "email");
 						}}
-						classList={{ [styles.input]: true }}
+						classList={{ [styles.input]: true, [styles.inputfield]: true }}
 						required
 					/>
 				</div>
@@ -167,7 +167,7 @@ export default function ContactForm(){
 						onFocusOut={(e) => {
 							checkValidInput(e, "phone");
 						}}
-						classList={{ [styles.input]: true }}
+						classList={{ [styles.input]: true, [styles.inputfield]: true }}
 					/>
 				</div>
 
@@ -178,7 +178,7 @@ export default function ContactForm(){
 						name="Entity"
 						placeholder="Company"
 						id="entityField"
-						classList={{ [styles.input]: true }}
+						classList={{ [styles.input]: true, [styles.inputfield]: true }}
 					/>
 				</div>
 
@@ -241,7 +241,7 @@ export default function ContactForm(){
 					cols={10}
 					name="Info"
 					id="commentField"
-					classList={{ [styles.input]: true }}
+					classList={{ [styles.input]: true, [styles.inputfield]: true }}
 				/>
 				<div id="errorMessage" class={styles.errorMessage} ref={errorRef}>
 					{errorMessage()}
