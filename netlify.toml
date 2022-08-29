@@ -6,3 +6,8 @@
   to = "https://review-mate.com/"
   status = 301
   force = false
+[[redirects]]
+  from = "http://pickerson.com/"
+  to = "http://review-mate.com/"
+  status = 301
+  force = false
