@@ -1,6 +1,10 @@
 [build]
   command = "yarn run build"
   publish = "dist"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
 [[redirects]]
   from = "https://pickerson.com/"
   to = "https://review-mate.com/"

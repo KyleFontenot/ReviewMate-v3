@@ -15,7 +15,7 @@ import {Img} from "astro-imagetools/components"
         </div>
     </div>
     <slot name="common" />
-    <Img src={imgSrc} alt={imgAlt} attributes={{img: {class: 'featureimage'}}} />
+    <Img src={imgSrc} alt={imgAlt} attributes={{img: {class: 'featureimage'}}} class="featureimage" />
     <slot/>
     
   </div>

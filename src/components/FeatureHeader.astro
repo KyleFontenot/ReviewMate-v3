@@ -5,7 +5,7 @@ import {Img } from 'astro-imagetools/components'
 const arrofLinks = [ "Plans", "Resources", 'Contact']
 const arrofSubLinks = ["Auditing", "Automation", "Reporting", "Security", "Monitoring" ]
 const {featureHeader } = Astro.props;
-console.log(featureHeader)
+// console.log(featureHeader)
 ---
   
 <header>
@@ -45,8 +45,7 @@ console.log(featureHeader)
       </ul>
     </nav>
   {featureHeader && <div class="featureimg">
-      <Img src={featureHeader.src.toString()} alt={featureHeader.alt} attributes={{img: {style: "object-fit:cover;max-width:100%;max-height:100%;"}}} style="object-fit:cover;max-width:100%;max-height:100%;" />
-      <img src={featureHeader.src} alt={featureHeader.alt} style="object-fit:cover;max-width:100%;max-height:100%;" />
+    <Img src={featureHeader.src} alt={featureHeader.alt} attributes={{img: {style: "object-fit:cover;max-width:100%;max-height:100%;"}}} style="object-fit:cover;max-width:100%;max-height:100%;" />
     </div>}
 </header>
 
