@@ -8,23 +8,24 @@ import ConcernBlob from '../components/ConcernBlob.astro'
 import RMDiagram from '../components/RMDiagram.astro'
 import Timeline from '../components/Timeline.astro'
 import SmallLink from '../components/SmallLink.astro'
+import {Img} from "astro-imagetools/components"
 import {formatSlug} from '../utils'
 ---
 <HomepageLayout>
-    <div class="shapeintro" >
+    <div class="shapeintro">
       <noscript><link rel="stylesheet" href="nojs.css" /></noscript>
+      <div id="bgimage"></div>
       <div class="shapeintrobg" id="shapeintrobg"></div>
       <div class="introtext">
+        <h1 class="hiddenheader">ReviewMate</h1>
         <h2 class="scrollrevealtext1">Elevate your medical code auditing workflow</h2>
         <p class="scrollrevealtext2">Streamline auditing,
         integrate your data seamlessly, and consolidate communication in one platform.</p>
         <h3 class="scrollrevealtext3" style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
       </div>
-
         <iframe id="productintroscreen" width="560"  height="315" src="https://www.youtube.com/embed/TGe97xQyex8?modestbranding=1"
-        srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img{position:absolute;width:100%;top:0;bottom:0;margin:auto}.youtubearrow{color: white;width:50%;aspect-ratio: 1 / 1;position: absolute;left:50%;top: 50%;transform: translate(-50%, -50%);display:grid;justify-content:center;}</style><a href=https://www.youtube.com/embed/TGe97xQyex8?modestbranding=1><img src=https://img.youtube.com/vi/TGe97xQyex8/maxresdefault.jpg alt='ReviewMate Overview'><span class='youtubearrow'><svg width='100' height='100' style='fill:#ffffff;position: absolute;top: 50%;left:50%;transform:translate(-50%, -50%);' viewBox='0 0 90.898514 90.898514' version='1.1' id='svg5' inkscape:export-filename='ytplay.svg' inkscape:export-xdpi='300' inkscape:export-ydpi='300' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' ><defs id='defs2'  /><g inkscape:label='Layer 1' inkscape:groupmode='layer' id='layer1' transform='translate(-1.0631373)'><path id='path241' transform='matrix(0,-0.32138075,0.32138075,0,11.079654,57.71011)' inkscape:transform-center-x='0.94132348' inkscape:transform-center-y='1.872329' d='m 106.74077,66.323128 -25.506365,44.178322 -39.2647,68.00846 a 7.9433773,7.9433773 -180 0 1 -13.758333,0 L 2.7050047,134.33158 -36.559696,66.323128 a 7.9433773,7.9433773 120 0 1 6.879167,-11.915066 h 51.012734 78.5294 a 7.9433773,7.9433773 60 0 1 6.879165,11.915066 z' style='fill:#fff;stroke-width:7.9375' /><path style='color:#fff;fill:#fff;-inkscape-stroke:none' d='M 46.511719,0 C 21.439501,0 1.0625,20.377001 1.0625,45.449219 c 0,25.072218 20.377001,45.449218 45.449219,45.449218 25.072218,0 45.449218,-20.377 45.449218,-45.449218 C 91.960937,20.377001 71.583937,0 46.511719,0 Z m 0,4.84375 c 22.454291,0 40.605468,18.151178 40.605468,40.605469 0,22.454291 -18.151177,40.605468 -40.605468,40.605468 C 24.057428,86.054687 5.90625,67.90351 5.90625,45.449219 5.90625,22.994928 24.057428,4.84375 46.511719,4.84375 Z' id='path403' /></g></svg></span></a>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen 
+        srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img{position:absolute;width:calc(100% + 8px);margin-left: 0;top:0;left: -4px;bottom:0;margin:auto}.youtubearrow{color: white;width:50%;aspect-ratio: 1 / 1;position: absolute;left:50%;top: 50%;transform: translate(-50%, -50%);display:grid;justify-content:center;}</style><a href=https://www.youtube.com/embed/TGe97xQyex8?modestbranding=1><img src=https://img.youtube.com/vi/TGe97xQyex8/maxresdefault.jpg alt='ReviewMate Overview'><span class='youtubearrow'><svg width='100' height='100' style='fill:#ffffff;position: absolute;top: 50%;left:50%;transform:translate(-50%, -50%);' viewBox='0 0 90.898514 90.898514' version='1.1' id='svg5' inkscape:export-filename='ytplay.svg' inkscape:export-xdpi='300' inkscape:export-ydpi='300' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' ><defs id='defs2'  /><g inkscape:label='Layer 1' inkscape:groupmode='layer' id='layer1' transform='translate(-1.0631373)'><path id='path241' transform='matrix(0,-0.32138075,0.32138075,0,11.079654,57.71011)' inkscape:transform-center-x='0.94132348' inkscape:transform-center-y='1.872329' d='m 106.74077,66.323128 -25.506365,44.178322 -39.2647,68.00846 a 7.9433773,7.9433773 -180 0 1 -13.758333,0 L 2.7050047,134.33158 -36.559696,66.323128 a 7.9433773,7.9433773 120 0 1 6.879167,-11.915066 h 51.012734 78.5294 a 7.9433773,7.9433773 60 0 1 6.879165,11.915066 z' style='fill:#fff;stroke-width:7.9375' /><path style='color:#fff;fill:#fff;-inkscape-stroke:none' d='M 46.511719,0 C 21.439501,0 1.0625,20.377001 1.0625,45.449219 c 0,25.072218 20.377001,45.449218 45.449219,45.449218 25.072218,0 45.449218,-20.377 45.449218,-45.449218 C 91.960937,20.377001 71.583937,0 46.511719,0 Z m 0,4.84375 c 22.454291,0 40.605468,18.151178 40.605468,40.605469 0,22.454291 -18.151177,40.605468 -40.605468,40.605468 C 24.057428,86.054687 5.90625,67.90351 5.90625,45.449219 5.90625,22.994928 24.057428,4.84375 46.511719,4.84375 Z' id='path403' /></g></svg></span></a>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen 
         loading="lazy"></iframe>
-
       <div id="testscreen">
         <img src="/HomeDashboard.svg" alt="screenshot of ReviewMate's graphical user interface" />
       </div>
@@ -36,25 +37,29 @@ import {formatSlug} from '../utils'
     <Button as="link" href="/plans/" text="Plans and Features" outline style="z-index:30;"></Button>
   </div>
 
-  <FlexDiv className="producttraits">
+  <FlexDiv className="producttraits"  alignContent="center">
     <div class="scrollreveal">
-      <img src="/Integrate(kf).svg" width="168" height="183"  alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
-      <h3 style="letter-spacing:0;">Consolidate data from any source</h3>
+      <img src="/Integrate(kf).svg" width="138" height="153"  alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
+      <h3>Integrate</h3>
+      <h4 >Consolidate data from any source</h4>
       <p>Connect ReviewMate right into your universe of data or import loose resources independently, for gathering samples.</p>
     </div>
     <div class="scrollreveal">
-    <img src="/Audit(kf).svg" width="168" height="183" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
-      <h3 style="letter-spacing:0;">Audit and extrapolate findings seamlessly</h3>
+    <img src="/Audit(kf).svg" width="138" height="153" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
+      <h3>Audit</h3>
+      <h4>Find and extrapolate findings seamlessly</h4>
       <p>Integrated tools keep both the auditor closer to the data, and expands more accountable, transparent communication.</p>
     </div>
     <div class="scrollreveal">
-      <img src="/Report(kf).svg" width="168" height="183" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
-      <h3 style="letter-spacing:0;">Report and monitor</h3>
+      <img src="/Report(kf).svg" width="138" height="153" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
+      <h3>Report</h3>
+      <h4>Summarize findings and continually manage auditing operations</h4>
       <p>Customizable reports and integrated communication channels expedite results right to the end-user.</p>
     </div>
     <div class="scrollreveal">
-      <img src="/Automate(kf).svg" width="168" height="183" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
-      <h3 style="letter-spacing:0;">Automate and gain insight</h3>
+      <img src="/Automate(kf).svg" width="138" height="153" alt="Icon of pulling in data from hospital database" class="rellax1 introicon" />
+      <h3>Automate</h3>
+      <h4>Automate work and gain insight</h4>
       <p>Leverage artificial intelligence and community-sourced data to augment workflows intuitively. Expedite discovery of auditing opportunities.</p>
     </div>
   </FlexDiv>
@@ -63,40 +68,40 @@ import {formatSlug} from '../utils'
   <h3 style="margin-bottom: 3rem;">Trusted By:</h3>
   <div class="partnersdiv">
       <a href="https://www.comforcehealth.com/" target="__blank" rel="noopener">
-          <img class="partnerlogo" src="/brandsvgs/comforcehealth.svg" height="180" width="336" alt="Comforce Health logo" />
+          <img class="partnerlogo" src="/brandsvgs/comforcehealth.svg" height="180" width="336" alt="Comforce Health logo" loading="lazy"/>
       </a>
       <a href="https://www.cioxhealth.com/" target="__blank" rel="noopener">
-          <img class="partnerlogo" src="/brandsvgs/ciox.svg" alt="Ciox's logo" height="180" width="336" />
+          <img class="partnerlogo" src="/brandsvgs/ciox.svg" alt="Ciox's logo" height="180" width="336" loading="lazy"/>
       </a>
       <a href="https://www.3m.com/" target="__blank" rel="noopener">
-          <img class="partnerlogo" src="/brandsvgs/3m.svg" alt="3M's logo" height="180" width="336" />
+          <img class="partnerlogo" src="/brandsvgs/3m.svg" alt="3M's logo" height="180" width="336" loading="lazy"/>
       </a>
       <a href="https://ecatalysthealth.com/" target="__blank" rel="noopener">
-          <img class="partnerlogo" src="/brandsvgs/eCatalyst.svg" alt="eCatalyst's logo" height="180" width="336" />
+          <img class="partnerlogo" src="/brandsvgs/eCatalyst.svg" alt="eCatalyst's logo" height="180" width="336" loading="lazy"/>
       </a>
       <a href="https://intellisiq.com/" target="__blank" rel="noopener">
-          <img class="partnerlogo" src="/brandsvgs/intellis.svg" alt="Intellis' logo" height="180" width="336" />
+          <img class="partnerlogo" src="/brandsvgs/intellis.svg" alt="Intellis' logo" height="180" width="336" loading="lazy"/>
       </a>
       <a href="https://www.lifebridgehealth.org/Main/Home.aspx" target="__blank" rel="noopener">
-          <img class="partnerlogo" src="/brandsvgs/lifebridge.svg" alt="Intellis' logo" height="180" width="336" />
+          <img class="partnerlogo" src="/brandsvgs/lifebridge.svg" alt="Intellis' logo" height="180" width="336" loading="lazy"/>
       </a>
       <a href="https://www.essentiahealth.org/" target="__blank" rel="noopener">
-          <img class="partnerlogo" src="/brandsvgs/Essentia-Health-Logo.svg" height="180" width="336" alt="Maxim Healthcare's logo" />
+          <img class="partnerlogo" src="/brandsvgs/Essentia-Health-Logo.svg" height="180" width="336" alt="Maxim Healthcare's logo" loading="lazy"/>
       </a>
       <a href="https://www.maximhealthcare.com/" target="__blank" rel="noopener">
-          <img class="partnerlogo" src="/brandsvgs/maxim.svg" alt="Maxim Healthcare's logo" height="180" width="336" />
+          <img class="partnerlogo" src="/brandsvgs/maxim.svg" alt="Maxim Healthcare's logo" height="180" width="336" loading="lazy"/>
       </a>
       <a href="https://www.optum.com/" target="__blank" rel="noopener">
-          <img class="partnerlogo" src="/brandsvgs/Optum.svg" alt="Optum Health services' logo" height="180" width="336" />
+          <img class="partnerlogo" src="/brandsvgs/Optum.svg" alt="Optum Health services' logo" height="180" width="336" loading="lazy"/>
       </a>
       <a href="https://xtendhealthcare.net/" target="__blank" rel="noopener">
-          <img class="partnerlogo" src="/brandsvgs/Xtend.svg" alt="Xtend Healthcare's logo" height="180" width="336" />
+          <img class="partnerlogo" src="/brandsvgs/Xtend.svg" alt="Xtend Healthcare's logo" height="180" width="336" loading="lazy"/>
       </a>
       <a href="https://www.nthrive.com/transunionhealthcare/" target="__blank" rel="noopener">
-          <img class="partnerlogo" src="/brandsvgs/nThrive.svg" alt="nThrive's logo" height="180" width="336" />
+          <img class="partnerlogo" src="/brandsvgs/nThrive.svg" alt="nThrive's logo" height="180" width="336" loading="lazy"/>
       </a>
       <a href="https://jtshealthpartners.com/jts-health-partners-overview/" target="__blank" rel="noopener">
-          <img class="partnerlogo" src="/brandsvgs/JTS-Health.svg" alt="JTS's logo" height="180" width="336" />
+          <img class="partnerlogo" src="/brandsvgs/JTS-Health.svg" alt="JTS's logo" height="180" width="336" loading="lazy"/>
       </a>
   </div>
 </FlexDiv>
@@ -218,13 +223,16 @@ import {formatSlug} from '../utils'
 </CallToAction>
 
 </main>
-<script >
+<script>
   function deferAddimage(){
-    const introbgS = document.querySelector('#shapeintrobg')?.style;
-    introbgS.backgroundImage = `url('/marc-mueller.webp'), url('/marc-mueller.jpeg')`;
-    introbgS.background = `url('/marc-mueller.webp'), url('/marc-mueller.jpeg')`;
-    introbgS.backgroundRepeat = `no-repeat`;
-    introbgS.backgroundSize = `cover` ;
+    const introbg = document.querySelector('#bgimage')?.style;
+    introbg.backgroundImage = `url('/marc-mueller.webp'), url('/marc-mueller.jpeg')`;
+    introbg.background = `url('/marc-mueller.webp'), url('/marc-mueller.jpeg')`;
+    introbg.backgroundRepeat = `no-repeat`;
+    introbg.backgroundSize = `cover`;
+    setTimeout(() => {
+      introbg.opacity = 1;
+    }, 300)
   }
   window.onload = deferAddimage();
 
@@ -236,19 +244,59 @@ import {formatSlug} from '../utils'
     color: white; 
     width: 100%;
     margin-inline: auto;
-    height: clamp(48rem, 48rem, 60rem);
+    // height: clamp(48rem, 48rem, 60rem);
+    height: clamp(28rem, 70vh, 48rem);
     display: block;
     max-width: 100%;
     top: -1px;
     text-indent: 0;
     position: relative;
     z-index: 30;
-    margin-bottom: calc(80vw + 7rem);
+    // margin-bottom: calc(80vw + 7rem);
+    margin-bottom: 9rem;
+    
+    #bgimage, .shapeintrobg {
+      background-color: #888;
+      background-repeat: no-repeat;  
+      background-size: cover;
+      clip-path: polygon(0% 80%, 0% -0.5%, 100% -0.5%, 100% 80%, 50% 100%);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    #bgimage {
+      background: white;
+    }
+    #shapeintrobg {
+      // opacity: 0;
+      // transition: opacity 0.5s;
+    }
+    .shapeintrobg {
+      background-color: hsl(var(--color1hsl));
+      background: linear-gradient(172deg, hsl(var(--color1hsl)) 25%, hsla(var(--color1h), 70%, 20%, 30%) );
+    }
+    #productintroscreen{
+      position: absolute;
+      bottom: 6rem;
+      bottom: -6.5rem;
+      left: 50%;
+      transform-origin: 50% 50%;
+      transform: translate3d(-50%, 0, 0);
+      // width: 78%;
+      // height: 100%;
+      // max-height: 28rem;
+      max-width: 55rem;
+      z-index: 300;
+      box-shadow: 0 12px 20px -4px #111;
+      border-radius: 12px;
+      aspect-ratio: 16 / 9;
+    }
     .introtext {
       position: absolute;
-      width: 80%;
+      width: 50%;
       left: 8vw;
-      top: 3rem;
+      top: 0rem;
       z-index: 100;
 
       & h2, & p, & h3 {
@@ -290,40 +338,29 @@ import {formatSlug} from '../utils'
   @media (max-width: 446px ){
     .shapeintro > .introtext {
       width: 90%;
-      bottom: calc(20vw + 12rem);
+      // bottom: calc(20vw + 12rem);
     }
   }
   @media (min-width: 1110px ){
     .shapeintro {
-      margin-bottom: 21vw;
+      // margin-bottom: 21vw;
     }
     .shapeintro > .introtext {
       bottom: calc(22vw * 0.80 + 12rem);
     }
   }
-  #productintroscreen{
-    position: absolute;
-    bottom: -8rem;
-    left: 50%;
-    transform-origin: 50% 50%;
-    transform: translate3d(-50%, 0, 0);
-    width: 92%;
-    height: 100%;
-    max-height: 28rem;
-    max-width: 55rem;
-    z-index: 300;
-    box-shadow: 0 12px 20px -4px #111;
-    border-radius: 12px;
-  }
+  
 
 
   @media(max-width:669px){
     #productintroscreen{
       bottom: -35vw;
-      bottom: -4rem;
+      bottom: -2rem;
+      max-width: 80%;
       box-shadow:none;
     }
   }
+  
   .shapeintrobg {
     background-color: #888;
     background-repeat: no-repeat;  
@@ -332,17 +369,18 @@ import {formatSlug} from '../utils'
     position: absolute;
     width: 100%;
     height: 100%;
-    top: -20px;
-    transform: translate(0, -2px);
+    // max-height: 38rem;
+    // top: 2px;
+    // transform: translate(0, -2px);
     z-index: -1;
     &::after {
       content: '';
       height: 100%;
       width: 100%;
       background-color: hsl(var(--color1hsl));
-      background: linear-gradient(172deg, hsl(var(--color1hsl)) 20%, hsla(var(--color1h), 70%, 20%, 80%) );
+      background: linear-gradient(172deg, hsl(var(--color1hsl)) 25%, hsla(var(--color1h), 70%, 20%, 30%) );
       position: absolute;
-      top: -30px;
+      top: -6px;
       left: 0;
       z-index: -1;
     }
@@ -369,19 +407,34 @@ import {formatSlug} from '../utils'
 
 .producttraits {
   display: grid!important;
-  grid-template-columns: repeat(auto-fit, minmax(18rem,  46%));    
+  grid-template-columns: repeat(auto-fit, minmax(18rem,  44%));    
   flex-flow: row wrap;
-    justify-content: center;
-    column-gap: 5%;
-    row-gap: 2.5rem;
-    margin-bottom: 4rem;
-    & > div {
-      flex: 1 1 24rem;
-      min-width: 18rem;
-      max-width: 32rem;
-      margin-inline: auto;
+  justify-content: space-around;
+  align-content: start;
+  column-gap: 6%;
+  // row-gap: 2.5rem;
+  margin-bottom: 4rem;
+  & > div {
+    flex: 1 1 24rem;
+    // min-width: 18rem;
+    max-width: 28rem;
+    margin-inline: auto;
+    & > h3 {
+      font-size: 1.85rem;
+      // text-align: center;
+      // text-indent: 1rem;
+    }
+    & > h4 {
+      font-size: 1.25rem;
+      letter-spacing: 0;
+      // text-indent: 1rem;
+    }
+    & > p {
+      margin-top: 0.5rem;
+      text-indent: 0;
     }
   }
+}
 
   @media (min-width: 690px ){
     .introCTA{
@@ -392,11 +445,11 @@ import {formatSlug} from '../utils'
       margin-top: 1rem;
     }
     .shapeintro {
-      margin-bottom: calc(10rem * 1.2);
+      // margin-bottom: calc(10rem * 1.2);
     }
     .introtext {
       position: absolute;
-      width: 80%;
+      width: 50%;
       left: 8vw;
       top: 3rem;
       z-index: 100;
@@ -441,7 +494,7 @@ import {formatSlug} from '../utils'
     }    
     #testscreen{
       perspective: 500px;
-      bottom: -12vw;
+      bottom: 0vw;
       height: 100%;
       width: clamp(20rem, 40vw, 90rem);
       position: absolute;
@@ -520,7 +573,7 @@ import {formatSlug} from '../utils'
     width: 9rem;
     margin-inline: auto;
     display: block;
-    margin-bottom: 1.3rem;
+    // margin-bottom: 1.3rem;
   }
   .concernblobcontainer {
     margin-top: 5rem;
@@ -575,4 +628,7 @@ import {formatSlug} from '../utils'
  .morecapabilities{
   outline: 2px solid purple;
  }  
+ .hiddenheader{
+  display: none;
+ }
 </style> 

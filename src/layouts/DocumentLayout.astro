@@ -10,12 +10,11 @@
 
   const description = Astro.props.description || metadata.description 
 
-  const canonical = Astro.props.canonical || metadata.canonical || "https://deft-cuchufli-bfd7e3.netlify.app/";
+  const canonical = Astro.props.canonical || metadata.canonical || "https://review-mate.com/";
   const image = Astro.props.image || metadata.openGraph.basic.image
   const imageAlt = Astro.props.imageAlt || "ReviewMate's brand logo"
-  const url = Astro.props.url || "https://deft-cuchufli-bfd7e3.netlify.app/"
+  const url = Astro.props.url || "https://review-mate.com/"
   let openGraph = Astro.props.openGraph || new defaultOpenGraph(metadata.title, description, image, imageAlt, url)
-  // console.log(openGraph.title)
 ---
 <html lang="en">
   <head>

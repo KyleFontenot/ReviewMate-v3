@@ -3,12 +3,13 @@ export interface FlexDivProps {
   variant?: 0 | 1 | 2 ;
   style?: string;
   id?: string;
-  justify?: 'center' | 'flex-end' | 'flex-start' | 'space-around' | 'space-between';
+  justify?: 'center' | 'flex-end' | 'flex-start' | 'start' | 'space-around' | 'space-between';
+  alignContent?: 'center' | 'flex-end' | 'flex-start' | 'start' | 'space-around' | 'space-between';
   className?: string;
   gap?: string;
   padding?: string;
 }
-const {variant, style, id, className, justify, gap, padding } = Astro.props as FlexDivProps;
+const {variant, style, id, className, justify, gap, padding, alignContent } = Astro.props as FlexDivProps;
 let procStyle = new String();
 // console.log(className);
 if (style ) {
@@ -16,6 +17,9 @@ if (style ) {
 }
 if (justify ) {
   procStyle = procStyle.concat('justify-content:' + justify + ';');
+}
+if (alignContent) {
+  procStyle = procStyle.concat('align-content:' + alignContent + ';');
 }
 if (gap ) {
   procStyle = procStyle.concat('gap:' + gap + ';');
