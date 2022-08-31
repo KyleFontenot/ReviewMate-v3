@@ -29,7 +29,7 @@ export async function getStaticPaths() {
         body: documentToHtmlString(fields.body), 
         author: fields.author,
         date: new Date(fields.dateCreated),
-        img: `https://${fields.thumbnail.fields.file.url}`,
+        img: `https:${fields.thumbnail.fields.file.url}`,
         imgAlt: fields.thumbnail.fields.description,
       }
     };

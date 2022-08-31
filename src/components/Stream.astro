@@ -11,6 +11,7 @@ let posts = await contentfulItems(postType)
 const months = ['January', 'February',
 'March','April','May','June','July','August','September','October','November','December',]
 const descriptionCutoff = 120
+
 ---
 <div class:list={[ 'blogwrapper', className ]} id="blog" {style}>
   {size === 'large' ? 
@@ -18,13 +19,15 @@ const descriptionCutoff = 120
   <h3 style="width: 100%;margin-bottom: 2rem;">{title}</h3>}
   <div class="container">
     {posts.map(post => 
+    
       {
+        // console.log(post.fields.thumbnail.fields.file)
         let blogBody = post?.fields?.body?.content[0]?.content[0]?.value;
         let formatDate = new Date(post.fields.dateCreated);
         return (<Article 
           articleTitle={post.fields.title}
           href={post.fields.url ? post.fields.url : `/blog/${formatSlug(post.fields.title)}/`}
-          imgSrc={post.fields.thumbnail.fields.file.url}
+          imgSrc={'https:' + post.fields.thumbnail.fields.file.url}
           imgAlt={post.fields.thumbnailAlt}
           body={blogBody.length > descriptionCutoff ? blogBody.split('').splice(0, descriptionCutoff).join('').concat(' . . .') : blogBody}
           author={post.fields.author}
