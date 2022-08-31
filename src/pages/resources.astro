@@ -3,6 +3,8 @@ import StandardLayout from '../layouts/StandardLayout.astro'
 import FAQSection from "../components/FAQSection.astro"
 import WhatsNew from '../components/WhatsNew.astro'
 import Stream from '../components/Stream.astro'
+import BlogStream from '../components/BlogStream.astro'
+import ArticleStream from '../components/ArticleStream.astro'
 import {pageOpenGraph} from '../utils.js'
 ---
 <StandardLayout openGraph={new pageOpenGraph('Resources', 
@@ -11,10 +13,12 @@ import {pageOpenGraph} from '../utils.js'
   >
     <h1 style="margin-bottom: 2rem;">Resources</h1>
 
-<Stream postType="blogPost" title="Blog Posts" size="small" />
+<!-- <Stream postType="blogPost" title="Blog Posts" size="small" /> -->
+<BlogStream />
 <WhatsNew/>
 
-<Stream postType="articlePost" title="Relevant External Articles" size="small" />
+<!-- <ArticleStream /> -->
+<!-- <Stream postType="articlePost" title="Relevant External Articles" size="small" /> -->
 
 <FAQSection/>
 </StandardLayout>

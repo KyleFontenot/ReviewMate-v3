@@ -2,7 +2,7 @@
   command = "yarn run build"
   publish = "dist"
 [[headers]]
-  for = "/*"
+  for = "*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
 [[redirects]]

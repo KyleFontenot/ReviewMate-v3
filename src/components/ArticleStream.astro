@@ -1,13 +1,12 @@
 ---
 import {formatSlug} from '../featureList.js'
-
 import Article from "./Article.astro"
 import Arrow from "./Arrow.astro"
 import {Img} from 'astro-imagetools/components'
 import { contentfulItems} from './contentfulClient.js'
-const {size = "small", title, postType = "blogPost", style, className}  = Astro.props;
+const {size = "small", title, style, className}  = Astro.props;
 
-let posts = await contentfulItems(postType)
+let posts = await contentfulItems("articlePost")
 
 const months = ['January', 'February',
 'March','April','May','June','July','August','September','October','November','December',]
@@ -20,28 +19,24 @@ const descriptionCutoff = 120
   <h3 style="width: 100%;margin-bottom: 2rem;">{title}</h3>}
 
   <div class="container">
-    <!-- <Img src='https://www.pixelstalk.net/wp-content/uploads/2016/04/Google-Wallpaper-Images-HD-download.jpg' alt='something' /> -->
-    <img src='https://www.pixelstalk.net/wp-content/uploads/2016/04/Google-Wallpaper-Images-HD-download.jpg' alt='something' />
     {posts.map(post => 
       {
-        console.log(post.fields.thumbnail.fields.file.url)
         let blogBody = post?.fields?.body?.content[0]?.content[0]?.value;
         let formatDate = new Date(post.fields.dateCreated);
+        console.log(post);
         return (
-          <h3>{blogBody}</h3>
+
+          <a href={`/blog/${formatSlug('df')}`}  class:list={[  'article', { 'article--small' : size === 'small' }] }>
+            <div class="image">
+              <Img src={'https:' + post.fields.thumbnail.fields.file.url} alt={post.fields.thumbnailAlt} />
+            </div>
+          <div class="textbody">
+            <h3>{post.fields.title}&nbsp;</h3>
+            <p>{blogBody.length > descriptionCutoff ? blogBody.split('').splice(0, descriptionCutoff).join('').concat(' . . .') : blogBody}</p>
+            <p class="date">{`${months[formatDate.getMonth()]} ${formatDate.getDate()}, ${formatDate.getFullYear()}`}</p>
+          </div>
+          </a>
         )
-      //   return (<Article 
-      //     articleTitle={post.fields.title}
-      //     href={post.fields.url ? post.fields.url : `/blog/${formatSlug(post.fields.title)}/`}
-      //     imgSrc={'https:' + post.fields.thumbnail.fields.file.url}
-      //     imgAlt={post.fields.thumbnailAlt}
-      //     body={blogBody.length > descriptionCutoff ? blogBody.split('').splice(0, descriptionCutoff).join('').concat(' . . .') : blogBody}
-      //     author={post.fields.author}
-      //     date={`${months[formatDate.getMonth()]} ${formatDate.getDate()}, ${formatDate.getFullYear()}`}
-      //     size={size}
-      //     externallink={(postType === "articlePost") ? true : false}
-      // >
-      // </Article>)
       }
     )}
   </div>
@@ -52,6 +47,40 @@ const descriptionCutoff = 120
 </div>
 
 <style lang="scss">
+  .article { 
+    transition: outline 0.2s;
+    outline: 2px solid transparent;
+    flex: 2 1 20rem;
+    position: relative;
+    display: block;
+    height: 100%;
+    max-width: 50rem;
+    border: 2px solid transparent;
+      border-radius: 10px;
+    box-shadow: 0 6px 16px -8px #33333388;
+    transition: transform 0.3s;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: block;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      border-radius: 10px;
+      box-shadow: 0 10px 12px 0px #33333366;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &:hover, &:focus-visible, {
+      border: 2px solid hsl(var(--color1hsl));
+      transform: translate3d(0, -5px, 0);
+      &::after {
+        opacity: 1;
+      }
+    }
+   }
 .blogwrapper {
   color: #666;
   background-color: #f2f2f2;
