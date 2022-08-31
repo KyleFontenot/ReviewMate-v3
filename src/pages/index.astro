@@ -3,7 +3,7 @@ import HomepageLayout from '../layouts/HomepageLayout.astro'
 import FlexDiv from '../components/FlexDiv.astro'
 import Button from "../components/Button.astro"
 import CallToAction from "../components/CallToAction.astro" 
-import Stream from "../components/Stream.astro"
+import Stream from "../components/Stream.astro" 
 import ConcernBlob from '../components/ConcernBlob.astro'
 import RMDiagram from '../components/RMDiagram.astro'
 import Timeline from '../components/Timeline.astro'
@@ -14,14 +14,15 @@ import {formatSlug} from '../utils'
 <HomepageLayout>
     <div class="shapeintro">
       <noscript><link rel="stylesheet" href="nojs.css" /></noscript>
+      <div id="bgbackdrop"></div>
       <div id="bgimage"></div>
       <div class="shapeintrobg" id="shapeintrobg"></div>
-      <div class="introtext">
-        <h1 class="hiddenheader">ReviewMate</h1>
-        <h2 class="scrollrevealtext1">Elevate your medical code auditing workflow</h2>
-        <p class="scrollrevealtext2">Streamline auditing,
+      <div class="introtext ">
+        <h1 class="hiddenheader load-hidden">ReviewMate</h1>
+        <h2 class="scrollrevealtext1 load-hidden">Elevate your medical code auditing workflow</h2>
+        <p class="scrollrevealtext2 load-hidden">Streamline auditing,
         integrate your data seamlessly, and consolidate communication in one platform.</p>
-        <h3 class="scrollrevealtext3" style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
+        <h3 class="scrollrevealtext3 load-hidden" style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
       </div>
         <iframe id="productintroscreen" width="560"  height="315" src="https://www.youtube.com/embed/TGe97xQyex8?modestbranding=1"
         srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img{position:absolute;width:calc(100% + 8px);margin-left: 0;top:0;left: -4px;bottom:0;margin:auto}.youtubearrow{color: white;width:50%;aspect-ratio: 1 / 1;position: absolute;left:50%;top: 50%;transform: translate(-50%, -50%);display:grid;justify-content:center;}</style><a href=https://www.youtube.com/embed/TGe97xQyex8?modestbranding=1><img src=https://img.youtube.com/vi/TGe97xQyex8/maxresdefault.jpg alt='ReviewMate Overview'><span class='youtubearrow'><svg width='100' height='100' style='fill:#ffffff;position: absolute;top: 50%;left:50%;transform:translate(-50%, -50%);' viewBox='0 0 90.898514 90.898514' version='1.1' id='svg5' inkscape:export-filename='ytplay.svg' inkscape:export-xdpi='300' inkscape:export-ydpi='300' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' ><defs id='defs2'  /><g inkscape:label='Layer 1' inkscape:groupmode='layer' id='layer1' transform='translate(-1.0631373)'><path id='path241' transform='matrix(0,-0.32138075,0.32138075,0,11.079654,57.71011)' inkscape:transform-center-x='0.94132348' inkscape:transform-center-y='1.872329' d='m 106.74077,66.323128 -25.506365,44.178322 -39.2647,68.00846 a 7.9433773,7.9433773 -180 0 1 -13.758333,0 L 2.7050047,134.33158 -36.559696,66.323128 a 7.9433773,7.9433773 120 0 1 6.879167,-11.915066 h 51.012734 78.5294 a 7.9433773,7.9433773 60 0 1 6.879165,11.915066 z' style='fill:#fff;stroke-width:7.9375' /><path style='color:#fff;fill:#fff;-inkscape-stroke:none' d='M 46.511719,0 C 21.439501,0 1.0625,20.377001 1.0625,45.449219 c 0,25.072218 20.377001,45.449218 45.449219,45.449218 25.072218,0 45.449218,-20.377 45.449218,-45.449218 C 91.960937,20.377001 71.583937,0 46.511719,0 Z m 0,4.84375 c 22.454291,0 40.605468,18.151178 40.605468,40.605469 0,22.454291 -18.151177,40.605468 -40.605468,40.605468 C 24.057428,86.054687 5.90625,67.90351 5.90625,45.449219 5.90625,22.994928 24.057428,4.84375 46.511719,4.84375 Z' id='path403' /></g></svg></span></a>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen 
@@ -252,29 +253,28 @@ import {formatSlug} from '../utils'
     text-indent: 0;
     position: relative;
     z-index: 30;
-    // margin-bottom: calc(80vw + 7rem);
     margin-bottom: 9rem;
-    
-    #bgimage, .shapeintrobg {
-      background-color: #888;
+      // clip-path: polygon(0% 80%, 0% -0.5%, 100% -0.5%, 100% 80%, 50% 100%);
+    #bgbackdrop {
+      background-color: hsl(var(--color1hsl));
+      background: hsl(var(--color1hsl));
+      z-index: -1;
+    }
+    #bgimage, .shapeintrobg, #bgbackdrop  {
       background-repeat: no-repeat;  
       background-size: cover;
       clip-path: polygon(0% 80%, 0% -0.5%, 100% -0.5%, 100% 80%, 50% 100%);
       position: absolute;
       width: 100%;
       height: 100%;
-      z-index: -1;
     }
     #bgimage {
-      background: white;
-    }
-    #shapeintrobg {
-      // opacity: 0;
-      // transition: opacity 0.5s;
+      opacity: 0;
+      // transition-delay: 2s;
+      transition: opacity 4s 0.2s;
     }
     .shapeintrobg {
-      background-color: hsl(var(--color1hsl));
-      background: linear-gradient(172deg, hsl(var(--color1hsl)) 25%, hsla(var(--color1h), 70%, 20%, 30%) );
+      background: linear-gradient(172deg, hsl(var(--color1hsl)) 20%, hsla(var(--color1h), 70%, 20%, 15%) );
     }
     #productintroscreen{
       position: absolute;
@@ -283,9 +283,6 @@ import {formatSlug} from '../utils'
       left: 50%;
       transform-origin: 50% 50%;
       transform: translate3d(-50%, 0, 0);
-      // width: 78%;
-      // height: 100%;
-      // max-height: 28rem;
       max-width: 55rem;
       z-index: 300;
       box-shadow: 0 12px 20px -4px #111;
@@ -361,30 +358,31 @@ import {formatSlug} from '../utils'
     }
   }
   
-  .shapeintrobg {
-    background-color: #888;
-    background-repeat: no-repeat;  
-    background-size: cover;
-    clip-path: polygon(0% 80%, 0% -0.5%, 100% -0.5%, 100% 80%, 50% 100%);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    // max-height: 38rem;
-    // top: 2px;
-    // transform: translate(0, -2px);
-    z-index: -1;
-    &::after {
-      content: '';
-      height: 100%;
-      width: 100%;
-      background-color: hsl(var(--color1hsl));
-      background: linear-gradient(172deg, hsl(var(--color1hsl)) 25%, hsla(var(--color1h), 70%, 20%, 30%) );
-      position: absolute;
-      top: -6px;
-      left: 0;
-      z-index: -1;
-    }
-  }
+  // .shapeintrobg {
+  //   background-color: #888;
+  //   background-repeat: no-repeat;  
+  //   background-size: cover;
+  //   clip-path: polygon(0% 80%, 0% -0.5%, 100% -0.5%, 100% 80%, 50% 100%);
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   // max-height: 38rem;
+  //   // top: 2px;
+  //   // transform: translate(0, -2px);
+  //   z-index: -1;
+  //   &::after {
+  //     content: '';
+  //     height: 100%;
+  //     width: 100%;
+  //     background-color: hsl(var(--color1hsl));
+  //     background: linear-gradient(172deg, hsl(var(--color1hsl)) 25%, hsla(var(--color1h), 70%, 20%, 30%) );
+  //     position: absolute;
+  //     top: -6px;
+  //     left: 0;
+  //     z-index: -1;
+  //   }
+  // }
+  
   .introCTA{
     width: 100%; 
     display: flex;

@@ -7,10 +7,9 @@ import TwitterIcon from '../../components/TwitterIcon.astro';
 import Button from '../../components/Button.astro'
 import { contentfulItems} from '../../components/contentfulClient.js'
 import {months, ArticleOpenGraph} from "../../utils.js"
+import {Img } from 'astro-imagetools/components'
 import metadata from "src/layouts/metadata";
 import { formatSlug } from "../../featureList.js";
-
-
 
 export async function getStaticPaths() {
   const {formatSlug} = await import("../../featureList.js")
@@ -62,8 +61,8 @@ let url = Astro.url.pathname.toString().concat(`/blog/${formatSlug(title)}/`)
   </div>
 </div>
 
-  <!-- <Img src={img} alt={imgAlt} objectFit="cover" attributes={{img: {class: 'blogimage'}}} /> -->
-  <img src={img} alt={imgAlt} class="blogimage" loading="lazy"/>
+  <Img src={img} alt={imgAlt} objectFit="cover" attributes={{img: {class: 'blogimage'}}} />
+  <!-- <img src={img} alt={imgAlt} class="blogimage" loading="lazy"/> -->
   <div class="blogbody" set:html={body}></div>
 </article>
   
