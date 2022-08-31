@@ -1,5 +1,6 @@
 ---
 import Arrow from './Arrow.astro'
+import {Img } from 'astro-imagetools/components'
 
 interface ArticleProps {
   href: string;
@@ -19,7 +20,8 @@ const concatsrc = `https:${imgSrc}`
 ---
 <a href={`${href}`}  {externallink ? `target='__blank' rel='noopener'` : ''} class={ `article${size === 'small' ? ' article--small' : ''}` }>
   <div class="image">
-    <img src={concatsrc} alt={ imgAlt.toString() } />
+    <!-- <img src={concatsrc} alt={ imgAlt.toString() } /> -->
+    <Img src={concatsrc} alt={ imgAlt.toString() } />
   </div>
   <div class="textbody">
     <h3>{articleTitle}&nbsp;{(externallink === true) && <Arrow direction="upright" color="#666" />}</h3>

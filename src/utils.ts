@@ -62,14 +62,15 @@ export class defaultOpenGraph {
 	};
 
 	constructor(
-		title: string = 'ReviewMate',
-		description: string = "An all-in-one software platform for medical code auditing. Streamline medical code auditing workflows by expediting findings, integrating communication, maintaining fidelity, and optimizing workflow through automation.",
+		title: string = "ReviewMate :: All-in-one medical code auditing software",
+		description: string = "An all-in-one software platform for medical code auditing. Streamline medical code auditing workflows by expediting findings, integrating communication, maintaining fidelity, and optimizing workflow through automation. ",
 		image: string = "/ReviewMate-op.jpg",
 		imageAlt: string = "ReviewMate's overview of main features.",
 		url: string = metadata.canonical
 	) {
 		this.title = title;
-		this.canonical = metadata.canonical || "https://deft-cuchufli-bfd7e3.netlify.app/";
+		this.canonical =
+			metadata.canonical || "https://review-mate.com/";
 		this.description = description;
 		this.basic = {
 			title: title,
@@ -93,7 +94,9 @@ export class pageOpenGraph extends defaultOpenGraph {
 		slug: string,
 		description: string,
 	) {
-    let title = slug ? `ReviewMate - ${slug}` : `ReviewMate`
+    let title = slug
+			? `ReviewMate | ${slug} :: All-in-one medical code auditing software`
+			: `ReviewMate :: All-in-one medical code auditing software`;
 	super(
 		title,
 		description,
