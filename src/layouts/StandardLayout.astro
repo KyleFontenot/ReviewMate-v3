@@ -4,21 +4,22 @@ import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import FeatureHeader from "../components/FeatureHeader.astro"
 import {pageOpenGraph} from '../utils.js'
-interface StandardLayoutProps {
-  slug: string;
-  featureHeader?: {
-    bool: boolean,
-    src: string,
-    alt: string,
-  }
-}
-const {slug, featureHeader = {bool: false, src:'', alt: ''} } = Astro.props as StandardLayoutProps
+// interface StandardLayoutProps {
+//   slug: string;
+//   featureHeader?: {
+//     bool: boolean,
+//     src: string,
+//     alt: string,
+//   }
+// }
+const {slug, featureHeader = undefined} = Astro.props 
 
 let openGraph = Astro.props.openGraph || new pageOpenGraph(slug, "An all-in-one software platform for medical code auditing. Streamline medical code auditing workflows by expediting findings, integrating communication, maintaining fidelity, and optimizing workflow through automation.")
+console.log(featureHeader)
 ---
 
 <DocumentLayout {openGraph}>
-  {featureHeader.bool ? <Header {featureHeader}/> : <Header/>}
+  {(featureHeader !== undefined) ? <Header featureHeader={featureHeader}/> : <Header/>}
   <!-- <Header {featureHeader}/> -->
   <!-- {featureHeader.bool ? <FeatureHeader featureHeader={featureHeader}/> : <Header/>} -->
   <main id="main"><slot /></main>

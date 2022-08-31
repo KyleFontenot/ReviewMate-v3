@@ -1,5 +1,5 @@
 [build]
-  command = "NODE_ENV=production yarn run build"
+  command = "yarn run build"
   publish = "dist"
 [[redirects]]
   from = "https://pickerson.com/"

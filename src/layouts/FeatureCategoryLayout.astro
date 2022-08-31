@@ -6,10 +6,7 @@ import featureList from "../featureList.js"
 import {pageOpenGraph} from "../utils.js"
 import type {Module } from "../featureList.js"
 
-const {moduleType, customDescription, featureHeader = {
-    src: '',
-    alt: '',
-  }} = Astro.props;
+const {moduleType, customDescription, featureHeader = undefined} = Astro.props;
 let modules : Module[] = [];
 
 Object.values(featureList).forEach(category => { 
@@ -17,6 +14,7 @@ Object.values(featureList).forEach(category => {
     module.section === moduleType ? modules.push(module) : false
   })
  })
+//  console.log(featureHeader)
 ---
 <StandardLayout 
   openGraph={new pageOpenGraph(`${moduleType} Features`, 
