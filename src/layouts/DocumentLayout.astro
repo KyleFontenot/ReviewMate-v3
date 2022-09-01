@@ -3,9 +3,6 @@
   import "../styles/reset.scss"
   import "../styles/global.scss"
   import { SEO } from "astro-seo"
-  import Quicklink from "../scripts/Quicklink.astro"
-  import Rellax from "../scripts/Rellax.astro"
-  import ScrollReveal from "../scripts/ScrollReveal.astro"
   import {defaultOpenGraph} from "../utils.js"
 
   const description = Astro.props.description || metadata.description 
@@ -34,52 +31,9 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Inter:wght@300;400;600&display=swap">
     <!-- async CSS -->
     <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Inter:wght@300;400;600&display=swap">
-    <!-- no-JS fallback -->
-    <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Inter:wght@300;400;600&display=swap">
-    </noscript>
-    <ScrollReveal/>
   </head>
 
   <body style="width: 100%;">
     <slot />
   </body>
-  <Quicklink />
-  
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F916HCBP51"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-F916HCBP51');
-    </script>
-    <Rellax />
-    <ScrollReveal />
-
-    <script defer>
-    function hideDropdowns() {
-      document.querySelectorAll(".dropdown--open").forEach((each) => {
-        each.classList.remove("dropdown--open");
-      });
-      document.querySelectorAll(".arrow").forEach((each) => {
-        each.classList.remove("arrow--open");
-      });
-    }
-
-    function hideMobileMenu() {
-      document.querySelector("nav").classList.remove("mobilemenu--open");
-      document.querySelector('#mobilenavbutton').classList.remove('mobilenavbutton--open');
-    }
-
-    document.addEventListener('click', e => {
-      if (e.target.closest('.fdd') == null){
-        hideDropdowns();
-      }
-      if (e.target.closest('nav') == null && e.target.closest('header') == null){
-        hideMobileMenu()
-      }
-    })
-    </script>
 </html>

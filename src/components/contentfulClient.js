@@ -19,7 +19,7 @@ export const contentfulItems = async (content) => {
 			}
 	).catch(err => {
 		console.log(err);
-		return err
+		// return err
 	});
 	return contentfulItems
 }
