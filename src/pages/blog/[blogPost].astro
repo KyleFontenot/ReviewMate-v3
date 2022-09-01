@@ -39,7 +39,6 @@ const {title, description, body, date, author, img, imgAlt} = Astro.props;
 
 const articleOG = new ArticleOpenGraph(title, description, img, imgAlt, date, author)
 let url = Astro.url.pathname.toString().concat(`/blog/${formatSlug(title)}/`)
-console.log(img)
 ---
 <StandardLayout slug={title} openGraph={articleOG} >
 <article class="blogArticle">
