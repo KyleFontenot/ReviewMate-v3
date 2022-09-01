@@ -1,9 +1,11 @@
 import contentful from "contentful";
 
 export const contentfulClient = contentful.createClient({
-	space:  import.meta.env.CONTENTFUL_SPACE_ID || process.env.CONTENTFUL_SPACE_ID,
-	accessToken: import.meta.env.CONTENTFUL_CONTENT_DELIVERY ||
+	space: import.meta.env.CONTENTFUL_SPACE_ID || process.env.CONTENTFUL_SPACE_ID,
+	accessToken:
+		import.meta.env.CONTENTFUL_CONTENT_DELIVERY ||
 		process.env.CONTENTFUL_CONTENT_DELIVERY,
+	resolveLinks: true,
 });
 
 export const contentfulItems = async (content) => {
@@ -16,7 +18,8 @@ export const contentfulItems = async (content) => {
 			return entries.items
 			}
 	).catch(err => {
-		console.log(err)
+		console.log(err);
+		return err
 	});
 	return contentfulItems
 }
