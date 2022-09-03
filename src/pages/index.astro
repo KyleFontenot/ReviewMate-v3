@@ -1,5 +1,5 @@
 ---
-import HomepageLayout from '../layouts/HomepageLayout.astro'
+import StandardLayout from '../layouts/StandardLayout.astro'
 import FlexDiv from '../components/FlexDiv.astro'
 import Button from "../components/Button.astro"
 import CallToAction from "../components/CallToAction.astro" 
@@ -11,14 +11,14 @@ import SmallLink from '../components/SmallLink.astro'
 import {Img} from "astro-imagetools/components"
 import {formatSlug} from '../utils'
 ---
-<HomepageLayout>
+<StandardLayout homepage>
     <div class="shapeintro">
       <noscript><link rel="stylesheet" href="nojs.css" /></noscript>
       <div id="bgbackdrop"></div>
       <div id="bgimage"></div>
       <div class="shapeintrobg" id="shapeintrobg"></div>
       <div class="introtext ">
-        <h1 class="hiddenheader load-hidden">ReviewMate</h1>
+        <h1 class="hiddenheader load-hidden">The ultimate medical code auditing application for all auditing, sampling, and reporting needs. </h1>
         <h2 class="scrollrevealtext1 load-hidden">Elevate your medical code auditing workflow</h2>
         <p class="scrollrevealtext2 load-hidden">Streamline auditing,
         integrate your data seamlessly, and consolidate communication in one platform.</p>
@@ -237,7 +237,7 @@ import {formatSlug} from '../utils'
   window.onload = deferAddimage();
 
 </script>
-</HomepageLayout>
+</StandardLayout>
 
 <style lang="scss">
   .shapeintro {
@@ -252,7 +252,7 @@ import {formatSlug} from '../utils'
     text-indent: 0;
     position: relative;
     z-index: 30;
-    margin-bottom: 13rem;
+    margin-bottom: 15rem;
     margin-bottom: 56vh;
 
       // clip-path: polygon(0% 80%, 0% -0.5%, 100% -0.5%, 100% 80%, 50% 100%);
@@ -280,7 +280,7 @@ import {formatSlug} from '../utils'
     & #productintroscreen{
       position: absolute;
       max-width: 55rem;
-      bottom: -9rem;
+      bottom: -14rem;
       max-width: 80%;
       box-shadow:none;
 
@@ -358,7 +358,7 @@ import {formatSlug} from '../utils'
   @media (min-width:669px){
     .shapeintro {
   
-      margin-bottom: 12rem;
+      margin-bottom: 17rem;
       & > #productintroscreen{
         aspect-ratio: 4 / 3;
         // bottom: -6.5rem;

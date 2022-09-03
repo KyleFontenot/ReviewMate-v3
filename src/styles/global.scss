@@ -103,6 +103,9 @@ main {
 	line-height: 1.3rem;
 	color: #555;
 	margin: 0 auto;
+	&.homepage {
+		padding: 0;
+	}
 }
 a {
 	text-decoration: none;

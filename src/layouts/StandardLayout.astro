@@ -12,7 +12,7 @@ import {pageOpenGraph} from '../utils.js'
 //     alt: string,
 //   }
 // }
-const {slug, featureHeader = undefined} = Astro.props 
+const {slug, featureHeader = undefined, homepage = false} = Astro.props 
 
 let openGraph = Astro.props.openGraph || new pageOpenGraph(slug, "An all-in-one software platform for medical code auditing. Streamline medical code auditing workflows by expediting findings, integrating communication, maintaining fidelity, and optimizing workflow through automation.")
 console.log(featureHeader)
@@ -22,6 +22,6 @@ console.log(featureHeader)
   {(featureHeader !== undefined) ? <Header featureHeader={featureHeader}/> : <Header/>}
   <!-- <Header {featureHeader}/> -->
   <!-- {featureHeader.bool ? <FeatureHeader featureHeader={featureHeader}/> : <Header/>} -->
-  <main id="main"><slot /></main>
+  <main class:list={[{ 'homepage': homepage }]}><slot /></main>
   <Footer/>
 </DocumentLayout>
