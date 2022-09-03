@@ -6,6 +6,7 @@ import CallToAction from "../components/CallToAction.astro"
 import Stream from "../components/Stream.astro" 
 import ConcernBlob from '../components/ConcernBlob.astro'
 import RMDiagram from '../components/RMDiagram.astro'
+import ChangeTracker from '../components/ChangeTracker.astro'
 import Timeline from '../components/Timeline.astro'
 import SmallLink from '../components/SmallLink.astro'
 import {Img} from "astro-imagetools/components"
@@ -64,6 +65,8 @@ import {formatSlug} from '../utils'
     </div>
   </FlexDiv>
 
+<ChangeTracker/>
+
   <FlexDiv padding="2rem 0 3rem" className="red scrollreveal" style="margin-top: 5rem;background: radial-gradient(hsla(var(--color2hsl), 40%), hsla(var(--color2hsl), 20%) 20%, white 60%); ">
   <h3 style="margin-bottom: 3rem;">Trusted By:</h3>
   <div class="partnersdiv">
@@ -119,7 +122,7 @@ import {formatSlug} from '../utils'
 
 <RMDiagram />
 
-<Timeline>
+<!-- <Timeline>
     <div slot="1">
       <div class="timelinediv">
         <div>
@@ -200,7 +203,7 @@ import {formatSlug} from '../utils'
     </div>
   </div>
   
-</Timeline>
+</Timeline> -->
 
 <FlexDiv class="morecapabilities" style="background-color: #fafafa;width: 114%;margin-top: -3rem;margin-inline:-7%;padding: 2rem;">
   <div class="scrollreveal" style="display:block;width:100%;text-align: center;">
