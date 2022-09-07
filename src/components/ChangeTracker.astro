@@ -1,64 +1,79 @@
----
-// import { gsap } from "gsap";
----
+  <div class="changecontainer">
+    <div class="changetracker">
+      <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+      <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+      <svg width="100%" height="100%" viewBox="0 0 1400 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"  id="changetrackersvg">
+          <g id="Artboard1">
+              <rect x="179.387" y="30.424" width="690.052" height="592.892" style="fill:none;"/>
+              <g transform="matrix(0.600052,0,0,0.734191,147.501,90.3543)">
+              </g>
+              <g id="indicatortrack" transform="matrix(0.58785,0,0,0.719262,190.35,62.184)" style="transform-origin: 50% 50%;">
+                  <rect x="80.431" y="131.184" width="506.214" height="506.214" style="fill:none;"/>
+                  <clipPath id="_clip1">
+                  </clipPath>
+              </g>
+      
+              <g id="indicator" style="stroke-width: 2px;width:300;" width="300" height="300">
+                <g id="marker">
+                  <circle cx="290" cy="150" r="10" style="fill:none;stroke:rgb(109,109,109);stroke-width:7px;stroke-dasharray:7,0.35,0,0;"/>
+                </g>
+                <g >
+                  <path d="M 290 140 L 290 100" style="fill:blnoneue;stroke:rgb(109,109,109);stroke-width:5px;"/>
+                </g>
+                  <!-- <path id="endpoint" x="100" y="300" style="fill:blue;stroke:blue;stroke-width:9.19px;"/> -->
 
+                  <!-- <circle id="endpoint" cx="300" cy="100" r="10" style="fill:none;stroke:rgb(109,109,109);stroke-width:7px;stroke-dasharray:7,0.35,0,0;"/> -->
+                
 
-<div class="changetracker">
-  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 1150 808" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;" id="changetrackersvg">
-    <g id="Artboard1" transform="matrix(1.66652,0,0,1.36204,-298.953,-41.4382)">
-        <rect x="179.387" y="30.424" width="690.052" height="592.892" style="fill:none;"/>
-        <g transform="matrix(0.600052,0,0,0.734191,147.501,90.3543)">
-            <circle cx="398.166" cy="338.108" r="217.662" style="fill:none;stroke:rgb(109,109,109);stroke-width:3.5px;stroke-dasharray:17.5,17.5,0,0;"/>
-        </g>
-        <g id="Indicator" transform="matrix(0.600052,0,0,0.734191,71.7456,98.6056)">
-            <g id="marker" transform="matrix(1,0,0,1,190.144,-25.8016)">
-                <circle cx="334.27" cy="135.009" r="10.756" style="fill:none;stroke:rgb(109,109,109);stroke-width:7px;stroke-dasharray:7,0.35,0,0;"/>
-            </g>
-            <g id="ENdpoint" transform="matrix(2e-06,0,0,1,524.413,-92.8669)">
-                <path d="M345.026,141.477L350.438,141.477" style="fill:none;stroke:rgb(109,109,109);stroke-width:9.19px;"/>
-            </g>
-            <g transform="matrix(1,0,0,1.56535,179.387,-201.028)">
-                <path d="M345.026,191.318L345.026,159.478" style="fill:none;stroke:rgb(109,109,109);stroke-width:4.95px;"/>
-            </g>
-        </g>
-        <g transform="matrix(0.600052,0,0,0.734191,144.236,23.1788)">
-            <path d="M735.601,141.052C735.601,123.398 721.269,109.066 703.615,109.066L407.629,109.066C389.975,109.066 375.643,123.398 375.643,141.052C375.643,158.705 389.975,173.038 407.629,173.038L703.615,173.038C721.269,173.038 735.601,158.705 735.601,141.052Z" style="fill:white;stroke:rgb(109,109,109);stroke-width:3.5px;"/>
-        </g>
-    </g>
-</svg>
+              </g>
+              <rect width="300" height="300" x="150" y="150" fill="transparent">
+              </rect>
+              <circle cx="300" cy="300" r="150" style="fill:none;stroke:rgb(109,109,109);stroke-width:3.5px;stroke-dasharray:17.5,17.5,0,0;"/>
+              <!-- Dialog Box -->
+                
+          </g>
+      </svg>
+    </div>
+  </div >
 
-</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" hoisted></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js" hoisted></script>
 <script defer>
-// let timeline = gsap.timeline({repeat: 1, repeatDelay: 1});
-  let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".changetracker",
-        pin: true,   
-        // pinType: 'fixed',
-        // pinnedContainer: '.changetracker',
-        start: "top top", // when the top of the trigger hits the top of the viewport
-        end: "bottom bottom", // end after scrolling 500px beyond the start
-        scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-        markers: true,
-        snap: {
-          snapTo: "labels", // snap to the closest label in the timeline
-          duration: {min: 0.2, max: 5}, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-          delay: 0.1, // wait 0.2 seconds from the last scroll event before doing the snapping
-          ease: "power1.inOut" // the ease of the snap animation ("power3" by default)
-        }
-      }
-    });
+  gsap.registerPlugin(ScrollTrigger);
+  const endpoint = document.querySelector('#endpoint')
+  const ctlabel = document.querySelector('#ctlabel')
 
-  tl.to("#Indicator", {rotation: 60}, {rotation: 60});
+  let tl = gsap.timeline({
+    // yoyo: true,
+    scrollTrigger : {
+      trigger: ".changecontainer",
+      start: "50% 50%",
+      end: "170% top",
+      pin: true,
+      scrub: 0.6,
+      markers: true,
+      snap: { snapTo: [0, 0.25, 0.5, 0.75, 1], duration: 1, delay: 0},
+      onUpdate: self => {
+        console.log(endpoint)
+        gsap.set(ctlabel, {rotate: self.progress * 30})
+      }
+    }
+  })
+  .fromTo("#indicator", {
+    rotation: 30,
+    transformOrigin: "20 200"
+  }, {
+    rotation: 140,
+    transformOrigin: "20 200"
+  }, 0)
 
 </script>
 
 <style>
-  .changetracker {
-    /* height: 200vh; */
+  .changecontainer {
+    height: 30rem;
+    width: 100%;
+    outline: 2px solid red;
+    margin-top: 8rem;
   }
 </style>

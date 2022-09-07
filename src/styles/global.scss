@@ -32,7 +32,7 @@ $color2hsl: $color2h, $color2s, $color2l;
 }
 html {
 	scroll-behavior: smooth;
-	max-width: 100%;
+	// max-width: 100%;
 }
 
 h1,
@@ -87,11 +87,8 @@ body {
 	text-rendering: optimizeLegibility;
 	overflow-x: hidden;
 
-	perspective: 1px;
-	transform-style: preserve-3d;
-	height: 100%;
-}
-body {
+	// perspective: 1px;
+	// transform-style: preserve-3d;
 	height: 100%;
 }
 main {
