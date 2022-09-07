@@ -15,7 +15,6 @@ import {pageOpenGraph} from '../utils.js'
 const {slug, featureHeader = undefined, homepage = false} = Astro.props 
 
 let openGraph = Astro.props.openGraph || new pageOpenGraph(slug, "An all-in-one software platform for medical code auditing. Streamline medical code auditing workflows by expediting findings, integrating communication, maintaining fidelity, and optimizing workflow through automation.")
-console.log(featureHeader)
 ---
 
 <DocumentLayout {openGraph}>

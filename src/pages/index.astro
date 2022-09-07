@@ -23,7 +23,7 @@ import {formatSlug} from '../utils'
         <p class="scrollrevealtext2 load-hidden">Streamline auditing,
         integrate your data seamlessly, and consolidate communication in one platform.</p>
         <h3 class="scrollrevealtext3 load-hidden" style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
-        <Button color="white" text="Key Features"  outline style="color: white" className="scrollrevealtext3"/>
+        <!-- <Button color="white" text="Key Features"  outline style="color: white" className="scrollrevealtext3"/> -->
       </div>
         <iframe id="productintroscreen" width="660" height="415" src="https://www.youtube.com/embed/TGe97xQyex8?modestbranding=1" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img{position:absolute;min-width:calc(100% + 8px);height: calc(100% + 8px);margin-left: 0;top:-4px;left: -4px;bottom:0;margin:auto;}.youtubearrow{color: white;width:50%;aspect-ratio: 1 / 1;position: absolute;left:50%;top: 50%;transform: translate(-50%, -50%);display:grid;justify-content:center;}</style><a href=https://www.youtube.com/embed/TGe97xQyex8?modestbranding=1><img src=https://img.youtube.com/vi/TGe97xQyex8/maxresdefault.jpg alt='ReviewMate Overview'><span class='youtubearrow'><svg width='100' height='100' style='fill:#ffffff;position: absolute;top: 50%;left:50%;transform:translate(-50%, -50%);' viewBox='0 0 90.898514 90.898514' version='1.1' id='svg5' inkscape:export-filename='ytplay.svg' inkscape:export-xdpi='300' inkscape:export-ydpi='300' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' ><defs id='defs2'  /><g inkscape:label='Layer 1' inkscape:groupmode='layer' id='layer1' transform='translate(-1.0631373)'><path id='path241' transform='matrix(0,-0.32138075,0.32138075,0,11.079654,57.71011)' inkscape:transform-center-x='0.94132348' inkscape:transform-center-y='1.872329' d='m 106.74077,66.323128 -25.506365,44.178322 -39.2647,68.00846 a 7.9433773,7.9433773 -180 0 1 -13.758333,0 L 2.7050047,134.33158 -36.559696,66.323128 a 7.9433773,7.9433773 120 0 1 6.879167,-11.915066 h 51.012734 78.5294 a 7.9433773,7.9433773 60 0 1 6.879165,11.915066 z' style='fill:#fff;stroke-width:7.9375' /><path style='color:#fff;fill:#fff;-inkscape-stroke:none' d='M 46.511719,0 C 21.439501,0 1.0625,20.377001 1.0625,45.449219 c 0,25.072218 20.377001,45.449218 45.449219,45.449218 25.072218,0 45.449218,-20.377 45.449218,-45.449218 C 91.960937,20.377001 71.583937,0 46.511719,0 Z m 0,4.84375 c 22.454291,0 40.605468,18.151178 40.605468,40.605469 0,22.454291 -18.151177,40.605468 -40.605468,40.605468 C 24.057428,86.054687 5.90625,67.90351 5.90625,45.449219 5.90625,22.994928 24.057428,4.84375 46.511719,4.84375 Z' id='path403' /></g></svg></span></a>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       <div id="testscreen">
@@ -115,6 +115,7 @@ import {formatSlug} from '../utils'
     </ConcernBlob>
     <ConcernBlob variant={2} tagline={` The "Opaque" problem`} description="Managers, and most importantly, clients, need to be able to keep track of active progression in auditing tasks to utilize a pro-active approach to the teams' work." answer="Tasks in ReviewMate are groups of assigned work which can be traced on factual, present data. ReviewMate even extends special transparency tools for clients and coders alike." img="/OpaqueProblem.svg" imgAlt={`Man hiding his computer screen with a "TBD" sign`} className="scrollreveal" >
     </ConcernBlob>
+    
 </div>
 
 <RMDiagram />
@@ -122,6 +123,7 @@ import {formatSlug} from '../utils'
 <Timeline>
     <div slot="1">
       <div class="timelinediv">
+        
         <div>
           <h2>Integrate</h2> 
           <p>Securely connect to your universe of data seamlessly. Imported
@@ -146,19 +148,19 @@ import {formatSlug} from '../utils'
     </div>
     <div slot="3">
     <div class="timelinediv">
-        <div>
-     <h2>Audit</h2> 
-     <p>Conduct audits in a transparent consolidated platform that makes it easy to maneuver. Relay audit findings
-     to other users easily.</p>
-     <SmallLink href="/auditing/inpatient/" text="IPPS"/>
-     <SmallLink href="/auditing/outpatient/" text="OPPS"/>
-     <SmallLink href="/auditing/profee/" text="Profee"/>
-     <SmallLink href="/auditing/asc/" text="ASC"/>
-     <SmallLink href="/auditing/cms-hcc/" text="CMS-HCC"/>
-     <SmallLink href="/auditing/selector-tools/" text="Selector Tools"/>
-     <SmallLink href="/auditing/record-tracker/" text="Record Tracker"/>
-     <SmallLink href="/auditing/physician-query-analysis/" text="Physician Query Analysis"/>
-     </div>
+      <div>
+        <h2>Audit</h2> 
+        <p>Conduct audits in a transparent consolidated platform that makes it easy to maneuver. Relay audit findings
+        to other users easily.</p>
+        <SmallLink href="/auditing/inpatient/" text="IPPS"/>
+        <SmallLink href="/auditing/outpatient/" text="OPPS"/>
+        <SmallLink href="/auditing/profee/" text="Profee"/>
+        <SmallLink href="/auditing/asc/" text="ASC"/>
+        <SmallLink href="/auditing/cms-hcc/" text="CMS-HCC"/>
+        <SmallLink href="/auditing/selector-tools/" text="Selector Tools"/>
+        <SmallLink href="/auditing/record-tracker/" text="Record Tracker"/>
+        <SmallLink href="/auditing/physician-query-analysis/" text="Physician Query Analysis"/>
+        </div>
       </div>
     </div>
     <div slot="4">
@@ -199,14 +201,14 @@ import {formatSlug} from '../utils'
      </div>
     </div>
   </div>
-  
+
 </Timeline>
 
 <FlexDiv class="morecapabilities" style="background-color: #fafafa;width: 114%;margin-top: -3rem;margin-inline:-7%;padding: 2rem;">
   <div class="scrollreveal" style="display:block;width:100%;text-align: center;">
     <h3>Explore more</h3>
   </div><br/>
-
+  
   <Button text="Auditing" href="/auditing/" outline className="scrollreveal"></Button>
   <Button text="Automation" href="/automation/" outline className="scrollreveal"></Button>
   <Button text="Reporting" href="/reporting/" outline className="scrollreveal"></Button>
@@ -221,8 +223,9 @@ import {formatSlug} from '../utils'
   <Button color="white" as="link" href="/plans/" text="Explore our plans and features" size="2" style="z-index:30;margin-top: 2rem;"/>
   <Button color="yellow" as="link" href="/contact/" text="Contact Us" size="2" style="z-index:30;margin-top: 2rem;"/>
 </CallToAction>
-
 </main>
+<!-- </div> -->
+</StandardLayout>
 <script>
   function deferAddimage(){
     const introbg = document.querySelector('#bgimage')?.style;
@@ -234,7 +237,10 @@ import {formatSlug} from '../utils'
       introbg.opacity = 1;
     }, 300)
   }
-  window.onload = deferAddimage();
+  window.addEventListener('load', () => {
+    deferAddimage()
+  });
+  // window.onload = deferAddimage();
 
 </script>
 </StandardLayout>
@@ -245,7 +251,7 @@ import {formatSlug} from '../utils'
     width: 100%;
     margin-inline: auto;
     // height: clamp(48rem, 48rem, 60rem);
-    height: clamp(28rem, 70vh, 48rem);
+    height: clamp(29rem, 70vh, 48rem);
     display: block;
     max-width: 100%;
     top: -1px;
@@ -253,7 +259,7 @@ import {formatSlug} from '../utils'
     position: relative;
     z-index: 30;
     margin-bottom: 15rem;
-    margin-bottom: 56vh;
+    margin-bottom: calc(100% + 12rem);
 
       // clip-path: polygon(0% 80%, 0% -0.5%, 100% -0.5%, 100% 80%, 50% 100%);
     #bgbackdrop {
@@ -315,13 +321,13 @@ import {formatSlug} from '../utils'
         font-weight: bolder;
         text-indent: 0;
         position: relative;
-        top: 2rem;
-        margin: 0 0 2rem;
+        top: 1.5rem;
+        margin: 0 0 1rem;
         display: block;
         text-shadow: 0 4px 12px #000000aa;
       }
       & > p {
-        margin-top: 4rem;
+        margin-top: 3rem;
         font-size: 110%;
         text-indent: 0;
         padding-right: 5%;
@@ -409,7 +415,7 @@ import {formatSlug} from '../utils'
   }
   #testscreen{
     perspective: 500px;
-    bottom: calc(-80vw - 3rem);
+    top: calc(100% + 16rem);
     width: 88vw;
     max-width: 70rem;
     margin-inline: auto;
@@ -420,7 +426,7 @@ import {formatSlug} from '../utils'
 
 .producttraits {
   display: grid!important;
-  grid-template-columns: repeat(auto-fit, minmax(18rem,  44%));    
+  grid-template-columns: repeat(auto-fit, minmax(15rem,  44%));    
   flex-flow: row wrap;
   justify-content: space-around;
   align-content: start;
@@ -507,7 +513,7 @@ import {formatSlug} from '../utils'
     }    
     #testscreen{
       perspective: 500px;
-      bottom: 0vw;
+      top: 0;
       height: 100%;
       width: clamp(20rem, 40vw, 90rem);
       position: absolute;
