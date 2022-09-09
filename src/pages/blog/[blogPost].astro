@@ -40,7 +40,7 @@ const {title, description, body, date, author, img, imgAlt} = Astro.props;
 const articleOG = new ArticleOpenGraph(title, description, img, imgAlt, date, author)
 let url = Astro.url.pathname.toString().concat(`/blog/${formatSlug(title)}/`)
 ---
-<StandardLayout slug={title} openGraph={articleOG} >
+<StandardLayout slug={title} openGraph={articleOG} canonical={Astro.url}>
 <article class="blogArticle">
   <div class="navcrumbs">
     <Button as="link" leftArrow color="grey" href="/blog/" text="All Blog Posts" outline style="margin-left: auto;margin-right: 0;text-align: right;position: absolute;"  ></Button>

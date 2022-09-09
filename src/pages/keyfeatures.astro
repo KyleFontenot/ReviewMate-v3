@@ -6,7 +6,7 @@ import CallToAction from '../components/CallToAction.astro'
 import Button from '../components/Button.astro'
 import {formatSlug} from '../featureList.js'
 ---
-<StandardLayout>
+<StandardLayout canonical={Astro.url}>
   <Timeline>
     <div slot="1">
       <div class="timelinediv">

@@ -28,7 +28,8 @@ const {feature} = Astro.props;
 ---
 <FeatureLayout 
   openGraph={new pageOpenGraph(feature.title, 
-  assessShort(feature.short, feature.long))}>
+  assessShort(feature.short, feature.long))}
+  canonical={Astro.url}>
 <Feature title={feature.title} imgSrc={feature?.imgSrc} imgAlt={feature?.imgAlt} commontraits> 
   <div slot="paragraphs">
     {feature.long.map(paragraph => {

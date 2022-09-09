@@ -11,7 +11,7 @@ import SmallLink from '../components/SmallLink.astro'
 import {Img} from "astro-imagetools/components"
 import {formatSlug} from '../utils'
 ---
-<StandardLayout homepage>
+<StandardLayout homepage canonical={Astro.url}>
     <div class="shapeintro">
       <noscript><link rel="stylesheet" href="nojs.css" /></noscript>
       <div id="bgbackdrop"></div>

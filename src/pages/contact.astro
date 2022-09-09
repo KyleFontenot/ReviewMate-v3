@@ -3,7 +3,7 @@ import StandardLayout from "../layouts/StandardLayout.astro"
 import ContactForm from '../components/ContactForm.jsx'
 import FAQSection from '../components/FAQSection.astro'
 ---
-<StandardLayout>
+<StandardLayout canonical={Astro.url}>
    <div class="contactbg" style="background-image:url(/fauxels-meeting-blur.jpg);background-position: 50% 50%;background-size: cover;">
       <!-- <div style=" width: 115%;height:135%;max-height:59rem;">
          <img src="/fauxels-meeting.jpg" alt="people meeting over a table." class="bgimage"/>
