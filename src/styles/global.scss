@@ -146,9 +146,15 @@ blockquote {
 	}
 	font-size: 1.2rem;
 }
-
+ul {
+	margin-bottom: 2rem;
+}
 li {
 	list-style-image: url('/icons/right-arrow-list.svg');	
+	margin-left: 2rem;
+	margin-top: 0.4rem;
+	margin-top: 0.4rem;
+	line-height: 1.6rem;
 }
 .bullet {
 	line-height: 2rem;

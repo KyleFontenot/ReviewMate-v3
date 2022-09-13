@@ -14,9 +14,15 @@ import FlexDiv from '../components/FlexDiv.astro'
     <Card imgBorder="/automationoverview.jpg">
       <h2 slot="header">Risk Manager</h2>
       <img src="/riskmanagericon2.svg" alt="Risk Manager icon" role="presentation" class="iconsvg" style="width: 35%;shape-outside:url('/riskmanagericon2.svg');float: right;shape-margin:25px;max-height:14rem;"/>
-      <p>Risk Manager is the hub of ReviewMate that facilitates methods of interactive insight. Auditors can assess all suggested risks, configure how the risks interact with the auditor's workflow, and view general insight from the community using ReviewMate Insights.</p>
-      <p>Everything in Risk Manager is configurable, from setting how an auditor receives a notification on changing HL7 data, to tag notifications based on coding mistakes from any scalable community within ReviewMate.</p>
-      <ul class="list">
+      <p>Risk Manager is a ReviewMate module designed to solve the most pressing question middle cycle revenue managers face today: "<strong class="e"><u>What</u></strong> should we audit?"</p>
+      <p>Risk Manager is a tool that provides audit managers the ability to identify records with compliance issues or to help identify reimbursement  issues.  This can be accomplished one of two ways: </p>
+      <ul style="margin-top:1rem;">
+        <li>Using Artificial Intelligence (AI) to leverage industry standards or, </li>
+        <li>Enter rules manually to identify certain conditions that should be audited.</li>
+      </ul>
+      <!-- <p>Risk Manager is the hub of ReviewMate that facilitates methods of interactive insight. Auditors can assess all suggested risks, configure how the risks interact with the auditor's workflow, and view general insight from the community using ReviewMate Insights.</p>
+      <p>Everything in Risk Manager is configurable, from setting how an auditor receives a notification on changing HL7 data, to tag notifications based on coding mistakes from any scalable community within ReviewMate.</p> -->
+      <!-- <ul class="list">
         <li>
           Discover opportunities 
         </li>
@@ -26,7 +32,7 @@ import FlexDiv from '../components/FlexDiv.astro'
         <li>
           Apply guidance intuitively
         </li>
-      </ul>
+      </ul> -->
       <br/>
       <div style="display:flex;justify-content: space-around;">
         <SmallLink href="/monitoring/risk-manager/" text="Risk Manager" />
@@ -34,22 +40,106 @@ import FlexDiv from '../components/FlexDiv.astro'
       </div>
       <br/>
     </Card>
-
-    <div class="featurequality">
-      <img src="/RiskManagerHeatmap3.svg" src="Table of content with first column in a colored heatmap" class="featureGraphic" />
-      <Card className="rellax1">
-        <h3>Risk Dashboards</h3>
-        <p>View and analyze commonly occuring coding faults and communication errors at-a-glance. Common risks propogate data directly into easily configurable displays for taking action on. Heatmaps easily distinguish problem areas without lifting a finger. By simply tagging each risk the auditor would like to keep relevant, the system will prioritize and notify the auditor intuitively.</p>
-        <p>These aggregated findings also export perfectly into any <a href="/reporting/summary-templates/">custom reports</a>, <a href="/reporting/coder-report-cards/">Coder Report Cards</a>, and other <a href="/reporting/dashboards/">dashboards</a>.</p>
-      </Card>
-    </div>
+    
   </div>
+  <h2>Artificial Intelligence Platform </h2>
+<p>
+ReviewMate is one of the largest databases for medical code auditing systems. Over the past decade we have processed millions of accounts and gathered hundreds of thousands of code recommendations. All of this data was vital to our data scientists who developed this innovative machine learning capability that can assist users in finding audit opportunities to stay in coding and billing compliance. 
+</p>
+<h2>How does it work?</h2>
+<p>ReviewMate contains an adaptive rule engine which automatically updates the sets of conditions identifying future opportunities. The adaptive rule engine can flag records and assign risk scores to assist auditors in focusing on certain reviews and paying attention to specific errors previously identified.   The AI model will help in predicting accounts not compliant or those identified with risk factors.  </p>
+<p>
+  The AI engine finds patterns based on customizable parameters  that organizations can tailor to their own needs.  Here's how ReviewMate captures that intelligence:
+</p>
+<div style="margin-left: 2rem;">
+  <h3 style="font-size: 1.3rem;font-weight:bolder;color:#666;">Machine Learning Sources</h3>
+  <ul style="margin-bottom: 3rem;">
+    <li>Based on the coder trending errors.</li>
+    <li>Based on your own organizational trending errors.</li>
+    <li>Based on trending errors from our Insights database if you  opt into the ReviewMate Community.</li>
+    <li>In some cases, the coder might not have a specific trending error, but the overall performance of a coder can play a role in identifying risks.</li>
+    <li>Based on known industry standards and trends. </li>
+  </ul>
+</div>
+<p>For example, if the coder repeatedly codes the principal diagnosis A419 (Sepsis, unspecified organism) incorrectly,  resulting in an incorrect MSDRG or APRDRG which possibly could lead to compliance issues or/and incorrect reimbursement, the system will identify all related accounts meeting these conditions and automatically flag them for further review.  Another example is coder performance monitoring.  If a coder's accuracy rates drop below certain thresholds, then the ReviewMate AI module will automatically flag a higher percentage of their coded records until their accuracy rates improve.  The system will perform similar adaptive engine updates for the other sources of Machine Learning listed above.  </p>
+
+<div id="aitraits">
+  <div class="main">ReviewMate AI</div>
+  <div class="sub">Institution Trending</div>
+  <div class="sub">ReviewMate Community Trending</div>
+  <div class="sub">Overall Coder Performance</div>
+  <div class="sub">Known Industry Standards</div>
+  <div class="sub">Coder Trending</div>
+</div>
+
+
+<div class="featurequality">
+  <img src="/RiskManagerHeatmap3.svg" src="Table of content with first column in a colored heatmap" class="featureGraphic" />
+  <Card className="rellax1">
+    <h3>Risk Dashboards</h3>
+    <p>View and analyze commonly occuring coding faults and communication errors at-a-glance. Common risks propogate data directly into easily configurable displays for taking action on. Heatmaps easily distinguish problem areas without lifting a finger. By simply tagging each risk the auditor would like to keep relevant, the system will prioritize and notify the auditor intuitively.</p>
+    <p>These aggregated findings also export perfectly into any <a href="/reporting/summary-templates/">custom reports</a>, <a href="/reporting/coder-report-cards/">Coder Report Cards</a>, and other <a href="/reporting/dashboards/">dashboards</a>.</p>
+  </Card>
+</div>
 
 <CallToAction>
 
 </CallToAction>
   </FeatureCategoryLayout>
 <style lang="scss">
+  $bigcirclewidth: 30rem;
+  $circlewidth: 16rem;
+  $circleradius: $circlewidth / 2;
+  #aitraits {
+    display: grid;
+      place-items: center;
+    // display: block;
+    width: 100%;
+    height: 60rem;
+    position: relative;
+    & .main, & .sub {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 2rem;
+      border-radius: 100vw;
+      background-color: hsla(var(--color1h),var(--color1s),var(--color1l), 60%);
+      
+      transform-origin: center center;
+    }
+    & .main {
+      left: 50%;
+      top: calc(50% - $bigcirclewidth);
+      // transform: translate(-50%, -50);
+      width: $bigcirclewidth;
+      height: $bigcirclewidth;
+      border: 10px solid hsla(var(--color1h),var(--color1s),var(--color1l), 40%);
+      border: 10px solid #ffffff22;
+    }
+    .sub {
+      width: $circlewidth;
+      height: $circlewidth;
+      font-size: 1.6rem;
+      border: 7px solid #ffffff22;
+    }
+    // & .sub:nth-of-type(1){
+    //   left: 0;
+    //   top: 0%;
+    // }
+    & .sub:nth-of-type(2){
+      left: calc(50% - $circlewidth / 2);
+      top: 5%;
+    }
+    & .sub:nth-of-type(3){
+      left: calc(80% - $circlewidth / 2);
+      top: 25%;
+    }
+    & .sub:nth-of-type(4){
+      left: calc(80% - $circlewidth / 2);
+      top: 80%;
+    }
+  }
   .riskmanager {
     background-color: #fafafa;
     width: 114%;
