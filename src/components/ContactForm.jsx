@@ -129,8 +129,8 @@ export default function ContactForm(){
 						classList={{ [styles.input]: true, [styles.inputfield]: true }}
 						ref={nameRef}
 						required
-						oninput={e => {
-							setNameInput(nameRef.value)
+						oninput={(e) => {
+							setNameInput(nameRef.value);
 						}}
 					/>
 				</div>
@@ -215,8 +215,43 @@ export default function ContactForm(){
 								/>
 								<label for="demoIPPS">Inpatient Auditing</label>
 							</div>
+							<div class={styles.inputdiv}>
+								<input
+									type="checkbox"
+									id="demoIPPS"
+									name="demoOPPS"
+									value="Outpatient"
+								/>
+								<label for="demoOPPS">Outpatient Auditing</label>
+							</div>
+							<div class={styles.inputdiv}>
+								<input
+									type="checkbox"
+									id="demoIPPS"
+									name="demoProfee"
+									value="Profee"
+								/>
+								<label for="demoProfee">Profee Auditing</label>
+							</div>
+							<div class={styles.inputdiv}>
+								<input
+									type="checkbox"
+									id="demoASC"
+									name="demoASC"
+									value="ASC"
+								/>
+								<label for="demoASC">ASC</label>
+							</div>
+							<div class={styles.inputdiv}>
+								<input
+									type="checkbox"
+									id="demoHCC"
+									name="demoHCC"
+									value="HCC"
+								/>
+								<label for="demoHCC">HCC</label>
+							</div>
 						</div>
-
 					</div>
 
 					<div>
@@ -249,7 +284,7 @@ export default function ContactForm(){
 				<button
 					type="button"
 					onClick={() => {
-						handleSubmit()
+						handleSubmit();
 						// modalAlert(`
 						// <div>
 						// 	<h3>Thank you, ${nameInput()}!</h3>
