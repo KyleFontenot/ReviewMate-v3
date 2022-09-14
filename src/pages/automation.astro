@@ -20,19 +20,6 @@ import FlexDiv from '../components/FlexDiv.astro'
         <li>Using Artificial Intelligence (AI) to leverage industry standards or, </li>
         <li>Enter rules manually to identify certain conditions that should be audited.</li>
       </ul>
-      <!-- <p>Risk Manager is the hub of ReviewMate that facilitates methods of interactive insight. Auditors can assess all suggested risks, configure how the risks interact with the auditor's workflow, and view general insight from the community using ReviewMate Insights.</p>
-      <p>Everything in Risk Manager is configurable, from setting how an auditor receives a notification on changing HL7 data, to tag notifications based on coding mistakes from any scalable community within ReviewMate.</p> -->
-      <!-- <ul class="list">
-        <li>
-          Discover opportunities 
-        </li>
-        <li>
-          Reveal common coding faults
-        </li>
-        <li>
-          Apply guidance intuitively
-        </li>
-      </ul> -->
       <br/>
       <div style="display:flex;justify-content: space-around;">
         <SmallLink href="/monitoring/risk-manager/" text="Risk Manager" />
@@ -46,12 +33,12 @@ import FlexDiv from '../components/FlexDiv.astro'
 <p>
 ReviewMate is one of the largest databases for medical code auditing systems. Over the past decade we have processed millions of accounts and gathered hundreds of thousands of code recommendations. All of this data was vital to our data scientists who developed this innovative machine learning capability that can assist users in finding audit opportunities to stay in coding and billing compliance. 
 </p>
-<h2>How does it work?</h2>
+<h3 style="margin-top: 2rem;">How does it work?</h3>
 <p>ReviewMate contains an adaptive rule engine which automatically updates the sets of conditions identifying future opportunities. The adaptive rule engine can flag records and assign risk scores to assist auditors in focusing on certain reviews and paying attention to specific errors previously identified.   The AI model will help in predicting accounts not compliant or those identified with risk factors.  </p>
 <p>
   The AI engine finds patterns based on customizable parameters  that organizations can tailor to their own needs.  Here's how ReviewMate captures that intelligence:
 </p>
-<div style="margin-left: 2rem;">
+<div style="margin-left: 2rem;margin-top:2rem;">
   <h3 style="font-size: 1.3rem;font-weight:bolder;color:#666;">Machine Learning Sources</h3>
   <ul style="margin-bottom: 3rem;">
     <li>Based on the coder trending errors.</li>
@@ -89,7 +76,7 @@ ReviewMate is one of the largest databases for medical code auditing systems. Ov
 <style lang="scss">
   $bigcirclewidth: 30rem;
   $circlewidth: 16rem;
-  $circleradius: $circlewidth / 2;
+  $circleradius: calc($circlewidth / 2);
   #aitraits {
     display: grid;
       place-items: center;
