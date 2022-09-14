@@ -41,11 +41,11 @@ ReviewMate is one of the largest databases for medical code auditing systems. Ov
 <div style="margin-left: 2rem;margin-top:2rem;">
   <h3 style="font-size: 1.3rem;font-weight:bolder;color:#666;">Machine Learning Sources</h3>
   <ul style="margin-bottom: 3rem;">
-    <li>Based on the coder trending errors.</li>
-    <li>Based on your own organizational trending errors.</li>
-    <li>Based on trending errors from our Insights database if you  opt into the ReviewMate Community.</li>
-    <li>In some cases, the coder might not have a specific trending error, but the overall performance of a coder can play a role in identifying risks.</li>
-    <li>Based on known industry standards and trends. </li>
+    <li style="margin-bottom: 1rem;">Based on the coder trending errors.</li>
+    <li style="margin-bottom: 1rem;">Based on your own organizational trending errors.</li>
+    <li style="margin-bottom: 1rem;">Based on trending errors from our Insights database if you  opt into the ReviewMate Community.</li>
+    <li style="margin-bottom: 1rem;">In some cases, the coder might not have a specific trending error, but the overall performance of a coder can play a role in identifying risks.</li>
+    <li style="margin-bottom: 1rem;">Based on known industry standards and trends. </li>
   </ul>
 </div>
 <p>For example, if the coder repeatedly codes the principal diagnosis A419 (Sepsis, unspecified organism) incorrectly,  resulting in an incorrect MSDRG or APRDRG which possibly could lead to compliance issues or/and incorrect reimbursement, the system will identify all related accounts meeting these conditions and automatically flag them for further review.  Another example is coder performance monitoring.  If a coder's accuracy rates drop below certain thresholds, then the ReviewMate AI module will automatically flag a higher percentage of their coded records until their accuracy rates improve.  The system will perform similar adaptive engine updates for the other sources of Machine Learning listed above.  </p>
@@ -59,13 +59,63 @@ ReviewMate is one of the largest databases for medical code auditing systems. Ov
   <div class="sub">Coder Trending</div>
 </div>
 
+<p>The pattern detection technology which leverages historical and current data, and specifically data captured from your own auditing environment, enables ReviewMate to provide an intelligence prediction model <u>unique</u> in the marketplace. </p>
+<h3 style="margin-top: 3rem;">Adaptive Accuracy Rate Warnings </h3> <p>Using AI and Machine Learning, ReviewMate can identify when coders are having problems with certain codes.  When code accuracy drops, then our AI engine will flag records with these codes and route them to the auditing department for further review.  Once code accuracy improves, ReviewMate AI will remove these codes from that routing.</p> <h3 style="margin-top: 3rem;">Record Type Classifications and Coding Error Severity </h3>
+<p style="margin-bottom:2rem;">Unlike other products, ReviewMate can classify records and assign a severity score to give management a full map of current available risks in the database. </p>
+<ol style="margin-left: 2rem;">
+  <li style="margin-bottom: 1rem;">Risk Scores: You can assign a relative integer value as a risk value to identify the severity of the risk being identified.  Accumulative risk scores will be given to accounts with more than one risk match. </li>
+  <li>Flags: Help you easily classify records and help drive workflow automation.  </li> </ol>
+<p>Risk Manager advantages over other products in the marketplace:</p>
+<table class="table">
+  <thead>
+    <th>Key Features</th>
+    <th>ReviewMate</th>
+    <th>Other Competitors</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Full Workflow Automation</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Ability to Flag Records</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Ability to Flag specific codes in the records</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Customize your own logic to identify opportunities</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Integrate with Sampling and Record Randomization</td>
+      <td>Yes</td>
+      <td>Some</td>
+    </tr>
+    <tr>
+      <td>Customizable AI Models</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Applies to ASC, IPPS, OPPS, and Profee</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="featurequality">
   <img src="/RiskManagerHeatmap3.svg" src="Table of content with first column in a colored heatmap" class="featureGraphic" />
   <Card className="rellax1">
     <h3>Risk Dashboards</h3>
-    <p>View and analyze commonly occuring coding faults and communication errors at-a-glance. Common risks propogate data directly into easily configurable displays for taking action on. Heatmaps easily distinguish problem areas without lifting a finger. By simply tagging each risk the auditor would like to keep relevant, the system will prioritize and notify the auditor intuitively.</p>
-    <p>These aggregated findings also export perfectly into any <a href="/reporting/summary-templates/">custom reports</a>, <a href="/reporting/coder-report-cards/">Coder Report Cards</a>, and other <a href="/reporting/dashboards/">dashboards</a>.</p>
+    <p>View and analyze commonly occuring coding faults and communication errors at-a-glance. Common risks propogate data directly into easily configurable displays for taking action on. Heatmaps easily distinguish problem areas without lifting a finger. By simply tagging each risk the auditor would like to keep relevant, the system will prioritize and notify the auditor intuitively.</p> <p>These aggregated findings also export perfectly into any <a href="/reporting/summary-templates/">custom reports</a>, <a href="/reporting/coder-report-cards/">Coder Report Cards</a>, and other <a href="/reporting/dashboards/">dashboards</a>.</p>
   </Card>
 </div>
 
@@ -74,16 +124,19 @@ ReviewMate is one of the largest databases for medical code auditing systems. Ov
 </CallToAction>
   </FeatureCategoryLayout>
 <style lang="scss">
-  $bigcirclewidth: 30rem;
-  $circlewidth: 16rem;
+  $bigcirclewidth: 40vw;
+  $circlewidth: 30vw;
   $circleradius: calc($circlewidth / 2);
+  
   #aitraits {
     display: grid;
-      place-items: center;
-    // display: block;
+    place-items: center;
     width: 100%;
-    height: 60rem;
     position: relative;
+    margin-inline: auto;
+    aspect-ratio: 1 / 1;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     & .main, & .sub {
       position: absolute;
       display: grid;
@@ -91,41 +144,48 @@ ReviewMate is one of the largest databases for medical code auditing systems. Ov
       color: white;
       font-size: 2rem;
       border-radius: 100vw;
-      background-color: hsla(var(--color1h),var(--color1s),var(--color1l), 60%);
-      
       transform-origin: center center;
+      line-height: 2rem;
+      text-align: center;
     }
     & .main {
       left: 50%;
-      top: calc(50% - $bigcirclewidth);
-      // transform: translate(-50%, -50);
+      top: 50%;
+      transform: translate(-50%, -50%);
       width: $bigcirclewidth;
       height: $bigcirclewidth;
-      border: 10px solid hsla(var(--color1h),var(--color1s),var(--color1l), 40%);
+      padding:6%;
+      background-color: hsla(var(--color1h),var(--color1s),var(--color1l), 85%);
       border: 10px solid #ffffff22;
+      // z-index: 10;
     }
     .sub {
       width: $circlewidth;
       height: $circlewidth;
-      font-size: 1.6rem;
+      padding:6%;
+      font-size: 1.3rem;
+      background-color: hsla(var(--color1h), var(--color1s), var(--color1l), 70%);
       border: 7px solid #ffffff22;
     }
-
     & .sub:nth-of-type(2){
       left: calc(50% - $circlewidth / 2);
-      top: 5%;
+      top: 0%;
     }
     & .sub:nth-of-type(3){
-      left: calc(80% - $circlewidth / 2);
-      top: 25%;
+      left: calc(85% - $circlewidth / 2);
+      top: 30%;
     }
     & .sub:nth-of-type(4){
-      left: calc(80% - $circlewidth / 2);
-      top: 80%;
+      left: calc(70% - $circlewidth / 2);
+      top: 62%;
     }
-    & .sub:nth-of-type(4){
-      left: calc(80% - $circlewidth / 2);
-      top: 80%;
+    & .sub:nth-of-type(5){
+      left: calc(30% - $circlewidth / 2);
+      top: 62%;
+    }
+    & .sub:nth-of-type(6){
+      left: calc(15% - $circlewidth / 2);
+      top: 30%;
     }
   }
   .riskmanager {
@@ -191,5 +251,55 @@ ReviewMate is one of the largest databases for medical code auditing systems. Ov
         left: 40%;
         position: relative;
       }
+ }
+
+ $tableborderwidth: 1px;
+ $tablebordercolor: #666;
+ $tableborderradius: 7px;
+.table{
+  width: 100%;
+  & th {
+    font-weight: bold;
+    font-size: 120%;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    line-height: 2rem;
+    letter-spacing: 0;
+  }
+  & tr {
+    td{
+      padding: 7px 10px;
+      border-color: #666;
+      border-style: solid;
+      border-width: $tableborderwidth;
+      border-bottom-width: 0;
+      &:first-of-type {
+        border-right-width: 0px;
+      }
+      &:last-of-type {
+        border-left-width: 0px;
+      }
     }
+    &:first-of-type {
+      td:first-of-type {
+        border-top-left-radius: $tableborderradius;
+      }
+      td:last-of-type {
+        border-top-right-radius: $tableborderradius;
+      }
+    }
+    &:last-of-type {
+      & td {
+        border-bottom-width: $tableborderwidth;
+      }
+      td:first-of-type {
+        border-bottom-left-radius: $tableborderradius;
+      }
+      td:last-of-type {
+        border-bottom-right-radius: $tableborderradius;
+      }
+    }
+  }
+}
+
 </style>

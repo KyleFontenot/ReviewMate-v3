@@ -10,8 +10,7 @@ let posts = await contentfulItems(postType)
 
 const months = ['January', 'February',
 'March','April','May','June','July','August','September','October','November','December',]
-const descriptionCutoff = 120
-
+const descriptionCutoff = 240
 ---
 <div class:list={[ 'blogwrapper', className ]} id="blog" {style}>
   {size === 'large' ? 
@@ -21,7 +20,6 @@ const descriptionCutoff = 120
     {posts.map(post => 
     
       {
-        // console.log(post.fields.thumbnail.fields.file)
         let blogBody = post?.fields?.body?.content[0]?.content[0]?.value;
         let formatDate = new Date(post.fields.dateCreated);
         return (<Article 
