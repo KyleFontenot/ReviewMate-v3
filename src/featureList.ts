@@ -72,7 +72,7 @@ const featureList = {
 	auditing_modules: [
 		new AuditingModule(
 			"Inpatient",
-			"Evaluate DRG assignment within any IPPS account type.",
+			"Evaluate DRG assignment within any IPPS account type. Inpatient medical code audits are one of ReviewMate's specialty by responding to industry problems with accumen.",
 			[
 				"More than three-quarters of the nation's inpatient acute-care hospitals are paid under the Inpatient Prospective Payment System (IPPS). The IPPS methodology pays a flat rate based on the average charges across all hospitals for specific diagnoses, regardless of whether that particular patient costs more or less.",
 				"Correct DRG assignment is critical to the health of your organization. Coding audits and using the proper tools will allow financial and compliant stability.",
@@ -91,9 +91,9 @@ const featureList = {
 		),
 		new AuditingModule(
 			"Outpatient",
-			"Outpatient prospective payment systems extend our core standard auditing features.",
+			"Any medical record regarding outpatient procedures and services work as well as other accounts in ReviewMate's core suite. Correct APC assignment with reassuring ease.",
 			[
-				"The Outpatient Prospective Payment System (OPPS) is the system through which Medicare decides how much money a hospital or community mental health center will get for outpatient care provided to patients with Medicare.    Reimbursement is based on Ambulatory Payment Classification (APC) assignment.",
+				"The Outpatient Prospective Payment System (OPPS) is the system through which Medicare decides how much money a hospital or community mental health center will get for outpatient care provided to patients with Medicare. Reimbursement is based on Ambulatory Payment Classification (APC) assignment.",
 				"Correct APC assignment is critical to the health of your organization. Coding audits and using the proper tools will allow financial and compliant stability.",
 				"The ReviewMate platform assists medical coding auditors analyze specific elements affecting APC assignment and reimbursement.",
 			],
@@ -116,7 +116,7 @@ const featureList = {
 		),
 		new AuditingModule(
 			"Profee",
-			"Physician Fee schedule and/or Physician office auditing is among the other core auditing standards.",
+			"Physician Fee schedule and/or Physician Office auditing requires a deep insight into problematic instances of the field: insight ReviewMate excels in providing.",
 			[
 				"ProFee, or professional fee, refers to coding and billing the physician side of a patient encounter. ProFee coding covers the work performed by the provider and the reimbursement they will receive for the medical services performed.",
 				"Because Profee billing directly affects providers, it can be more strict than other types of accounts. Because of the very narrow margin for error as an auditor, ReviewMate is prepared in addressing the exact punctuality that you need.",
@@ -137,7 +137,7 @@ const featureList = {
 		),
 		new AuditingModule(
 			"ASC",
-			"Free-standing ambulatory surgery center is a first-class citizen to the standard auditing capabilities.",
+			"Free-standing ambulatory surgery center accounts spawn many opportunities for firms to save incredible amounts of time and resources for both client and auditor.",
 			// not in the business of providing office visits, laboratory services, diagnostic tests,
 			[
 				"Coding for Ambulatory Surgery Centers is a specialty unto itself. It is a facility service, but Medicare requires ASC's to send their bills to the professional fee payers through the facility. There is a whole different set of regulations and bundling edits to use for ASCs, mainly pertaining to Medicare.",
