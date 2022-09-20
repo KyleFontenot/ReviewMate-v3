@@ -19,7 +19,8 @@ import {formatSlug} from '../utils'
       <div class="shapeintrobg" id="shapeintrobg"></div>
       <div class="introtext ">
         <h1 class="hiddenheader load-hidden">The ultimate medical code auditing application for all auditing, sampling, and reporting needs. </h1>
-        <h2 class="scrollrevealtext1 load-hidden">Elevate your medical code auditing workflow</h2>
+        <!-- <h2 class="scrollrevealtext1 load-hidden">Elevate your medical code auditing workflow</h2> -->
+        <h2 class="scrollrevealtext1 load-hidden">The <span class="gold">Gold Standard</span> of medical code auditing</h2>
         <p class="scrollrevealtext2 load-hidden">Streamline auditing,
         integrate your data seamlessly, and consolidate communication in one platform.</p>
         <h3 class="scrollrevealtext3 load-hidden" style="letter-spacing:1px;">Created by auditors, for auditors.</h3>
@@ -252,7 +253,8 @@ import {formatSlug} from '../utils'
     margin-inline: auto;
     // height: clamp(48rem, 48rem, 60rem);
     height: clamp(29rem, 70vh, 48rem);
-    display: block;
+    display: flex;
+    justify-content: center;
     max-width: 100%;
     top: -1px;
     text-indent: 0;
@@ -269,19 +271,42 @@ import {formatSlug} from '../utils'
     }
     #bgimage, .shapeintrobg, #bgbackdrop  {
       background-repeat: no-repeat;  
-      background-size: cover;
+      background-size: 100vw;
       clip-path: polygon(0% 80%, 0% -0.5%, 100% -0.5%, 100% 80%, 50% 100%);
+      // clip-path: polygon(100% 0, 0 0, 50% 100%);
       position: absolute;
       width: 100%;
-      height: 100%;
+      // max-width: 130rem;
+      height: 120%;
+      margin-inline: auto;
+    }
+    .shapeintrobg{
+      // clip-path: polygon(100% 0, 0 0, 50% 100%);
+      margin-top: -2px;
+    }
+    #bgbackdrop{
+      clip-path: polygon(100% 0, 0 0, 50% 100%);
+      width: 500%;
+      overflow: hidden;
     }
     #bgimage {
+      // clip-path: polygon(100% 0, 0 0, 50% 100%);
       opacity: 0;
       // transition-delay: 2s;
       transition: opacity 4s 0.2s;
     }
+    .gold {
+      background: hsl(var(--color2hsl));
+      background: linear-gradient(160deg, hsl(40, 100%, 72%) 36%, #fff 68%, hsl(var(--color2h), 100%, 75%) 70%);
+      background-size: fill;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 4px hsla(var(--color2hsl), 40%);
+      display: inline-block;
+    }
     .shapeintrobg {
-      background: linear-gradient(172deg, hsl(var(--color1hsl)) 20%, hsla(var(--color1h), 70%, 20%, 15%) );
+      // background: linear-gradient(172deg, hsl(var(--color1hsl)) 20%, hsla(var(--color1h), 70%, 20%, 15%) );
+      background-image: radial-gradient(circle at 50% 150%, hsla(var(--color1h), 70%, 20%, 5%), hsl(var(--color1hsl)) 84%);
     }
     & #productintroscreen{
       position: absolute;
@@ -317,25 +342,27 @@ import {formatSlug} from '../utils'
       }
       & > h2 {
         line-height: 2.8rem;
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         font-weight: bolder;
         text-indent: 0;
         position: relative;
         top: 1.5rem;
         margin: 0 0 1rem;
         display: block;
-        text-shadow: 0 4px 12px #000000aa;
+        // text-shadow: 0 4px 12px #000000aa;
+        text-shadow: 0 0 6px #ffffff11;
       }
       & > p {
         margin-top: 3rem;
-        font-size: 110%;
+        font-size: 1.1rem;
         text-indent: 0;
         padding-right: 5%;
         text-shadow: 0 3px 9px  #44444499;
+        line-height: 1.4rem;
       }
       & > h3 {
         margin-top: 0.5rem;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         letter-spacing: 0;
         font-weight: bolder;
         text-shadow: 0 2px 4px #444444;
@@ -439,14 +466,18 @@ import {formatSlug} from '../utils'
     max-width: 28rem;
     margin-inline: auto;
     & > h3 {
-      font-size: 1.85rem;
+      font-size: 2.1rem;
       // text-align: center;
       // text-indent: 1rem;
+      // font-weight: bolder;
     }
     & > h4 {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       letter-spacing: 0;
+      line-height: 1.6rem;
       // text-indent: 1rem;
+      font-weight: bolder;
+      font-family: "Hind Madurai";
     }
     & > p {
       margin-top: 0.5rem;

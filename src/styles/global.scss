@@ -33,6 +33,7 @@ $color2hsl: $color2h, $color2s, $color2l;
 html {
 	scroll-behavior: smooth;
 	max-width: 100%;
+	overflow-x:hidden;
 }
 
 h1,
@@ -75,7 +76,7 @@ h4 {
 }
 p {
 	font-size: 1.08rem;
-	line-height: 1.9rem;
+	line-height: 1.6rem;
 	text-indent: 2rem;
 	margin-bottom: 0.5rem;
 	color: #666;
@@ -323,8 +324,8 @@ html.sr .load-hidden {
 #skiptocontent {
 	opacity: 0;
 	position: absolute;
-	left: 1rem;
-	top: 5rem;
+	left: 6rem;
+	top: 2rem;
 	color: white;
 	z-index: 900;
 	padding: 8px 14px;
