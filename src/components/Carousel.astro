@@ -1,141 +1,146 @@
 <div class="carousel" id="partnercarousel">
-    <a href="https://www.maximhealthcare.com/" target="_blank" rel="noopener" class="carousel__child">
-      <img class="partnerlogo" src="/brandsvgs/maxim.svg" alt="Maxim Healthcare's logo" height="300" width="500" />
+  <a href="https://www.comforcehealth.com/" target="__blank" rel="noopener">
+    <img class="partnerlogo" src="/brandsvgs/comforcehealth.svg" height="180" width="336" alt="Comforce Health logo" loading="lazy"/>
   </a>
-  <a href="https://intellisiq.com/" target="_blank" rel="noopener" class="carousel__child">
-      <img class="partnerlogo" src="/brandsvgs/intellis.svg" alt="Intellis' logo" height="300" width="400" />
+  <a href="https://www.cioxhealth.com/" target="__blank" rel="noopener">
+    <img class="partnerlogo" src="/brandsvgs/ciox.svg" alt="Ciox's logo" height="180" width="336" loading="lazy"/>
   </a>
-  <a href="https://www.essentiahealth.org/" target="_blank" rel="noopener" class="carousel__child">
-      <img class="partnerlogo" src="/brandsvgs/Essentia-Health-Logo.svg" height="300" width="400" alt="Maxim Healthcare's logo" />
+  <a href="https://www.3m.com/" target="__blank" rel="noopener">
+    <img class="partnerlogo" src="/brandsvgs/3m.svg" alt="3M's logo" height="180" width="336" loading="lazy"/>
   </a>
-  <a href="https://www.comforcehealth.com/" target="_blank" rel="noopener" class="carousel__child" >
-    <img class="partnerlogo" src="/brandsvgs/comforcehealth.svg" height="300" width="400" alt="Comforce Health logo" />
+  <a href="https://ecatalysthealth.com/" target="__blank" rel="noopener">
+    <img class="partnerlogo" src="/brandsvgs/eCatalyst.svg" alt="eCatalyst's logo" height="180" width="336" loading="lazy"/>
   </a>
-  <a href="https://www.cioxhealth.com/" target="_blank" rel="noopener" class="carousel__child">
-      <img class="partnerlogo" src="/brandsvgs/ciox.svg" alt="Ciox's logo" height="300" width="400" />
+  <a href="https://intellisiq.com/" target="__blank" rel="noopener">
+    <img class="partnerlogo" src="/brandsvgs/intellis.svg" alt="Intellis' logo" height="180" width="336" loading="lazy"/>
   </a>
-  <a href="https://ecatalysthealth.com/" target="_blank" rel="noopener" class="carousel__child">
-      <img class="partnerlogo" src="/brandsvgs/eCatalyst.svg" alt="eCatalyst's logo" height="300" width="400" />
+  <a href="https://www.lifebridgehealth.org/Main/Home.aspx" target="__blank" rel="noopener">
+    <img class="partnerlogo" src="/brandsvgs/lifebridge.svg" alt="Intellis' logo" height="180" width="336" loading="lazy"/>
   </a>
-  <a href="https://www.lifebridgehealth.org/Main/Home.aspx" target="_blank" rel="noopener" class="carousel__child">
-      <img class="partnerlogo" src="/brandsvgs/lifebridge.svg" alt="Intellis' logo" height="300" width="400" />
+  <a href="https://www.essentiahealth.org/" target="__blank" rel="noopener">
+    <img class="partnerlogo" src="/brandsvgs/Essentia-Health-Logo.svg" height="180" width="336" alt="Maxim Healthcare's logo" loading="lazy"/>
+  </a>
+  <a href="https://www.maximhealthcare.com/" target="__blank" rel="noopener">
+    <img class="partnerlogo" src="/brandsvgs/maxim.svg" alt="Maxim Healthcare's logo" height="180" width="336" loading="lazy"/>
+  </a>
+  <a href="https://www.optum.com/" target="__blank" rel="noopener">
+    <img class="partnerlogo" src="/brandsvgs/Optum.svg" alt="Optum Health services' logo" height="180" width="336" loading="lazy"/>
+  </a>
+  <a href="https://xtendhealthcare.net/" target="__blank" rel="noopener">
+    <img class="partnerlogo" src="/brandsvgs/Xtend.svg" alt="Xtend Healthcare's logo" height="180" width="336" loading="lazy"/>
+  </a>
+  <a href="https://www.nthrive.com/transunionhealthcare/" target="__blank" rel="noopener">
+    <img class="partnerlogo" src="/brandsvgs/nThrive.svg" alt="nThrive's logo" height="180" width="336" loading="lazy"/>
+  </a>
+  <a href="https://jtshealthpartners.com/jts-health-partners-overview/" target="__blank" rel="noopener">
+    <img class="partnerlogo" src="/brandsvgs/JTS-Health.svg" alt="JTS's logo" height="180" width="336" loading="lazy"/>
   </a>
 </div>
 
-<!-- <script>
-  const children = document.querySelectorAll('.carousel__child')
-  let carouselhovering = {
-    elem: children[0],
-    timer: true,
-  };
-  let carouselObserver = new IntersectionObserver(carouselAuto, {
+<script>
+
+  const carouselContainer = document.querySelector('#partnercarousel');
+  let scrollPos = carouselContainer.scrollLeft;
+  let isScrolling = false;
+
+
+  let options = {
     root: null,
-    rootMargin: '20px',
+    rootMargin: '0px',
     threshold: 1.0
-  });
-  carouselObserver.observe(document.querySelector('#partnercarousel'));
-  
-  let carouselTicker;
-  let carouselDetermineTimer;
-  function carouselAuto() {
-    let timer = 0;
-    setTimeout(() => {
-      if(carouselhovering.timer){
-        // activateAnim(hovering.enum)
-        carouselhovering?.elem?.classList.add('hovered')
-      }
-    }, 200)
-    clearInterval(carouselTicker)
-    clearInterval(carouselDetermineTimer)
-    carouselTicker = setInterval(() => {
-      timer += 300
-    }, 300);
-    carouselDetermineTimer = setInterval(() => {
-      if(timer > 2000 && carouselhovering.timer){
-        // deactivateAll()
-        children.forEach(child => {
-          child.classList.remove('hovered')
-        })
-        // Replace with findIndex() method
-        if(children.indexOf(carouselhovering.elem) === children.length) {
-          // activateAnim(1)
-          carouselhovering.elem = children[0]
-        }
-        else {
-          // activateAnim(hovering.enum + 1)
-          carouselhovering.elem = children[children.indexOf(carouselhovering.elem)]
-        }
-        timer = 0;
-      }
-    }, 800);
   }
 
-  document.querySelectorAll('.carousel__child').forEach(logo => {
-  logo.addEventListener('mouseover', e => {
-    e.target.classList.add('hovered');
-    // console.log(document.querySelectorAll('.carousel__child').indexOf(e.target));
-    carouselhovering = {
-      elem: document.querySelectorAll('.carousel__child').indexOf(e.target),
-      timer: false
+  let observer = new IntersectionObserver(assessScroll, options);
+  observer.observe(carouselContainer);
+
+  function initintersection() {
+    console.log('hello')
+    isScrolling = true;
+    setInterval(() => {
+      assessScroll();
+    }, 100);
+  }
+
+  function assessScroll() : void{
+    // isScrolling = true; 
+    if ( carouselContainer.scrollLeft > ( carouselContainer.clientWidth * 0.80) && isScrolling){
+      window.requestAnimationFrame(scrollLeft)
+      scrollLeft()
     }
-  });
-  logo.addEventListener('mouseout', e => {
-    e.target.classList.remove('hovered')
-    carouselhovering = {
-      elem: document.querySelectorAll('.carousel__child').indexOf(e.target),
-      timer: true
+    else if ( carouselContainer.scrollLeft < ( carouselContainer.clientWidth * 0.80) && isScrolling) {
+      console.log('scrollRight')
+      window.requestAnimationFrame(scrollRight)
+      scrollRight()
     }
-    carouselAuto()
+  }
+  function scrollRight() {
+    carouselContainer.scrollLeft += 2;
+  }
+  function scrollLeft() {
+    carouselContainer.scrollLeft -= 2;
+  }
+  document.querySelectorAll('.partnerlogo').forEach(logo => {
+    logo.addEventListener('mousenter', () => {
+      isScrolling = false;
+    })
+    logo.addEventListener('mousexit', () => {
+      isScrolling = true;
+    })
   })
-});
-</script> -->
+
+</script>
 
 <style lang="scss">
   .carousel {
     overflow-x: scroll;
-    padding: 1.5rem 0 3rem;
+    padding: 1.5rem 0 2rem;
     display: flex;
     flex-flow: row nowrap;
-    gap: 8vw;
-    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    // scroll-snap-type: x mandatory;
     position: relative;
+    margin-top: 2rem;
     margin-bottom: 6rem;
     width: 100%;
   }
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: hsl(var(--color2hsl)) transparent;
-  }
-  *::-webkit-scrollbar {
-    width: 12px;
-    height: 4px;
-  }
-  *::-webkit-scrollbar-track {
-    margin-left: 10rem;
-    margin-right: 10rem;
-    background: #eee;
-  }
-  *::-webkit-scrollbar-thumb {
-    background-color: hsl(var(--color2hsl));
-    border-radius: 20px;
-    border: 3px solid transparent;
-  }
+  // * {
+  //   scrollbar-width: thin;
+  //   scrollbar-color: blue orange;
+  // }
 
-  .partnerlogo{
+#partnercarousel {
+  scrollbar-width: thin;          /* "auto" or "thin" */
+  scrollbar-color: hsl(var(--color1hsl)) #888;   /* scroll thumb and track */ 
+}
+.partnerlogo{
     filter: invert(23%) sepia(18%) saturate(7185%) hue-rotate(347deg) brightness(95%) contrast(84%);
     max-width: 16rem;
-    max-height: 6rem;
+    max-height: 12rem;
     position: relative;
-      transform: scale(1);
-      transition: transform 0.2s;
-    &:hover {
-      transform: scale(1.1);
-    }
-  } 
-  .carousel__child {
-    scroll-snap-align: start;
+    transform: scale(1);
+    transition: transform 0.2s, filter 0.2s;
+    // scroll-snap-align: start;
     z-index:30;
+    &:hover {
+      filter: invert(23%) sepia(18%) saturate(7185%) hue-rotate(347deg) brightness(75%) contrast(84%);
+      // transform: scale(1.05);
+    }
   }
+#partnercarousel::-webkit-scrollbar {
+  width: 4px;               /* width of the entire scrollbar */
+  height: 10px;
+}
+#partnercarousel::-webkit-scrollbar-track {
+  background: #f3f3f3;  
+  border-radius: 100vw;        /* color of the tracking area */
+}
+#partnercarousel::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--color1hsl));    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #eee;  
+}
+
+  
   .hovered{
     transform: scale(1.2);
   }
