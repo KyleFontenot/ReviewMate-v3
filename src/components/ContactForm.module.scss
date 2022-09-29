@@ -190,3 +190,47 @@ input[type=email]:focus, input[type=number]:focus, input[type=password]:focus, i
 	opacity: 1;
 	// z-index: 10;
  }
+
+
+ .directcontact{
+	text-align: center;
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	& > span {
+		// line-height: 3rem;
+		font-size: 2.2rem;
+		font-style: italic;
+		margin: 3rem auto 3.5rem;
+		color: #ccc;
+	}
+	& > div{
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		margin-inline: auto;
+		margin-bottom: 1rem;
+		& p, & img, & a {
+			display: inline-block;
+			text-indent: 2rem;
+			color: #333;
+		}
+		& p, & a {
+		font-size: 1.6rem;
+	}
+	& a {
+		outline: 2px solid transparent;
+		padding: 10px;
+		border-radius: 8px;
+		transition: outline;
+		&:hover {
+
+		outline: 2px solid #666;
+		}
+	}
+	}
+ }
+ .icon {
+	filter: invert(25%) sepia(41%) saturate(1434%) hue-rotate(330deg) brightness(100%) contrast(88%);
+	height: 3rem;
+ }

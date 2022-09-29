@@ -297,6 +297,12 @@ export default function ContactForm(){
 				</button>
 			</form>
 			<div class={styles.modal} ref={modalRef}></div>
+			<div class={styles.directcontact}>
+				<span>or</span>
+				<div><img class={styles.icon} src="/mailicon.svg" /> <a href="mailto:info@pickerson.com" target="__blank" rel="noopener">info@pickerson.com</a></div>
+				<div><img class={styles.icon} src="/phoneicon.svg" /><p>(702)723-7227</p></div>
+
+			</div>
 		</div>
 	);
 }
