@@ -41,7 +41,8 @@
 
   const carouselContainer = document.querySelector('#partnercarousel');
   let scrollPos = carouselContainer.scrollLeft;
-  let isScrolling = false;
+  let isScrolling = true;
+  let scrollDirectionRight = true;
 
 
   let options = {
@@ -53,40 +54,52 @@
   let observer = new IntersectionObserver(assessScroll, options);
   observer.observe(carouselContainer);
 
-  function initintersection() {
-    console.log('hello')
-    isScrolling = true;
-    setInterval(() => {
-      assessScroll();
-    }, 100);
-  }
-
-  function assessScroll() : void{
-    // isScrolling = true; 
-    if ( carouselContainer.scrollLeft > ( carouselContainer.clientWidth * 0.80) && isScrolling){
-      window.requestAnimationFrame(scrollLeft)
-      scrollLeft()
+function assessDirection(){
+  if(carouselContainer.scrollLeft > (carouselContainer.clientWidth - 260)){
+      scrollDirectionRight = false;
     }
-    else if ( carouselContainer.scrollLeft < ( carouselContainer.clientWidth * 0.80) && isScrolling) {
-      console.log('scrollRight')
-      window.requestAnimationFrame(scrollRight)
-      scrollRight()
+  else if(carouselContainer.scrollLeft < 260) {
+    scrollDirectionRight = true;
+  }
+}
+  
+  function assessScroll() {
+    if ( isScrolling && scrollDirectionRight){
+      setTimeout(assessDirection, 800);
+      isScrolling = true;
+      window.requestAnimationFrame(() => {
+        scrollRight(true)});
+    }
+    else if ( isScrolling && !scrollDirectionRight) {
+      setTimeout(assessDirection, 800)
+      isScrolling = true;
+      window.requestAnimationFrame(() => {
+        scrollLeft(true)});
     }
   }
-  function scrollRight() {
-    carouselContainer.scrollLeft += 2;
+  function scrollRight(raf) {
+    if (isScrolling) {
+      carouselContainer.scrollLeft += 0.6;
+    }
+    isScrolling && raf && window.requestAnimationFrame(scrollRight)
   }
-  function scrollLeft() {
-    carouselContainer.scrollLeft -= 2;
+  function scrollLeft(raf) {
+    if (isScrolling) {
+      carouselContainer.scrollLeft -= 0.6;
+    }
+    isScrolling && raf && window.requestAnimationFrame(scrollRight)
   }
   document.querySelectorAll('.partnerlogo').forEach(logo => {
-    logo.addEventListener('mousenter', () => {
+    console.log(logo)
+    logo.addEventListener('mouseover', () => {
       isScrolling = false;
     })
-    logo.addEventListener('mousexit', () => {
+    logo.addEventListener('mouseout', () => {
       isScrolling = true;
+      assessScroll()
     })
   })
+  // console.log(document.querySelectorAll('.partnerlogo'))
 
 </script>
 
