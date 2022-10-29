@@ -1,0 +1,14 @@
+---
+import StandardLayout from "../../layouts/StandardLayout.astro"
+import Disclaimer from "../../components/Policies/Disclaimer.astro"
+---
+<StandardLayout canonical={Astro.url}>
+<div style="display: flex; justify-content: space-around; width: 100%;">
+  <a href="/policies/privacypolicy" style="padding: 0.5rem">Privacy Policy</a>
+  <a href="/policies/termsandconditions" style="padding: 0.5rem">Terms and Conditions</a>
+  <a href="/policies/disclaimer" style="padding: 0.5rem">Disclaimer</a>
+</div>
+  
+<Disclaimer />
+
+</StandardLayout >

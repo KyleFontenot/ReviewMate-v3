@@ -87,7 +87,7 @@ function assessDirection(){
     if (isScrolling) {
       carouselContainer.scrollLeft -= 0.6;
     }
-    isScrolling && raf && window.requestAnimationFrame(scrollRight)
+    isScrolling && raf && window.requestAnimationFrame(scrollLeft)
   }
   document.querySelectorAll('.partnerlogo').forEach(logo => {
     console.log(logo)
