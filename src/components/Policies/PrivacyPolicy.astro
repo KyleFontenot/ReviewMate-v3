@@ -2,9 +2,11 @@
 const companyName = "Pickerson Solutions LLC."
 const canonicalUrl = "review-mate.com"
 const contactEmail = "info@pickerson.com"
+import {months} from '../../utils'
+const currDate = new Date()
 ---
   <h2 style="text-align: center;margin-top: 1rem;padding-top: 3rem;" id="privacypolicy"><b>PRIVACY POLICY</b></h2>
-  <p>Effective date: 2022-04-18</p>
+<p>Effective: {months[currDate.getMonth() + 1]}, {currDate.getFullYear()} </p>
   <p>1. <b>Introduction</b></p>
   <p>Welcome to <b>{companyName}</b>.</p>
   <p><b>{companyName}</b> (“us”, “we”, or “our”) operates <b>{canonicalUrl}</b> (hereinafter referred to as <b>“Service”</b>).</p>

@@ -3,9 +3,11 @@ const companyName = "Pickerson Solutions LLC."
 const canonicalUrl = "review-mate.com"
 const contactEmail = "info@pickerson.com"
 const refundDaysAllowed = "20"
+import {months} from '../../utils'
+const currDate = new Date()
 ---
   <h2 style="text-align: center; margin-top: 1rem; padding-top: 3rem;" id="termsandconditions"><b>TERMS AND CONDITIONS</b></h2>
-<p>Last updated: 2022-04-18</p>
+<p>Effective: {months[currDate.getMonth() + 1]}, {currDate.getFullYear()} </p>
 <p>1. <b>Introduction</b></p>
 <p>Welcome to <b>{companyName}</b> (“Company”, “we”, “our”, “us”)!</p>
 <p>These Terms of Service (“Terms”, “Terms of Service”) govern your use of our website located at <b>{canonicalUrl}</b> (together or individually “Service”) operated by <b>{companyName}</b>.</p>
