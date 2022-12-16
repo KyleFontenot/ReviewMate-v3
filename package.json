@@ -6,7 +6,6 @@
 		"dev": "astro dev --reload",
 		"start": "astro dev",
 		"build": "NODE_ENV=production astro build",
-		"postinstall": "patch-package",
 		"serve": "astro preview",
 		"astro": "astro"
 	},
@@ -16,7 +15,6 @@
 		"astro": "^1.6.15",
 		"autoprefixer": "^10.4.13",
 		"cssnano": "^5.1.14",
-		"patch-package": "^6.5.0",
 		"postinstall-postinstall": "^2.1.0",
 		"solid-js": "^1.6.5"
 	},
