@@ -10,6 +10,7 @@ import {months, ArticleOpenGraph} from "../../utils.js"
 import {Img } from 'astro-imagetools/components'
 import metadata from "../../layouts/metadata";
 import { formatSlug } from "../../featureList.js";
+import CallToAction from '../../components/CallToAction.astro'
 
 export async function getStaticPaths() {
   const {formatSlug} = await import("../../featureList.js")
@@ -63,6 +64,9 @@ let url = Astro.url.pathname.toString().concat(`/blog/${formatSlug(title)}/`)
   <Img src={img.toString()} alt={imgAlt.toString()} objectFit="cover" attributes={{img: {class: 'blogimage'}}} />
   <!-- <img src={img} alt={imgAlt} class="blogimage" loading="lazy"/> -->
   <div class="blogbody" set:html={body}></div>
+  <CallToAction padding="4rem 2% 0rem">
+    <Button as="link" color="yellow" text="Contact Us" href="/contact/" >Contact Us</Button>
+  </CallToAction>
 </article>
   
 </StandardLayout>
@@ -70,6 +74,14 @@ let url = Astro.url.pathname.toString().concat(`/blog/${formatSlug(title)}/`)
   .blogArticle{
     max-width: 65rem;
     margin-inline: auto;
+    // outline: 2px solid purple;
+    & p {
+      line-height: 4rem;
+    }
+    & :global(ul) {
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
   }
 .heading{
   flex-flow: column nowrap;
