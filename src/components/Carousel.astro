@@ -89,7 +89,6 @@ function assessDirection(){
     isScrolling && raf && window.requestAnimationFrame(scrollLeft)
   }
   document.querySelectorAll('.partnerlogo').forEach(logo => {
-    console.log(logo)
     logo.addEventListener('mouseover', () => {
       isScrolling = false;
     })

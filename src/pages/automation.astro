@@ -20,7 +20,7 @@ import FlexDiv from '../components/FlexDiv.astro'
         <li>Using Artificial Intelligence (AI) to leverage industry standards or, </li>
         <li>Enter rules manually to identify certain conditions that should be audited.</li>
       </ul>
-      <br/>
+      <!-- <br/> -->
       <div style="display:flex;justify-content: space-around;">
         <SmallLink href="/monitoring/risk-manager/" text="Risk Manager" />
         <SmallLink href="/monitoring/reviewmate-insights/" text="ReviewMate Insights" />
@@ -124,14 +124,15 @@ ReviewMate is one of the largest databases for medical code auditing systems. Ov
 </CallToAction>
   </FeatureCategoryLayout>
 <style lang="scss">
-  $bigcirclewidth: 40vw;
-  $circlewidth: 30vw;
+  $bigcirclewidth: 75%;
+  $circlewidth: 40%;
   $circleradius: calc($circlewidth / 2);
   
   #aitraits {
     display: grid;
     place-items: center;
     width: 100%;
+    max-width: 34rem;
     position: relative;
     margin-inline: auto;
     aspect-ratio: 1 / 1;
@@ -142,11 +143,15 @@ ReviewMate is one of the largest databases for medical code auditing systems. Ov
       display: grid;
       place-items: center;
       color: white;
-      font-size: 2rem;
+      
       border-radius: 100vw;
       transform-origin: center center;
-      line-height: 2rem;
+      line-height: 1.8rem;
       text-align: center;
+      transition: background-color 0.4s;
+      &:hover {
+        background-color: hsla(var(--color1h), var(--color1s), var(--color1l), 100%);
+      }
     }
     & .main {
       left: 50%;
@@ -154,6 +159,7 @@ ReviewMate is one of the largest databases for medical code auditing systems. Ov
       transform: translate(-50%, -50%);
       width: $bigcirclewidth;
       height: $bigcirclewidth;
+      font-size: 1.3rem;
       padding:6%;
       background-color: hsla(var(--color1h),var(--color1s),var(--color1l), 85%);
       border: 10px solid #ffffff22;
@@ -162,10 +168,12 @@ ReviewMate is one of the largest databases for medical code auditing systems. Ov
     .sub {
       width: $circlewidth;
       height: $circlewidth;
+      text-indent: 0;
       padding:6%;
-      font-size: 1.3rem;
+      font-size: 1rem;
       background-color: hsla(var(--color1h), var(--color1s), var(--color1l), 70%);
       border: 7px solid #ffffff22;
+      
     }
     & .sub:nth-of-type(2){
       left: calc(50% - $circlewidth / 2);
