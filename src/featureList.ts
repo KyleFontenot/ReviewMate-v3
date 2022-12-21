@@ -189,7 +189,9 @@ const featureList = {
 			"Reporting",
 			"Choose from a range of parameters and gather custom accuracy rates. Arrange a group and pull the findings you need exactly.",
 			[
-				"ReviewMate is an entirely comprehensive tool for summarizing results. Use the Accuracy Manager to compile custom accuracy rates using a variety of parameters. The Accuracy Manager is a great tool for auditors to surgically manipulate accuracy rates and connects directly with the rest of ReviewMate tools like: Reporting, Audit The Auditor, and Task Workflows.",
+				"Calculating and summarizing accuracy rates is a crucial task for your auditors, and important for your organization as a whole. With ReviewMate, your auditors become equipped with comprehensive tools that allows them to easily compile custom accuracy reports under a variety of different parameters.",
+				"Using ReviewMate's Accuracy Manager, auditors can gather accuracy rates with a surgical precision in a way that connects directly with the rest of the ReviewMate suite of tools, including Reporting, Audit the Auditor, and Task Workflows. ",
+				"Coders must have a low tolerance for inaccurate codes. Auditors will be able to gather a variety of accuracy rates across many different searching parameters, including searching by facilities (or groups of facilities), searching by coder or coder groups, searching by date ranges, and much more. Using ReviewMate, your auditors will have access to the tools they need to diagnose accuracy rates across a wide number of dimensions.",
 			],
 			{
 				src: "/photos/lukas.jpg",
@@ -215,7 +217,9 @@ const featureList = {
 			"Reporting",
 			"Reference specific code instances historically system-wide. Index historically used codes.",
 			[
-				"An integrated tool with ReviewMate is Code Finder. It allows auditors to view historically audited codes to correlate common findings. Instead of querying searches by tasks, facility, or any other parameter, you can query by particular codes. It provides a shortcut to particular instances and provides specific insight on coder performance.",
+				"Part of an auditor's job is investigating common patterns among different codes. The information from these investigations can often be used to direct areas of focus for future auditing. With ReviewMate, your auditors will gain the ability to easily investigate historically audited codes in order to analyze and figure out common findings.",
+				"Using ReviewMate, your auditors will be able to run queries by specific codes, rather than having to use other parameters for their search, such as by task or by facility. This provides shortcuts to viewing the prevalence and other aspects of the code being searched, allowing your auditors to seek deeper patterns in your structures.",
+				"By giving your auditors the power find records by code, you expand their ability to help your organization. With ReviewMate, you can make sure your auditors have the tools they need to do their job with efficiency and effectiveness. Armed with all of our tools, they will be ready to meet any challenge their job throws at them.",
 			],
 			{
 				src: "/photos/tima.jpg",
@@ -229,8 +233,10 @@ const featureList = {
 			"Reporting",
 			"Customizable dashboards for organizing the data you need. Underline pertinent workflows for auditors, administrators, or create client dashboards for consuming results.",
 			[
-				"From common data formations and models, dashboards deliver important information succinctly. All dashboards feature pie charts, graphs and tables that can be arranged and customized for each user's particular need.",
-				"The most common setup is for an auditor to track progress on many different tasks simultaneously, allowing him or her to visually assess one's progress. Additionally, dashboards can be setup for other users such as clients and coders to be able to communicate the entire auditing process more efficiently. ",
+				"It is essential for an auditor to have easy access to the cases they are auditing. With ReviewMate, your auditors will gain access to a customizable dashboard that will visually deliver the information your auditor needs to do their job effectively.",
+				"The dashboard is easily modified by the auditor, allowing them to place custom pie charts, graphics, and tables that can be arranged to the needs of a particular auditor, placing an emphasis on their own individual workflow and preferences.",
+				"It is most common for auditors to have to track progress across multiple different tasks simultaneously. ReviewMate's dashboard system enables them to improve their work by allowing them easy access to visually assess their own progress in a way that they prefer, empowering them to take their job performance into their own hands. ",
+				"Dashboards aren't only useful for auditors, however ' auditors can also set up dashboards to visually present their progress or data to clients and coders, allowing them to communicate to interested parties in a way that is concise, efficient, and transparent.",
 			],
 			{
 				src: "/photos/cottonbro.jpg",
@@ -245,9 +251,9 @@ const featureList = {
 			"Reporting",
 			"Unlimited amount of customizable templates for your firm. From branding to typography, keep your reports consistent seamlessly.",
 			[
-				"Our Summary reports offer many ways of customizing reports, but templating these reports is where users find great value. Users can generate reports from templates, or create an unlimited amount of custom templates to fit your firms' needs.",
-				"All custom templates become easily shareable within your company's designated system.",
-				"Customization options are endless. With hundreds of components to choose from, users can arrange and format every aspect of the template.",
+				"One of the best ways to increase worker productivity is to give your workers tools that allow them to do their work more efficiently. ReviewMate includes a templating system that allows a user to create or utilize existing templates to generate reports that have a consistent design. ",
+				"The amount of templates you can create is unlimited, and automation tools such as templates can help make your auditor work faster and smarter. Not only can a single auditor make themselves more efficient, but because templates can be easily shared, individual auditors can share their templates with others, or companies can provide custom templates tailored to their specific organization systems.",
+				"With ReviewMate's templates, the customization options are endless. Auditors have access to hundreds of different components with which to customize their templates, and every aspect of the templates can be arranged and formatted by your auditors. ReviewMate gives your auditors the empowerment they need to take their productivity into their own hands, resulting in a more efficient organization that benefits everyone.",
 			],
 			{
 				src: "/photos/artem.jpg",
@@ -261,9 +267,9 @@ const featureList = {
 			"Reporting",
 			"Easily digestible reports on accuracy with exact comment notes from all associated reviewers. Distributed coder login credentials allow for direct viewable transcripts for accountability.",
 			[
-				"Reports are primarily meant for clients, but offering to involve the relevant coders in audit findings is an excellent way to expand communication and accountability for all parties. Coder Report Cards are a smaller, more concise, and automatic version of reports meant specifically for coders.",
-				"When auditors allow, coders can sign into ReviewMate using their own credentials for viewing their own performance. Conversely, firms may easily generate documents, like PDFs, to inform the coder on his or her performance.",
-				"ReviewMate empowers both coder and auditor by providing accountability and transparency.",
+				"Normally, only clients would receive reports, however ReviewMate strives to provide utility at all levels of use, whether you're a client, an auditor or a coder. Using the Coder Report Card system, coders can receive feedback on their coding after auditing, allowing them to improve their future performance. This creates a good system of communication and accountability for all parties.",
+				"Coder Report Cards act as a more concise and automated derivation of reports, and are designed specifically for coders. Coders have easy access to these report cards - they simply sign into ReviewMate using their on credentials, allowing them to review their report cards and examine their performance. As an alternative, documents (such as a PDF) can be generated and distributed to a coder.",
+				"By using our Coder Report Card system, ReviewMate empowers both coders and auditors to provide accountability, allowing succinct communication across all levels of reports. Armed with the knowledge gained by their report cards, coders are presented with an opportunity to improve their craft, creating a positive work environment focused on growth and self-improvement.",
 			],
 			{
 				src: "/photos/kindel.jpg",
@@ -277,7 +283,9 @@ const featureList = {
 			"Reporting",
 			"All reports can be exported into PDFs, Excel spreadsheets, Word documents.",
 			[
-				"After aggregating your results into a report of your choosing, ReviewMate offers standard ways of exporting your report into usable documents, including PDF, Excel and Word. The auditing industry has many interoperability challenges, so these standard document formats are treated as first-class citizens within ReviewMate. ",
+				"It is important that you have easy access to the work of your coders and auditors. That's why ReviewMate is designed to export your data quickly and efficiently. Once you have your auditors finish a report, or if you want to present a report-in-progress, ReviewMate gives you plenty of options for exporting the data through a wide variety of common formats, including PDF, Excel, and Word.",
+				"The auditing industry can be tricky when it comes to interoperability - which is why ReviewMate supports the most common and standard document formats. ReviewMate is designed to operate with these formats, creating a smooth experience from the time coding begins, to auditing, to exporting.",
+				"With ReviewMate, you'll always have easy access to your data, whether it's through the software or the exported reports. This can come in handy when reviewing the work of your auditors, or to present works in progress, enabling swift accountability, and by supporting these common formats, you can be sure that no matter how you have to submit them, ReviewMate will cover your needs.",
 			],
 			{
 				src: "/photos/pixabay.jpg",
@@ -293,8 +301,9 @@ const featureList = {
 			"Security",
 			"Confirm fidelity with more complex sign-on options. Integration with Google Duo.",
 			[
-				"ReviewMate treats HIPAA requirements with the utmost importance. Multi-factor Authentication is one way that secures each user's login. By using modern email authentication and Google's Duo service, user fidelity is guaranteed.",
-				"Google Duo is available on every app store for mobile devices to track a per-device policy to prove authenticity. Google Duo is optional and can be disabled with each user's settings.",
+				"When it comes to the management of patient data, following HIPAA guidelines is an absolute must. ReviewMate takes the HIPAA requirements very seriously, and is designed with security of patient data in mind.",
+				"Multi-factor authentication is a modem security strategy whereby users must verify their identity in multiple different ways before gaining access to a particular system. There are a variety of different ways to achieve this, depending on the level of security required. Often times, alongside having a username and password, a user might be required to receive a pin via a text to a phone number they've previously established, or through an email.",
+				"Alongside password and email authentication, ReviewMate also uses the Google Duo service to further verify user fidelity. Google Duo is a video chatting service designed by Google, and is available on every app store for mobile devices and can authenticate users on a per-device policy. Google Duo integration is optional, and may be disabled with each user's setting.",
 			],
 
 			{
@@ -308,7 +317,10 @@ const featureList = {
 			"Security",
 			"Connect directly into enterprise LDAP system from within ReviewMate. Master passwords work within ReviewMate for seamless user authentication.",
 			[
-				`A common industry standard for connecting to a hospital or firm's database –or as we call the firm's "universe of data" is using LDAP or Active Directory. It is a file-sharing tool for networking connections between computers to other computers or resources. ReviewMate can use LDAP or Active Directory natively in the platform so that data is easy to obtain in a secure, point-to-point method.`,
+				`Lightweight Directory Access Protocol, or LDAP, is the common industry standard used when connecting to the database, or “universe of data”, of a hospital or firm. LDAP is used through a network to facilitate sharing files from these databases, particularly between different computers on the network.  Active Directory is a commonly used service that helps oversee and manage data connections on a network, and it is this service which communicates using LDAP.`,
+				`With ReviewMate, LDAP and Active Directory is supported natively, allowing easy integration into ReviewMate's services. For example, ReviewMate's integration system allows users to manage data connections, and to apply them directly to different reviews and tasks. ReviewMate will connect directly to Active Directory systems using the LDAP, and allow for seamless user authentication.
+`,
+				`Security is important, which is why ReviewMate prioritizes ease of use when it comes to security options. By making these features easy to use, ReviewMate helps ensure that users utilize these features.`,
 			],
 			{
 				src: "/photos/morillo.jpg",
@@ -321,7 +333,9 @@ const featureList = {
 			"Security",
 			"End-to-end VPN tunneling compatibility with SOC2 certified compliance.",
 			[
-				"With many hospitals and institutions, connecting remotely to servers or even to individual computers almost always requires the use of connection to a private VPN. ReviewMate fully supports VPN connections for directly tunneling connections to the source for ensuring safety and security for PHI in a HIPAA-compliant manner.",
+				"The safety and security of PHI (or patient health information) is of the utmost importance in ReviewMate. In addition so standard security tools such as session management, ReviewMate build VPN capability right into the software.",
+				"VPNs, or Virtual Private Networks, are a tool used for privatizing and securing data transfers. Whereas a typical network connection will connect directly from a computer to the network through a service provider, a VPN acts as a middleman between a service provider and the network in question. With a VPN, you can enhance security by further encrypting data beyond what your computer would do normally, while simultaneously stopping bad actors from analyzing movement of data.",
+				"ReviewMate fully supports VPN configurations to seamlessly begin connecting to your servers holding critical patient data. With ReviewMate, you can ensure the connections are safe and secure, making it ready to handle PHI in a HIPAA-compliant manner.",
 			],
 			{
 				src: "/photos/vpn.jpg",
@@ -337,9 +351,9 @@ const featureList = {
 			"Monitoring",
 			"Time tracking and progress transparency, against tasks, findings, accounts. Track goals and accountability with visual charts and dashboard plugins.",
 			[
-				"ReviewMate offers many ways of tracking time that empower both subjective progression and for external transparency.",
-				"Tasks are the typical unit of grouping records together for the use of analyzing progression. ReviewMate records metadata on each task which is shared directly with clients and users. On teams over-looking auditors, this offers essential accountability.",
-				"Tasks are automatically tracked and indexed, but audits are never completely predictable within time constraints. Users have tools for augmenting the built-in time tracking software for claiming additional time into more-intensive auditing tasks.",
+				"ReviewMate offers a variety of tools to track the time of your staff in a way which empowers both the subjective sense of progression and for the purposes of organization-wide transparency. This is essential not only for understanding performance, but for understanding how time is spent and what it is that time is spent on.",
+				"ReviewMate groups records together as tasks, a unit that is used for analyzing progression. Metadata is then collected by ReviewMate for each task, which is made accessible directly with users and clients. This provides teams who have to overlook auditors with essential data with which to hold their auditors accountable.",
+				"Tasks are automatically tracked and indexed by ReviewMate, however by nature audits are unpredictable within particular time constraints. To deal with this, users are provided with tools to augment the built-in time tracking software in order to claim additional time for more intensive auditing tasks. This ensures that, no matter how unpredictable the task becomes, your user has the ability to track all of the time that is used.",
 			],
 			{
 				src: "/photos/krukov.jpg",
@@ -372,8 +386,8 @@ const featureList = {
 			"Share files such as reports, imported spreadsheets, and training materials between different administration levels. HIPAA compliant, and supported by clear version control.",
 			[
 				"Document manager is a simple ECM system, in which you can easily update, track and manage your documents in a secure and HIPPA compliant environment. Document Manager is a module in the ReviewMate platform that allows users to store their audit related files in a centralized and secure location.",
-				"In addition, they can easily share files with other users, departments, or certain user roles. Every file imported into the ReviewMate platform will reside in the Document Manager module, including files that are loaded via Integration Manager from an EMR or an abstracting system. Each document will be assigned a unique identifier to help manage version control and ensure proper availability and backup procedures are performed. The system will capture all necessary login information to identify users that accessed and downloaded the document.", 
-				"Only users with active credentials and have the proper access privileges can access files from the Document Manager. Document Manager works on all popular browsers and supports all known file extensions including Microsoft Word, Excel and PowerPoint, PDF, CSV, XML, JSON, TXT, JPG, PNG, BMP, GIF, HL7, EDI Files such as 837 and others."
+				"In addition, they can easily share files with other users, departments, or certain user roles. Every file imported into the ReviewMate platform will reside in the Document Manager module, including files that are loaded via Integration Manager from an EMR or an abstracting system. Each document will be assigned a unique identifier to help manage version control and ensure proper availability and backup procedures are performed. The system will capture all necessary login information to identify users that accessed and downloaded the document.",
+				"Only users with active credentials and have the proper access privileges can access files from the Document Manager. Document Manager works on all popular browsers and supports all known file extensions including Microsoft Word, Excel and PowerPoint, PDF, CSV, XML, JSON, TXT, JPG, PNG, BMP, GIF, HL7, EDI Files such as 837 and others.",
 			],
 
 			{
@@ -387,8 +401,8 @@ const featureList = {
 			"Auditing",
 			"Expanded utilities for querying your universe of data. Explicit parameters for querying in addition to a randomization query tool.",
 			[
-				"Selector tools are essential to any auditor, and ReviewMate focuses on creating easy tools for every scenario to empower the auditor. An assortment of querying parameters are integrated for every auditing account used for extracting the exact accounts that you need. The randomizer is an additional way to query a random set of accounts.",
-				"In addition to flexible manual selections, all queries and sample selections can be customized to run automatically. Routine audits are standard expectations for end-user firms. ReviewMate can automate these tasks with a few clicks, which can automatically populate tasks/findings.",
+				"An auditor needs good selector tools to help them in their auditing. This makes good selector tools essential, and ReviewMate has a special focus on creating easy-to-use tools for all scenarios to help empower your auditors. A variety of different querying parameters are integrated for every auditing account to help extract the exact accounts you need from your database. ReviewMate also includes randomized selection as an additional way to query random accounts, helping to reduce the chance of errors, keeping your records spick and span (and compliant!).",
+				"Not only does ReviewMate contain flexible manual selection tools, all querying and sample selections can be customized to run automatically, allowing your auditor to tailor their auditing process to their needs, improving productivity and reducing mistakes. Routine audits are the standard when it comes to end-user firms. With ReviewMate, these tasks are only a few clicks away from being automated, allowing tasks or findings to be automatically populated.",
 			],
 			{
 				src: "/photos/selection.jpg",
@@ -401,8 +415,9 @@ const featureList = {
 			"Monitoring",
 			"Customizable task responses allow all users to focus on pertinent issues. Field or view verbose responses based on user preferences.",
 			[
-				"Tasks in ReviewMate are units or sets of accounts that index progression and communication notes. Tasks offer convenient ways to interact with a compartmentalized set of findings by being able to add this information to any dashboard, export into a report, or to isolate accountability using online logins with end-users.",
-				"Tasks not only provide ways to chunk the auditor's work, but it's very important for differentiating whole audits between different clients and/or firms. Auditors often balance whole jobs with communication post-evaluation, so ReviewMate keeps these tasks still at arms-reach.",
+				"When it comes to auditing, communication is key, and clear communication requires clear subjects to communicate. ReviewMate utilizes tasks, a unit of auditing information (such as a set of accounts) that index progression and communication notes. Using the ReviewMate task features, users are allowed a convenient way to interact with and share a compartmentalized set of findings.",
+				"Users can add these findings to any dashboard, export them to be gathered into a report, or to isolate accountability using online logins with other end-users. Not only do tasks provide a convenient and clear way to divide an auditor's work, but it addresses the very important problem of differentiating between different clients and/or firms. Since auditors often balance whole jobs between their auditing and communication post-evaluation, ReviewMate allows auditors an easy way to retrieve necessary information.",
+				"Simple and effective communication forms the backbone for any successful organization. Using ReviewMate's task system, you can make sure to capture the information you need in order to conduct clear and precise reviews of an auditor's work, thus enabling easy and intuitive communication.",
 			],
 			{
 				src: "/photos/postitnotes.jpg",
@@ -415,7 +430,10 @@ const featureList = {
 			"Security",
 			"Import spreadsheets, universes of data, or any other third-party source of data into a central resource. Manage, maintain, and navigate sources dynamically.",
 			[
-				`For the many ways a user can integrate and receive data from a source such as a "universe of data". ReviewMate allows an interface for configuring and managing all of the users' connections to data sources. These connections are what we consider integrations. For setting up new connections, an easy setup process enables a stream of data right into reviews and tasks.`,
+				`Secure and robust management of connections and data is crucial to any operation, and ease of use is critical for ensuring users follow through with security protocols. With ReviewMate, you get access to an integration management tool that enables a users to receive data from multiple sources, all under one interface that's easy to digest.`,
+				`This is what we call an integration. Using ReviewMate's simple integration interface, users have the ability to manage and configure their different connections to various the various sources of their data. This allows for simple and effective management of the data and its security.`,
+				`ReviewMate also streamlines the process for adding new connections to an integration using an easy, intuitive and user-friendly setup process. With ReviewMate's integration manager, you can directly pipe streams of data right into different reviews and tasks.`,
+				`The integration system was designed with usability in mind, and having it enables users to securely and easily manage their different data streams. ReviewMate will empower your users by providing them with an easy-to-use interface for securing their data.`,
 			],
 			{
 				src: "/photos/sayles.jpg",
@@ -429,8 +447,9 @@ const featureList = {
 			"Monitoring",
 			"Review completed audits and reviews by adding layered documentation. Original data is referential and integrated.",
 			[
-				"Every auditor can interact with already-finished audits. Comments and notes can be attached directly to a specific code, a coder, or for the auditor themselves. By doing this, it creates a layer of communication on top of the rest of the finding's communication shared by coder, auditor, and potentially client.",
-				"This way of stacking communication is similar to modern thread-based messaging that enhances transparency for every user of the chain of interaction.",
+				"Transparency is key for any successful organization. With ReviewMate, auditors are provided with the means to interact with other completed audits and to add comments or notes that are attached to specific code, a specific coder, or to auditors themselves. With these features, channels of communication are opened between the coder, the auditor, and any client, helping to provide context throughout an entire audit.",
+				"Using these features that ReviewMate provides, communication is stacked in a manner similar to modern thread-based messaging that helps to enable transparency across entire chains of interactions. This allows for a more robust level of communication between all parties, and provides critical context to the different actions when reviewing an audit.",
+				"Having this critical context is absolutely vital to reviewing and understanding a particular audit, whether it's a simple performance review or an investigation into the compliance of an auditor. When you use ReviewMate, you'll have all of the necessary tools at your disposal to examine auditors and their work, enabling a deeper level of control to efficiently make sure compliance is maintained.",
 			],
 			{
 				src: "/photos/andrey.jpg",
@@ -444,8 +463,9 @@ const featureList = {
 			"Monitoring",
 			"Directly assign training materials from either custom uploaded training resources such as videos, PDFs, and PowerPoint presentations, or use integrated nThrive's training modules.",
 			[
-				"While auditors review coders' evaluations, auditors have the option of suggesting training materials. Communication with the coder is optional though training suggestions –especially for common coding mistakes– and is a very impactful feature that intuitively helps coder, auditor, and client alike.",
-				"Training materials are provided by nThrive, a developed service that provides AHIMA compliant tutorials and relevant articles for assisting in billing education. All codes within ReviewMate are indexable toward training materials, so suggesting training materials is a matter of clicking a button.",
+				"It's vital for your coders to stay educated with modern codes and practices. ReviewMate gives your auditors the ability to suggest training materials to coders when auditing. This communication is optional, but integral for providing resources to coders that need them for the purpose of improving their coding.",
+				"Compliance is important, and mistakes can be easy to make and subtle in nature. ReviewMate's education tracking allows your auditors to not only correct mistakes, but to help prevent future mistakes in a way that is intuitive to coders, audits, and clients. It's a win-win situation for all - the coders can be trained to make less mistakes, auditors will then get to utilize their time more effectively, and organizations get a more robust work environment.",
+				"The training materials for this feature are provided by nThrive, a well-developed service that provides tutorials and articles which are AHIMA compliant, and assist in billing education. In ReviewMate, all codes are indexable toward training materials, so suggesting a particular training material is as simple as clicking a button.",
 			],
 			{
 				src: "/photos/goodluz.jpg",
@@ -487,7 +507,8 @@ const featureList = {
 			"Auditing",
 			"View full narratives of records in one integrated place by using timelines within each record.",
 			[
-				"ReviewMate offers an intuitive way of observing and analyzing a thread of changes in a record. The auditor  has full transparency of the conversations between all parties from beginning of the diagnosis, to the rebuttal process without having to switch to external tools.",
+				"When it comes to auditing, you can never have too much data. ReviewMate is designed to provide your auditors with an intuitive way of investigating and analyzing different threads of changes within a record. With our tools in hand, your auditor will have complete transparency regarding all of the communication between all of the different parties involved, from the beginning of the diagnosis through to the rebuttal process. They'll have access to all of this information without having to switch to any other tools; it's all integrated in one place.",
+				"Record compliance is integral for any medical organization. With ReviewMate's ingenious designs, you can help ensure your auditor will have access to all the information they need, right where they need it. Besides streamlining the record reviewing process, ReviewMate's integrated record tracking helps to reduce auditing errors, by making information accessible and easily reviewed, from the diagnosis to the rebuttal.",
 			],
 			{
 				src: "/photos/recordtracker.jpg",
@@ -501,8 +522,9 @@ const featureList = {
 			"Auditing",
 			"Intuitively analyze and report coders' physician queries on compliance, appropriateness, and efficiency.",
 			[
-				"Context is incredibly important for auditing. For broadening the scope of communication within ReviewMate, Physician Query Analyses allows auditors to examine coders' submitted physician queries.",
-				"Physician queries are important for both compliance, and for providing context into the record's narrative. Auditors may simply inspect and refer to physician queries right in the timeline of the record.",
+				"Understanding why and by whom a particular code has been submitted is integral to a productive auditing environment. In order to help streamline the experience for your auditors, ReviewMate provides them with Physician Query Analysis – allowing your auditors to visually examine the submitted physician queries for each code with ease.",
+				"Physician queries are a necessity to guarantee compliance and provide context for your auditors. Using the Physician Query Analysis, your auditors will gain the ability to view physician queries right within the timeline of the record being reviewed - giving them a clear and concise view of the chronological order of all events within the record. ",
+				"ReviewMate provides your auditors with the tools they need to do their job quickly and efficiently. Armed with the Physician Query Analysis, your can enable your auditors to make sure your business stays compliant.",
 			],
 			{
 				src: "/photos/physicianquery.jpg",
@@ -516,8 +538,9 @@ const featureList = {
 			"Reporting",
 			"Integrate communication with any first-party or third-party CDI team within ReviewMate.",
 			[
-				"ReviewMate aims to be an all-in-one solution, so communication solutions for connecting with a CDI team are integrated within standard reporting workflows.",
-				"Oftentimes auditors report not only to clients, but to an adjacent Clinical Documentation Improvement team as well. Once an auditor has aggregated findings and is ready to report, ReviewMate allows connecting to a designated external CDI team via email, exported documents, or a special client-facing login portal. The login portal ensures reports give the most accurate up-to-date information.",
+				"ReviewMate is designed with the idea that one tool should cover all of your needs. ReviewMate includes functionality for communicating to and connecting with CDI teams. This functionality is fully integrated right into the standard reporting workflows!",
+				"In the course of auditing, it is often the case that auditors will have to send reports and other information to an external Clinical Documentation Improvement (CDI) team. Using ReviewMate, your auditor has the ability to aggregate their findings and easily report it to a CDI team. ",
+				"Once an auditor has gathered the information they need, ReviewMate makes sure that sending it to the CDI team is a breeze. Auditors can connected an external CDI team through email, by exporting documents, or using a special client-facing login portal, allowing the CDI team to maintain an updated and accurate account of a particular record. Clinical documentation improvement is an essential part of making sure your records are compliant. With easy access to documents using ReviewMate, you can rest assured that your CDI team will have everything they need to do their job.",
 			],
 			{
 				src: "/photos/CDIcommunication.jpg",
