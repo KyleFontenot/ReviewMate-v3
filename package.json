@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "astro dev --reload",
+		"dev": "astro dev",
 		"start": "astro dev",
 		"build": "astro build",
 		"serve": "astro preview",
@@ -12,19 +12,19 @@
 	"devDependencies": {
 		"@astrojs/sitemap": "^1.0.0",
 		"@astrojs/solid-js": "^1.2.3",
-		"astro": "^1.6.15",
+		"astro": "^1.9.2",
 		"autoprefixer": "^10.4.13",
 		"cssnano": "^5.1.14",
 		"postinstall-postinstall": "^2.1.0",
-		"solid-js": "^1.6.5"
+		"solid-js": "^1.6.9"
 	},
 	"dependencies": {
 		"@contentful/rich-text-html-renderer": "^16.0.2",
 		"@contentful/rich-text-plain-text-renderer": "^16.0.2",
-		"astro-imagetools": "^0.6.17",
-		"astro-seo": "^0.6.0",
-		"contentful": "^9.2.14",
-		"libphonenumber-js": "^1.10.15",
-		"sass": "^1.56.2"
+		"astro-imagetools": "^0.7.3",
+		"astro-seo": "^0.7.0",
+		"contentful": "^9.2.17",
+		"libphonenumber-js": "^1.10.18",
+		"sass": "^1.57.1"
 	}
 }
