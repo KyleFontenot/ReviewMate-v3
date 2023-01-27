@@ -89,8 +89,8 @@ body {
 	text-rendering: optimizeLegibility;
 	// overflow-x: hidden;
 
-	perspective: 1px;
-	transform-style: preserve-3d;
+	// perspective: 1px;
+	// transform-style: preserve-3d;
 	height: 100%;
 }
 main {
@@ -344,4 +344,12 @@ html.sr .load-hidden {
 }
 .iconsvg {
 	filter: invert(23%) sepia(18%) saturate(7185%) hue-rotate(347deg) brightness(95%) contrast(84%);
+}
+.zsiq_floatmain {
+	position: fixed;
+	bottom: 30px;
+}
+.siq_bR{
+	bottom: 14px!important;
+	right: 14px!important;
 }
